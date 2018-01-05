@@ -1,0 +1,1 @@
+document.getElementById("myaccount").innerHTML = "Hello JavaScripdsat";
