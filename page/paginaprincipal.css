@@ -1,0 +1,16 @@
+body{
+margin-top:65px;
+    background-image: url("/page/assets/images/timthumb.png");
+  
+}
+.caseta{
+    border-radius: 25px;
+    background-color: white;
+    padding: 20px; 
+    width: 50%;
+    height: 150px; 
+    margin-left: auto;
+    margin-right:auto;
+    vertical-align: middle;
+    margin-top:80px;
+}

@@ -6,7 +6,7 @@
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">   
- <link rel="stylesheet" type="text/css" href="page/main.css">   
+ <link rel="stylesheet" href="page/styl.css">   
  
   <script  href="jquery-3.2.1.min"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -106,7 +106,7 @@
           <a class="Signup">Nu ai un cont?Creaza unul acum!</a>
             <button class="btn btn-primary"  class="Signup" id="SignUp">Sign Up</button> 
       
-        <button type="button" id="loginSignupButton" class="btn btn-primary" >Login</button>
+        <button type="button" id="loginSignupButton"  class="btn btn-primary" >Login</button>
         </div>
     </div>
   </div>
@@ -201,7 +201,7 @@
                       if ((parseInt(mesaj)+1)!=2){
                           $( "#alert" ).text(result); 
                       }else{
-                          window.location.assign("http://infolearn-com.stackstaging.com/index.php");
+                          window.location.assign("http://infolearn-com.stackstaging.com/index.php?page=timeline");
                       }}
                          
                       

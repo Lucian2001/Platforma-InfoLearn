@@ -12,6 +12,7 @@ if (mysqli_connect_error()){
 
     if ($_GET['function']== "logout"){
 session_unset();
+    
     }
 
     
