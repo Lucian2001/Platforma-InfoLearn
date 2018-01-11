@@ -5,8 +5,9 @@
 <meta charset="utf-8">
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">   
- <link rel="stylesheet" href="page/styl.css">   
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+ <link rel="stylesheet" href="page/style.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
  
   <script  href="jquery-3.2.1.min"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -19,12 +20,12 @@
 <body>
     
     
-     <div id="top-bar">
+     <div id="left-bar">
         
-       <p class="top-text" id="title">InfoLearn</p>
+       <img id="title" src="page/assets/images/titlu.png" width="182" height="40">
         
    
-         
+    </div>      
         <?php 
          include("functions.php");if ($_SESSION['id']) { ?>
       
@@ -36,13 +37,13 @@
       
     <button id="myaccount" data-toggle="modal" data-target="#myModal"> 
             <p class="top-text" id="login-text">Contul meu</p>   
-            <img id="login-image" src="page/assets/images/user-icon-placeholder.png"  height="35" width="35">
+            <img id="login-image" src="page/assets/images/user-icon-placeholder.png"  height="22" width="22">
          </button>
    
       
       <?php } 
          ?>
-    </div>
+   
     
 
  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -214,6 +215,9 @@
           
 })
    
+     
+
+    
     
      
     
@@ -221,7 +225,51 @@
     </script>
   
 
+<div id="pagina">
+
     
+  <div class="column1">
+        <p class="text"> &nbsp;        &nbsp;Logheaza-te pentru a invata sa programezi prin cele mai usoare si intuitive metode.</p>
+  </div>
+ 
+ 
+  
+  <div class="row">
+    <div class="col-sm">
+      <div class="presentation-panel" id="presentation-panel1">
+       <img class="presentation-image" src="page/assets/images/test1.png"  >
+          <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice cpe care il vrea muschii  tai</b>
+</div>
+    <div class="presentation-panel"id="presentation-panel1">
+        <img class="presentation-image" src="page/assets/images/test1.png"  >
+    <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice  pe care il vrea muschii  tai</b>
+        
+</div>
+      </div>
+    <div class="col-sm">
+      <div class="presentation-panel" id="presentation-panel2">
+          <img class="presentation-image" src="page/assets/images/test1.png"  >
+     <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice  pe care il vrea muschii  tai</b>
+</div>
+    <div class="presentation-panel" id="presentation-panel2">
+        <img class="presentation-image" src="page/assets/images/test1.png"  >
+    <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice  pe care il vrea muschii  tai</b>
+</div>
+    </div>
+    <div class="col-sm">
+     <div class="presentation-panel"id="presentation-panel3">
+         <img class="presentation-image" src="page/assets/images/test1.png"  >
+    <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice pe care il vrea muschii  tai</b>
+</div>
+    <div class="presentation-panel" id="presentation-panel3">
+        <img class="presentation-image" src="page/assets/images/test1.png"  >
+   <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice  pe care il vrea muschii  tai</b>
+</div>
+    </div>
+  </div>
+
+    
+</div>
 </body>
 
 </html>
