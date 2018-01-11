@@ -3,7 +3,7 @@
  position: fixed;
   top: -5;
   left: -1;
-  width: 200px;
+  width:15.1%;
   height:110%;
   background-color: lightgrey;
 margin-bottom: 0;  
@@ -21,7 +21,9 @@ margin-bottom: 0;
     }
 #title {
         margin-top: 15px;
-        margin-left:8px;
+        margin-left:10px;
+        width:90%;
+        height: 6%;
     }
 #login-text{
         font-size:19px;
@@ -80,9 +82,10 @@ float:right;
 }
 #pagina{
     shape-margin: -30px;
-    margin-left: 200px;
+    margin-left: 15.1%;
     background-color: #f2f2f2;
-    height: 100%;overflow: hidden;
+    height: 100%;
+    overflow-x: hidden;
       
 }
 .text{

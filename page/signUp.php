@@ -18,9 +18,9 @@ echo "Completeaza toate campurile.      ";
  $error=$error+1;
 }
 if ( $_POST["tipul"]=="3" and $_POST["clasa"]!=""){
-if(intval($_POST["clasa"])<5 or intval($_POST["clasa"])>12 )
+if(intval($_POST["clasa"])<5 or intval($_POST["clasa"])>12 ){
     echo "Clasa trebuie sa fie intre 5-12 ";
-$error=$error+1;
+$error=$error+1;}
 }
 
 if($_POST["tipul"]=="0"){

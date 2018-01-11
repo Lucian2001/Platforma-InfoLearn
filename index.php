@@ -1,12 +1,25 @@
 <?php
 include("page/functions.php");
+
+//($_GET['page'] == 'timeline' and $_GET['tip_de_utilizator'] == 1 
+$id1=$_SESSION['id'];
+$query="SELECT *FROM users WHERE id = $id1";
+if ($result1 = mysqli_query($link,$query)){
+    $row1 = mysqli_fetch_array($result1);
+   }  
+if ( $_SESSION['id'] !="" and $row1[4]==1) {
+         include("page/meniu.html");
+        include("page/paginaUtilizator.php");
+}
+else if ( $_SESSION['id'] !="" and $row1[4]==2){
+        include("page/meniu.html");
+        include("page/paginaProfesor.php");
+}
+else if ( $_SESSION['id'] !="" and $row1[4]==3){
+include("page/meniu.html");
+        include("page/paginaElev.php");
+} else
 include("page/head.php");
 
-  if ($_GET['page'] == 'timeline') {
-        
-        include("Pagina principala.php");}
-else{
-include("page/Pagina principala.php");
-}
 include("page/bottom.php");
 ?>

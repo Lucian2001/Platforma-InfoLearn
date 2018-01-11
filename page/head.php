@@ -6,7 +6,7 @@
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
- <link rel="stylesheet" href="page/style.css"> 
+ <link rel="stylesheet" href="page/styl.css"> 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
  
   <script  href="jquery-3.2.1.min"></script>
@@ -22,7 +22,8 @@
     
      <div id="left-bar">
         
-       <img id="title" src="page/assets/images/titlu.png" width="182" height="40">
+       <img id="title" src="page/assets/images/titlu.png" width="90%"
+        height= "6%" >
         
    
     </div>      
@@ -202,7 +203,7 @@
                       if ((parseInt(mesaj)+1)!=2){
                           $( "#alert" ).text(result); 
                       }else{
-                          window.location.assign("http://infolearn-com.stackstaging.com/index.php?page=timeline");
+                          window.location.assign("http://infolearn-com.stackstaging.com/index.php");
                       }}
                          
                       
