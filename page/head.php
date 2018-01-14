@@ -6,7 +6,7 @@
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
- <link rel="stylesheet" href="page/styl.css"> 
+ <link rel="stylesheet" href="page/style.css"> 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
  
   <script  href="jquery-3.2.1.min"></script>
@@ -217,7 +217,12 @@
 })
    
      
+  $( document ).ready(function() {
+   
+    $("#myaccount").css ("width","180px");    
 
+        
+});
     
     
      
