@@ -1,5 +1,5 @@
 <?php
-
+$_POST["username"]=ucfirst($_POST["username"]); 
 $error=0;
 if ($_POST["email"]=="" or $_POST["password"]=="" or $_POST["username"]=="" or $_POST["password1"]==""){
 
@@ -41,6 +41,10 @@ if ($_POST["password"]!=$_POST["password1"])
 if ($_POST["varsta"]!="")
     if(intval($_POST["varsta"])<1  ){
         echo"Introduceti o varsta valida ";
+$error=$error+1;}
+
+if (strlen($_POST["username"]) < 6 or strlen($_POST["username"]) > 12   ){
+  echo "Nume invalid (6-12 caractere)";
 $error=$error+1;}
 
 include("functions.php");

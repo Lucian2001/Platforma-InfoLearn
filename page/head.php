@@ -6,7 +6,7 @@
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
- <link rel="stylesheet" href="page/style.css"> 
+ <link rel="stylesheet" href="page/s.css"> 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
  
   <script  href="jquery-3.2.1.min"></script>
@@ -37,7 +37,7 @@
       <?php } else { ?>
       
     <button id="myaccount" data-toggle="modal" data-target="#myModal"> 
-            <p class="top-text" id="login-text">Contul meu</p>   
+            <p class="top-text" id="login-text"   font-weight=" normal;">Contul meu</p>   
             <img id="login-image" src="page/assets/images/user-icon-placeholder.png"  height="22" width="22">
          </button>
    
@@ -136,7 +136,7 @@
         $("#login-text").css ("color","white")  ;
     })
     $("#SignUp").click(function(){
-        
+        $( "#alert" ).text(""); 
         if (inLogin==1){
          inLogin=0;
          $(".showLogin1").show();
@@ -184,14 +184,7 @@
      })
 
     $("#loginSignupButton").click(function(){
-        if (inLogin == 0){
-          $(".showLogin1").hide();  
-          $("#loginModalTitle").text("Sign In");
-          $(".Signup").text("Nu ai un cont?Creaza unul acum!");
-            $("#showLogin2").hide();  
-           $("#showLogin3").hide();
-            inLogin=1;
-            $( "#alert" ).text("");}
+        
             if (inLogin==1){
                 
                  $.ajax({   type:"POST",
@@ -211,7 +204,14 @@
                  });
          
                             
-            }
+            } else if (inLogin == 0){
+          $(".showLogin1").hide();  
+          $("#loginModalTitle").text("Sign In");
+          $(".Signup").text("Nu ai un cont?Creaza unul acum!");
+            $("#showLogin2").hide();  
+           $("#showLogin3").hide();
+            inLogin=1;
+            $( "#alert" ).text("");}
         
           
 })
