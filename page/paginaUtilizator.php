@@ -12,12 +12,25 @@ if ($result1 = mysqli_query($link,$query)){
     // echo "your username is ".$row[1] . "hello ".$row[1];
    
 }
+include("imageUpload.php");
 ?>
+ <?php
+
+  $query = "select `encoded_image` from `images` where `id`=". $id;
+  $result = mysqli_query($link, $query);
+  if(mysqli_num_rows($result) == 1) {
+    $row = mysqli_fetch_object($result);
+    //echo "<br><br>";
+    $image= $row->encoded_image;
+  
+}
+?>
+ 
 <html>
     
     <head><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
-        <link rel="stylesheet" href="page/mama5.css"> 
+        <link rel="stylesheet" href="page/mama6.css"> 
      <script  href="jquery-3.2.1.min"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -41,7 +54,7 @@ if ($result1 = mysqli_query($link,$query)){
     </button>
     <div id="panel">
   
-        <img id ="profileImage" src="page/assets/images/user-icon-placeholder.png" >
+        <img id ="profileImage" >
      
         
         <ul id="lista">
@@ -54,9 +67,15 @@ if ($result1 = mysqli_query($link,$query)){
  
 </ul>  <div class="clear-float"></div>
       <div id="butoane">
- <button type="button" class="btn btn-primary">Alege o imagine</button>
-<button type="button" class="btn btn-primary">Upload</button>
-        </div>
+ <form method="post" action="index.php" enctype="multipart/form-data">
+    <input type="file"  name="uploadFile" value="" />
+   
+        
+ 
+<button  type="submit" name="submitBtn" value="Upload"class="btn btn-primary">Upload</button>
+        
+          </form>
+     </div>
   <div class="clear-float"></div>
        <b id="completat">Completat %</b >  
         <div class="clear-float"></div>    
@@ -106,16 +125,19 @@ if ($result1 = mysqli_query($link,$query)){
     var username= "<?php echo $username?>"
     var varsta="<?php echo $varsta?>"
     var email="<?php echo $email?>"
+    var image="<?php echo $image ?>"
     var n=username.length;
              var panelOn=false;
          var n1; 
      n1=n*(29-n);
+            
       
     $("#myaccount").css ("width",n1);    
     $("#login-text").text(username);
     $("#username1").text("Username: "+username);
     $("#varsta1").text("Varsta: "+varsta);
     $("#email1").text("Email: "+email);
+    $("#profileImage" ).attr("src",image);
         
 });
         
