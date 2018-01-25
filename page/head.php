@@ -6,7 +6,7 @@
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
- <link rel="stylesheet" href="page/mama5.css"> 
+ <link rel="stylesheet" href="page/mama8.css"> 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
  
   <script  href="jquery-3.2.1.min"></script>
@@ -15,8 +15,9 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script> 
-</head>
 
+    </head>
+    
 <body>
     
     
@@ -117,119 +118,8 @@
    
     
 
+  <script type="text/javascript" src="page/scripturi/head_script.js"></script>  
     
-    
-<script type="text/javascript">
-
-     var mesaj="";
-    var post_tip=0;
-    var inLogin=1;
-    $("#myaccount").mouseover(function(){
-       
-        $(this).css("background-color","white"); 
-        $("#login-text").css ("color","#2669d6") ; 
-    })
-    
-      $("#myaccount").mouseout(function(){
-       
-        $(this).css("background-color","#2669d6"); 
-        $("#login-text").css ("color","white")  ;
-    })
-    $("#SignUp").click(function(){
-        $( "#alert" ).text(""); 
-        if (inLogin==1){
-         inLogin=0;
-         $(".showLogin1").show();
-         $("#loginModalTitle").text("Sign Up");
-         $(".Signup").text("Daca ai deja un cont logeaza-te aici!");}
-        else if (inLogin==0){
-       
-         
-          $.ajax({   type:"POST",
-                     url:"page/signUp.php",  
-                     data:"username=" + $("#username").val() + "&email=" + $("#email").val() + "&password=" + $("#password").val() +"&password1="+$("#password1").val()+ "&tipul=" + post_tip+"&varsta="+$("#varsta").val()+"&clasa=" + $("#clasa").val(), 
-                  success:function(result)  
-                     {   
-                         $( "#alert" ).text(result);
-                      }  
-                
-                 });
-          
-            
-            
-         
-            
-                       
-      }
-    })
-
-     
-      $("#utilizator1").click(function(){
-         $("#dropdownMenuButton").text("Utilizator normal");
-        $("#showLogin2").show();  
-           $("#showLogin3").hide();
-           post_tip=1;
-      })
-     $("#utilizator2").click(function(){
-         $("#dropdownMenuButton").text("Profesor"); 
-         $("#showLogin2").hide();
-         $("#showLogin3").hide();
-         post_tip=2;
-     })
-     $("#utilizator3").click(function(){
-         $("#dropdownMenuButton").text("Elev");
-          $("#showLogin3").show();
-         $("#showLogin2").hide();
-     post_tip=3;
-     })
-
-    $("#loginSignupButton").click(function(){
-        
-            if (inLogin==1){
-                
-                 $.ajax({   type:"POST",
-                     url:"page/logIn.php",  
-                     data:"&email=" + $("#email").val() + "&password=" + $("#password").val() ,
-                  success:function(result)  
-                     {   mesaj=result;
-                          
-                      if ((parseInt(mesaj)+1)!=2){
-                          $( "#alert" ).text(result); 
-                      }else{
-                          window.location.assign("http://infolearn-com.stackstaging.com/index.php");
-                      }}
-                         
-                      
-               
-                 });
-         
-                            
-            } else if (inLogin == 0){
-          $(".showLogin1").hide();  
-          $("#loginModalTitle").text("Sign In");
-          $(".Signup").text("Nu ai un cont?Creaza unul acum!");
-            $("#showLogin2").hide();  
-           $("#showLogin3").hide();
-            inLogin=1;
-            $( "#alert" ).text("");}
-        
-          
-})
-   
-     
-  $( document ).ready(function() {
-   
-    $("#myaccount").css ("width","180px");    
-
-        
-});
-    
-    
-     
-    
-    
-    </script>
-  
 
 <div id="pagina">
 

@@ -12,7 +12,7 @@ if ($result1 = mysqli_query($link,$query)){
     // echo "your username is ".$row[1] . "hello ".$row[1];
    
 }
-include("imageUpload.php");
+include("imageUpload.php")
 ?>
  <?php
 
@@ -30,7 +30,8 @@ include("imageUpload.php");
     
     <head><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
-        <link rel="stylesheet" href="page/mama6.css"> 
+        <link rel="stylesheet" href="page/mama9.css"> 
+         
      <script  href="jquery-3.2.1.min"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -38,13 +39,15 @@ include("imageUpload.php");
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script> 
      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
 
 <body>
 <div id="pagina1">
         
-
-    
+<div id="panel2">
+    </div>
+   
 
 
 <div id="account">
@@ -68,11 +71,16 @@ include("imageUpload.php");
 </ul>  <div class="clear-float"></div>
       <div id="butoane">
  <form method="post" action="index.php" enctype="multipart/form-data">
-    <input type="file"  name="uploadFile" value="" />
-   
+  
+   <button id="fileupload-example-5"  class="btn btn-primary" >
+    <input type="file"  name="uploadFile"  class="btn btn-primary">
+    <span>Add image</span>
+</button>
+   <!-- <input type="file"  name="uploadFile" value="" id="addImage" />
+   -->
         
  
-<button  type="submit" name="submitBtn" value="Upload"class="btn btn-primary">Upload</button>
+<button  type="submit" name="submitBtn" value="Upload" class="btn btn-primary">Upload</button>
         
           </form>
      </div>
@@ -92,10 +100,17 @@ include("imageUpload.php");
     </div>
     
     
+    <?php
+    if ($_GET['page'] == 'inceput'){
+    include("test.html");
+    }
     
-     <p>utilizator..............</p>
     
+    ?>
+    
+        
     </div>
+    
 </body>
     <script>
       $("#myaccount").mouseout(function(){

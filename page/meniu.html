@@ -88,7 +88,9 @@ margin-bottom: 0;
              <div class="item-design"><p class="menu-text">Despre</p> </div>
              </li>
           <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Inceput</p> </div></li>    
+             <div class="item-design" id="inceput"> 
+                 
+                 <p class="menu-text">Inceput</p> </div></li>    
           <li class="menu-item">    
              <div class="item-design"> <p class="menu-text">Despre</p> </div></li>
              <li id="last-column">
@@ -114,7 +116,13 @@ margin-bottom: 0;
      
 <script>
   
-    
+    $("#inceput").click(function(){
+      
+      $(location).attr('href', 'http://infolearn-com.stackstaging.com/index.php?page=inceput');
+        
+    })
+                    
+                
 </script>
 
 </html>

@@ -9,15 +9,20 @@ if ($result1 = mysqli_query($link,$query)){
    }  
 if ( $_SESSION['id'] !="" and $row1[4]==1) {
          include("page/meniu.html");
+
         include("page/paginaUtilizator.php");
+//include("page/meniuDreapta.html");
+
 }
 else if ( $_SESSION['id'] !="" and $row1[4]==2){
         include("page/meniu.html");
         include("page/paginaProfesor.php");
+        include("page/meniuDreapta.html");
 }
 else if ( $_SESSION['id'] !="" and $row1[4]==3){
 include("page/meniu.html");
         include("page/paginaElev.php");
+include("page/meniuDreapta.html");
 } else
 include("page/head.php");
 
