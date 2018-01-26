@@ -30,8 +30,8 @@ include("imageUpload.php")
     
     <head><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
-        <link rel="stylesheet" href="page/mama9.css"> 
-         
+        <link rel="stylesheet" href="page/mama11.css"> 
+       <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">  
      <script  href="jquery-3.2.1.min"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

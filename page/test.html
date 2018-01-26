@@ -1,18 +1,34 @@
+<head>
+
+</head>
 <div class="titlu-sectiune">
-  <h1>Inceput</h1>
+  <h1>Inceput - Algoritmul</h1>
 </div>
 <div>
 
 <div id="frame-aplicatie">
    <div id="informatie-aplicatie" >
-    
+    <p class="infoText">  &nbsp; sdahjdasdsadasuiIn desfasuradsarea cercetarii de marketing o importanta deosebita o prezinta stabilirea corelatiilor dintre produs, pretul sau / si modalitatile de distribuire si promovare, agregate in conceptul de mix. Stabilirea continutului si relatiilor dintre acessFsfSDFSDfsdfte patru elemente trebuie sa duca la atingerea obiective e acessFsfSDFSDfsdfte patru elemente trebuie sa duca la atingerea obiective</p>
    </div>
     <div id="exe-aplicatie" >
+   
+       <div id="animation-side">
+        
+        
+       </div>
+           <button class="btn btn-primary " class="button_text"><span class="button_text">Run</span>
+          <img  class="image_button" src="page/assets/images/button-play-icon.png"  float="right"> 
+            </button>
+         
+   
     
    </div>
     <div id="code-aplicatie" >
-    
+    <div id="blocuri">
+       <b id="blocuri-text">Blocuri</b>
    </div>
+   </div>
+   
 </div>
 
 </div>
@@ -31,3 +47,28 @@
     </li>
   </ul>
 </nav>
+<script>
+$(document).ready(function(){
+  var height_of_window=0,width_of_window=0;
+    height_of_window= $(document).height();
+    width_of_window= $(document).width();
+   //alert( width_of_window);
+     //alert( height_of_window);
+    if(height_of_window>900 && width_of_window>1800){
+        $(".infoText").css("font-size","23.5px");
+          $("#blocuri-text").css("font-size","28.5px");  
+     $(".button_text").css("font-size","30px");  
+        $(".image_button").css("height","40px"); 
+         $(".image_button").css("width","40px"); 
+          $(".image_button").css("margin-top","-10px");
+    }
+    else{
+           $(".infoText").css("font-size","15px");
+         $("#blocuri-text").css("font-size","20px");
+        $(".button_text").css("font-size","20px");  
+    }
+    
+});
+
+
+</script>
