@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html >
+   
+<!-- <script src="scripturi/angularscript.js"></script> -->
+   
+    
+
+
+<body  ng-app="myApp">
+     <a ng-href="#/!">Load page</a>
+  
+    
+    <div ng-view >
+ 
+    </div> 
+
+ </body>
+    
+<script>
+    
+
+    var app = angular.module('myApp', ['ngRoute','ng-fi-text','ngSanitize']);
+
+ app.config(function($routeProvider) {
+    $routeProvider .when("/", {
+    templateUrl : "page/test3.html",
+ });
+ });
+
+
+    
+</script>
+
+    
+       
+</html>
