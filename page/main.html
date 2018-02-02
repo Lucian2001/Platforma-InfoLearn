@@ -7,29 +7,19 @@
 
 
 <body  ng-app="myApp">
-     <a ng-href="#/!">Load page</a>
-  
+    <div id="next_and_previous"> 
+    <a class="btn btn-primary" href="#" role="button" id="Previous">Previous</a>
+    <a class="btn btn-primary" href="#" role="button" id="Next ">Next</a>
+    </div>
     
     <div ng-view >
  
     </div> 
 
- </body>
+ 
+    </body>
     
-<script>
-    
-
-    var app = angular.module('myApp', ['ngRoute','ng-fi-text','ngSanitize']);
-
- app.config(function($routeProvider) {
-    $routeProvider .when("/", {
-    templateUrl : "page/test3.html",
- });
- });
-
-
-    
-</script>
+<script src="page/angularscript.js"></script>
 
     
        
