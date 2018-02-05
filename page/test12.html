@@ -1,0 +1,199 @@
+
+<style>
+    
+		p { font-size: 1.2em }
+
+		h2 { margin-top: 50px; }
+
+		h5 { height: 26px; text-align: center; margin-top: 20px;}
+
+		.desc { margin: 50px auto; }
+
+
+		[class^="expl-box"] {
+			text-align: center;
+            position: relative;
+			height: 10%;
+            color:white;
+			/*margin: 15px;*/
+			/*border: 2px solid gray;*/
+             z-index: 1;
+		}
+  
+		.expl-box-fi {
+			margin-left: 10px;
+            border-style: none;
+			height: 95%;
+            width:99%;
+             text-align: left; 
+             text-indent: 30px;
+            color:black;
+             z-index: 1;
+		}
+    .expl-box-fi1 {
+		
+            border-style: none;
+			height: 7%;
+            width:100%;
+             text-align: left; 
+             
+            color:black;
+            
+		}
+     
+		}
+   
+
+		.expl-box-nr {
+			height:200px; overflow-y: scroll 
+		}
+  .alert {width: 50%;
+      height:50px;
+    float:left;
+        
+        
+    }
+  
+    container12{
+z-index: 1;
+      
+    }
+    .row{
+        width: 100%;
+        margin-left: 0px;
+        height: 100%;
+}
+    .col{
+background-color: red;
+        border-style: solid;
+        border-width: 0.5px;
+      height: 14.3%;
+    }
+</style>
+<body ng-app="myApp" >
+<div class="titlu-sectiune">
+  <h1>Inceput - Algoritmul</h1>
+</div>
+
+
+
+<div>
+
+<div id="frame-aplicatie"  >
+  
+    <div id="informatie-aplicatie" >
+ 
+		
+<div class="expl-box-fi" ng-fi-text="Producdsatia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000 metrii cubi anual. In Carpatii Occidentali, in Petrosani se extrag anual 43 mil. tone de licnit. Energie termica este produsa in proportie de cca. 77% de termocentrale, care folosesc licnit, petrol si gaz, iar restul de 23% este dat in hidrocentrale."></div>
+	 	
+   </div>  <div ng-controller=blocuri>
+    <div id="exe-aplicatie" >
+   
+       <div id="animation-side">
+     
+
+<div class="container">
+  <div class="box rotate"></div>
+</div>
+
+
+
+           
+<!--<img src="page/assets/images/masina.png" width="70px"  height="40px" > -->
+           <div id="object1" style="background:#98bf21;height:40px;width:50px;position:absolute;z-index: 2"></div>
+           
+  <div class="container12">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+    <div class="col"></div>
+   <div class="w-100"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+    <div class="col"></div>
+          <div class="col"></div>
+    <div class="col"></div>
+      <div class="w-100"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+    <div class="col"></div>
+          <div class="col"></div>
+    <div class="col"></div>
+    <div class="w-100"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+    <div class="col"></div>
+          <div class="col"></div>
+    <div class="col"></div>
+      <div class="w-100"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+    <div class="col"></div>
+          <div class="col"></div>
+    <div class="col"></div>
+     <div class="w-100"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+    <div class="col"></div>
+          <div class="col"></div>
+    <div class="col"></div>  
+       <div class="w-100"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+    <div class="col"></div>
+          <div class="col"></div>
+    <div class="col"></div> 
+  </div>
+</div>
+      
+       </div>
+        <div>
+        <div class="alert alert-danger">{{error}}</div>   
+        <button class="btn btn-primary " class="button_text" id="butonsmecher" ng-click="Run()" ><span class="button_text" >Run</span>
+          <img  class="image_button" src="page/assets/images/button-play-icon.png"  float="right"> 
+            </button>
+      </div>   
+   
+
+   </div>
+  
+    <div id="code-aplicatie" >
+    
+   
+  <div id="marcaj">
+     
+      <div class="expl-box-fi1" ng-fi-text=" &nbsp;Program"></div>
+     <div class="expl-box-fi1"ng-repeat="x in records " ng-fi-text="{{x}}"></div>
+
+      
+   </div>
+    
+   </div>
+    <div id="blocuri" >
+       <b id="blocuri-text" >Blocuri</b>
+        <div class="button11"  >
+           <div class="expl-box" ng-fi-text="Mergi-inainte" ng-click="myFunc()" ></div>
+        </div>
+      
+   </div>
+   </div>
+</div>
+
+</div> 
+ 
+</body>
+<script src="page/script.js"></script>
+<script>
+
+   
+
+</script>
