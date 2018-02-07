@@ -73,6 +73,15 @@ margin-bottom: 0;
         font-size:3vh;
         padding-top: 8px;
     }
+    #sub-menu-item{
+
+    margin-left:5px;
+    }
+    #sub-menu{
+    margin-left:-11%;
+        display: none;
+    
+    }
     </style>
     
 </head>
@@ -90,7 +99,14 @@ margin-bottom: 0;
           <li class="menu-item">
              <div class="item-design" id="inceput"> 
                  
-                 <p class="menu-text">Inceput</p> </div></li>    
+                 <p class="menu-text">Inceput</p> </div></li> 
+              <ul id="sub-menu">
+              <li class="menu-item"><div id="sub-menu-item"  class="text-design"> Titlu</div></li>
+                <li class="menu-item"><div id="sub-menu-item"  class="text-design"> Titlu</div></li>
+                 <li class="menu-item" ><div id="sub-menu-item" class="text-design"> Titlu</div></li>
+              
+              
+              </ul>  
           <li class="menu-item">    
              <div class="item-design"> <p class="menu-text">Despre</p> </div></li>
              <li id="last-column">
@@ -99,7 +115,9 @@ margin-bottom: 0;
           <li class="menu-title">
              <div class="text-design"> Titlu</div></li>
             <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Algoritmi </p> </div></li>    
+             <div class="item-design"> <p class="menu-text">Algoritmi </p> </div>
+            </li>
+               
           <li class="menu-item">    
              <div class="item-design"> <p class="menu-text">Curiozitati</p> </div></li>
           <li class="menu-item">
@@ -115,11 +133,19 @@ margin-bottom: 0;
     </div>  
      
 <script>
-  
+     var meniuInceput=0;
     $("#inceput").click(function(){
       
       $(location).attr('href', 'http://infolearn-com.stackstaging.com/index.php?page=inceput#/1');
-        
+      if (meniuInceput==0){
+        $("#sub-menu").show();
+        meniuInceput=1;
+      }else
+          {$("#sub-menu").hide();
+        meniuInceput=0;
+              
+          }
+        $(".menu-item").css("border-bottom-width","1px");
     })
     
                     

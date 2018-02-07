@@ -38,8 +38,9 @@ $( "#object1" ).animate({
   }, 2000, function() {
   
    setTimeout(function (){
-      
-       if ((offset1.left/($(document).width()/100))>(offsetLimit.left/($(document).width()/100))){
+      var target = $( "#object1" );
+var offset1 = target.offset();
+       if ((offset1.left/(($(document).width())/100))>(offsetLimit.left/(($(document).width())/100))){
            $( "#object1" ).stop(true);
            alert("eroare fraiere");
        }
@@ -48,12 +49,12 @@ $( "#object1" ).animate({
 });   
 
 } setTimeout(function(){
-             var target = $( "#object1" );
+var target = $( "#object1" );
 var offset1 = target.offset();
-    offset1 = target.offset();
+   // offset1 = target.offset();
     //  alert(offset1.left/($(document).width()/100));
        if ((offset1.left/($(document).width()/100))<((offset.left/($(document).width()/100))+1.5) && ((offset1.left/($(document).width()/100))>((offset.left/($(document).width()/100))-1.5))) {
-          // $( "#object1" ).stop(true);
+          $( "#object1" ).stop(true);
         alert("pola");
        }  
     else alert("eroare");
