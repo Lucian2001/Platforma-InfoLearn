@@ -71,11 +71,49 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
   $scope.records = []
       n=1;
       i=0;
+      pattern=0;
         
  }
     $scope.deleteLine=function(){
+   
+
    rand=parseInt($scope.rand);
-   rand=rand-1;
+  
+        var pattern1=1,x,x1=0,y2=1;
+        if (rand!=rand){ 
+            pattern=Math.floor(pattern/10);
+            alert(pattern);
+}else{
+        x1=0;
+        y2=1;
+        
+        pattern1=0;
+        for (var i1=1;i1<n-1;i1++){
+            y2=y2*10;}
+               
+     
+      while(pattern>0){
+          x1=x1+1;
+            x=Math.floor(pattern /y2);
+          console.log(x);
+            console.log(x1);
+            if (x1!=rand){
+                var x3;
+                x3=10;
+                pattern1=pattern1*x3+x;
+               
+                x3=x3*10;
+                } 
+            pattern=pattern%y2;
+            y2=y2/10;
+          
+        } 
+      pattern=pattern1; 
+     alert(pattern);}
+        
+        
+        rand=rand-1;
+        
       $scope.records[rand] ="";
       var j;
       j=rand;

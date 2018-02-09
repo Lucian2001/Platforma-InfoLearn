@@ -34,33 +34,95 @@ for(var i=0;i<x.length;i++){
     
     
     var z=(4.63*$(document).width())/100;
-  var targ = $( "#target" );
-var offset = targ.offset();
-     var targetLimit = $( "#limit1" );
-var offsetLimit = targetLimit.offset();
-//p.html( "left: " + offset.left + ", top: " + offset.top );
-//alert(offset.left/($(document).width()/100));
+    var z1=(6.9*$(document).height())/100;
+    var targ = $( "#target" );
+    var offset = targ.offset();
+    var targetLimit = $( "#limit1" );
+    var offsetLimit = targetLimit.offset();
+    var targetLimit1 = $( "#limit2" );
+    var offsetLimit1 = targetLimit1.offset();
+ 
+     
+   
 
 
     
-  var ok; var nr1=numarPasi,nr2=0,nr3=0;
+  var ok; var nr1=numarPasi,nr2=0,nr3=0,eroare=false;
    var $obiect = $("#object1"), degree=0,degree1=0 ,timer;
     
     if (y!=0){    
   animatie(nr1);  
 
     }
-    function animatie(i){
-     if (pasiArray[i]==1){
-        $( "#object1" ).animate({
+    function animatie(i){     
+         var target = $( "#object1" );
+var offset1 = target.offset(); 
+          if (i==-1){
+                if ((offset1.left/($(document).width()/100))<((offset.left/($(document).width()/100))+1.5) && ((offset1.left/($(document).width()/100))>((offset.left/($(document).width()/100))-1.5)) && (offset1.top/($(document).width()/100))<((offset.top/($(document).width()/100))+1.5) && ((offset1.top/($(document).width()/100))>((offset.top/($(document).width()/100))-1.5))) {
+         
+        alert("pola");
+       }  
+    else alert("eroare");
+          }
+        if ((offset1.left/(($(document).width())/100))>(offsetLimit.left/(($(document).width())/100)) || (offset1.top/(($(document).width())/100))>(offsetLimit1.top/(($(document).width())/100))-1.1){
+           eroare=true;
+       alert("eroare fraiere");
+       }
+     // alert(degree);
+        if (eroare !=true){
 
-   left: "+="+z,
+            if ((degree>360 && degree<361) ||(degree<(-360) && degree>(-361) )){
+    degree=0;
+            nr2=0;
+     }
+        if (pasiArray[i]==1){
+        if((degree/90<1 && degree/90>=0)||(degree/90>-2 && degree/90<=0)){
+         $( "#object1" ).animate({
+  
+  left: "+="+z,
 
   }, 2000, function() {
         nr1=nr1-1;  
         animatie(nr1);
     })
-    } else if (pasiArray[i]==2){
+   
+     } else if ((degree/90>=1 && degree/90<2) || (degree/90<=-3 && degree/90>-4)){
+        
+                $( "#object1" ).animate({
+  
+   top: "+="+z1,
+
+  }, 2000, function() {
+        nr1=nr1-1;  
+        animatie(nr1);
+    })
+     }
+            else if((degree/90>=2 && degree/90<3)|| (degree/90<=-2 && degree/90>-3)){
+        
+                $( "#object1" ).animate({
+  
+   left: "-="+z,
+
+  }, 2000, function() {
+        
+                    nr1=nr1-1;  
+        animatie(nr1);
+    })
+     }
+            else if((degree/90<=-1 && degree/90>-2) || (degree/90>=3 && degree/90<4)){
+        
+                $( "#object1" ).animate({
+  
+   bottom: "+="+z1,
+
+  }, 2000, function() {
+        nr1=nr1-1;  
+        animatie(nr1);
+    })
+     }
+     
+     
+     } else if (pasiArray[i]==2){
         
       rotate();   
     function rotate() {
@@ -100,71 +162,9 @@ var offsetLimit = targetLimit.offset();
         
     }
     }
-
-        
-        /*for (i=numarPasi;i>=0;i--){
-if (pasiArray[i]==1){
-   
-    nr1=nr1+1;
-     setTimeout(function (){
-    $( "#object1" ).animate({
-
-    left: "+="+z,
-
-  }, 2000, function() {
-  
-   setTimeout(function (){
-      var target = $( "#object1" );
-var offset1 = target.offset();
-       if ((offset1.left/(($(document).width())/100))>(offsetLimit.left/(($(document).width())/100))){
-           $( "#object1" ).stop(true);
-           alert("eroare fraiere");
-       }
-   },400);
- 
-});  },2000*nr2);
-   } 
-               
-    else if (pasiArray[i]==2){
-        var $obiect = $("#object1"), degree = 0, timer;
-        
-    setTimeout(function (){
-    
-    rotate();
-    function rotate() {
-         nr2=nr2+1;
-        $obiect.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});  
-        $obiect.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});                      
-        timer = setTimeout(function() {
-            degree=degree+0.2; 
-            if (degree < 90)
-            rotate();
-        },5);
     }
-    
-      },2000*(nr1));
-    
-    
-    }
-    else if (pasiArray[i]==3){
-        
-    }
-    
-    
 
-}  setTimeout(function(){
-var target = $( "#object1" );
-var offset1 = target.offset();
-   // offset1 = target.offset();
-    //  alert(offset1.left/($(document).width()/100));
-       if ((offset1.left/($(document).width()/100))<((offset.left/($(document).width()/100))+1.5) && ((offset1.left/($(document).width()/100))>((offset.left/($(document).width()/100))-1.5))) {
-          $( "#object1" ).stop(true);
-        alert("pola");
-       }  
-    else alert("eroare");
-             } ,2000*(numarPasi+1)+10);
-        
-} */     
+       
               
            
             
