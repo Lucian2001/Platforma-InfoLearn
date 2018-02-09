@@ -18,6 +18,7 @@
 			/*margin: 15px;*/
 			/*border: 2px solid gray;*/
              z-index: 1;
+        
 		}
   
 		.expl-box-fi {
@@ -104,6 +105,21 @@ background-color: ghostwhite;
     margin-left:0.2px;
     
     }
+    #dreapta{
+     margin-left:100px;
+        margin-top: -50px;
+        
+    }
+    .expl-box-1{
+        width:50%;
+    }
+    #selectie{
+        margin-left: 48%;
+        margin-top:-23%;
+        height:7%;
+        width:50%;
+       
+    }
 </style>
 <body ng-app="myApp" >
 <div class="titlu-sectiune">
@@ -176,9 +192,22 @@ background-color: ghostwhite;
     
     <div id="blocuri" >   <button type="button" class="btn btn-primary" id="clear" ng-click="clear()">Clear</button>
        <b id="blocuri-text" >Blocuri</b>
-        <div class="button11"  >
-           <div class="expl-box" ng-fi-text="Mergi-inainte" ng-click="myFunc()"></div>
+        <div class="button11"> 
+           <div class="expl-box" ng-fi-text="Mergi-inainte" ng-click="inainte()"></div>
+          
         </div>
+        <div class="button11">
+            <div class="expl-box-1" ng-fi-text="Rotire la " ng-click="intoarcere()"></div>
+             <button type="button" id="selectie" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+    <span class="sr-only">Toggle Dropdown</span><div style="margin-top: -10%;">{{rotireText}}</div>
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" ng-click="dreapta()">Dreapta</a>
+    <a class="dropdown-item"  ng-click="stanga()">Stanga</a>
+    
+  </div>
+</div>
+      
       <div id="deleteLine">
 <input type="text" value="" style="float:right;width:10%;" ng-model="rand">
              <button style="float:right;" ng-click="deleteLine()">Sterge</button>
@@ -192,3 +221,10 @@ background-color: ghostwhite;
  
 </body>
 <script src="page/script.js"></script>
+<script>
+$(document).ready(function(){
+                  
+                 
+$('.dropdown-toggle').dropdown();
+     })
+</script>
