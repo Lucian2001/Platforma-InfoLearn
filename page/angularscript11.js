@@ -29,34 +29,111 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
 //}
     $scope.code = "Blocuri"; 
     var i=0;
-    var n=1;
+    var n=1,n1=1;
     var nr=0;
     var rotire=0;
     pattern=0;
+    patternRepeta=0;
+    spatiu="";
+    spatiu1="";
+    var bucla=false;
     $scope.chestie=n;
      $scope.rotireText="dreapta";
     rotire="dreapta";
  //adaugare linii
    $scope.inainte=function(){
     
-        $scope.records[i] =n+"    "+"mergi-inainte("+n+")";
-    i=i+1; n=n+1;
-        pattern=pattern*10+1;
+        $scope.records[i] =n1+spatiu+spatiu1+" "+"mergi-inainte("+n1+")";
+    i=i+1; 
+       if (bucla==false){
+       n1=n1+1;n=n+1;
+        pattern=pattern*10+1;}
+       else{n1=n1+1;
+            
+            
+            patternRepeta=patternRepeta*10+1;
+       }
     } 
    $scope.intoarcere=function(){
     
-        $scope.records[i] =n+"    "+"rotire la "+rotire+"("+n+")";
-    i=i+1; n=n+1;
+        $scope.records[i] =n1+spatiu+spatiu1+" "+"rotire la "+rotire+"("+n1+")";
+    i=i+1; 
+        if (bucla==false){
+            n1=n1+1;n=n+1;
        if (rotire=="dreapta") 
        pattern=pattern*10+2;
        else
         pattern=pattern*10+3;
+        }else
+            {n1=n1+1;
+        if (rotire=="dreapta") 
+       patternRepeta=patternRepeta*10+2;
+       else
+        patternRepeta=patternRepeta*10+3;
+
+            }
+    } 
+     $scope.repeta=function(){
+        
+        $scope.records[i] =n1+spatiu+spatiu1+"    "+"repeta de "+$scope.numarRepetari +" ori"+"("+n1+")";
+    i=i+1; n1=n1+1;n=n+1;pattern=pattern*10+4;
+         spatiu="--";
+         spatiu1="--";
+        bucla=true;
+      
+    } 
+     var patternString,patternRepetaString,patternRepetaString1="";var patternRepetaLenght;
+     $scope.end=function(){
+        
+        $scope.records[i] =n1+"    "+"end"+"("+n1+")";
+    i=i+1; n1=n1+1;
+           spatiu="";
+         spatiu1="";
+          patternString=pattern.toString();
+         patternRepetaString=patternRepeta.toString();
+       // alert($scope.numarRepetari)
+         // alert(patternRepetaString);
+           
+        
+     
+         //alert(n);
+      for(var i3=1;i3<$scope.numarRepetari;i3++){
+         
+             n=n+patternRepetaLenght;
+         }
+     
     } 
    
    
    //
  $scope.Run=function(){
-    
+    var patternRepetaLenght;
+         
+         patternRepetaLenght=patternRepetaString.length;
+     
+   
+      for(var i3=1;i3<=$scope.numarRepetari;i3++){
+          patternRepetaString1=patternRepetaString1+patternRepetaString;
+         
+         }
+       
+                 patternString=patternString.replace("4",patternRepetaString1);
+     
+            
+         
+         pattern=parseInt(patternString);
+         
+     alert(pattern);
+     
+     
+     
+     
+     
+     
+     
+     
+     
+   
      if (n==1){
         $scope.error="Pune si tu ceva cod!" ;
           $location.url('#'+0);
@@ -69,20 +146,23 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
  }
   $scope.clear=function(){
   $scope.records = []
+      n1=1;
       n=1;
       i=0;
       pattern=0;
+      spatiu="";
+      spatiu1="";
         
  }
     $scope.deleteLine=function(){
    
-
+   alert(pattern);
    rand=parseInt($scope.rand);
   
         var pattern1=1,x,x1=0,y2=1;
         if (rand!=rand){ 
             pattern=Math.floor(pattern/10);
-            alert(pattern);
+          
 }else{
         x1=0;
         y2=1;
@@ -109,7 +189,7 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
           
         } 
       pattern=pattern1; 
-     alert(pattern);}
+     }
         
         
         rand=rand-1;
@@ -131,10 +211,11 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
     
         $scope.records.splice(n-2, 1);
       n=n-1;
+        n1=n1-1;
         i=i-1;
     
-      
-      
+      alert(pattern); 
+    
      
 }
     //dreapta stanga
