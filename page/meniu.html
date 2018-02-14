@@ -1,7 +1,7 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-   
+
 <style>
     #left-bar{
  position: fixed;
@@ -10,10 +10,10 @@
   width: 15.1%;
   height:110%;
   background-color: lightgrey;
-margin-bottom: 0;  
+margin-bottom: 0;
    box-shadow:         inset 0 0 10px #000000;
-    
-}  
+
+}
 #title {
         margin-top: 15px;
         margin-left:11px;
@@ -24,29 +24,29 @@ margin-bottom: 0;
     body {
   margin: 0px;
   padding: 0px;
- 
+
 }
     .item-design{
-        background-color:#388aff; 
+        background-color:#388aff;
         width:5px;
         height:6%;
     }
-    
+
     #lista{
 
-    
+
     }
     ul {
   list-style-type: none;
         padding-left: 20px;
-        
+
 }
     .menu-item{
        margin-right: 20px;
         border-style: solid;
         border-color:white;
-        border-right:none; 
-        border-bottom:none; 
+        border-right:none;
+        border-bottom:none;
         border-width: 1px;
         cursor: pointer;
     }
@@ -54,9 +54,9 @@ margin-bottom: 0;
        margin-right: 20px;
         border-style: solid;
         border-color:white;
-        border-right:none; 
-         
-        border-width: 1px;       
+        border-right:none;
+
+        border-width: 1px;
 
     }
     .menu-title{
@@ -75,20 +75,20 @@ margin-bottom: 0;
     }
     #sub-menu-item{
 
-    margin-left:5px;
+    margin-left:3%;
     }
     #sub-menu{
-    margin-left:-11%;
+    margin-left:-9%;
         display: none;
-    
+
     }
     </style>
-    
+
 </head>
 
 
 <div id="left-bar">
-        
+
        <img id="title" src="page/assets/images/titlu.png" >
           <ul id="lista">
            <li class="menu-title">
@@ -97,17 +97,17 @@ margin-bottom: 0;
              <div class="item-design"><p class="menu-text">Despre</p> </div>
              </li>
           <li class="menu-item">
-             <div class="item-design" id="inceput"> 
-                 
-                 <p class="menu-text">Inceput</p> </div></li> 
+             <div class="item-design" id="inceput">
+
+                 <p class="menu-text">Inceput</p> </div></li>
               <ul id="sub-menu">
               <li class="menu-item"><div id="sub-menu-item"  class="text-design">Titlu</div></li>
                 <li class="menu-item"><div id="sub-menu-item"  class="text-design">Titlu</div></li>
                  <li class="menu-item" ><div id="sub-menu-item" class="text-design">Titlu</div></li>
-              
-              
-              </ul>  
-          <li class="menu-item">    
+
+
+              </ul>
+          <li class="menu-item">
              <div class="item-design"> <p class="menu-text">Despre</p> </div></li>
              <li id="last-column">
              <div class="item-design" > <p class="menu-text">Despre</p> </div>
@@ -117,39 +117,39 @@ margin-bottom: 0;
             <li class="menu-item">
              <div class="item-design"> <p class="menu-text">Algoritmi </p> </div>
             </li>
-               
-          <li class="menu-item">    
+
+          <li class="menu-item">
              <div class="item-design"> <p class="menu-text">Curiozitati</p> </div></li>
           <li class="menu-item">
              <div class="item-design"> <p class="menu-text">Sfaturi</p> </div>
              </li>
           <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Contact</p> </div></li>    
-          <li  id="last-column">    
+             <div class="item-design"> <p class="menu-text">Contact</p> </div></li>
+          <li  id="last-column">
              <div class="item-design"> <p class="menu-text">Despre</p> </div></li>
- 
+
          </ul>
-   
-    </div>  
-     
+
+    </div>
+
 <script>
      var meniuInceput=1;
     $("#inceput").click(function(){
-      
-      $(location).attr('href', 'http://infolearn-com.stackstaging.com/index.php?page=inceput#/1');
+
+      $(location).attr('href', 'http://infolearn-com.stackstaging.com/index.php?page=inceput#/inceput/1/1');
       if (meniuInceput==0){
         $("#sub-menu").show();
         meniuInceput=1;
       }else
           {$("#sub-menu").hide();
         meniuInceput=0;
-              
+
           }
         $(".menu-item").css("border-bottom-width","1px");
     })
-    
-                    
-                
+
+
+
 </script>
 
 </html>
