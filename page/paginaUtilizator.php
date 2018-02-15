@@ -1,6 +1,7 @@
 <?php
 
 $id=$_SESSION['id'];
+
 $query="SELECT *FROM users WHERE id = $id";
 
 if ($result1 = mysqli_query($link,$query)){

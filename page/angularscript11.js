@@ -10,11 +10,13 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
      //surse aplicatiii {
     var srcCounter=0;
     var srcId=1;
-
-  /* srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
+alert($scope.src);
+   srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
+    
+    alert(srcCounter);
     if ( srcCounter== "1"){
        $scope.src="page/test.html";
-                
+                alert("dsa");
      }
     if (srcCounter==2){
         
@@ -150,7 +152,7 @@ bucla=false;
 
 
 pattern=pattern*10+parseInt($location.absUrl().substr($location.absUrl().length - 1));
-alert(pattern);
+//alert(pattern);
      if (n==1){
         $scope.error="Pune si tu ceva cod!" ;
           $location.url('#'+0);
@@ -174,7 +176,7 @@ alert(pattern);
  }
     $scope.deleteLine=function(){
 
-   alert(pattern);
+   //alert(pattern);
    rand=parseInt($scope.rand);
 
         var pattern1=1,x,x1=0,y2=1;
@@ -254,7 +256,7 @@ alert(pattern);
     //
 
     // functii load surse {
-    $scope.src="page/test.html";
+    //$scope.src="page/test.html";
     $scope.a1=function(){
 
 

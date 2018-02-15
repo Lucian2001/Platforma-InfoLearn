@@ -20,7 +20,9 @@ x = x.substr(0, x.length-1);
       }
       
   } 
+    var urlSave;
  urlNou=urlNou+"#"+capatUrl;
+   urlSave=urlNou;
     // alert(urlNou);
 urlNou="http://infolearn-com.stackstaging.com/index.php?page=inceput#"+urlNou;
  
@@ -79,10 +81,19 @@ urlNou="http://infolearn-com.stackstaging.com/index.php?page=inceput#"+urlNou;
 var offset1 = target.offset();
           if (i==-1){
                 if ((offset1.left/($(document).width()/100))<((offset.left/($(document).width()/100))+1.5) && ((offset1.left/($(document).width()/100))>((offset.left/($(document).width()/100))-1.5)) && (offset1.top/($(document).width()/100))<((offset.top/($(document).width()/100))+1.5) && ((offset1.top/($(document).width()/100))>((offset.top/($(document).width()/100))-1.5))) {
-
+            var Id;
+                    Id="";
+                    //alert(urlSave);
+                    for(i=0;i<urlSave.length;i++){
+                if (urlSave[i]!="/" && urlSave[i]!="#"){
+                    Id=Id+urlSave[i];
+                }
+            }
+                    $("#id-"+Id).css("background-color","red");
+                    //alert(id);
             $.ajax({   type:"POST",
                      url:"page/testHttp.php",
-                     data:"Completat=" + true ,
+                     data:"Id=" + Id ,
                   success:function(result)
                      {
                          alert(result);
@@ -218,23 +229,23 @@ setTimeout(function (){
      var tabs; 
 tabs=window.location.href[window.location.href.length -1];
      if (tabs==1){
-         $( "#nav-home-tab" ).addClass( "nav-item nav-link active" );
+         $( "#id-111" ).addClass( "nav-item nav-link active" );
          $( "#nav-contact-tab" ).removeClass( "nav-item nav-link active" );
-         $( "#nav-profile-tab" ).removeClass( "nav-item nav-link active" );
-          $( "#nav-profile-tab" ).addClass( "nav-item nav-link " );
-          $( "#nav-contact-tab" ).addClass( "nav-item nav-link " );
+         $( "#id-112" ).removeClass( "nav-item nav-link active" );
+          $( "#id-112" ).addClass( "nav-item nav-link " );
+          $( "#id-113" ).addClass( "nav-item nav-link " );
      } else if (tabs==2){
-         $( "#nav-profile-tab" ).addClass( "nav-item nav-link active" );
-         $( "#nav-home-tab" ).removeClass( "nav-item nav-link active" );
-         $( "#nav-contact-tab" ).removeClass( "nav-item nav-link active" );
-         $( "#nav-home-tab" ).addClass( "nav-item nav-link " );
-          $( "#nav-contact-tab" ).addClass( "nav-item nav-link " );
+         $( "#id-112" ).addClass( "nav-item nav-link active" );
+         $( "#id-111" ).removeClass( "nav-item nav-link active" );
+         $( "#id-113" ).removeClass( "nav-item nav-link active" );
+         $( "#id-111" ).addClass( "nav-item nav-link " );
+          $( "#id-113" ).addClass( "nav-item nav-link " );
 } else if (tabs==3){
-         $( "#nav-contact-tab" ).addClass( "nav-item nav-link active" );
-         $( "#nav-home-tab" ).removeClass( "nav-item nav-link active" );
-         $( "#nav-profile-tab" ).removeClass( "nav-item nav-link active" );
-         $( "#nav-home-tab" ).addClass( "nav-item nav-link " );
-          $( "#nav-profile-tab" ).addClass( "nav-item nav-link " );
+         $( "#id-113" ).addClass( "nav-item nav-link active" );
+         $( "#id-111" ).removeClass( "nav-item nav-link active" );
+         $( "#id-112" ).removeClass( "nav-item nav-link active" );
+         $( "#nid-111" ).addClass( "nav-item nav-link " );
+          $( "#id-112" ).addClass( "nav-item nav-link " );
 }
 } ,200); 
      var height_of_window=0,width_of_window=0;
