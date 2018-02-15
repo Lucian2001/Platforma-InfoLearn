@@ -1,12 +1,31 @@
-var x="",y="";var nr=0;var  pasi=0;
+var x="",y="";var nr=0;var  pasi=0;var urlNou=""; var capatUrl;
 $("#butonsmecher").click(function(){
 y="";
 nr=0;
 setTimeout(function (){
 x=window.location.href;
-
-window.location.replace("http://infolearn-com.stackstaging.com/index.php?page=inceput#/1");
-for(var i=0;i<x.length;i++){
+capatUrl=x[x.length-1];
+x = x.substr(0, x.length-1); 
+    //alert(x);
+  var ok,nr4;
+  ok=true;nr4=0;
+  for(i=x.length;i>1 && ok==true;i--){
+    if (x[i] == "/" && nr4<2){
+        urlNou="/"+x[i+1]+urlNou;  
+      nr4=nr4+1;
+    }
+  
+      if (nr4==2){
+          ok=false;
+      }
+      
+  } 
+ urlNou=urlNou+"#"+capatUrl;
+    // alert(urlNou);
+urlNou="http://infolearn-com.stackstaging.com/index.php?page=inceput#"+urlNou;
+ 
+  window.location.replace(urlNou);
+ for(var i=0;i<x.length;i++){
       if (nr==2){
           y=y+x[i];
        }
@@ -16,7 +35,8 @@ for(var i=0;i<x.length;i++){
        }
 
    }
-    pasi=parseInt(y);
+  //alert(y);  
+  pasi=parseInt(y);
 
     //lert(Math.floor(pasi/10));
     //creere vector de miscari
@@ -192,6 +212,8 @@ var offset1 = target.offset();
 
 })
  $(document).ready(function(){
+     
+    
 setTimeout(function (){
      var tabs; 
 tabs=window.location.href[window.location.href.length -1];

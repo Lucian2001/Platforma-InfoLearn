@@ -11,7 +11,7 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
     var srcCounter=0;
     var srcId=1;
 
-   srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
+  /* srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
     if ( srcCounter== "1"){
        $scope.src="page/test.html";
                 
@@ -26,7 +26,7 @@ $scope.src="page/test1.html";
         }
 
 
-//}
+//} OLD SISTEM*/
     $scope.code = "Blocuri";
     var i=0;
     var n=1,n1=1;
@@ -46,10 +46,14 @@ $scope.src="page/test1.html";
 
         $scope.records[i] =n1+spatiu+spatiu1+" "+"mergi-inainte("+n1+")";
     i=i+1;
-       if (bucla==false){
+       if (bucla==false && repetaOn==false){
        n1=n1+1;n=n+1;
         pattern=pattern*10+1;}
-       else{n1=n1+1;
+       else if(repetaOn==true && bucla==false){
+        n1=n1+1;n=n+1;
+           patternString=patternString+"1";
+       } else
+       {n1=n1+1;
 
 
             patternRepeta=patternRepeta*10+1;
@@ -68,14 +72,14 @@ $scope.src="page/test1.html";
      }
        else
         pattern=pattern*10+3;
-        }else if(repetaOn==true){
-            n1=n1+1;
+        }else if(repetaOn==true && bucla==false){
+            n1=n1+1;n=n+1;
         if (rotire=="dreapta")
        patternString=patternString+"2";
        else
         patternString=patternString+"3";
         }else
-            {n1=n1+1;
+            {n1=n1+1; n=n+1;
         if (rotire=="dreapta")
        patternRepeta=patternRepeta*10+2;
        else
@@ -129,9 +133,9 @@ bucla=false;
           patternRepetaString1=patternRepetaString1+patternRepetaString;
 
          }
-alert(patternString);
+//alert(patternString);
                  patternString=patternString.replace("4",patternRepetaString1);
-alert(patternString);
+//alert(patternString);
 
 
          pattern=parseInt(patternString);}
@@ -145,8 +149,8 @@ alert(patternString);
 
 
 
-
-
+pattern=pattern*10+parseInt($location.absUrl().substr($location.absUrl().length - 1));
+alert(pattern);
      if (n==1){
         $scope.error="Pune si tu ceva cod!" ;
           $location.url('#'+0);
@@ -250,22 +254,24 @@ alert(patternString);
     //
 
     // functii load surse {
+    $scope.src="page/test.html";
     $scope.a1=function(){
 
 
-    $location.url("inceput/1/1");
-
+    $location.url("1/1#1");
+  $scope.src="page/test.html";
 
 
 
     }
     $scope.a2=function(){
 
-        $location.url("inceput/1/2");
-      
+        $location.url("1/1#2");
+  $scope.src="page/test1.html";
+          
     }
     $scope.a3=function(){
-$location.url("inceput/1/3");
+$location.url("1/1#3");
 
     }
     //}
