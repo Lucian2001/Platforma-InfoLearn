@@ -5,7 +5,8 @@ nr=0;
 setTimeout(function (){
 x=window.location.href;
 capatUrl=x[x.length-1];
-x = x.substr(0, x.length-1); 
+urlNou="";
+    x = x.substr(0, x.length-1); 
     //alert(x);
   var ok,nr4;
   ok=true;nr4=0;
@@ -66,8 +67,11 @@ urlNou="http://infolearn-com.stackstaging.com/index.php?page=inceput#"+urlNou;
 
 
 
-
-
+ var target = $( "#object1" );
+var offset1 = target.offset();
+var pozitieInitiala;
+    pozitieInitiala=offset1.left;
+    alert(pozitieInitiala);
 
   var ok; var nr1=numarPasi,nr2=0,nr3=0,eroare=false;
    var $obiect = $("#object1"), degree=0,degree1=0 ,timer;
@@ -76,6 +80,7 @@ urlNou="http://infolearn-com.stackstaging.com/index.php?page=inceput#"+urlNou;
   animatie(nr1);
 
     }
+ 
     function animatie(i){
          var target = $( "#object1" );
 var offset1 = target.offset();
@@ -106,7 +111,12 @@ var offset1 = target.offset();
 
 
                 }
-    else alert("eroare");
+    else {
+        alert("eroare");
+   $("#object1").css("left",pozitieInitiala-(9.5*pozitieInitiala)/100);
+    alert(pozitieInitiala);
+    
+    }
           }
         if ((offset1.left/(($(document).width())/100))>(offsetLimit.left/(($(document).width())/100)) || (offset1.top/(($(document).width())/100))>(offsetLimit1.top/(($(document).width())/100))-1.1){
            eroare=true;
@@ -244,11 +254,11 @@ tabs=window.location.href[window.location.href.length -1];
          $( "#id-113" ).addClass( "nav-item nav-link active" );
          $( "#id-111" ).removeClass( "nav-item nav-link active" );
          $( "#id-112" ).removeClass( "nav-item nav-link active" );
-         $( "#nid-111" ).addClass( "nav-item nav-link " );
+         $( "#id-111" ).addClass( "nav-item nav-link " );
           $( "#id-112" ).addClass( "nav-item nav-link " );
 }
 } ,200); 
-     var height_of_window=0,width_of_window=0;
+     var height_of_window=0,width_of_window=0;  
      height_of_window= $(document).height();
      width_of_window= $(document).width();
      if(height_of_window>900 && width_of_window>1800){

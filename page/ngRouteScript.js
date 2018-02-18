@@ -1,7 +1,7 @@
 app.config(['$routeProvider',
    function($routeProvider,$scope) {
    $routeProvider .when("/1/1", {
-   templateUrl : "page/test17.html",
+   templateUrl : "page/test17.php",
        reloadOnSearch: false,
 
 })

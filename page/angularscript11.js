@@ -10,13 +10,13 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
      //surse aplicatiii {
     var srcCounter=0;
     var srcId=1;
-alert($scope.src);
+//alert($scope.src);
    srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
     
-    alert(srcCounter);
+  //  alert(srcCounter);
     if ( srcCounter== "1"){
        $scope.src="page/test.html";
-                alert("dsa");
+    //            alert("dsa");
      }
     if (srcCounter==2){
         
@@ -142,25 +142,27 @@ bucla=false;
 
          pattern=parseInt(patternString);}
 
-    // alert(pattern);
+    alert(pattern);
 
 
 
 
-
+alert(n);
 
 
 
 pattern=pattern*10+parseInt($location.absUrl().substr($location.absUrl().length - 1));
-//alert(pattern);
+alert(pattern);
      if (n==1){
         $scope.error="Pune si tu ceva cod!" ;
           $location.url('#'+0);
-     }else{n=n-1;
+     }else{
       $scope.error="";
      $location.url('#'+pattern);
+         pattern=Math.floor(pattern /10);
     $scope.error="Nu e nicio eroare" ;
-           n=n+1;
+          
+           alert("boss");
      }
  }
   $scope.clear=function(){
@@ -274,7 +276,7 @@ pattern=pattern*10+parseInt($location.absUrl().substr($location.absUrl().length 
     }
     $scope.a3=function(){
 $location.url("1/1#3");
-
+$scope.src="page/test2.html";
     }
     //}
 });
