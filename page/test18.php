@@ -1,14 +1,8 @@
-
+<?php include ("meniu.php");?>
+<head>
+<link rel="stylesheet" href="page/lectii.css">
+</head>
 <style>
-
-		p { font-size: 1.2em }
-
-		h2 { margin-top: 50px; }
-
-		h5 { height: 26px; text-align: center; margin-top: 20px;}
-
-		.desc { margin: 50px auto; }
-
 
 		[class^="expl-box"] {
 			text-align: center;
@@ -48,87 +42,8 @@
 		.expl-box-nr {
 			height:200px; overflow-y: scroll
 		}
-  .alert {width: 50%;
-      height:50px;
-    float:left;
-
-
-    }
-
-    container12{
-z-index: 1;
-
-    }
-   #marcaj{
-z-index: 1;
-
-    }
-    .row{
-        width: 100%;
-        margin-left: 0px;
-        height: 100%;
-}
-    .col{
-background-color: ghostwhite;
-        border-style: solid;
-
-        border-width: 0.5px;
-      height: 16.7%;
-    }
-    #object1{
-        margin:1.7%;
-        background-color:dodgerblue;
-        height:5%;
-        width:3.5%;
-        position:absolute;
-        z-index: 2;
-    }
-    #clear
-{z-index: 2;
-     position: fixed;
-   margin-left:-6%;
-    margin-top: 1%;
-    width:5%;
-}
-    #butonsmecher{
-        margin-top:-15%;
-    }
-    #deleteLine{
-
-   position: fixed;
-     bottom: 6%;
-     right: 20%;
-    }
-
-    #tab-aplicatii{
-
-    margin-left:0.2px;
-
-    }
-    #dreapta{
-     margin-left:100px;
-        margin-top: -50px;
-
-    }
-    .expl-box-1{
-        width:50%;
-
-    }
-    #selectie{
-        margin-left: 48%;
-        margin-top:-23%;
-        height:7%;
-        width:50%;
-
-    }
-    #repetaInput{
-       width:20%;
-        margin-left:56%;
-        margin-top:-22%;
-        height:6%;
-    }
 </style>
-<body ng-app="myApp" >
+  <body ng-app="myApp" >
 <div class="titlu-sectiune">
   <h1>Inceput - Algoritmul</h1>
 </div>
@@ -142,15 +57,22 @@ background-color: ghostwhite;
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="Producdtia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000 metrii cubi anual. In Carpatii Occidentali, in Petrosani se extrag anual 43 mil. tone de licnit. Energie termica este produsa in proportie de cca. 77% de termocentrale, care folosesc licnit, petrol si gaz, iar restul de 23% este dat in hidrocentrale."></div>
+<div class="expl-box-fi" ng-fi-text="Omul sa fie multumit cu saracia sa, caci, daca e vorba, nu bogatia, ci linistea
+colibei tale te face fericit. Dar voi sa faceti dupa cum va trage inima, si Dumnezeu
+sa va ajute si sa va acopere cu aripa bunatatii sale. Eu sunt acum batrana, si
+fiindca am avut si am atat de multe bucurii in viata, nu inteleg nemultumirile celor
+tineri si ma tem ca nu cumva, cautand acum la batranete un noroc nou, sa pierd
+pe acela de care am avut parte pana in ziua de astazi si sa dau la sfarsitul vietii
+mele de amaraciunea pe care nu o cunosc decat din frica. Voi stiti, voi faceti; de
+mine sa nu ascultati."></div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active "  id="nav-home-tab" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">A1</a>
-    <a class="nav-item nav-link " id="nav-profile-tab" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Profile</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Contact</a>
+    <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">A2</a>
+    <a class="nav-item nav-link " id="id-122" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">A3</a>
+    <a class="nav-item nav-link" id="id-123" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">A4</a>
   </div>
 </nav>
          <div id="object1"></div>
@@ -236,11 +158,16 @@ background-color: ghostwhite;
 </div>
 
 </body>
-<script src="page/script.js"></script>
+<script src="page/script.js"></script> 
+<script src="page/loadSaves.js"></script> 
 <script>
 $(document).ready(function(){
 
 
 $('.dropdown-toggle').dropdown();
      })
+
+    var username= "<?php echo  $row[1]?>";
+     loadsaves(username);
 </script>
+

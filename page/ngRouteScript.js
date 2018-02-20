@@ -5,10 +5,10 @@ app.config(['$routeProvider',
        reloadOnSearch: false,
 
 })
-//.when("/1/1/2", {
-//templateUrl : "page/test17.html",
-  // reloadOnSearch: false,
+.when("/1/2", {
+templateUrl : "page/test18.php",
+   reloadOnSearch: false,
 
-//})
+})
 
 }]);

@@ -3,8 +3,8 @@
 
 
 angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams){
-  
-    
+
+
       $scope.error="Nu ai nicio eroare";
       $scope.records = []
      //surse aplicatiii {
@@ -12,20 +12,21 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
     var srcId=1;
 //alert($scope.src);
    srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
-    
-  //  alert(srcCounter);
-    if ( srcCounter== "1"){
-       $scope.src="page/test.html";
+   pagina1=$location.absUrl().substr($location.absUrl().length - 3);
+   pagina1=pagina1.charAt(0);
+     paginaUpload="1."+pagina1+"."+srcCounter;
+    //if ( srcCounter== "1"){
+       $scope.src="page/"+paginaUpload+".html";
     //            alert("dsa");
-     }
-    if (srcCounter==2){
-        
-$scope.src="page/test1.html";
-          
-      }
-      if (srcCounter==3){
-  $scope.src="page/test1.html";
-        }
+    //}
+    //if (srcCounter==2){
+
+//$scope.src="page/test1.html";
+
+      //}
+      //if (srcCounter==3){
+  ///$scope.src="page/test2.html";
+        //}
 
 
 //} OLD SISTEM*/
@@ -109,7 +110,7 @@ repetaOn=true;
          patternRepetaString=patternRepeta.toString();
        // alert($scope.numarRepetari)
          // alert(patternRepetaString);
-    //alert(patternString);
+    //alert(pattaernString);
 
 
          //alert(n);
@@ -142,12 +143,12 @@ bucla=false;
 
          pattern=parseInt(patternString);}
 
-    alert(pattern);
+    //alert(pattern);
 
 
 
 
-alert(n);
+//alert(n);
 
 
 
@@ -161,8 +162,8 @@ alert(pattern);
      $location.url('#'+pattern);
          pattern=Math.floor(pattern /10);
     $scope.error="Nu e nicio eroare" ;
-          
-           alert("boss");
+
+           //alert("boss");
      }
  }
   $scope.clear=function(){
@@ -260,23 +261,42 @@ alert(pattern);
     // functii load surse {
     //$scope.src="page/test.html";
     $scope.a1=function(){
-
-
-    $location.url("1/1#1");
-  $scope.src="page/test.html";
+       
+pagina1=$location.absUrl().substr($location.absUrl().length - 3);
+    pagina1=pagina1.charAt(0);
+   $location.url("1/"+pagina1+"#1");
+         srcCounter=$location.absUrl().substr($location.absUrl().length - 1); 
+        paginaUpload="1."+pagina1+"."+srcCounter;
+   
+        
+ $scope.src="page/"+paginaUpload+".html";
 
 
 
     }
     $scope.a2=function(){
-
-        $location.url("1/1#2");
-  $scope.src="page/test1.html";
-          
+        
+pagina1=$location.absUrl().substr($location.absUrl().length - 3);
+      
+        pagina1=pagina1.charAt(0);
+    
+        $location.url("1/"+pagina1+"#2");
+         srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
+            paginaUpload="1."+pagina1+"."+srcCounter;
+        
+ $scope.src="page/"+paginaUpload+".html";
     }
     $scope.a3=function(){
-$location.url("1/1#3");
-$scope.src="page/test2.html";
+   
+        pagina1=$location.absUrl().substr($location.absUrl().length - 3);
+     pagina1=pagina1.charAt(0);
+        
+      
+
+$location.url("1/"+pagina1+"#3");
+              srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
+          paginaUpload="1."+pagina1+"."+srcCounter;  
+$scope.src="page/"+paginaUpload+".html";
     }
     //}
 });
@@ -310,7 +330,7 @@ n3="";
       counter=counter-1;
 
  }
-      $scope.href=n3+"/"+counter+"/1";
+      $scope.href=n3+"/"+counter+"#1";
 // }
 }
   $scope.next=function(){
@@ -318,7 +338,7 @@ n3="";
       counter=counter+1;
 
  }
-      $scope.href=n3+"/"+counter+"/1";
+      $scope.href=n3+"/"+counter+"#1";
  }
 
 

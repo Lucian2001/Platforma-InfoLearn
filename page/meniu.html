@@ -1,3 +1,16 @@
+<?php 
+ include("testHttp.php");
+$query="SELECT *FROM completat WHERE id = $id";
+
+if ($result1 = mysqli_query($link,$query)){
+    $row = mysqli_fetch_array($result1);
+    //echo $row[2];
+     
+    
+}
+
+
+?>
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -133,7 +146,23 @@ margin-bottom: 0;
     </div>
 
 <script>
-     var meniuInceput=1;
+    $(document).ready( function{
+                      
+                      var username= "<?php echo  $row[1]?>";
+    username=username.toString();
+    alert((username.length)/3);
+    var usernameLength=username.length;
+    var id1; 
+    for( i=1;i<=usernameLength/3;i++){
+      id1=username.substr(username.length - 3);
+        username=username.slice(0,-3);
+        alert(username);
+        
+         $("#id-"+id1).css("background-color","#d8ffd6");
+     }
+    }) 
+    var meniuInceput=1;
+    
     $("#inceput").click(function(){
 
       $(location).attr('href', 'http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/1#1');

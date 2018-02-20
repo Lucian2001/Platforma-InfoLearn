@@ -1,12 +1,12 @@
-<?php 
+<?php
  include("testHttp.php");
 $query="SELECT *FROM completat WHERE id = $id";
 
 if ($result1 = mysqli_query($link,$query)){
     $row = mysqli_fetch_array($result1);
     //echo $row[2];
-     
-    
+
+
 }
 
 
@@ -148,27 +148,30 @@ margin-bottom: 0;
 <script>
     var href1;
     var vector=[];
-    // DECLARARE VECTOR CU TOATE PAGINILE  
+    // DECLARARE VECTOR CU TOATE PAGINILE
     vector[11]=0;
      vector[12]=0;
      vector[13]=0;
      vector[21]=0;
      vector[22]=0;
      vector[23]=0;
-    //    
-    
+    //
+
     $(document).ready( function(){
-                  var username= "<?php echo  $row[1]?>";    
-                
+                  var username= "<?php echo  $row[1]?>";
+//alert(username);
         // loadHref(id1,username);
-                      }) 
+                      })
     var meniuInceput=1;
     var id1=0;
     $("#inceput").click(function(){
-         
-        var username= "<?php echo  $row[1]?>";  
-       id1=1;   
+      var username= "<?php echo  $row[1]?>";
+
+        //var username= "<?php echo  $row[1]?>";
+//alert(username);
+       id1=1;
       $(location).attr('href', loadHref(id1,username,vector));
+//alert(loadHref(id1,username,vector))
       if (meniuInceput==0){
         $("#sub-menu").show();
         meniuInceput=1;
