@@ -36,15 +36,16 @@ background-color: ghostwhite;
       height: 16.7%;
     }
     #object1{
-        margin:1.7%;
-        background-color:dodgerblue;
-        height:5%;
-        width:3.5%;
+        margin:1.4%;
+
+        height:6%;
+        width:4%;
         position:absolute;
         z-index: 2;
+        display: none;
     }
     #clear
-{z-index: 2;
+{z-index: 1;
      position: fixed;
    margin-left:-6%;
     margin-top: 1%;

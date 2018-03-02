@@ -85,6 +85,7 @@ margin-bottom: 0;
      font-size: 100%;
         font-size:3vh;
         padding-top: 8px;
+        width:200px;
     }
     #sub-menu-item{
 
@@ -105,21 +106,22 @@ margin-bottom: 0;
        <img id="title" src="page/assets/images/titlu.png" >
           <ul id="lista">
            <li class="menu-title">
-             <div class="text-design">Titlu</div></li>
+             <div class="text-design" >Invatare</div></li>
               <li class="menu-item">
-             <div class="item-design"><p class="menu-text">Despre</p> </div>
+             <div class="item-design" id="inceput"><p class="menu-text">Introducere</p> </div>
              </li>
-          <li class="menu-item">
-             <div class="item-design" id="inceput">
-
-                 <p class="menu-text">Inceput</p> </div></li>
-              <ul id="sub-menu">
-              <li class="menu-item"><div id="sub-menu-item"  class="text-design">Titlu</div></li>
-                <li class="menu-item"><div id="sub-menu-item"  class="text-design">Titlu</div></li>
-                 <li class="menu-item" ><div id="sub-menu-item" class="text-design">Titlu</div></li>
-
+                            <ul id="sub-menu">
+              <li class="menu-item" id="id--111"><div id="sub-menu-item"  class="text-design" >Algoritmul</div></li>
+                <li class="menu-item" id="id--112"><div id="sub-menu-item"  class="text-design">Expresii aritmetice</div></li>
+                 <li class="menu-item" id="id--113" ><div id="sub-menu-item" class="text-design">Expresii logice</div></li>
+               <li class="menu-item" id="id--114" ><div id="sub-menu-item" class="text-design">Operatori relationali</div></li>
 
               </ul>
+          <li class="menu-item">
+             <div class="item-design" >
+
+                 <p class="menu-text">Inceput</p> </div></li>
+
           <li class="menu-item">
              <div class="item-design"> <p class="menu-text">Despre</p> </div></li>
              <li id="last-column">
@@ -128,7 +130,7 @@ margin-bottom: 0;
           <li class="menu-title">
              <div class="text-design">Titlu</div></li>
             <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Algoritmi </p> </div>
+             <div class="item-design" id="compilator"> <p class="noselect" class="menu-text"> </p> </div>
             </li>
 
           <li class="menu-item">
@@ -164,14 +166,29 @@ margin-bottom: 0;
                       })
     var meniuInceput=1;
     var id1=0;
-    $("#inceput").click(function(){
-      var username= "<?php echo  $row[1]?>";
+    $("#compilator").click(function(){
+        
+        $(location).attr('href',"http://infolearn-com.stackstaging.com/index.php?page=compilator");
+        
+        
+    })
+    $("#inceput").click(function(){ 
+     x=window.location.href;
+      
+        if (x=="http://infolearn-com.stackstaging.com/index.php"){
+    var username= "<?php echo  $row[1]?>";
 
-        //var username= "<?php echo  $row[1]?>";
+     var username= "<?php echo  $row[1]?>";
 //alert(username);
-       id1=1;
-      $(location).attr('href', loadHref(id1,username,vector));
-//alert(loadHref(id1,username,vector))
+      var username1;
+      username1=parseInt(username);
+      id1=1;
+      if(username!="") 
+            $(location).attr('href', loadHref(id1,username1,vector));
+            else
+              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/1#1");   
+//alert(loadHref(id1,username,vector));
+        }
       if (meniuInceput==0){
         $("#sub-menu").show();
         meniuInceput=1;
@@ -183,7 +200,26 @@ margin-bottom: 0;
         $(".menu-item").css("border-bottom-width","1px");
     })
 
-
+$("#id--111").click(function(){
+    
+   $(location).attr('href',submenuhref("/1/1#1"));
+       location.reload();
+})
+    $("#id--112").click(function(){
+    
+   $(location).attr('href',submenuhref("/1/1#2"));
+          location.reload();
+})
+    $("#id--113").click(function(){
+    
+   $(location).attr('href', submenuhref("/1/1#3"));
+          location.reload();
+})
+    $("#id--114").click(function(){
+   
+   $(location).attr('href', submenuhref("/1/1#4"));
+          location.reload();
+})
 
 </script>
 

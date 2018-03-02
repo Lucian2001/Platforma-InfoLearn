@@ -2,7 +2,8 @@
      
 username=username.toString();
    // alert((username.length)/3);
-    var usernameLength=username.length;
+    if (username!=""){
+     var usernameLength=username.length;
     var id1; 
     for( i=1;i<=usernameLength/3;i++){
       id1=username.substr(username.length - 3);
@@ -11,10 +12,11 @@ username=username.toString();
         
          $("#id-"+id1).css("background-color","#d8ffd6");
      }
+    }
  }
 
 function loadHref(nr,ids,vectorIds){
-var id; var ok=true;href="";
+var id; var ok=true;href="#/1/1#1";
     //alert(nr);
    
     while(ids!=0){
@@ -36,4 +38,10 @@ if (vectorIds[i]==0){
     href="http://infolearn-com.stackstaging.com/index.php?page=inceput"+href;
     return(href);
  // return nr;
+}
+
+function submenuhref(id){
+    var href1="http://infolearn-com.stackstaging.com/index.php?page=inceput#";
+    href1=href1+id;
+    return href1;
 }

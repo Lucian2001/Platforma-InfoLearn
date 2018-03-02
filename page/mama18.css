@@ -6,10 +6,10 @@
   width:15.1%;
   height:110%;
   background-color: lightgrey;
-margin-bottom: 0;  
+margin-bottom: 0;
    box-shadow:         inset 0 0 10px #000000;
-    
-}  
+
+}
 .top-text{
         color:white;
         float:left;
@@ -22,13 +22,13 @@ margin-bottom: 0;
     }
 #login-text{
        color:white;
-    
+
     font-size:22px;
         margin-top: 30px;
         margin-left:12px;
-     
+
     float :left;
-        
+
     }
 #panel2{ margin-top: -40px;
            float:right;
@@ -38,16 +38,16 @@ margin-bottom: 0;
            max-width: 230px;
                  box-shadow:         inset 0 0 10px black;
        }
-    
+
 #myaccount {
         background-color:#2669d6 ; position:fixed; top:0.7%; right:1%;
-        cursor: pointer;   
-      
+        cursor: pointer;
+
         height:65px;
         margin-top: -40px;
         margin-right:1%;
         width:220px;
-     border:none;    
+     border:none;
      z-index: 2;
     border-width: 2px;
         border-radius: 25px;
@@ -57,8 +57,8 @@ margin-bottom: 0;
     display: none;
     background-color:#297ae5 ;
     width: 32%;
-    max-width: 650px; 
-    height: 47%;position: absolute; 
+    max-width: 650px;
+    height: 47%;position: absolute;
     float:right;
    margin-top:29px;
      z-index: 2;
@@ -69,27 +69,27 @@ max-height: 370px;
     min-height: 190px;
 
     margin-left: 52%;
-   
-} 
+
+}
 #lista{
-    margin-top: 3%; 
+    margin-top: 3%;
     margin-left: 11%px;
-    
+
 }
 #profil{
      list-style-type: none;
     font-size:2vw;
 font-family: 'Open Sans', sans-serif;
     color:white;
-    
+
 }
 .listaText{
   font-family: 'Open Sans', sans-serif;
-    margin:0 0 5px 0;  
+    margin:0 0 5px 0;
     font-size:1.5vw;
     color:#0a0a0a;
 
-    
+
 
 }
 #upload_image{
@@ -100,10 +100,10 @@ font-family: 'Open Sans', sans-serif;
 font-size:1vw;
     margin-bottom: 20px;
     text-align:center;
-    
-    
-   
-  
+
+
+
+
 }
 #butoane{
 margin-top:5px;
@@ -121,13 +121,13 @@ border-radius: 10px;
     border-style: solid;
     background-color: lightgray;
     float:left;
-    
+
      border-color:#2669d6;
- 
+
 }
 #addImage{
-font-size:50px;  
-  
+font-size:50px;
+
 }
 .clear-float{
     clear: both;
@@ -153,8 +153,8 @@ font-style: normal;
     margin-right: 2%;
     height:40px;
     width:100px;
- 
-  
+
+
 }
 .progress{
    margin-top:5px;
@@ -179,16 +179,16 @@ float:right;
 }
 .showLogin1{
 display: none;
-    
-} 
+
+}
 #showLogin2{
 display: none;
-    
-} 
+
+}
 #showLogin3{
 display: none;
-    
-} 
+
+}
 .Signup{
 float:left;
     margin-right:100px;
@@ -212,8 +212,8 @@ float:left;
 color:red;
 width: 220px;
 height: auto;
-    
-    
+
+
 }
 .alert alert-success{
     display:none;
@@ -227,15 +227,15 @@ float:right;
     background-color: #f2f2f2;
     height: 100%;
     overflow-x: hidden;
-      
+
 }
 .text{
     padding-top: 45px;
     padding-bottom: 4vh;
     margin-left :auto;
     margin-right:auto;
-    font-size:30px; 
-   
+    font-size:30px;
+
     font-style: bold;
     width: 700px;
      text-align: center;
@@ -247,11 +247,11 @@ float:right;
    height: 35vh;
      border-radius: 10px;
      background:#cecece;
-     
+
    margin-bottom: 40px;
     border-width: 2px;border-color: gray;
     border-style:solid;
-   
+
 
 }
 .presentation-image{
@@ -259,28 +259,28 @@ float:right;
       border-width: 2px;
     border-style:solid;
    border-color: gray;
-    width: 100%; 
-height: 28vh; 
-    
+    width: 100%;
+height: 28vh;
+
 }
 .column1{
   margin-left: 0px;
     margin-right: auto;
-    
+
 }
 .column2{
   margin-left: auto;
     margin-right: 0px;
-    
+
 }
 .text-presentation{
   margin-left:10px;
-    width:auto;   
+    width:auto;
    text-align:justify;
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Open Sans', sans-serif;
     font-style: bold;
-     
-  font-size:1vw; 
+
+  font-size:1vw;
 }
 #presentation-panel1{
     margin-left:20%;
@@ -292,18 +292,18 @@ height: 28vh;
     margin-right:20%;
 }
 body{
-    
+
 }
     #pagina1{
          overflow-x: hidden;overflow-y: hidden;
          margin-right: 14.5%;
-       margin-top: 0px; 
+       margin-top: 0px;
     margin-left:15%;
     background-color: #f2f2f2;
     height: 100%;
         width: 85%;
-        
-        
+
+
     }
 
 .titlu-sectiune{
@@ -311,25 +311,25 @@ body{
     margin-right: 500px;
     margin-left:50px;
     font-family: 'Roboto', sans-serif;
-    
+
 }
 
 .link{
-    
+
     height: 100px;
-    
+
 }
 #frame-aplicatie{
     margin-top: 3%;
-   
+
     width:80%;
         height: 83%;
     margin-left:2.5%;
-    
+
 }
 #informatie-aplicatie{
     width:100%;
-        height: 20%; 
+        height: 20%;
     background-color:#dddddd;
     border:solid;
   border-width: 3px;
@@ -339,7 +339,7 @@ body{
 }
 #exe-aplicatie{
     width:45%;
-        height: 80%; 
+        height: 80%;
     background-color:#ffffff;
     float:left;
      border:solid;
@@ -347,35 +347,35 @@ body{
     border-color:#3472e5;
      border-bottom-left-radius: 25px;
     border-top-width: 0px;
-   
+
 }
 #code-aplicatie{
     float:left;
     width:36%;
-    height: 80%; 
+    height: 80%;
     background-color:white;
      border:solid;
   border-width: 3px;
     border-color:#3472e5;
-     
+
     border-left-width: 0px;
     border-top-width: 0px;
-    
+
 }
 
 #blocuri{
 float:right;
 
     width:19%;
-    height: 80%; 
+    height: 80%;
     background-color:#dddddd;
     border-right-width:3px;
     border-right-color:#3472e5;
-    border-right-style:solid; 
+    border-right-style:solid;
      border-bottom-right-radius: 25px;
     border-bottom-width:3px;
     border-bottom-color:#3472e5;
-    border-bottom-style:solid; 
+    border-bottom-style:solid;
 }
 #pages{
    margin-top: 3vh;
@@ -387,13 +387,13 @@ font-size:auto;
     text-align: justify;
     margin-left: 10px;
     margin-right:10px;
-   
+
 }
 #blocuri-text{
   margin-left: 3%;
     font-size: 25px;
     text-align:center;
- 
+
 }
 .button_text{
   font-size: 20px;
@@ -402,15 +402,15 @@ font-size:auto;
 
 .image_button{
 margin-top:-6px;
-   width:30px; 
-   height:30px; 
+   width:30px;
+   height:30px;
 
 }
 #butonsmecher {
     margin-top: -75px;
     width: 22%;
     margin-left: 76%;
-    
+
 }
 #animation-side{
 margin:  3.5%;
@@ -419,7 +419,7 @@ margin:  3.5%;
     background-color:white;
     border-style:solid;
     border-color:grey;
-    
+
 }
 
 .button11{
@@ -428,8 +428,8 @@ margin:  3.5%;
     width: 85%;
     margin-left: 8%;
     cursor: pointer;
-    
-    
+
+
 }
 #coding{
 width: 100px;
@@ -445,16 +445,37 @@ background-color: red;
 }
 
 #next_and_previous{
- float:right;  
+ float:right;
     margin-top: 4%;
     margin-right: 8%;
 }
 #next{
 
-   
+
 }
 #previous{
 
 
-    
+
+}
+#info_button{
+
+  cursor: pointer;
+}
+#info_panel{
+  float:right;
+  background-color: blue;
+  width:200px;
+ height:100px;
+  margin-top:100px;
+  z-index: 2;
+}
+.noselect {
+ 
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }

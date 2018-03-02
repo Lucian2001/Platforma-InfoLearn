@@ -2,7 +2,7 @@
 
 
 
-angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams){
+angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams,$http){
 
 
       $scope.error="Nu ai nicio eroare";
@@ -16,7 +16,8 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
    pagina1=pagina1.charAt(0);
      paginaUpload="1."+pagina1+"."+srcCounter;
     //if ( srcCounter== "1"){
-       $scope.src="page/"+paginaUpload+".html";
+       $scope.src="page/"+paginaUpload+".php";
+       $scope.blocuriSrc="page/"+paginaUpload +"bloc.html";
     //            alert("dsa");
     //}
     //if (srcCounter==2){
@@ -125,6 +126,31 @@ bucla=false;
 
    //
  $scope.Run=function(){
+if (paginaUpload=="1.1.1"){
+textTanc1="Tancul facut de tine este acesta";
+if (idComponenta==513){
+$scope.tancComplet="page/assets/images/tanc_albastru.png";
+$scope.textTanc=textTanc1;
+$scope.eroare="";
+}
+if (idComponenta==514){
+$scope.tancComplet="page/assets/images/tanc_corp_albastru_cap_gri.png";
+$scope.textTanc=textTanc1;
+$scope.eroare="";
+}
+if (idComponenta==523){
+$scope.tancComplet="page/assets/images/tanc_corp_gri_cap_albastru.png";
+$scope.textTanc=textTanc1;
+$scope.eroare="";
+}
+if (idComponenta==524){
+$scope.tancComplet="page/assets/images/tanc_gri.png";
+$scope.textTanc=textTanc1;
+$scope.eroare="";
+}
+   $location.url('#'+idComponenta+srcCounter);
+}
+else{
 //alert(pattern);
      if (repetaOn==true){
     var patternRepetaLenght;
@@ -166,6 +192,7 @@ alert(pattern);
            //alert("boss");
      }
  }
+}
   $scope.clear=function(){
   $scope.records = []
       n1=1;
@@ -261,52 +288,133 @@ alert(pattern);
     // functii load surse {
     //$scope.src="page/test.html";
     $scope.a1=function(){
-       
+
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
     pagina1=pagina1.charAt(0);
    $location.url("1/"+pagina1+"#1");
-         srcCounter=$location.absUrl().substr($location.absUrl().length - 1); 
+         srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
         paginaUpload="1."+pagina1+"."+srcCounter;
-   
-        
- $scope.src="page/"+paginaUpload+".html";
+
+
+ $scope.src="page/"+paginaUpload+".php";
 
 
 
     }
     $scope.a2=function(){
-        
+
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
-      
+
         pagina1=pagina1.charAt(0);
-    
+
         $location.url("1/"+pagina1+"#2");
          srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
             paginaUpload="1."+pagina1+"."+srcCounter;
-        
- $scope.src="page/"+paginaUpload+".html";
+
+ $scope.src="page/"+paginaUpload+".php";
+
+        //daca este diferit de o pagina care nu are nevoie de target
+
     }
     $scope.a3=function(){
-   
+
         pagina1=$location.absUrl().substr($location.absUrl().length - 3);
      pagina1=pagina1.charAt(0);
-        
-      
+
+
 
 $location.url("1/"+pagina1+"#3");
               srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
-          paginaUpload="1."+pagina1+"."+srcCounter;  
-$scope.src="page/"+paginaUpload+".html";
+          paginaUpload="1."+pagina1+"."+srcCounter;
+$scope.src="page/"+paginaUpload+".php";
     }
+
+// aplicatie tancuri
+
+
+
+
+$scope.eroare="";
+nrComponenta=1;
+idComponenta=0;
+    $scope.corpTanc1=function(){
+      if (nrComponenta == 2){
+        $scope.eroare="";
+        $scope.tancPart2="page/assets/images/corp_albastru.png";
+nrComponenta=nrComponenta+1;
+idComponenta=idComponenta*10+1;
+      }
+      else {
+      $scope.eroare = "eroare";
+
+      }
+    }
+    $scope.corpTanc2=function(){
+      if (nrComponenta == 2){
+        $scope.eroare="";
+        $scope.tancPart2="page/assets/images/corp_gri.png";
+nrComponenta=nrComponenta+1;
+idComponenta=idComponenta*10+2;
+      }
+      else {
+      $scope.eroare = "eroare";
+
+      }
+    }
+    $scope.capTanc1=function(){
+      if (nrComponenta == 3){
+        $scope.eroare="";
+        $scope.tancPart3="page/assets/images/cap_albastru.png";
+nrComponenta=nrComponenta+1;
+idComponenta=idComponenta*10+3;
+      }
+      else {
+      $scope.eroare = "eroare";
+
+      }
+    }
+    $scope.capTanc2=function(){
+      if (nrComponenta == 3){
+        $scope.eroare="";
+        $scope.tancPart3="page/assets/images/cap_gri.png";
+nrComponenta=nrComponenta+1;
+idComponenta=idComponenta*10+4;
+      }
+      else {
+      $scope.eroare = "eroare";
+
+      }
+    }
+    $scope.roti=function(){
+
+    if (nrComponenta == 1){
+      $scope.eroare="";
+      $scope.tancPart1="page/assets/images/roti.png";
+   nrComponenta=nrComponenta+1;
+   idComponenta=idComponenta*10+5;
+    }
+    else {
+  $scope.eroare = "eroare";
+
+    }
+    }
+
+
+
     //}
+
 });
 
 angular.module('myApp').controller('pagini', function ($scope,$http,$location){
+  $scope.info=function(){
+  alert("mama");
 
+  }
    var n=1;
     //$scope.href=n;
 
    var n1=$location.url();
+
 var n2="";
 var n3="";
     var nr=0;
@@ -341,7 +449,10 @@ n3="";
       $scope.href=n3+"/"+counter+"#1";
  }
 
+$scope.info=function(){
+alert("mama");
 
+}
 
 
 
