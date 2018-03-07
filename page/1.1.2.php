@@ -1,56 +1,64 @@
 <?php
-include("meniu.php");
+
 include("functions.php");
 include("loadTanc.php");
 
 ?>
 <div id="animation-side">
- <div class="container12">
-  <div class="row">
-    <div id="id:11" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:12" class="col1" id="target"><img src="" width="100%" height="100%"></div>
-      <div id="id:13" class="col1" ><img src="" width="100%" height="100%"></div>
-    <div id="id:14" class="col1"><img src="" width="100%" height="100%"></div>
-      <div id="id:15" class="col1" ><img src="" width="100%" height="100%"></div>
-    <div id="id:16" class="col1" id="limit1"><img src="" width="100%" height="100%"></div>
-   <div class="w-100"></div>
-    <div id="id:21" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:22" class="col1"><img src="" width="100%" height="100%"></div>
-      <div id="id:23" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:24" class="col1"><img src="" width="100%" height="100%"></div>
-          <div id="id:25" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:26" class="col1"><img src="" width="100%" height="100%"></div>
-      <div class="w-100"></div>
-    <div id="id:31" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:32" class="col1"><img src="" width="100%" height="100%"></div>
-      <div id="id:33"  class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:34" class="col1" ><img src="" width="100%" height="100%"></div>
-          <div id="id:35" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:36" class="col1"><img src="" width="100%" height="100%"></div>
-    <div class="w-100"></div>
-    <div id="id:41" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:42" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:43" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:44" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:45" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:46" class="col1"><img src="" width="100%" height="100%"></div>
-      <div class="w-100"></div>
-    <div id="id:51" class="col1" ><img src="" width="100%" height="100%"></div>
-    <div id="id:52" class="col1"><img src="" width="100%" height="100%"></div>
-      <div id="id:53" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:54" class="col1"><img src="" width="100%" height="100%"></div>
-          <div id="id:55" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:56" class="col1"><img src="" width="100%" height="100%"></div>
-     <div class="w-100"></div>
-    <div id="id:61" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:62" class="col1" ><img src="" width="100%" height="100%"></div>
-      <div id="id:63" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:64" class="col1"><img src="" width="100%" height="100%"></div>
-          <div id="id:65" class="col1"><img src="" width="100%" height="100%"></div>
-    <div id="id:66" class="col1" id="limit2"><img src="" width="100%" height="100%"></div>
-       <div class="w-100"></div>
 
+
+ <div class="container12" >
+
+
+  <div class="row" style="z-index:2;margin-top:0%;">
+    <div  class="col1" ><img id="id-11" src="" width="100%" height="100%"></div>
+    <div  class="col1" ><img id="id-12" src="" width="100%" height="100%"></div>
+      <div  class="col1" ><img id="id-13" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-14" src="" width="100%" height="100%"></div>
+      <div  class="col1" ><img id="id-15" src="" width="100%" height="100%"></div>
+    <div  class="col1" id="limit1"><img id="id-16"  src="" width="100%" height="100%"></div>
+   <div class="w-100"></div>
+    <div  class="col1"><img id="id-21" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img  id="id-22" src="" width="100%" height="100%"></div>
+      <div  class="col1"><img id="id-23" src="" width="100%" height="100%"></div>
+    <div class="col1"><img id="id-24" src="" width="100%" height="100%"></div>
+          <div  class="col1"><img  id="id-25" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-26" src="" width="100%" height="100%"></div>
+      <div class="w-100"></div>
+    <div  class="col1" id="pozitie"><img id="id-31" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-32" src="" width="100%" height="100%"></div>
+      <div   class="col1"><img  id="id-33" src="" width="100%" height="100%"></div>
+    <div class="col1" ><img id="id-34"  src="" width="100%" height="100%"></div>
+          <div  class="col1" ><img id="id-35" src=""  width="100%" height="100%"></div>
+    <div class="col1"><img id="id-36" src="" width="100%" height="100%"></div>
+    <div class="w-100"></div>
+    <div  class="col1"><img id="id-41" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-42" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img  id="id-43"src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-44" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-45" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-46" src="" width="100%" height="100%"></div>
+      <div class="w-100"></div>
+    <div  class="col1" ><img id="id-51" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-52" src="" width="100%" height="100%"></div>
+      <div  class="col1"><img id="id-53" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-54" src="" width="100%" height="100%"></div>
+          <div  class="col1"><img id="id-55" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-56" src="" width="100%" height="100%"></div>
+     <div class="w-100"></div>
+    <div  class="col1"><img id="id-61" src="" width="100%" height="100%"></div>
+    <div class="col1" ><img  id="id-62"src="" width="100%" height="100%"></div>
+      <div  class="col1"><img id="id-63" src="" width="100%" height="100%"></div>
+    <div  class="col1"><img id="id-64" src="" width="100%" height="100%"></div>
+          <div  class="col1"><img id="id-65" src="" width="100%" height="100%"></div>
+    <div  class="col1" id="limit2"><img id="id-66" src="" width="100%" height="100%"></div>
+       <div class="w-100"></div>
+ <div id="errorPanel">
+     <center id="textError">ATENTIE</center>
+     <button id="butonError"type="button" class="btn btn-primary">Incearca din nou</button>
+     </div>
   </div>
+
 </div>
 
 </div>
@@ -67,17 +75,26 @@ include("loadTanc.php");
          text-indent: 10px;
 
 		}
- .col1{
-background-color: ghostwhite;
-        border-style: solid;
- width:16.66%;
-        border-width: 0.5px;
-      height: 16.7%;
-    }
+
 </style>
+<script src="page/generareMapa.js"></script>
+
 <script>
-var tanc;
-$("#object1").show();
+    //generate target
+    var locatiiValide = new Array(34,35,36);
+ var targetPlace= $( "#pozitie" );
+    var offsettarget= targetPlace.offset();
+    //alert((($(document).width()*1.33)/100));
+    var target = $( "#object1" );
+
+target.css("top",offsettarget.top-(($(document).width()*1.2)/100));
+
+target.css("left",offsettarget.left-(($(document).width()*1.2)/100));
+target1=generareTinta(locatiiValide,33,37,3);
+    $("#id-"+target1).attr('src','page/assets/images/road_target.png');
+generareTeren1(target1);
+    var tanc;
+
 $(".imagineComponentaTanc").hide();
 //alert(($("#object1").attr('src')));
   //if (($("#object1").attr('src'))==""){
@@ -87,12 +104,17 @@ $(".imagineComponentaTanc").hide();
 //location.reload();
 //reload=2;
 //}
+  tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
+   // $("#id:35").attr("src","page/assets/images/road_target");
+// $("#id-35").attr('id', 'target');
 
-  tanc= "<?php echo $row2[1]?>";
-  $("#object1").attr('src','page/assets/images/'+tanc+'.png');
 
+    $("#object1").attr('src','page/assets/images/'+tanc+'.png');
+$("#object1").show();
 
 })
+
+
 </script>

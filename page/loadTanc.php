@@ -1,5 +1,5 @@
 <?php
-
+$id=$_SESSION['id'];
 $query="SELECT *FROM Tancuri WHERE id = $id";
 
 if ($result2 = mysqli_query($link,$query)){

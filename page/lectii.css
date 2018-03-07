@@ -88,3 +88,30 @@ background-color: ghostwhite;
         margin-top:-22%;
         height:6%;
     }
+ .col1{
+background-color: ghostwhite;
+        border-style: solid;
+ width:16.66%;
+        border-width: 0.5px;
+      height: 16.7%;
+    }
+#errorPanel{
+    display:none;
+    z-index: 1;
+    width: 50%;
+    height:50%;
+    border-radius:25px;
+    background-color: white;
+    border-color: black;
+    border-width: 2px;
+    margin-top: -60%;
+    margin-left: 25%;
+    border-style:solid;
+}
+#textError{
+    margin-top: 30%;
+}
+#butonError{
+    margin-left:25%;
+    
+}

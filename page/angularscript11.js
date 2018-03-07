@@ -179,7 +179,7 @@ else{
 
 
 pattern=pattern*10+parseInt($location.absUrl().substr($location.absUrl().length - 1));
-alert(pattern);
+//alert(pattern);
      if (n==1){
         $scope.error="Pune si tu ceva cod!" ;
           $location.url('#'+0);
@@ -264,7 +264,7 @@ alert(pattern);
         n1=n1-1;
         i=i-1;
 
-      alert(pattern);
+      //alert(pattern);
 
 
 }
@@ -297,7 +297,7 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
 
 
  $scope.src="page/"+paginaUpload+".php";
-
+ $scope.blocuriSrc="page/"+paginaUpload +"bloc.html";
 
 
     }
@@ -312,7 +312,7 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
             paginaUpload="1."+pagina1+"."+srcCounter;
 
  $scope.src="page/"+paginaUpload+".php";
-
+ $scope.blocuriSrc="page/"+paginaUpload +"bloc.html";
         //daca este diferit de o pagina care nu are nevoie de target
 
     }
@@ -327,8 +327,21 @@ $location.url("1/"+pagina1+"#3");
               srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
           paginaUpload="1."+pagina1+"."+srcCounter;
 $scope.src="page/"+paginaUpload+".php";
+ $scope.blocuriSrc="page/"+paginaUpload +"bloc.html";
     }
+    $scope.a4=function(){
 
+        pagina1=$location.absUrl().substr($location.absUrl().length - 3);
+     pagina1=pagina1.charAt(0);
+
+
+
+  $location.url("1/"+pagina1+"#4");
+              srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
+          paginaUpload="1."+pagina1+"."+srcCounter;
+  $scope.src="page/"+paginaUpload+".php";
+  $scope.blocuriSrc="page/"+paginaUpload +"bloc.html";
+    }
 // aplicatie tancuri
 
 
@@ -345,7 +358,7 @@ nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+1;
       }
       else {
-      $scope.eroare = "eroare";
+      $scope.eroare = "  Mai intai ar trebui sa pui rotile deoarece,si aici ca la un algoritm pasii trebuie sa respecte o ordine logica!";
 
       }
     }
@@ -357,7 +370,7 @@ nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+2;
       }
       else {
-      $scope.eroare = "eroare";
+      $scope.eroare = "Mai intai ar trebui sa pui rotile deoarece,si aici ca la un algoritm pasii trebuie sa respecte o ordine logica!";
 
       }
     }
@@ -369,7 +382,7 @@ nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+3;
       }
       else {
-      $scope.eroare = "eroare";
+      $scope.eroare = "Aceasta nu este piesa care ar trebui pusa!";
 
       }
     }
@@ -381,7 +394,7 @@ nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+4;
       }
       else {
-      $scope.eroare = "eroare";
+      $scope.eroare = "Aceasta nu este piesa care ar trebui pusa!Mai intai ar trebui sa pui rotile deoarece,si aici ca la un algoritm pasii trebuie sa respecte o ordine logica!";
 
       }
     }
@@ -394,7 +407,7 @@ idComponenta=idComponenta*10+4;
    idComponenta=idComponenta*10+5;
     }
     else {
-  $scope.eroare = "eroare";
+  $scope.eroare = "Ai pus deja niste roti. Un tanc poate sa aiba doar o singura pereche de roti!";
 
     }
     }

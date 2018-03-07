@@ -51,12 +51,10 @@ include("loadTanc.php");
           <div  class="col1"><img id="id-65" src="" width="100%" height="100%"></div>
     <div  class="col1" id="limit2"><img id="id-66" src="" width="100%" height="100%"></div>
        <div class="w-100"></div>
-       <div id="errorPanel">
+ <div id="errorPanel">
      <center id="textError">ATENTIE</center>
      <button id="butonError"type="button" class="btn btn-primary">Incearca din nou</button>
      </div>
-  
- 
   </div>
 
 </div>
@@ -104,11 +102,11 @@ $(".imagineComponentaTanc").hide();
 //location.reload();
 //reload=2;
 //}
-tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
    // $("#id:35").attr("src","page/assets/images/road_target");
 // $("#id-35").attr('id', 'target');
+  tanc= "<?php echo $row2[1]?>";
 
     $("#object1").attr('src','page/assets/images/'+tanc+'.png');
 $("#object1").show();

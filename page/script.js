@@ -1,4 +1,4 @@
-var x="",y="";var nr=0;var  pasi=0;var urlNou=""; var capatUrl;var tancId;    var Id;
+var x="",y="";var nr=0;var  pasi=0;var urlNou=""; var capatUrl;var tancId; var  eroareDegree;   var Id;
 $("#butonsmecher").click(function(){
 y="";
 nr=0;
@@ -64,7 +64,7 @@ urlNou="http://infolearn-com.stackstaging.com/index.php?page=inceput#"+urlNou;
 
     var z=(4.63*$(document).width())/100;
     var z1=(6.9*$(document).height())/100;
-    var targ = $( "#target" );
+    var targ = $( "#id-"+target1 );
     var offset = targ.offset();
     var targetLimit = $( "#limit1" );
     var offsetLimit = targetLimit.offset();
@@ -72,12 +72,11 @@ urlNou="http://infolearn-com.stackstaging.com/index.php?page=inceput#"+urlNou;
     var offsetLimit1 = targetLimit1.offset();
 
 
-
  var target = $( "#object1" );
 var offset1 = target.offset();
 var pozitieInitiala;
     pozitieInitiala=offset1.left;
-    alert(pozitieInitiala);
+        pozitieInitiala1=offset1.top;
 
   var ok; var nr1=numarPasi,nr2=0,nr3=0,eroare=false;
    var $obiect = $("#object1"), degree=0,degree1=0 ,timer;
@@ -88,8 +87,8 @@ var pozitieInitiala;
     }
 
     function animatie(i){
-         var target = $( "#object1" );
-var offset1 = target.offset();
+
+offset1 = target.offset();
           if (i==-1){
                 if ((offset1.left/($(document).width()/100))<((offset.left/($(document).width()/100))+1.5) && ((offset1.left/($(document).width()/100))>((offset.left/($(document).width()/100))-1.5)) && (offset1.top/($(document).width()/100))<((offset.top/($(document).width()/100))+1.5) && ((offset1.top/($(document).width()/100))>((offset.top/($(document).width()/100))-1.5))) {
 
@@ -118,8 +117,20 @@ var offset1 = target.offset();
 
                 }
     else {
-        alert("eroare");
-   $("#object1").css("left",pozitieInitiala-(9.5*pozitieInitiala)/100);
+        eroareDegree=true;
+        alert("eroare1");
+       
+        if (degree!=0 || degree1!=0){
+            eroareDegree=false;
+        }
+       
+        errorDisplay("Nu ai reusit sa ajungi in locul indicat!");
+        showthings();
+   $("#object1").css("left",pozitieInitiala-(6.7*pozitieInitiala)/100);
+          $("#object1").css("top",pozitieInitiala1-(7*pozitieInitiala1)/100);
+        
+       
+        
   //  alert(pozitieInitiala);
 
     }
@@ -127,6 +138,11 @@ var offset1 = target.offset();
         if ((offset1.left/(($(document).width())/100))>(offsetLimit.left/(($(document).width())/100)) || (offset1.top/(($(document).width())/100))>(offsetLimit1.top/(($(document).width())/100))-1.1){
            eroare=true;
        alert("eroare fraiere");
+              $("#object1").css("top",pozitieInitiala1-(6.7*pozitieInitiala1)/100);
+    
+        errorDisplay("Comenzile care le ai dat au scos tancul in afara spatiului de lucru.Incearca alt algoritm!");
+        showthings();
+              $("#object1").css("left",pozitieInitiala-(7*pozitieInitiala)/100);
        }
      // alert(degree);
         if (eroare !=true){
@@ -325,8 +341,23 @@ pagina=window.location.href[window.location.href.length -3];
  });
 
 function showthings(){
-
+$( "#errorPanel" ).fadeIn( "slow" );
+   
 }
 function hidethings(){
 
+    if (eroareDegree==false){
+       location.reload();
+      
+   }
+$( "#errorPanel" ).hide();
 }
+
+function errorDisplay(text){
+    
+    $("#textError").html(text);
+}
+$("#butonError").click(function(){
+   
+ hidethings();
+});
