@@ -106,7 +106,7 @@
    
     
 
-  <script type="text/javascript" src="page/head_script.js"></script>  
+  <script type="text/javascript" src="page/scripts/head_script.js"></script>  
     
 
 <div id="pagina">

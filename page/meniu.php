@@ -108,45 +108,40 @@ margin-bottom: 0;
            <li class="menu-title">
              <div class="text-design" >Invatare</div></li>
               <li class="menu-item">
-             <div class="item-design" id="inceput"><p class="menu-text">Introducere</p> </div>
+             <div class="item-design" id="inceput"><p class="menu-text">Algoritmul</p> </div>
              </li>
-                            <ul id="sub-menu">
-              <li class="menu-item" id="id--111"><div id="sub-menu-item"  class="text-design" >Algoritmul</div></li>
-                <li class="menu-item" id="id--112"><div id="sub-menu-item"  class="text-design">Expresii aritmetice</div></li>
-                 <li class="menu-item" id="id--113" ><div id="sub-menu-item" class="text-design">Expresii logice</div></li>
-               <li class="menu-item" id="id--114" ><div id="sub-menu-item" class="text-design">Operatori relationali</div></li>
 
-              </ul>
           <li class="menu-item">
              <div class="item-design" >
 
-                 <p class="menu-text">Inceput</p> </div></li>
+                 <p class="menu-text" id="expresiiaritmetice">Expresii aritmetice</p> </div></li>
 
           <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Despre</p> </div></li>
+             <div class="item-design"> <p class="menu-text">Expresii logice</p> </div></li>
+             <li class="menu-item">
+                <div class="item-design"> <p class="menu-text">Operatori relationali</p> </div></li>
+                <li class="menu-item">
+                   <div class="item-design"> <p class="menu-text">If-ul bucla</p> </div></li>
              <li id="last-column">
-             <div class="item-design" > <p class="menu-text">Despre</p> </div>
+             <div class="item-design" > <p class="menu-text">Bucla repetitiva</p> </div>
              </li>
           <li class="menu-title">
-             <div class="text-design">Titlu</div></li>
-            <li class="menu-item">
-             <div class="item-design" id="compilator"> <p class="noselect" class="menu-text"> </p> </div>
-            </li>
+             <div class="text-design">Exersare</div></li>
+
 
           <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Curiozitati</p> </div></li>
+             <div class="item-design"> <p class="menu-text">Jocul 1</p> </div></li>
           <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Sfaturi</p> </div>
+             <div class="item-design"> <p class="menu-text">Jocul 2</p> </div>
              </li>
-          <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Contact</p> </div></li>
+
           <li  id="last-column">
-             <div class="item-design"> <p class="menu-text">Despre</p> </div></li>
+             <div class="item-design"> <p class="menu-text">Platforma intrebari</p> </div></li>
 
          </ul>
 
     </div>
-<script src="page/loadSaves.js"></script>
+<script src="page/scripts/loadSaves.js"></script>
 <script>
     var href1;
     var vector=[];
@@ -160,63 +155,76 @@ margin-bottom: 0;
     //
 
     $(document).ready( function(){
-                  var username= "<?php echo  $row[1]?>";
+
 //alert(username);
         // loadHref(id1,username);
                       })
     var meniuInceput=1;
     var id1=0;
     $("#compilator").click(function(){
-        
+
         $(location).attr('href',"http://infolearn-com.stackstaging.com/index.php?page=compilator");
-        
-        
+
+
     })
-    $("#inceput").click(function(){ 
+    $("#inceput").click(function(){
      x=window.location.href;
-      
+
         if (x=="http://infolearn-com.stackstaging.com/index.php"){
-    var username= "<?php echo  $row[1]?>";
+
 
      var username= "<?php echo  $row[1]?>";
 //alert(username);
       var username1;
-      username1=parseInt(username);
+
+    username1=username
       id1=1;
-      if(username!="") 
-            $(location).attr('href', loadHref(id1,username1,vector));
+      if(username1!="")
+            $(location).attr('href', loadHref(1,username1,vector,id1));
             else
-              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/1#1");   
+              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/1#1");
 //alert(loadHref(id1,username,vector));
         }
-      if (meniuInceput==0){
-        $("#sub-menu").show();
-        meniuInceput=1;
-      }else
-          {$("#sub-menu").hide();
-        meniuInceput=0;
 
-          }
-        $(".menu-item").css("border-bottom-width","1px");
+    })
+    $("#expresiiaritmetice").click(function(){
+     x=window.location.href;
+
+        if (x=="http://infolearn-com.stackstaging.com/index.php"){
+
+
+     var username= "<?php echo  $row[1]?>";
+//alert(username);
+      var username1=username;
+    //  username1=parseInt(username);
+      id1=2;
+
+      if(username1!="")
+            $(location).attr('href', loadHref(1,username1,vector,id1));
+            else
+              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/2#1");
+//alert(loadHref(id1,username,vector));
+        }
+
     })
 
 $("#id--111").click(function(){
-    
+
    $(location).attr('href',submenuhref("/1/1#1"));
        location.reload();
 })
     $("#id--112").click(function(){
-    
+
    $(location).attr('href',submenuhref("/1/1#2"));
           location.reload();
 })
     $("#id--113").click(function(){
-    
+
    $(location).attr('href', submenuhref("/1/1#3"));
           location.reload();
 })
     $("#id--114").click(function(){
-   
+
    $(location).attr('href', submenuhref("/1/1#4"));
           location.reload();
 })

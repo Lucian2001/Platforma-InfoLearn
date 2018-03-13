@@ -1,4 +1,5 @@
 <?php include ("meniu.php");
+include ("functions.php");
 
 ?>
 
@@ -59,7 +60,7 @@ display: none;
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1> Algoritmul</h1>
+  <h1>Expresii Aritmetice</h1>
 </div>
 
 
@@ -118,43 +119,28 @@ display: none;
    </div>
 
     <div id="code-aplicatie" >
+       
+     <div id="next_and_previous" ng-controller="pagini">
+    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Previous</a>
+    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Next</a>
 
-
-  <div id="marcaj">
-
-      <div class="expl-box-fi1" ng-fi-text=" &nbsp;Program"></div>
-     <div class="expl-box-fi1"ng-repeat="x in records track by $index " ng-fi-text="{{x}}"></div>
-
- <img class="imagineComponentaTanc" ng-src="{{tancPart1}}" width="100px" height="100px" >
-<img  class="imagineComponentaTanc" ng-src="{{tancPart2}}" width="100px" height="100px">
-<img  class="imagineComponentaTanc" ng-src="{{tancPart3}}" width="50px" height="100px" style="margin-left:10.5%;">
-
-   </div>
-
-   </div>
+    </div>
+<div ng-include src="codeSrc"></div>
+    </div>
 <div  ng-include src="blocuriSrc">
 </div>
 
 </div>
-
 </div>
+
 
 </body>
 <script src="page/scripts/script.js"></script>
 <script src="page/scripts/loadSaves.js"></script>
+    
 <script>
 
 $(document).ready(function(){
-	var tanc;
-	tanc= "<?php echo $row2[1]?>";
-	$("#object1").attr('src','page/assets/images/'+tanc+'.png');
-
-
-$('.dropdown-toggle').dropdown();
-     })
-
-    var username= "<?php echo  $row[1]?>";
-      loadsaves(username);
-$("#sub-menu").show();
+})
 
 </script>
