@@ -417,17 +417,17 @@ idComponenta=idComponenta*10+4;
     //}
     //Surse expresiiaritmetice
 var numarSurse=5;
-var counterSursa=1;    
+var counterSursa=1;
     $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
 $scope.next1=function(){
-    if(counterSursa>0 && counterSursa<=numarSurse) {
+    if(counterSursa>0 && counterSursa<numarSurse) {
  counterSursa= counterSursa+1;
     $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica"+counterSursa.toString()+".html";
     }
 }
 
 $scope.previous1=function(){
-if(counterSursa>0 && counterSursa<=numarSurse) {
+if(counterSursa>1 && counterSursa<=numarSurse) {
     counterSursa= counterSursa-1;
     $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica"+counterSursa.toString()+".html";
 }
@@ -500,4 +500,3 @@ app.directive('header123', function () {
     templateUrl:'page/test.html',
   }
 })
-

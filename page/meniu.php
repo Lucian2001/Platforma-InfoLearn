@@ -153,21 +153,29 @@ margin-bottom: 0;
      vector[22]=0;
      vector[23]=0;
     //
+    $("#expresiiaritmetice").click(function(){
+     x=window.location.href;
+     alert("mama");
 
-    $(document).ready( function(){
+        if (x=="http://infolearn-com.stackstaging.com/index.php"){
 
-//alert(username);
-        // loadHref(id1,username);
-                      })
-    var meniuInceput=1;
-    var id1=0;
-    $("#compilator").click(function(){
 
-        $(location).attr('href',"http://infolearn-com.stackstaging.com/index.php?page=compilator");
+     var username= "<?php echo  $row[1]?>";
+  //alert(username);
+      var username1=username;
+    //  username1=parseInt(username);
+      id1=2;
 
+      if(username1!="")
+            $(location).attr('href', loadHref(1,username1,vector,id1));
+            else
+              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/2#1");
+  //alert(loadHref(id1,username,vector));
+        }
 
     })
     $("#inceput").click(function(){
+           alert("mama");
      x=window.location.href;
 
         if (x=="http://infolearn-com.stackstaging.com/index.php"){
@@ -187,26 +195,22 @@ margin-bottom: 0;
         }
 
     })
-    $("#expresiiaritmetice").click(function(){
-     x=window.location.href;
-
-        if (x=="http://infolearn-com.stackstaging.com/index.php"){
+    $(document).ready( function(){
 
 
-     var username= "<?php echo  $row[1]?>";
 //alert(username);
-      var username1=username;
-    //  username1=parseInt(username);
-      id1=2;
+        // loadHref(id1,username);
+                      })
+    var meniuInceput=1;
+    var id1=0;
+    $("#compilator").click(function(){
 
-      if(username1!="")
-            $(location).attr('href', loadHref(1,username1,vector,id1));
-            else
-              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/2#1");
-//alert(loadHref(id1,username,vector));
-        }
+        $(location).attr('href',"http://infolearn-com.stackstaging.com/index.php?page=compilator");
+
 
     })
+
+
 
 $("#id--111").click(function(){
 
