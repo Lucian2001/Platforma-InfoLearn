@@ -1,0 +1,138 @@
+ #id---2{
+        margin-left: 25%;
+    }
+    .valoare{
+        font-size:70px;
+        margin-right: 0px;
+        float: left;
+        margin-top: -4%;
+    }
+    .expl-box-fi2 {
+		margin-top: -5%;;
+            border-style: none;
+			height: 18%;
+            width:70%;
+             text-align: left;
+             margin-left:3%;
+            color:black;
+         text-indent: 10px;
+
+		}
+    #droppable{
+        width: 13%;
+        height: 83%;
+        margin-left: 16%;
+
+    }
+    #incercari{
+text-align: right;
+        margin-right: 4%;
+    }
+    #spatiuExercitii{
+margin-top: 2%;
+        width: 100%;
+    height:20%;
+
+        margin-left: 20%;
+    }
+    #generare{
+        margin-left: 57%;
+        margin-top: 7%;
+        width: 40%;
+        height: 12%;
+        font-size: 20px;
+    }
+    #exercitii{
+        margin-top: 5%;
+        float:right;
+    }
+    #corect{
+        display: none;
+        height:95%;
+        width: 15%;
+        float:left;
+        margin-left: 9%;
+        margin-top: -10%;
+    }
+    #gresit{
+        display: none;
+        height:95%;
+        width: 15%;
+        float:left;
+        margin-left: 9%;
+        margin-top: -10%;
+    }
+    #invisibleObject{
+      visibility: hidden;
+    }
+    #invisibleObject1{
+      visibility: hidden;
+    }
+   #invisibleObject2{
+      visibility: hidden;
+    }
+#spatiuExercitii1{
+    margin-left: 0;
+       width: 100%;
+    height:50%;
+}
+.valoare1{
+font-size:50px;
+    margin-right: 0px;
+        float: left;
+        margin-top: 20%;
+
+}
+#id-1 {
+   margin-left: 10%; 
+}
+#exercitii1{
+      margin-top: 20%;
+        float:right;
+
+}
+#corect1{
+      display: none;
+        height:20%;
+        width: 15%;
+        float:right;
+        margin-right:-4%;
+        margin-top: -4%;
+    }
+    #gresit1{
+      display: none;
+       height:20%;
+        width: 15%;
+        float:right;
+        margin-right:-4%;
+        margin-top: -4%;
+    }
+#buttons{
+    margin-top: 10%;
+    float:left;
+    margin-left: 5%;
+}
+#true{
+    margin-right: 0;
+    float: left;
+    height: 15%;
+    width: 25%;
+      font-size: 25px;
+}
+#false{
+float:left;
+    width: 40%;
+    height:15%;
+}
+#false1{
+    width: 95%;
+    height: 75%;
+    font-size: 25px;
+}
+#verificare{
+     margin-left: 50%;
+        margin-top: -10%;
+        width:20%;
+        height: 12%;
+        font-size: 20px;
+}

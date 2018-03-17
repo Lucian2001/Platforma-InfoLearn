@@ -78,10 +78,10 @@ display: none;
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active "  id="id-111" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatii Tip I</a>
-    <a class="nav-item nav-link " id="id-112" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatii Tip II</a>
-    <a class="nav-item nav-link" id="id-113" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicatii Tip III</a>
-		
+    <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatii Tip I</a>
+    <a class="nav-item nav-link " id="id-122" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatii Tip II</a>
+    <a class="nav-item nav-link" id="id-123" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicatii Tip III</a>
+
   </div>
 </nav>
         <img id="object1" src="">
@@ -116,7 +116,7 @@ display: none;
    </div>
 
     <div id="code-aplicatie" >
-       
+
      <div id="next_and_previous" ng-controller="pagini">
     <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Previous</a>
     <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Next</a>
@@ -134,7 +134,7 @@ display: none;
 </body>
 <script src="page/scripts/script.js"></script>
 <script src="page/scripts/loadSaves.js"></script>
-    
+
 <script>
 
 $(document).ready(function(){
