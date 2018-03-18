@@ -11,9 +11,7 @@
         <p class="valoare1" id="egal">=</p>
           <p class="valoare1" id="id--5">20</p>
 
-      <p id="invisibleObject">0<p>
-  <p id="invisibleObject1">0<p>
-          <p id="invisibleObject2">0<p>
+    
        
         </div>
           <h1 id="exercitii1"><span id="exercitiiRezolvate1">0</span>/6</h1>
@@ -33,19 +31,15 @@
 <script>
  generareNumere();
 $("#true").click(function(){
-    var nr=$("#invisibleObject1").html();
-   if (nr==1){
+   $("#false1").prop('disabled', true);
+   if (adevarat==true){
     corect2();
-   }else gresit2()
+   }else 
+       gresit2()
     
 })
     $("#verificare").click(function(){
-        var nr=$("#invisibleObject2").html();
-        if (nr==1){
-            corect3();
-        } else
-            {
-                gresit3();
-            }
+       verificare();
     })
+    
 </script>
