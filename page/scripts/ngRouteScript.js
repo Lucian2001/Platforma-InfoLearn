@@ -10,5 +10,10 @@ templateUrl : "page/expresiiaritmetica.php",
    reloadOnSearch: false,
 
 })
+       .when("/1/3", {
+templateUrl : "page/operatorirelationali.php",
+   reloadOnSearch: false,
+
+})
 
 }]);

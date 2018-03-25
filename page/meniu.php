@@ -85,7 +85,7 @@ margin-bottom: 0;
      font-size: 100%;
         font-size:3vh;
         padding-top: 8px;
-        width:200px;
+        width:300px;
     }
     #sub-menu-item{
 
@@ -117,9 +117,9 @@ margin-bottom: 0;
                  <p class="menu-text" id="expresiiaritmetice">Expresii aritmetice</p> </div></li>
 
           <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Expresii logice</p> </div></li>
+             <div class="item-design" > <p id="operatorirelationali" class="menu-text">Operatori relationali</p> </div></li>
              <li class="menu-item">
-                <div class="item-design"> <p class="menu-text">Operatori relationali</p> </div></li>
+                <div class="item-design"> <p class="menu-text">Operatori logici</p> </div></li>
                 <li class="menu-item">
                    <div class="item-design"> <p class="menu-text">If-ul bucla</p> </div></li>
              <li id="last-column">
@@ -152,10 +152,12 @@ margin-bottom: 0;
      vector[21]=0;
      vector[22]=0;
      vector[23]=0;
+     vector[31]=0;
+     vector[32]=0;
     //
-    $("#expresiiaritmetice").click(function(){
+    $("#operatorirelationali").click(function(){
      x=window.location.href;
-     alert("mama");
+    
 
         if (x=="http://infolearn-com.stackstaging.com/index.php"){
 
@@ -164,18 +166,18 @@ margin-bottom: 0;
   //alert(username);
       var username1=username;
     //  username1=parseInt(username);
-      id1=2;
-
+      id1=3;
+ //alert(username1);
       if(username1!="")
             $(location).attr('href', loadHref(1,username1,vector,id1));
             else
-              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/2#1");
+              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/3#1");
   //alert(loadHref(id1,username,vector));
         }
 
     })
     $("#inceput").click(function(){
-           alert("mama");
+
      x=window.location.href;
 
         if (x=="http://infolearn-com.stackstaging.com/index.php"){
@@ -192,6 +194,27 @@ margin-bottom: 0;
             else
               $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/1#1");
 //alert(loadHref(id1,username,vector));
+        }
+
+    })
+    $("#expresiiaritmetice").click(function(){
+     x=window.location.href;
+    
+
+        if (x=="http://infolearn-com.stackstaging.com/index.php"){
+
+
+     var username= "<?php echo  $row[1]?>";
+  //alert(username);
+      var username1=username;
+    //  username1=parseInt(username);
+      id1=2;
+
+      if(username1!="")
+            $(location).attr('href', loadHref(1,username1,vector,id1));
+            else
+              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/2#1");
+  //alert(loadHref(id1,username,vector));
         }
 
     })

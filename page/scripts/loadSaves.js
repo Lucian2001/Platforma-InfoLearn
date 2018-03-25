@@ -4,7 +4,7 @@ username=username.toString();
    // alert((username.length)/3);
     if (username!=""){
      var usernameLength=username.length;
-    var id1;
+    var id1; 
     for( i=1;i<=usernameLength/3;i++){
       id1=username.substr(username.length - 3);
         username=username.slice(0,-3);
@@ -16,9 +16,9 @@ username=username.toString();
  }
 
 function loadHref(nr,ids,vectorIds,id1){
-var id; var ok=true;href="#/1/1#1";
+var id; var ok=true;href="#/1/"+id1+"#1";
     //alert(nr);
-alert(ids);
+
 
 
  while(ids!=""){
@@ -32,9 +32,7 @@ alert(ids);
       ids=  ids.substring(0, ids.length-3);
 
     }
-  for ( var i=11;i<20;i++){
-//alert(vectorIds[i]);
-  }
+ 
  for ( var i=id1*10+1;i<id1*10+11 && ok==true;i++){
 if (vectorIds[i]==0){
    ok=false;
@@ -42,7 +40,7 @@ if (vectorIds[i]==0){
 }
  }
     href="http://infolearn-com.stackstaging.com/index.php?page=inceput"+href;
-    return(href);
+    return(href); 
  // return nr;
 }
 

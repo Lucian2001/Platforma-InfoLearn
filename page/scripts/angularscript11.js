@@ -416,20 +416,32 @@ idComponenta=idComponenta*10+4;
 
     //}
     //Surse expresiiaritmetice
-var numarSurse=5;
+var numarSurse;
 var counterSursa=1;
-    $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
+    var href2;
+    var href1=$location.absUrl();
+    href1=href1.charAt(href1.length-3);
+    if(href1=="2"){
+    numarSurse=5;
+     $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
+        href2="page/expresiiAritmetice/expresieAritmetica";
+    } else if(href1=="3"){
+        numarSurse=6;
+         $scope.codeSrc="page/operatoriRelationali/operatoriRelationali1.html";
+        href2="page/operatoriRelationali/operatoriRelationali";
+    }
+   
 $scope.next1=function(){
     if(counterSursa>0 && counterSursa<numarSurse) {
  counterSursa= counterSursa+1;
-    $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica"+counterSursa.toString()+".html";
+    $scope.codeSrc=href2+counterSursa.toString()+".html";
     }
 }
 
 $scope.previous1=function(){
 if(counterSursa>1 && counterSursa<=numarSurse) {
     counterSursa= counterSursa-1;
-    $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica"+counterSursa.toString()+".html";
+    $scope.codeSrc=href2+counterSursa.toString()+".html";
 }
 }
 //                           //
