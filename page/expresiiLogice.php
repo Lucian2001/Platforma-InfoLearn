@@ -56,13 +56,19 @@ include ("functions.php");
 			height:200px; overflow-y: scroll
 		}
 
-
+.imagineComponentaTanc{
+float:left;
+margin-right: 500px;
+margin-top: 10%;
+margin-left:5%;
+display: none;
+    }
 
 
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1>Operatori Relationali</h1>
+  <h1>Expresii Aritmetice</h1>
 </div>
 
 
@@ -80,9 +86,9 @@ include ("functions.php");
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active "  id="id-131" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatii Tip I</a>
-    <a class="nav-item nav-link " id="id-132" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatii Tip II</a>
-   
+    <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatii Tip I</a>
+    <a class="nav-item nav-link " id="id-122" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatii Tip II</a>
+    <a class="nav-item nav-link" id="id-123" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicatii Tip III</a>
 
   </div>
 </nav>
@@ -112,8 +118,8 @@ include ("functions.php");
       </div>
 
     </div>
-      
-          
+
+
    </div>
 
     <div id="code-aplicatie" >

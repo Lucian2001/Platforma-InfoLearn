@@ -1,4 +1,12 @@
-<?php include ("meniu.php");
+<?php include("testHttp.php");
+$query="SELECT *FROM completat WHERE id = $id";
+
+if ($result1 = mysqli_query($link,$query)){
+    $row = mysqli_fetch_array($result1);
+    //echo $row[2];
+
+
+}
 
 ?>
 
@@ -77,10 +85,10 @@ display: none;
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active "  id="id-111" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatia 1</a>
-    <a class="nav-item nav-link " id="id-112" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatia 2</a>
-    <a class="nav-item nav-link" id="id-113" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicatia 3</a>
-		  <a class="nav-item nav-link" id="id-114" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a4()">Aplicatia 4</a>
+    <a class="nav-item nav-link active tabAplicatie "  id="id-111" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatia 1</a>
+    <a class="nav-item nav-link tabAplicatie " id="id-112" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatia 2</a>
+    <a class="nav-item nav-link tabAplicatie" id="id-113" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicatia 3</a>
+		  <a class="nav-item nav-link tabAplicatie" id="id-114" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a4()">Aplicatia 4</a>
   </div>
 </nav>
         <img id="object1" src="">
@@ -157,4 +165,5 @@ $('.dropdown-toggle').dropdown();
       loadsaves(username);
 $("#sub-menu").show();
 
+    
 </script>

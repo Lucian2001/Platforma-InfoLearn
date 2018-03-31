@@ -1,4 +1,13 @@
-<?php include ("meniu.php");
+<?php
+include("testHttp.php");
+$query="SELECT *FROM completat WHERE id = $id";
+
+if ($result1 = mysqli_query($link,$query)){
+    $row = mysqli_fetch_array($result1);
+    //echo $row[2];
+
+
+}
 include ("functions.php");
 
 ?>
@@ -116,11 +125,12 @@ display: none;
 
     <div id="code-aplicatie" >
 
-     <div id="next_and_previous" ng-controller="pagini">
-    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Previous</a>
-    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Next</a>
+     <div id="next_and_previous1" ng-controller="pagini">
+    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Inapoi</a>
+    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" style="width:50%;text-indent-10px;" >Inainte</a>
 
     </div>
+        
 <div ng-include src="codeSrc"></div>
     </div>
 <div  ng-include src="blocuriSrc">

@@ -2,7 +2,7 @@
 
 
 
-angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams,$http){
+angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams,$http,$timeout){
 
 
       $scope.error="Nu ai nicio eroare";
@@ -418,19 +418,50 @@ idComponenta=idComponenta*10+4;
     //Surse expresiiaritmetice
 var numarSurse;
 var counterSursa=1;
+   
+   $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
     var href2;
     var href1=$location.absUrl();
+       $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica2.html";
+     $timeout( function(){
+         if (href1=="2")  
+         $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
+          else if(href1=="3"){
+             $scope.codeSrc="page/operatoriRelationali/operatoriRelationali1.html";  
+          } else if(href1=="4"){
+             $scope.codeSrc="page/expresiiLogice/expresiiLogice1.html"; 
+          }
+         
+        }, 100);
+
+        //time
+        $scope.time = 0;
+        
+        //timer callback
+        var timer = function() {
+            if( $scope.time < 5000 ) {
+                $scope.time += 1000;
+                $timeout(timer, 1000);
+            }
+        }
+        
+        
+        $timeout(timer, 1000); 
     href1=href1.charAt(href1.length-3);
     if(href1=="2"){
     numarSurse=5;
-     $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
+  
         href2="page/expresiiAritmetice/expresieAritmetica";
     } else if(href1=="3"){
         numarSurse=6;
-         $scope.codeSrc="page/operatoriRelationali/operatoriRelationali1.html";
+ 
         href2="page/operatoriRelationali/operatoriRelationali";
+    } else if (href1=="4"){
+      numarSurse=3;
+
+      href2="page/expresiiLogice/expresiiLogice";
     }
-   
+
 $scope.next1=function(){
     if(counterSursa>0 && counterSursa<numarSurse) {
  counterSursa= counterSursa+1;

@@ -119,7 +119,7 @@ margin-bottom: 0;
           <li class="menu-item">
              <div class="item-design" > <p id="operatorirelationali" class="menu-text">Operatori relationali</p> </div></li>
              <li class="menu-item">
-                <div class="item-design"> <p class="menu-text">Operatori logici</p> </div></li>
+                <div class="item-design"> <p id="expresiiLogice" class="menu-text">Operatori logici</p> </div></li>
                 <li class="menu-item">
                    <div class="item-design"> <p class="menu-text">If-ul bucla</p> </div></li>
              <li id="last-column">
@@ -141,121 +141,11 @@ margin-bottom: 0;
          </ul>
 
     </div>
-<script src="page/scripts/loadSaves.js"></script>
 <script>
-    var href1;
-    var vector=[];
-    // DECLARARE VECTOR CU TOATE PAGINILE
-    vector[11]=0;
-     vector[12]=0;
-     vector[13]=0;
-     vector[21]=0;
-     vector[22]=0;
-     vector[23]=0;
-     vector[31]=0;
-     vector[32]=0;
-    //
-    $("#operatorirelationali").click(function(){
-     x=window.location.href;
-    
+    var username= "<?php echo  $row[1]?>";
+    </script>
+<script src="page/scripts/loadSaves.js"></script>
+<script src=page/scripts/meniuScript.js></script>    
 
-        if (x=="http://infolearn-com.stackstaging.com/index.php"){
-
-
-     var username= "<?php echo  $row[1]?>";
-  //alert(username);
-      var username1=username;
-    //  username1=parseInt(username);
-      id1=3;
- //alert(username1);
-      if(username1!="")
-            $(location).attr('href', loadHref(1,username1,vector,id1));
-            else
-              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/3#1");
-  //alert(loadHref(id1,username,vector));
-        }
-
-    })
-    $("#inceput").click(function(){
-
-     x=window.location.href;
-
-        if (x=="http://infolearn-com.stackstaging.com/index.php"){
-
-
-     var username= "<?php echo  $row[1]?>";
-//alert(username);
-      var username1;
-
-    username1=username
-      id1=1;
-      if(username1!="")
-            $(location).attr('href', loadHref(1,username1,vector,id1));
-            else
-              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/1#1");
-//alert(loadHref(id1,username,vector));
-        }
-
-    })
-    $("#expresiiaritmetice").click(function(){
-     x=window.location.href;
-    
-
-        if (x=="http://infolearn-com.stackstaging.com/index.php"){
-
-
-     var username= "<?php echo  $row[1]?>";
-  //alert(username);
-      var username1=username;
-    //  username1=parseInt(username);
-      id1=2;
-
-      if(username1!="")
-            $(location).attr('href', loadHref(1,username1,vector,id1));
-            else
-              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/2#1");
-  //alert(loadHref(id1,username,vector));
-        }
-
-    })
-    $(document).ready( function(){
-
-
-//alert(username);
-        // loadHref(id1,username);
-                      })
-    var meniuInceput=1;
-    var id1=0;
-    $("#compilator").click(function(){
-
-        $(location).attr('href',"http://infolearn-com.stackstaging.com/index.php?page=compilator");
-
-
-    })
-
-
-
-$("#id--111").click(function(){
-
-   $(location).attr('href',submenuhref("/1/1#1"));
-       location.reload();
-})
-    $("#id--112").click(function(){
-
-   $(location).attr('href',submenuhref("/1/1#2"));
-          location.reload();
-})
-    $("#id--113").click(function(){
-
-   $(location).attr('href', submenuhref("/1/1#3"));
-          location.reload();
-})
-    $("#id--114").click(function(){
-
-   $(location).attr('href', submenuhref("/1/1#4"));
-          location.reload();
-})
-
-</script>
 
 </html>

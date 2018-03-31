@@ -15,5 +15,10 @@ templateUrl : "page/operatorirelationali.php",
    reloadOnSearch: false,
 
 })
+.when("/1/4", {
+templateUrl : "page/expresiiLogice.php",
+reloadOnSearch: false,
+
+})
 
 }]);

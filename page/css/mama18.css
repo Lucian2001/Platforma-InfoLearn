@@ -444,18 +444,19 @@ background-color: red;
    margin-left:0px;
 }
 
-#next_and_previous{
+#next_and_previous1{
  float:right;
     margin-top: 4%;
-    margin-right: 8%;
+    margin-right: 0.5%;
+   width:43%;
 }
 #next{
 
-
+width: 50%;
 }
 #previous{
 
-
+width: 46%;
 
 }
 #info_button{
