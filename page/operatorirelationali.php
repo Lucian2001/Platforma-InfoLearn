@@ -118,9 +118,9 @@ include ("functions.php");
 
     <div id="code-aplicatie" >
 
-     <div id="next_and_previous" ng-controller="pagini">
-    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Previous</a>
-    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Next</a>
+     <div id="next_and_previous1" ng-controller="pagini">
+    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Inapoi</a>
+    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Inainte</a>
 
     </div>
 <div ng-include src="codeSrc"></div>

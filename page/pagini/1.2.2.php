@@ -1,15 +1,15 @@
 <div id="animation-side">
- <h4>&nbsp;&nbsp;Trebuie formulat un enut bun</h4>
+ <div class="expl-box-fi-enun" ng-fi-text="Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta."></div>
     <div id="spatiuExercitii1">
-<p id="id-1" class="valoare1">20</p>
-          <p class="valoare1" id="id--1">/</p>
-        <p class="valoare1" id="id-2">20</p>
-           <p class="valoare1" id="id--2">+</p>
-             <p class="valoare1" id="id-3">20</p>
-           <p class="valoare1" id="id--3">-</p>
-             <p class="valoare1" id="id-4">20</p>
-        <p class="valoare1" id="egal">=</p>
-          <p class="valoare1" id="id--5">20</p>
+<p id="id-1" class="valoare2">20</p>
+          <p class="valoare2" id="id--1">/</p>
+        <p class="valoare2" id="id-2">20</p>
+           <p class="valoare2" id="id--2">+</p>
+             <p class="valoare2" id="id-3">20</p>
+           <p class="valoare2" id="id--3">-</p>
+             <p class="valoare2" id="id-4">20</p>
+        <p class="valoare2" id="egal">=</p>
+          <p class="valoare2" id="id--5">20</p>
 
     
        
@@ -41,5 +41,21 @@ $("#true").click(function(){
     $("#verificare").click(function(){
        verificare();
     })
-    
+    $(document).ready(function(){
+redimensionare2();
+    });
+     function redimensionare2(){
+        var height=$(document).height();
+        var width=$(document).width();
+     if (width<1400&&height<700){
+         $("#verificare").css("margin-top","15%");
+         $("#buttons").css("margin-top","-15%");
+         $(".valoare2").css("font-size","35px");
+          $("#true").css("width","15%");
+          $("#false").css("width","30%");
+          $("#verificare").css("width","29%");
+        $("#verificare").css("height","15%");
+          $("#verificare").css("margin-left","50%");
+     }
+    }
 </script>

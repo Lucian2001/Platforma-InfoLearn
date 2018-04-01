@@ -16,7 +16,12 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
    pagina1=pagina1.charAt(0);
      paginaUpload="1."+pagina1+"."+srcCounter;
     //if ( srcCounter== "1"){
-       $scope.src="page/pagini/"+paginaUpload+".php";
+     $scope.src="page/pagini/1.2.2.php";    
+    $timeout( function (){
+         $scope.src="page/pagini/"+paginaUpload+".php";
+         
+        }, 200);
+  
        $scope.blocuriSrc="page/blocuri/"+paginaUpload +"bloc.html";
     //            alert("dsa");
     //}
@@ -432,7 +437,7 @@ var counterSursa=1;
              $scope.codeSrc="page/expresiiLogice/expresiiLogice1.html"; 
           }
          
-        }, 100);
+        }, 200);
 
         //time
         $scope.time = 0;

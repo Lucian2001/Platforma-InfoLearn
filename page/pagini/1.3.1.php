@@ -1,7 +1,7 @@
 <div id="animation-side">
-  <h4>&nbsp;&nbsp;Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta.</h4>
+  <div class="expl-box-fi-enunt" ng-fi-text="Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta."></div>
 
-    <div id="spatiuExercitii">
+    <div id="spatiuExercitii3">
 
         <p id="id---1" class="valoare">20</p>
         <p class="valoare" id="id---2">20</p>
@@ -30,10 +30,11 @@ $(document).ready(function(){
 generareNumere(randomNr1);
    var semn= generareSemn(randomNr1);
     dragAndDrop(semn);
-
+  redimensionare4();
 
 })
-    $("#generare").click(function(){
+    $("#generare3").click(function(){
+      
          var randomNr1=Math.floor((Math.random() * 3) + 1);
 generareNumere(randomNr1);
    var semn= generareSemn(randomNr1);
@@ -43,4 +44,19 @@ generareNumere(randomNr1);
     raspuns=false;
     })
 
+     function redimensionare4(){
+        var height=$(document).height();
+        var width=$(document).width();
+     if (width<1500&&height<800){ 
+         $("#droppable").css("margin-left","19%");
+    
+         $("#exercitii").css("float","left");
+          $("#exercitii").css("margin-top","-10%");
+                                 $("#exercitii").css("margin-left","2%");
+         $("#numarIncercari").css("font-size","33px");
+           $("#generare3").css("font-size","18px");
+         $("#id---1").css("margin-left","1%");
+         $("#id---2").css("margin-left","21%");
+           $(".valoare").css("margin-top","-6%");
+     }}
 </script>

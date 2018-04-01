@@ -9,6 +9,17 @@ color:black;
   font-size: 10px;  
 
 }
+.expl-box-fi-subtitlu{
+margin-top: 2%;
+margin-left:1%;
+text-align: left;
+position: relative;
+height: 5%;
+width: 90%;
+color:black;
+  font-size: 10px;  
+
+}
 .expl-box-fi-text{
   margin-top: 0%;position: relative;
   text-align: left;

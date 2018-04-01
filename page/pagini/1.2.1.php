@@ -1,6 +1,8 @@
 <div id="animation-side">
-  <h4>&nbsp;&nbsp;Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta.</h4>
-    <h3 id="incercari">Incercari:<span id="numarIncercari">3</span></h3>
+  <div class="expl-box-fi-enunt" ng-fi-text="Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta."></div>
+     <div id="numarIncercari">3</div>
+    <div class="expl-box-fi-incercari" id="incercari" ng-fi-text="Incercari:"></div>
+   
     <div id="spatiuExercitii">
 <p id="id---1" class="valoare">20</p>
         <p class="valoare" id="id---2">20</p>
@@ -28,7 +30,7 @@ var corectValue;
 var numarSemneGenerate=1;
 var dificultateCalcul=5;
 $(document).ready(function(){
-
+redimensionare();
 var semn=Math.floor((Math.random() * 5) + 1);
 
 generareValori(numarNumereGenerate,numarSemneGenerate,dificultateCalcul,semn);
@@ -83,4 +85,13 @@ $("#invisibleObject").html(0);
 
 })
 
+    function redimensionare(){
+        var height=$(document).height();
+        var width=$(document).width();
+     if (width<1800&&height<900){
+         $("#exercitii").css("float","left");
+         $("#exercitii").css("margin-top","-8%");
+         $("#numarIncercari").css("font-size","33px");
+     }
+    }
 </script>

@@ -1,5 +1,5 @@
 <div id="animation-side">
-  <h4>&nbsp;&nbsp;Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta.</h4>
+   <div class="expl-box-fi-enunt" ng-fi-text="Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta."></div>
 
     <div id="spatiuExercitii">
 <input class="input" id="id---1" >
@@ -10,7 +10,7 @@
          <img id="gresit" src="page/assets/images/gresit.png" >
         </div>
 
-    <button id="generare" class="btn btn-primary">Verificare</button>
+    <button id="generare4" class="btn btn-primary">Verificare</button>
 
       <h1 id="exercitii"><span id="exercitiiRezolvate">0</span>/6</h1>
 </div>
@@ -26,12 +26,39 @@
 
 <script>    var numar=Math.floor((Math.random() * 6) + 1);
 $(document).ready(function(){
-
+redimensionare5();
     afisareSemn(numar);
 })
-    $("#generare").click(function(){
+    $("#generare4").click(function(){
         verificareRaspuns(numar);
 
     })
+function redimensionare5(){
+        var height=$(document).height();
+        var width=$(document).width();
+     if (width<1500&&height<800){ 
 
+    
+      
+         $("#semn1").css("margin-top","-4%");                        
+         $("#exercitii").css("margin-top","2%");
+     
+           $("#generare4").css("font-size","18px");
+         $("#id---1").css("margin-left","1%");
+      
+           $("#generare4").css("margin-top","-9%");
+         $(".input").css("font-size","32px");
+     }
+if(width<1700&&height<900){
+      $("#semn1").css("margin-top","-2%");                        
+         $("#exercitii").css("margin-top","2%");
+     
+           $("#generare4").css("font-size","22px");
+         $("#id---1").css("margin-left","1%");
+      
+           $("#generare4").css("margin-top","-2%");
+   
+    
+}
+}
 </script>

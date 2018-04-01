@@ -1,5 +1,5 @@
 <div id="animation-side">
- <h4>&nbsp;&nbsp;Trebuie formulat un enut bun</h4>
+   <div class="expl-box-fi-enun" ng-fi-text="Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta."></div>
     <div id="spatiuExercitii1">
 <p id="id-11" class="valoare1">20</p>
           <p class="valoare1" id="id--12">/</p>
@@ -25,8 +25,11 @@
 <link rel="stylesheet" href="page/css/expresiiAritmetice.css">
 
 <script>
+    $(document).ready(function(){
+redimensionare3();
+    });
 generareNumere4();
-alert(rezultat());
+
 $("#verificare1").click(function(){
   if ($("#raspuns2").val()==rezultat()){
     corect();
@@ -34,4 +37,15 @@ $("#verificare1").click(function(){
 gresit();
   }
 })
+    function redimensionare3(){
+        var height=$(document).height();
+        var width=$(document).width();
+     if (width>1800&&height>900){
+         $("#raspuns1").css("width","99%");
+         $("#raspuns1").css("margin-top","14%");
+         $("#verificare1").css("width","22%");
+         $("#verificare1").css("height","10%");
+          $("#verificare1").css("margin-top","-7%");
+     }
+    }
 </script>
