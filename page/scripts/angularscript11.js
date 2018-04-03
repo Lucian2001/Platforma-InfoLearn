@@ -423,11 +423,11 @@ idComponenta=idComponenta*10+4;
     //Surse expresiiaritmetice
 var numarSurse;
 var counterSursa=1;
-   
-   $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
+    
+ 
     var href2;
-    var href1=$location.absUrl();
-       $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica2.html";
+   var href1=$location.absUrl();
+       $scope.codeSrc="page/expresiiLogice/expresiiLogice2.html";
      $timeout( function(){
          if (href1=="2")  
          $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
@@ -437,7 +437,7 @@ var counterSursa=1;
              $scope.codeSrc="page/expresiiLogice/expresiiLogice1.html"; 
           }
          
-        }, 200);
+        }, 1000);
 
         //time
         $scope.time = 0;
@@ -548,3 +548,10 @@ app.directive('header123', function () {
     templateUrl:'page/test.html',
   }
 })
+
+
+$.getScript('/page/scripts/expresiiLogice.js', function()
+{
+    // script is now loaded and executed.
+    // put your dependent JS here.
+});

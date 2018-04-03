@@ -68,7 +68,7 @@ display: none;
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1>Expresii Aritmetice</h1>
+  <h1>Expresii Logice</h1>
 </div>
 
 
@@ -87,8 +87,7 @@ display: none;
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatii Tip I</a>
-    <a class="nav-item nav-link " id="id-122" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatii Tip II</a>
-    <a class="nav-item nav-link" id="id-123" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicatii Tip III</a>
+   
 
   </div>
 </nav>
@@ -124,12 +123,12 @@ display: none;
 
     <div id="code-aplicatie" >
 
-     <div id="next_and_previous" ng-controller="pagini">
-    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Previous</a>
-    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Next</a>
+     <div id="next_and_previous1" ng-controller="pagini">
+    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Inapoi</a>
+    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Inainte</a>
 
     </div>
-<div ng-include src="codeSrc"></div>
+<div id="mama" ng-include src="codeSrc"></div>
     </div>
 <div  ng-include src="blocuriSrc">
 </div>
@@ -147,6 +146,10 @@ display: none;
 $(document).ready(function(){
 	var username= "<?php echo  $row[1]?>";
 		loadsaves(username);
+    setTimeout(function(){
+           $("#mama").width();
+    },1000)
+
 })
 
 </script>

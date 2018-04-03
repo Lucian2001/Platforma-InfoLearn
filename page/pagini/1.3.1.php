@@ -15,9 +15,7 @@
       <h1 id="exercitii"><span id="exercitiiRezolvate">0</span>/6</h1>
 </div>
 <div class="expl-box-fi2" ng-fi-text="    Pentru a valida un raspuns apasa butonul Validare!"></div>
-<p id="invisibleObject">0<p>
-<p id="invisibleObject">0<p>
-  <p id="invisibleObject1">0<p>
+
 <link rel="stylesheet" href="page/css/expresiiAritmetice.css">
 
 <script src="page/scripts/draganddrop1.js"></script>
