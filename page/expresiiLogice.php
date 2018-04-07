@@ -68,7 +68,7 @@ display: none;
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1>Expresii Logice</h1>
+  <h1>Expresii logice</h1>
 </div>
 
 
@@ -80,13 +80,13 @@ display: none;
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="Producdtia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000 metrii cubi anual. In Carpatii Occidentali, in Petrosani se extrag anual 43 mil. tone de licnit. Energie termica este produsa in proportie de cca. 77% de termocentrale, care folosesc licnit, petrol si gaz, iar restul de 23% este dat in hidrocentrale."></div>
+<div class="expl-box-fi" ng-fi-text="  În descrierea algoritmilor pot să apară și expresii logice la care se evaluează valoarea lor de adevăr (dacă sunt adevărate sau false). Aceste expresii sunt formate din propoziții numite în informatică propoziții logice. Când avem expresii logice formate din alte expresii simple legate prin operatorii logici, evaluarea expresiei logice se realizează conform unor reguli care sunt expuse in tabelele de mai jos.  "></div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatii Tip I</a>
+    <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicația 1</a>
    
 
   </div>
@@ -124,8 +124,8 @@ display: none;
     <div id="code-aplicatie" >
 
      <div id="next_and_previous1" ng-controller="pagini">
-    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Inapoi</a>
-    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Inainte</a>
+    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Înapoi</a>
+    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Înainte</a>
 
     </div>
 <div id="mama" ng-include src="codeSrc"></div>

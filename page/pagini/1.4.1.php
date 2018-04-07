@@ -1,5 +1,6 @@
-<div id="animation-side" ng-controller="mama1">
- <div class="expl-box-fi-enunt" ng-fi-text="Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta."></div>
+<body ng-app=myApp>
+<div id="animation-side"  ng-controller="expresiiLogice">
+ <div class="expl-box-fi-enunt" ng-fi-text="Uitându-te la imagine de mai jos, completează spațiile punctate cu o expresie logică astfel încat enunțul să exprime un adevăr/fals."></div>
 <img src="page/assets/images/expresiiLogice/Imagine1.png" id="imagine">
     
         <img ng-show="visible"id="corect" src="page/assets/images/corect.png" >
@@ -11,8 +12,8 @@
 </div>
 
 
-<div class="expl-box-fi2" style="color:black;"ng-fi-text="    Pentru a valida un raspuns apasa butonul Validare!"></div>
-
+<div class="expl-box-fi2" style="color:black;text-align:left;height:25%;margin-top:-5%;margin-left:1%;text-indent:30px;"ng-fi-text="   Răspunsul se scrie în caseta de mai sus. După ce ai scris un raspuns apasă butonul ”Verificare” pentru a vedea dacă ai răspuns corect. Exercițiul este complet când ai răspuns corect la 4 itemi."></div>
+</body>
 <link rel="stylesheet" href="page/css/expresiiLogice.css">
 <script>$(document).ready(function(){
 

@@ -9,15 +9,15 @@
 </div>
 
 
-<div class="expl-box-fi2" ng-fi-text="    Producdtia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000"></div>
+<div class="expl-box-fi2" ng-fi-text="   Pentru a putea să-ți începi aventura învățarii trebuie mai întâi trebuie să-ți creezi un tanc.Trebuie să apeși pe fiecare bloc, punând toate componentele necesare unui tanc. Când ai terminat apasă pe butonul Run."></div>
 
 <style>
     .expl-box-fi2 {
-		margin-top: -5%;;
+		margin-top: -4.5%;;
             border-style: none;
-			height: 18%;
+			height: 25%;
             width:70%;
-             text-align: left;
+             text-align: justify;
              margin-left:3%;
             color:black;
          text-indent: 10px;

@@ -91,7 +91,7 @@ $("#id---"+(Counter)).html(generareRezultat(termeni,semne,Counter));
  numar=Math.floor((Math.random() * z) + 1);
  $("#id---"+Counter).html(numar);
  termeni[Counter]=numar;
- Counter++; alert("n="+n+"z="+z);
+ Counter++; 
  numar=maiMare(numar,z);termeni[Counter]=numar;
  $("#id---"+Counter).html(numar);
  Counter++;

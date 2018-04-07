@@ -16,7 +16,7 @@ if ($result1 = mysqli_query($link,$query)){
 <style>
 
 		[class^="expl-box"] {
-			text-align: center;
+		text-align: justify;
             position: relative;
 			height: 10%;
             color:white;
@@ -26,7 +26,7 @@ if ($result1 = mysqli_query($link,$query)){
 
 		}
 
-		.expl-box-fi {
+		.expl-box-fi { 
 			margin-left: 10px;
             border-style: none;
 			height: 95%;
@@ -79,16 +79,17 @@ display: none;
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="Producdtia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000 metrii cubi anual. In Carpatii Occidentali, in Petrosani se extrag anual 43 mil. tone de licnit. Energie termica este produsa in proportie de cca. 77% de termocentrale, care folosesc licnit, petrol si gaz, iar restul de 23% este dat in hidrocentrale."></div>
+<div class="expl-box-fi" ng-fi-text="   Algoritmul reprezintă o succesiune de pași ce trebuie parcurși pentru a rezolva un anumit tip de problemă.Un algoritm are următoarele proprietăți: 
+  Finitudine-Algorimul trebuie să se termine după un număr finit de pași, atunci nu ar putea da o rezolvare pentru problema respectivă.Generalitate-Algorimul trebuie să rezolve toate problemele de același tip. Claritate-Algoritmul trebuie să fie clar descris, fără ambiguități. La fiecare pas al algoritmului,trebuie precizat exact ce trebuie făcut și care este următorul pas ce se va realiza."></div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active tabAplicatie "  id="id-111" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatia 1</a>
-    <a class="nav-item nav-link tabAplicatie " id="id-112" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatia 2</a>
-    <a class="nav-item nav-link tabAplicatie" id="id-113" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicatia 3</a>
-		  <a class="nav-item nav-link tabAplicatie" id="id-114" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a4()">Aplicatia 4</a>
+    <a class="nav-item nav-link active tabAplicatie "  id="id-111" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicația 1</a>
+    <a class="nav-item nav-link tabAplicatie " id="id-112" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicația 2</a>
+    <a class="nav-item nav-link tabAplicatie" id="id-113" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicația 3</a>
+		  <a class="nav-item nav-link tabAplicatie" id="id-114" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a4()">Aplicația 4</a>
   </div>
 </nav>
         <img id="object1" src="">
@@ -96,8 +97,8 @@ display: none;
 <div  ng-include src="src">
 
 <div id="errorPanel">
-     <center id="textError">ATENTIE</center>
-     <button id="butonError"type="button" class="btn btn-primary">Incearca din nou</button>
+     <center id="textError">ATENȚIE</center>
+     <button id="butonError"type="button" class="btn btn-primary">Incearcă din nou</button>
      </div>
 
 <div class="container">

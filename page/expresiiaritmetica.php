@@ -69,7 +69,7 @@ display: none;
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1>Expresii Aritmetice</h1>
+  <h1>Expresii aritmetice</h1>
 </div>
 
 
@@ -81,15 +81,15 @@ display: none;
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="Producdtia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000 metrii cubi anual. In Carpatii Occidentali, in Petrosani se extrag anual 43 mil. tone de licnit. Energie termica este produsa in proportie de cca. 77% de termocentrale, care folosesc licnit, petrol si gaz, iar restul de 23% este dat in hidrocentrale."></div>
+<div class="expl-box-fi" ng-fi-text="Un algoritm informatic poate conține expresii. Expresiile sunt combinații de date și operații. În acest caz, datele se mai numesc și operanzi.Între operanzi se află niște simboluri numite operatori. Un operator este un semn care leagă două valori pentru a produce un rezultat.Un operand poate fi și o expresie, iar în acest caz ea va fi delimitată de paranteze rotunde. Acestea se evaluează primele."></div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatii Tip I</a>
-    <a class="nav-item nav-link " id="id-122" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatii Tip II</a>
-    <a class="nav-item nav-link" id="id-123" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicatii Tip III</a>
+    <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicație Tip I</a>
+    <a class="nav-item nav-link " id="id-122" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicație Tip II</a>
+    <a class="nav-item nav-link" id="id-123" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicație Tip III</a>
 
   </div>
 </nav>

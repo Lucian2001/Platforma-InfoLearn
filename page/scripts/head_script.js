@@ -85,7 +85,7 @@ var mesaj="";
             } else if (inLogin == 0){
           $(".showLogin1").hide();  
           $("#loginModalTitle").text("Sign In");
-          $(".Signup").text("Nu ai un cont?Creaza unul acum!");
+          $(".Signup").text("Nu ai un cont?Crează unul acum!");
             $("#showLogin2").hide();  
            $("#showLogin3").hide();
             inLogin=1;

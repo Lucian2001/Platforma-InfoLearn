@@ -1,4 +1,5 @@
-angular.module('myApp').controller('mama1', function ($scope,$http,$location,$timeout){
+angular.module('myApp').controller('expresiiLogice', function ($scope,$http,$location,$timeout){ 
+    
 var raspuns; 
     load();
       $scope.visible=0;
@@ -23,21 +24,27 @@ var raspuns;
       $scope.verificare=function(){
        var input1=$scope.input;
           input1.toLowerCase();
+   
           if (raspuns==1){
-          if (input1=="and" || input1=="&&" || "si"){
+          if (input1=="and" || input1=="si"){
               corect();
+              $scope.input="";
           } else{
               gresit();
+               $scope.input="";
           }
           } else if (raspuns==2){
-            if (input1=="or" || input1=="||" || input1=="ori"){
+            if (input1=="or" ||  input1=="ori"){
               corect();
+                 $scope.input="";
           }
           else{
                gresit();
+               $scope.input="";
           }
       }else{
                gresit();
+           $scope.input="";
           } 
  }
   function corect(){
@@ -69,7 +76,7 @@ $timeout( 1500);
 $timeout( 1500); 
   }
   function terminat(){
-alert("mama");
+
 }
-  
+ 
 })

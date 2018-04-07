@@ -3,18 +3,18 @@ $_POST["username"]=ucfirst($_POST["username"]);
 $error=0;
 if ($_POST["email"]=="" or $_POST["password"]=="" or $_POST["username"]=="" or $_POST["password1"]==""){
 
-echo "Completeaza toate campurile.     ";
+echo "Completează toate câmpurile.     ";
     $error=$error+1;
 }else
 if ( $_POST["tipul"]=="1" and  $_POST["varsta"]==""){
   
     $error=$error+1;
-echo "Completeaza toate campurile.     ";
+echo "Completează toate câmpurile.     ";
        
 }else
      
 if ( $_POST["tipul"]=="3" and $_POST["clasa"]==""){
-echo "Completeaza toate campurile.      ";
+echo "Completează toate câmpurile.      ";
  $error=$error+1;
 }
 if ( $_POST["tipul"]=="3" and $_POST["clasa"]!=""){
@@ -30,17 +30,17 @@ $error=$error+1;}
      
 }else {
    
-        echo "Adresa de mail nu este valida. ";
+        echo "Adresa de mail nu este validă. ";
     $error=$error+1;
     }
 if ($_POST["password"]!=$_POST["password1"])
 {
-   echo "Cele doua parole nu coincid. ";
+   echo "Cele două parole nu coincid. ";
     $error=$error+1;
 }
 if ($_POST["varsta"]!="")
     if(intval($_POST["varsta"])<1  ){
-        echo"Introduceti o varsta valida ";
+        echo"Introduceți o vârstă validă ";
 $error=$error+1;}
 
 if (strlen($_POST["username"]) < 6 or strlen($_POST["username"]) > 12   ){
@@ -65,11 +65,11 @@ $query = "INSERT INTO users (`username`, `email`,`password`,`tip`,`clasa`,`varst
                      $query = "UPDATE users SET password = '". md5(md5($_SESSION['id']).$_POST['password']) ."' WHERE id = ".$_SESSION['id']." LIMIT 1";
                       mysqli_query($link, $query);
                     echo "Contul  a fost creat cu succes. ";
-                    echo "   Puteti sa va logati acum! ";
+                    echo "   Puteți să vă logați acum! ";
                     $_SESSION['id'] = mysqli_insert_id($link);
                 } else {
                     
-                   echo "Nu s-a putut creea contul.Incearca mai tarziu!";
+                   echo "Nu s-a putut creea contul.Incearcă mai târziu!";
                     
                 }
 

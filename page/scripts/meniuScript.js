@@ -11,6 +11,7 @@
      vector[32]=0;
     //
     $("#operatorirelationali").click(function(){
+   
      x=window.location.href;
 
 

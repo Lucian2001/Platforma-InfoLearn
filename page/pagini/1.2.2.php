@@ -1,5 +1,5 @@
 <div id="animation-side">
- <div class="expl-box-fi-enun" ng-fi-text="Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta."></div>
+ <div class="expl-box-fi-enun" ng-fi-text="Stabilește valoarea de adevăr a expresiei de mai jos. În cazul în care crezi că expresia este adevărată apasă pe butonul adevărat. Dacă nu tastează rezultatul în caseta de lângă."></div>
     <div id="spatiuExercitii1">
 <p id="id-1" class="valoare2">20</p>
           <p class="valoare2" id="id--1">/</p>
@@ -24,7 +24,7 @@
          <img id="gresit1" src="page/assets/images/gresit.png" >
     <button id="verificare" class="btn btn-primary">Verificare</button>
 </div>
-<div class="expl-box-fi2" ng-fi-text="    Pentru a valida un raspuns apasa butonul Validare!"></div>
+<div class="expl-box-fi2" ng-fi-text="   După ce ai scris o valoare, validează  raspunsul apăsând butonul Verificare. Programul îți va spune dacă ai răspuns corect iar după cateva secunde se va genera un nou exercițiu.Aplicația se va completa după ce se vor efectua 6 exerciții."></div>
 
 <link rel="stylesheet" href="page/css/expresiiAritmetice.css">
 <script src="page/scripts/generareNumere2.js"></script>

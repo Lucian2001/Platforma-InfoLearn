@@ -62,7 +62,7 @@ include ("functions.php");
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1>Operatori Relationali</h1>
+  <h1>Operatori relaționali</h1>
 </div>
 
 
@@ -74,14 +74,14 @@ include ("functions.php");
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="Producdtia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000 metrii cubi anual. In Carpatii Occidentali, in Petrosani se extrag anual 43 mil. tone de licnit. Energie termica este produsa in proportie de cca. 77% de termocentrale, care folosesc licnit, petrol si gaz, iar restul de 23% este dat in hidrocentrale."></div>
+<div class="expl-box-fi" ng-fi-text="Operatorii relaționali utilizați în scrierea algoritmilor sunt aceiași ca la matematică, având doar mici modificări ale modului de scriere datorită faptului că limbajul de programare nu conține unele dintre semnele matematice."></div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active "  id="id-131" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicatii Tip I</a>
-    <a class="nav-item nav-link " id="id-132" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicatii Tip II</a>
+    <a class="nav-item nav-link active "  id="id-131" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicații Tip I</a>
+    <a class="nav-item nav-link " id="id-132" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicații Tip II</a>
    
 
   </div>
@@ -119,8 +119,8 @@ include ("functions.php");
     <div id="code-aplicatie" >
 
      <div id="next_and_previous1" ng-controller="pagini">
-    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Inapoi</a>
-    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Inainte</a>
+    <a class="btn btn-primary"  role="button" id="Previous" ng-click="previous1()" >Înapoi</a>
+    <a class="btn btn-primary"  role="button" id="Next " ng-click="next1()" >Înainte</a>
 
     </div>
 <div ng-include src="codeSrc"></div>

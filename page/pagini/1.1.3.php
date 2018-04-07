@@ -64,14 +64,14 @@ include("loadTanc.php");
 </div>
 
 
-<div class="expl-box-fi2" ng-fi-text="    Producdtia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000"></div>
+<div class="expl-box-fi6" ng-fi-text="   Acum trebuie sa te folosești de încă un bloc care întoarce tancul. Tu trebuie să-ți conduci tancul în punctul care trebuie urmând drumul fără sa te duci pe iarbă."></div>"></div>
 <style>
-    .expl-box-fi2 {
-		margin-top: -5%;;
+    .expl-box-fi6 {
+		margin-top: -3%;;
             border-style: none;
 			height: 18%;
             width:70%;
-             text-align: left;
+             text-align:justify;
              margin-left:3%;
             color:black;
          text-indent: 10px;
@@ -106,7 +106,19 @@ $(".imagineComponentaTanc").hide();
 //}
 tanc= "<?php echo $row2[1]?>";
 
-$(document).ready(function(){
+$(document).ready(function(){var height=$(document).height();
+        var width=$(document).width(); 
+       if (width<1900&&height<950&&width>1500&&height>700){ 
+         $("#textError").css("font-size","15px");
+      $("#textError").css("margin-top","10%");
+          $("#butonError").css("margin-left","14%");
+          $("#butonError").css("margin-left","16%");
+     } 
+    else if (width<1500&&height<800){ 
+         $("#textError").css("font-size","13px");
+      $("#textError").css("margin-top","15%");
+          $("#butonError").css("margin-left","15%");
+     } 
    // $("#id:35").attr("src","page/assets/images/road_target");
 // $("#id-35").attr('id', 'target');
 

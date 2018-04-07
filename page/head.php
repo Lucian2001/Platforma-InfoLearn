@@ -2,11 +2,11 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-
+<script src="page/scripts/angularscript11.js"></script>
 
 </head>
     
-<body>
+<body ng-app="myApp">
     
     
      <div id="left-bar">
@@ -25,10 +25,10 @@
       
       <?php } else { ?>
       
-    <button id="myaccount" data-toggle="modal" data-target="#myModal"> 
+    <div id="myaccount" data-toggle="modal" data-target="#myModal"> 
             <p class="top-text" id="login-text"   font-weight=" normal;">Contul meu</p>   
             <img id="login-image" src="page/assets/images/user-icon-placeholder.png"  height="22" width="22">
-         </button>
+         </div>
    
       
       <?php } 
@@ -76,25 +76,25 @@
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#" id="utilizator1">Utilizator normal</a>
-    <a class="dropdown-item" href="#" id="utilizator2">Profesor</a>
-    <a class="dropdown-item" href="#" id="utilizator3">Elev</a>
+ <!--   <a class="dropdown-item" href="#" id="utilizator2">Profesor</a>
+    <a class="dropdown-item" href="#" id="utilizator3">Elev</a> -->
   </div>
 </div>
 
  </fieldset>
   <fieldset id="showLogin2">
-    <label for="varsta">Varsta</label>
-    <input type="text" class="form-control" id="varsta" placeholder="Varsta dumneavoastra">
+    <label for="varsta">Vârstă</label>
+    <input type="text" class="form-control" id="varsta" placeholder="Vârsta dumneavoastră">
   </fieldset>
     <fieldset id="showLogin3" >
-    <label for="clasa">Clasa</label>
+    <label for="clasa">Clasă</label>
     <input type="text" class="form-control" id="clasa" placeholder="Clasa dumneavoastra(5-12)">
   </fieldset>
 </form>
       </div>
       
         <div class="modal-footer" class="showLogin">
-          <a class="Signup">Nu ai un cont?Creaza unul acum!</a>
+          <a class="Signup">Nu ai un cont?Crează unul acum!</a>
             <button class="btn btn-primary"  class="Signup" id="SignUp">Sign Up</button> 
       
         <button type="button" id="loginSignupButton"  class="btn btn-primary" >Login</button>
@@ -113,7 +113,7 @@
 
     
   <div class="column1">
-        <p class="text"> &nbsp;        &nbsp;Logheaza-te pentru a invata sa programezi prin cele mai usoare si intuitive metode.</p>
+        <p class="text"> &nbsp;        &nbsp;Loghează-te pentru a învăța informatica prin cele mai ușoare și intuitive metode.</p>
   </div>
  
  
@@ -121,33 +121,33 @@
   <div class="row">
     <div class="col-sm">
       <div class="presentation-panel" id="presentation-panel1">
-       <img class="presentation-image" src="page/assets/images/test1.png"  >
-          <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice cpe care il vrea muschii  tai</b>
+       <img class="presentation-image" src="page/assets/images/imaginiPrezentare/1.PNG"  >
+        <div class="expl-box-fi-text" ng-fi-text="Interfața este atractivă și ușor de folosit. Butoanele sunt bine plasate și facilitează rezolvarea exercițiilor, sarcinilor de lucru, ele devenind astfel nu doar ușoare, ci și atractive."></div>
 </div>
     <div class="presentation-panel"id="presentation-panel1">
-        <img class="presentation-image" src="page/assets/images/test1.png"  >
-    <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice  pe care il vrea muschii  tai</b>
+        <img class="presentation-image" src="page/assets/images/imaginiPrezentare/2.PNG"  >
+   <div class="expl-box-fi-text" ng-fi-text="Informația pentru fiecare lecție este clară și organizată în așa fel încât să permită o descriere foarte bună. Sursa de unde a fost preluată o constituie manualul de informatică de clasa a V-a, ceea ce asigură corectitudinea infomației. "></div>
         
 </div>
       </div>
     <div class="col-sm">
       <div class="presentation-panel" id="presentation-panel2">
-          <img class="presentation-image" src="page/assets/images/test1.png"  >
-     <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice  pe care il vrea muschii  tai</b>
+          <img class="presentation-image" src="page/assets/images/imaginiPrezentare/3.PNG"  >
+     <div class="expl-box-fi-text" ng-fi-text="Pentru înțelegerea căt mai bună a conținutului, au fost create aplicații ușor de utilizat de către elev. Folosirea acestora îi ușurează învățarea, ajutându-l, într-o formă interactivă, să rețină informațiile importante."></div>
 </div>
     <div class="presentation-panel" id="presentation-panel2">
-        <img class="presentation-image" src="page/assets/images/test1.png"  >
-    <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice  pe care il vrea muschii  tai</b>
+        <img class="presentation-image" src="page/assets/images/imaginiPrezentare/4.PNG"  >
+  <div class="expl-box-fi-text" ng-fi-text="Un alt avantaj al aplicațiilor create este acela că ele diferă de la un utilizator la altul, evitându-se astfel preluarea informației fără efort.Deoarece acestea se generează aleatoriu și nu sunt identice, fiecare elev este pus în ipostaza de a rezolva singur."></div>
 </div>
     </div>
     <div class="col-sm">
      <div class="presentation-panel"id="presentation-panel3">
-         <img class="presentation-image" src="page/assets/images/test1.png"  >
-    <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice pe care il vrea muschii  tai</b>
+         <img class="presentation-image" src="page/assets/images/imaginiPrezentare/5.PNG"  >
+   <div class="expl-box-fi-text" ng-fi-text="Platforma are un sistem de logare, ceea ce oferă fiecărui elev o serie de beneficii, cum ar fi : exercițiile rezolvate vor fi salvate,se rețin o serie de date despre utilizator care au anumite utilizări."></div>
 </div>
     <div class="presentation-panel" id="presentation-panel3">
-        <img class="presentation-image" src="page/assets/images/test1.png"  >
-   <b align="center" class="text-presentation">-Pe aceasta platforma poti sa faci orice  pe care il vrea muschii  tai</b>
+        <img class="presentation-image" src="page/assets/images/imaginiPrezentare/6.PNG"  >
+  <div class="expl-box-fi-text" ng-fi-text="Pentru fiecare exercițiu rezolvat elevul va primi un feedback, putându-se astfel evalua nivelul cunoștințelor în acel moment."></div>
 </div>
     </div>
   </div>

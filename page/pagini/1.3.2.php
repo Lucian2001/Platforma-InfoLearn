@@ -1,5 +1,5 @@
 <div id="animation-side">
-   <div class="expl-box-fi-enunt" ng-fi-text="Trage casetele din panoul Blocuri in locurile corespunzatoare pentru ca expresia sa fie corecta."></div>
+   <div class="expl-box-fi-enunt" ng-fi-text="Scrie în caseta liberă un număr astfel încât expresia de mai jos să fie corectă."></div>
 
     <div id="spatiuExercitii">
 <input class="input" id="id---1" >
@@ -14,7 +14,7 @@
 
       <h1 id="exercitii"><span id="exercitiiRezolvate">0</span>/6</h1>
 </div>
-<div class="expl-box-fi2" ng-fi-text="    Pentru a valida un raspuns apasa butonul Validare!"></div>
+<div class="expl-box-fi2" ng-fi-text="    După ce ai scris o valoare, validează  raspunsul apăsând butonul Validare. Programul îți va spune dacă ai răspuns corect iar după cateva secunde se va genera un nou exercițiu.Aplicația se va completa după ce se vor efectua 6 exerciții."></div>
 <p id="invisibleObject">0<p>
 <p id="invisibleObject">0<p>
   <p id="invisibleObject1">0<p>
@@ -56,8 +56,8 @@ if(width<1700&&height<900){
            $("#generare4").css("font-size","22px");
          $("#id---1").css("margin-left","1%");
       
-           $("#generare4").css("margin-top","-2%");
-   
+           $("#generare4").css("margin-top","-6%");
+   $(".expl-box-fi2 ").css("height","24%");
     
 }
 }

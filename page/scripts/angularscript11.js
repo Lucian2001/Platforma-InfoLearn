@@ -16,7 +16,11 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
    pagina1=pagina1.charAt(0);
      paginaUpload="1."+pagina1+"."+srcCounter;
     //if ( srcCounter== "1"){
-     $scope.src="page/pagini/1.2.2.php";    
+    var href12="1."+pagina1+"."+5;
+   
+ 
+    $scope.src="page/pagini/"+href12+".php";   
+
     $timeout( function (){
          $scope.src="page/pagini/"+paginaUpload+".php";
          
@@ -155,7 +159,8 @@ $scope.eroare="";
 }
    $location.url('#'+idComponenta+srcCounter);
 }
-else{
+else { 
+    
 //alert(pattern);
      if (repetaOn==true){
     var patternRepetaLenght;
@@ -183,12 +188,10 @@ else{
 
 
 
-pattern=pattern*10+parseInt($location.absUrl().substr($location.absUrl().length - 1));
-//alert(pattern);
-     if (n==1){
-        $scope.error="Pune si tu ceva cod!" ;
-          $location.url('#'+0);
-     }else{
+         if (n==1){
+        alert("Pune si tu ceva cod!") ;
+         pattern=0;
+     }else{pattern=pattern*10+parseInt($location.absUrl().substr($location.absUrl().length - 1));
       $scope.error="";
      $location.url('#'+pattern);
          pattern=Math.floor(pattern /10);
@@ -363,7 +366,7 @@ nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+1;
       }
       else {
-      $scope.eroare = "  Mai intai ar trebui sa pui rotile deoarece,si aici ca la un algoritm pasii trebuie sa respecte o ordine logica!";
+      $scope.eroare = "  Mai întâi ar trebui sa pui roțile deoarece,și aici, ca la un algoritm, pașii trebuie să respecte o ordine logică!";
 
       }
     }
@@ -375,7 +378,7 @@ nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+2;
       }
       else {
-      $scope.eroare = "Mai intai ar trebui sa pui rotile deoarece,si aici ca la un algoritm pasii trebuie sa respecte o ordine logica!";
+      $scope.eroare =  "  Mai întâi ar trebui sa pui roțile deoarece,și aici, ca la un algoritm, pașii trebuie să respecte o ordine logică!";
 
       }
     }
@@ -387,7 +390,7 @@ nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+3;
       }
       else {
-      $scope.eroare = "Aceasta nu este piesa care ar trebui pusa!";
+      $scope.eroare = "Aceasta nu este piesa care ar trebui pusă!";
 
       }
     }
@@ -399,7 +402,7 @@ nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+4;
       }
       else {
-      $scope.eroare = "Aceasta nu este piesa care ar trebui pusa!Mai intai ar trebui sa pui rotile deoarece,si aici ca la un algoritm pasii trebuie sa respecte o ordine logica!";
+      $scope.eroare = "Aceasta nu este piesa care ar trebui pusă!Mai întâi ar trebui să pui roțile deoarece, și aici, ca la un algoritm, pașii trebuie să respecte o ordine logică!";
 
       }
     }
@@ -412,7 +415,7 @@ idComponenta=idComponenta*10+4;
    idComponenta=idComponenta*10+5;
     }
     else {
-  $scope.eroare = "Ai pus deja niste roti. Un tanc poate sa aiba doar o singura pereche de roti!";
+  $scope.eroare = "Ai pus deja niște roți. Un tanc poate să aibă doar o singură pereche de roți!";
 
     }
     }
@@ -427,7 +430,14 @@ var counterSursa=1;
  
     var href2;
    var href1=$location.absUrl();
-       $scope.codeSrc="page/expresiiLogice/expresiiLogice2.html";
+       href1=href1.charAt(href1.length-3);
+        if (href1=="2")  
+         $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica2.html";
+          else if(href1=="3"){
+             $scope.codeSrc="page/operatoriRelationali/operatoriRelationali2.html";  
+          } else if(href1=="4"){
+             $scope.codeSrc="page/expresiiLogice/expresiiLogice2.html"; 
+          }
      $timeout( function(){
          if (href1=="2")  
          $scope.codeSrc="page/expresiiAritmetice/expresieAritmetica1.html";
@@ -437,7 +447,7 @@ var counterSursa=1;
              $scope.codeSrc="page/expresiiLogice/expresiiLogice1.html"; 
           }
          
-        }, 1000);
+        }, 200);
 
         //time
         $scope.time = 0;
@@ -451,8 +461,8 @@ var counterSursa=1;
         }
         
         
-        $timeout(timer, 1000); 
-    href1=href1.charAt(href1.length-3);
+        $timeout(timer, 100); 
+ 
     if(href1=="2"){
     numarSurse=5;
   
@@ -462,7 +472,7 @@ var counterSursa=1;
  
         href2="page/operatoriRelationali/operatoriRelationali";
     } else if (href1=="4"){
-      numarSurse=3;
+      numarSurse=2;
 
       href2="page/expresiiLogice/expresiiLogice";
     }
@@ -486,7 +496,7 @@ if(counterSursa>1 && counterSursa<=numarSurse) {
 
 angular.module('myApp').controller('pagini', function ($scope,$http,$location){
   $scope.info=function(){
-  alert("mama");
+
 
   }
    var n=1;
@@ -529,7 +539,6 @@ n3="";
  }
 
 $scope.info=function(){
-alert("mama");
 
 }
 
@@ -549,9 +558,86 @@ app.directive('header123', function () {
   }
 })
 
+angular.module('myApp').controller('expresiiLogice', function ($scope,$http,$location,$timeout){ 
 
-$.getScript('/page/scripts/expresiiLogice.js', function()
-{
-    // script is now loaded and executed.
-    // put your dependent JS here.
-});
+    
+var raspuns; 
+    load();
+      $scope.visible=0;
+    $scope.visible1=0;
+   $scope.numarExercitii=0;
+    raspuns=0;
+  function load(){
+    $http({
+  method: 'GET',
+  url: '/page/generareEnunt.php',
+   
+}).then(function successCallback(response) {
+ 
+        $scope.enunt=response.data.Intrebare;
+  raspuns=response.data.Raspuns;
+
+        
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });}
+      $scope.verificare=function(){
+       var input1=$scope.input;
+          input1.toLowerCase();
+   alert(raspuns);
+          if (raspuns==1){
+          if (input1=="and" || input1=="si"){
+              corect();
+              $scope.input="";
+          } else{
+              gresit();
+               $scope.input="";
+          }
+          } else if (raspuns==2){ 
+            if (input1=="or" ||  input1=="ori"){
+              corect();
+                 $scope.input="";
+          }
+          else{
+               gresit();
+               $scope.input="";
+          }
+      }else{
+               gresit();
+           $scope.input="";
+          } 
+ }
+  function corect(){
+      if ($scope.numarExercitii==3){
+                $scope.numarExercitii++;
+          terminat();
+      } else{
+      $scope.visible=1;
+      $scope.numarExercitii++;
+      $timeout( function(){
+        $scope.visible=0; 
+          load();
+        }, 1500);
+
+    
+        
+$timeout( 1500); 
+  }
+  }
+  function gresit(){
+           $scope.visible1=1;
+  
+      $timeout( function(){
+        $scope.visible1=0; 
+          load();
+        }, 1500);
+
+    
+        
+$timeout( 1500); 
+  }
+  function terminat(){
+
+}
+})

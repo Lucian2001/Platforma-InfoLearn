@@ -54,22 +54,22 @@ include("loadTanc.php");
     <div  class="col1" id="limit2"><img id="id-66" src="" width="100%" height="100%"></div>
        <div class="w-100"></div>
  <div id="errorPanel">
-     <center id="textError">ATENTIE</center>
-     <button id="butonError"type="button" class="btn btn-primary">Incearca din nou</button>
+     <center id="textError">ATENȚIE</center>
+     <button id="butonError"type="button" class="btn btn-primary">Incearcă din nou</button>
      </div>
   </div>
 
 </div>
 
 </div>
-<div class="expl-box-fi2" ng-fi-text="    Producdtia de titei este de aproximativ 6,6 mil. tone iar exploatarea de gaz metan prin apropierea Clujului stinge 28.000"></div>
+<div class="expl-box-fi5" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Ele se pot șterge la nevoie.Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
 <style>
-    .expl-box-fi2 {
-		margin-top: -5%;;
+    .expl-box-fi5 {
+		margin-top: -4%;;
             border-style: none;
-			height: 18%;
+			height: 23%;
             width:70%;
-             text-align: left;
+             text-align: justify;
              margin-left:3%;
             color:black;
          text-indent: 10px;
@@ -107,6 +107,19 @@ $(".imagineComponentaTanc").hide();
   tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
+    var height=$(document).height();
+        var width=$(document).width(); 
+       if (width<1900&&height<950&&width>1500&&height>700){ 
+         $("#textError").css("font-size","15px");
+      $("#textError").css("margin-top","10%");
+          $("#butonError").css("margin-left","14%");
+          $("#butonError").css("margin-left","16%");
+     } 
+    else if (width<1500&&height<800){ 
+         $("#textError").css("font-size","13px");
+      $("#textError").css("margin-top","15%");
+          $("#butonError").css("margin-left","15%");
+     } 
    // $("#id:35").attr("src","page/assets/images/road_target");
 // $("#id-35").attr('id', 'target');
 
@@ -115,6 +128,14 @@ $(document).ready(function(){
 $("#object1").show();
 
 })
-
-
+$("#butonError").click(function(){
+    
+    $("#errorPanel").hide();
+})
+  function redimensionare4(){
+        var height=$(document).height();
+        var width=$(document).width();
+     if (width<1500&&height<800&&width>1400&&height>1000){ 
+        
+     }}
 </script>

@@ -45,9 +45,9 @@ margin-bottom: 0;
         height:6%;
     }
 
-    #lista{
+    #lista1{
 
-
+margin-top: 20%;
     }
     ul {
   list-style-type: none;
@@ -85,7 +85,7 @@ margin-bottom: 0;
      font-size: 100%;
         font-size:3vh;
         padding-top: 8px;
-        width:300px;
+        width:250px;
     }
     #sub-menu-item{
 
@@ -96,6 +96,9 @@ margin-bottom: 0;
         display: none;
 
     }
+    #title{
+        cursor: pointer;
+    }
     </style>
 
 </head>
@@ -104,7 +107,8 @@ margin-bottom: 0;
 <div id="left-bar">
 
        <img id="title" src="page/assets/images/titlu.png" >
-          <ul id="lista">
+          <ul id="lista1">
+              
            <li class="menu-title">
              <div class="text-design" >Invatare</div></li>
               <li class="menu-item">
@@ -117,11 +121,11 @@ margin-bottom: 0;
                  <p class="menu-text" id="expresiiaritmetice">Expresii aritmetice</p> </div></li>
 
           <li class="menu-item">
-             <div class="item-design" > <p id="operatorirelationali" class="menu-text">Operatori relationali</p> </div></li>
+             <div class="item-design" > <p id="operatorirelationali" class="menu-text">Operatori relaționali</p> </div></li>
              <li class="menu-item">
-                <div class="item-design"> <p id="expresiiLogice" class="menu-text">Operatori logici</p> </div></li>
+                <div class="item-design"> <p id="expresiiLogice" class="menu-text">Expresii logice</p> </div></li>
                 <li class="menu-item">
-                   <div class="item-design"> <p class="menu-text">If-ul bucla</p> </div></li>
+                <!--   <div class="item-design"> <p class="menu-text">If-ul bucla</p> </div></li>
              <li id="last-column">
              <div class="item-design" > <p class="menu-text">Bucla repetitiva</p> </div>
              </li>
@@ -139,9 +143,23 @@ margin-bottom: 0;
              <div class="item-design"> <p class="menu-text">Platforma intrebari</p> </div></li>
 
          </ul>
-
+-->
     </div>
 <script>
+    $(document).ready(function(){
+         var height=$(document).height();
+        var width=$(document).width();
+     if (width<1400&&height<800){ 
+         
+         $(".menu-text").css("width","160px");
+                  
+
+     }
+    })
+    $("#title").click(function(){
+        window.location.replace("http://infolearn-com.stackstaging.com/index.php");
+          
+    })
     var username= "<?php echo  $row[1]?>";
     </script>
 <script src="page/scripts/loadSaves.js"></script>
