@@ -1,0 +1,532 @@
+
+#left-bar{
+ position: fixed;
+  top: -5;
+  left: -1;
+  width:15.1%;
+  height:110%;
+  background-color: lightgrey;
+margin-bottom: 0;
+   box-shadow:         inset 0 0 10px #000000;
+
+}
+.top-text{
+        color:white;
+        float:left;
+          }
+#title {
+        margin-top: 15px;
+        margin-left:10px;
+        width:90%;
+        height: 6%;
+    }
+#login-text{
+       color:white;
+
+    font-size:22px;
+        margin-top: 30px;
+        margin-left:12px;
+
+    float :left;
+
+    }
+#login-image{
+    float:right;
+}
+#panel2{ margin-top: -40px;
+           float:right;
+           background-color:#3472e5;
+           height: 110%;
+           width: 17%;
+           max-width: 230px;
+                 box-shadow:         inset 0 0 10px black;
+       }
+
+#myaccount {
+        background-color:#2669d6 ; position:fixed; top:0.7%; right:1%;
+        cursor: pointer;
+
+        height:65px;
+        margin-top: -40px;
+        margin-right:1%;
+        width:220px;
+     border:none;
+     z-index: 2;
+    border-width: 2px;
+        border-radius: 25px;
+     box-shadow:         inset 0 0 10px #000000;
+        }
+#panel {
+    display: none;
+    background-color:#297ae5 ;
+    width: 32%;
+    max-width: 650px;
+    height: 47%;position: absolute;
+    float:right;
+   margin-top:29px;
+     z-index: 2;
+     border-radius: 10px;
+    border-width:2px;border-style: solid;
+    border-color:#2669d6;
+max-height: 370px;
+    min-height: 190px;
+
+    margin-left: 52%;
+
+}
+#lista{
+    margin-top: 3%;
+    margin-left: 11%;
+
+}
+#profil{
+     list-style-type: none;
+    font-size:2vw;
+font-family: 'Open Sans', sans-serif;
+    color:white;
+
+}
+.listaText{
+  font-family: 'Open Sans', sans-serif;
+    margin:0 0 5px 0;
+    font-size:1.5vw;
+    color:#0a0a0a;
+
+
+
+}
+#upload_image{
+    margin-top: 5px;
+    margin-left: 1.5%;
+    width:10%;
+    height:10%;
+font-size:1vw;
+    margin-bottom: 20px;
+    text-align:center;
+
+
+
+
+}
+#butoane{
+margin-top:5px;
+    margin-left:10px;
+}
+
+#profileImage{
+    margin-right: 5%;
+border-radius: 10px;
+    width:25vh;
+   height: 25vh;
+    border-color:#444444;
+    border-top-width:0px;
+     border-left-width:0px;
+    border-style: solid;
+    background-color: lightgray;
+    float:left;
+
+     border-color:#2669d6;
+
+}
+#addImage{
+font-size:50px;
+
+}
+.clear-float{
+    clear: both;
+}
+#image{
+
+}
+
+
+#myaccount1{
+  text-decoration: none;
+font-style: normal;
+    float:right;
+    background-color: darkgrey; /* Green */
+    border: none;
+    color: white;
+    line-height:30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  margin-top:-10px;
+    margin-right: 2%;
+    height:40px;
+    width:100px;
+
+
+}
+.progress{
+   margin-top:5px;
+    float:left;
+    width:45vh;
+    margin-left:20px;
+}
+
+#completat{
+width:100px;
+    margin:0;
+    margin-left: 20px;
+    color:#cccccc;
+}
+
+
+
+#login-image {
+    margin-top: 36px;
+    margin-right:15px;
+float:right;
+}
+.showLogin1{
+display: none;
+
+}
+#showLogin2{
+display: none;
+
+}
+#showLogin3{
+display: none;
+
+}
+.Signup{
+float:left;
+    margin-right:100px;
+
+}
+#fileupload-example-5 {
+    position: relative;
+    overflow: hidden;
+}
+
+#fileupload-example-5 input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.001
+}
+#alert{
+
+color:red;
+width: 220px;
+height: auto;
+
+
+}
+.alert alert-success{
+    display:none;
+}
+#logOut {
+float:right;
+}
+#pagina{
+    shape-margin: -30px;
+    margin-left: 15.1%;
+    background-color: #f2f2f2;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+.text{
+    padding-top: 45px;
+    padding-bottom: 4vh;
+    margin-left :auto;
+    margin-right:auto;
+    font-size:30px;
+
+    font-style: bold;
+    width: 700px;
+     text-align: center;
+    color:#1b58ba;
+    LINE-HEIGHT:30px;
+}
+.presentation-panel{
+    width:80%;
+   height: 39vh;
+     border-radius: 10px;
+     background:#cecece;
+
+   margin-bottom: 40px;
+    border-width: 2px;border-color: gray;
+    border-style:solid;
+
+
+}
+.presentation-image{
+     border-radius: 10px;
+      border-width: 2px;
+    border-style:solid;
+   border-color: gray;
+    width: 100%;
+height: 25vh;
+
+}
+.column1{
+  margin-left: 0px;
+    margin-right: auto;
+
+}
+.column2{
+  margin-left: auto;
+    margin-right: 0px;
+
+}
+.text-presentation{
+  margin-left:10px;
+    width:auto;
+   text-align:justify;
+  font-family: 'Open Sans', sans-serif;
+    font-style: bold;
+
+  font-size:1vw;
+}
+#presentation-panel1{
+    margin-left:20%;
+}
+#presentation-panel2{
+    margin-left:10%;
+}
+#presentation-panel3{
+    margin-right:20%;
+}
+body{
+
+}
+    #pagina1{
+         overflow-x: hidden;overflow-y: hidden;
+         margin-right: 14.5%;
+       margin-top: 0px;
+    margin-left:15%;
+    background-color: #f2f2f2;
+    height: 100%;
+        width: 85%;
+
+
+    }
+
+.titlu-sectiune{
+    margin-top: 15px;
+    margin-right: 500px;
+    margin-left:50px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.link{
+
+    height: 100px;
+
+}
+#frame-aplicatie{
+    margin-top: 3%;
+
+    width:80%;
+        height: 83%;
+    margin-left:2.5%;
+
+}
+#informatie-aplicatie{
+    width:100%;
+        height: 20%;
+    background-color:#dddddd;
+    border:solid;
+  border-width: 3px;
+    border-color:#3472e5;
+     border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+#exe-aplicatie{
+    width:45%;
+        height: 80%;
+    background-color:#ffffff;
+    float:left;
+     border:solid;
+  border-width: 3px;
+    border-color:#3472e5;
+     border-bottom-left-radius: 25px;
+    border-top-width: 0px;
+
+}
+#code-aplicatie{
+    float:left;
+    width:36%;
+    height: 80%;
+    background-color:white;
+     border:solid;
+  border-width: 3px;
+    border-color:#3472e5;
+
+    border-left-width: 0px;
+    border-top-width: 0px;
+
+}
+
+#blocuri{
+float:right;
+
+    width:19%;
+    height: 80%;
+    background-color:#dddddd;
+    border-right-width:3px;
+    border-right-color:#3472e5;
+    border-right-style:solid;
+     border-bottom-right-radius: 25px;
+    border-bottom-width:3px;
+    border-bottom-color:#3472e5;
+    border-bottom-style:solid;
+}
+#paginaUtilizators{
+   margin-top: 3vh;
+    margin-left:57vh;
+}
+.infoText{
+
+font-size:auto;
+    text-align: justify;
+    margin-left: 10px;
+    margin-right:10px;
+
+}
+#blocuri-text{
+  margin-left: 3%;
+    font-size: 25px;
+    text-align:center;
+
+}
+.button_text{
+  font-size: 20px;
+
+}
+
+.image_button{
+margin-top:-6px;
+   width:30px;
+   height:30px;
+
+}
+#butonsmecher {
+    margin-top: -75px;
+    width: 22%;
+    margin-left: 76%;
+
+}
+#animation-side{
+margin:  3.5%;
+    width: 93%;
+    height:65%;
+    background-color:white;
+    border-style:solid;
+    border-color:grey;
+
+}
+
+.button11{
+ margin-top: 10px;
+    background-color: #0d53c4;
+    width: 85%;
+    margin-left: 8%;
+    cursor: pointer;
+
+
+}
+#coding{
+width: 100px;
+background-color: red;
+    margin-bottom: 0;
+    margin-right: 0;
+    float:left;
+}
+#marcaj{
+    margin-top: 5px;
+    list-style-type: none;
+   margin-left:0px;
+}
+
+#next_and_previous1{
+ float:right;
+    margin-top: 4%;
+    margin-right: 1%;
+   width:45%;
+}
+#next{
+
+width: 45%;
+}
+#previous{
+
+width: 45%;
+
+}
+#info_button{
+
+  cursor: pointer;
+}
+#info_panel{
+  float:right;
+  background-color: blue;
+  width:200px;
+ height:100px;
+  margin-top:100px;
+  z-index: 2;
+}
+.noselect {
+
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+[class^="expl-box"] {
+    position: relative;
+
+}
+.expl-box-fi-text{
+    margin-top: 1%;
+margin-left:1%;
+text-align: left;
+
+height: 35%;
+width: 99%;
+color:black;
+  text-indent: 20px;
+
+}
+#titluInfo{
+
+    margin-left: 5%;
+    margin-top: 3%;
+}
+#listaInfo{
+
+    margin-left: 3%;
+    margin-top: 3%;
+}
+#continutInfo{float:left;
+width: 60%;
+}
+.componentaLista{
+
+    margin-top: 3%;
+}
+.componentaLista1{
+
+    margin-left: 6%;
+}
+.textLista{
+  text-align: justify;
+}
+
+.imagineComponentaTanc{
+float:left;
+margin-right: 500px;
+margin-top: 10%;
+margin-left:5%;
+display: none;
+    }
