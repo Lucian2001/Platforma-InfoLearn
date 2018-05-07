@@ -79,6 +79,9 @@ include("loadTanc.php");
 </style>
 <script src="paginaUtilizator/scripts/generareMapa.js"></script>
 <script>
+if (tanc==0){
+  noTank();
+}
 for(var i=1;i<=66;i++)
     limite[i]=0;
    var locatiiValide = new Array(33,34,35,36,23,24,25,26,43,44,45,46,54,53,55,56,63,64,65,66);

@@ -81,6 +81,9 @@ include("loadTanc.php");
 </style>
 <script src="paginaUtilizator/scripts/generareMapa.js"></script>
 <script>
+if (tanc==0){
+  noTank();
+}
      for(var i=1;i<=66;i++)
         limite[i]=0;
    var locatiiValide = new Array(33,34,35,36,23,24,25,26,43,44,45,46,54,53,55,56,63,64,65,66);
@@ -109,20 +112,7 @@ $(".imagineComponentaTanc").hide();
 tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
-   
-    var height=$(document).height();
-        var width=$(document).width(); 
-       if (width<1900&&height<950&&width>1500&&height>700){ 
-         $("#textError").css("font-size","15px");
-      $("#textError").css("margin-top","10%");
-          $("#butonError").css("margin-left","14%");
-          $("#butonError").css("margin-left","16%");
-     } 
-    else if (width<1500&&height<800){ 
-         $("#textError").css("font-size","13px");
-      $("#textError").css("margin-top","15%");
-          $("#butonError").css("margin-left","15%");
-     } 
+   redimensionare13();
    // $("#id:35").attr("src","paginaUtilizator/assets/images/road_target");
 // $("#id-35").attr('id', 'target');
 

@@ -20,6 +20,13 @@
      vector[64]=0;
     //
 
+
+    $("#evaluare").click(function(){
+
+              $(location).attr('href', "http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/evaluare");
+ 
+
+    })
     $("#structuraAlternativa").click(function(){
 
      x=window.location.href;

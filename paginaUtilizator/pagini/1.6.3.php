@@ -90,29 +90,17 @@ color:black;
 
         $("#object1").hide();
     $("#butonsmecher").hide();
-redimensionare2();
+redimensionare153();
     });
-    $("#generare").click(function(){$("#input").val("");
+    $("#generare").click(function(){
 
         if ($("#input").val()==raspuns){
             corect();
-
+$("#input").val("");
         } else{
             gresit();
+            $("#input").val("");
         }
     })
-     function redimensionare2(){
-        var height=$(document).height();
-        var width=$(document).width();
-     if (width<1601&&height<800){ alert("mama");
-         $("#verificare").css("margin-top","15%");
-         $("#spatiuExercitii1").css("margin-top","-3%");
-         $(".valoare").css("font-size","25px");
-          $("#exerciții1").css("width","15%");
-          $("#false").css("width","30%");
-          $("#verificare").css("width","29%");
-        $("#verificare").css("height","15%");
-          $("#verificare").css("margin-left","50%");
-     }
-    }
+
 </script>

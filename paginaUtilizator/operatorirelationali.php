@@ -80,8 +80,8 @@ include ("functions.php");
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active "  id="id-131" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicații Tip I</a>
-    <a class="nav-item nav-link " id="id-132" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicații Tip II</a>
+    <a class="nav-item nav-link active tabAplicatie1 "  id="id-131" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicații Tip I</a>
+    <a class="nav-item nav-link tabAplicatie1" id="id-132" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicații Tip II</a>
    
 
   </div>

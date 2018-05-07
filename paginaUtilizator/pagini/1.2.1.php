@@ -30,7 +30,7 @@ var corectValue;
 var numarSemneGenerate=1;
 var dificultateCalcul=5;
 $(document).ready(function(){
-redimensionare();
+redimensionare121();
 var semn=Math.floor((Math.random() * 5) + 1);
 
 generareValori(numarNumereGenerate,numarSemneGenerate,dificultateCalcul,semn);
@@ -49,24 +49,8 @@ var ok=0;
 if (nr5==5 && nr2==1){
  // alert("done"); ok=1;
   $("#exercitiiRezolvate").html(6);
-var Id="";
-  var url= window.location.href;
-  for(i=0;i<url.length;i++){
-if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3)){
-  Id=Id+url[i];
-}
-}
-  $("#id-"+Id).css("background-color","#d8ffd6");
-
-$.ajax({   type:"POST",
-   url:"paginaUtilizator/testHttp.php",
-   data:"Id=" + Id ,
-success:function(result)
-   {
-     //  alert(result);
-    }
-
-});
+  
+succes();
 }
 if(ok==0){
       semn=Math.floor((Math.random() * 5) + 1);  //alert("semn="+semn);
@@ -76,7 +60,7 @@ if (nr3==1)
      generareValori(numarNumereGenerate,numarSemneGenerate,dificultateCalcul,semn);
      semn1=generareSemn(semn);
 fixOperatiiMultipleBug($("#id---1").html(),$("#id---2").html(),$("#id---3").html(),semn1);
-     alert(semn1);
+
      dragAndDrop(semn1);
 $("#invisibleObject").html(0);
   $("#gresit").hide();
@@ -87,14 +71,5 @@ $("#invisibleObject").html(0);
 
 })
 
-    function redimensionare(){
-        var height=$(document).height();
-        var width=$(document).width();
-     if (width<1800&&height<900){
-         $("#exercitii").css("float","left");
-         $("#exercitii").css("margin-top","-8%");
-         $("#numarIncercari").css("font-size","33px");
-                  $("#spatiuExercitii").css("margin-left","4%");
-     }
-    }
+
 </script>

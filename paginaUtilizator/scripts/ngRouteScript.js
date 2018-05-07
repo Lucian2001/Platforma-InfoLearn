@@ -30,5 +30,10 @@ templateUrl : "paginaUtilizator/structuraAlternativa.php",
 reloadOnSearch: false,
 
 })
+         .when("/evaluare", {
+templateUrl : "paginaUtilizator/evaluare.php",
+reloadOnSearch: false,
+
+})
 
 }]);

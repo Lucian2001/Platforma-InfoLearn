@@ -125,24 +125,21 @@ margin-top: 20%;
              <li class="menu-item">
                 <div class="item-design"> <p id="expresiiLogice" class="menu-text">Expresii logice</p> </div></li>
                 <li class="menu-item">
-                 <div class="item-design"> <p class="menu-text" id="structuraAlternativa">Structura Alternativa</p> </div></li>
+                 <div class="item-design"> <p class="menu-text" id="structuraAlternativa">Structura Alternativă</p> </div></li>
              <li id="last-column">
-             <div class="item-design" > <p  style="cursor: pointer;" id="buclarepetitiva" class="menu-text">Bucla repetitiva</p> </div>
+             <div class="item-design" > <p  style="cursor: pointer;" id="buclarepetitiva" class="menu-text">Bucla repetitivă</p> </div>
              </li>
           <li class="menu-title">
              <div class="text-design">Evaluare</div></li>
 
 
           <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Evaluare</p> </div></li>
+             <div class="item-design"> <p id="evaluare" class="menu-text">Evaluare</p> </div></li>
           <li class="menu-item">
-             <div class="item-design"> <p class="menu-text">Jocul 2</p> </div>
+          
              </li>
 
-          <li  id="last-column">
-             <div class="item-design"> <p class="menu-text">Platforma intrebari</p> </div></li>
-
-         </ul>
+          
 
     </div>
 <script>
@@ -166,4 +163,4 @@ margin-top: 20%;
 <script src=paginaUtilizator/scripts/meniuScript.js></script>
 
 
-</html>
+

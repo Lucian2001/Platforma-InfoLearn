@@ -1,6 +1,6 @@
 
 var x="",y="";var nr=0;var  pasi=0;var urlNou=""; var capatUrl;var tancId; var  eroareDegree;   var Id; var limite = new Array();var okSpatiu;
-$("#butonsmecher").click(function(){ 
+$("#butonsmecher").click(function(){
 y="";
 nr=0;
 okSpatiu=true;
@@ -35,7 +35,8 @@ urlNou="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=
 
   window.location.replace(urlNou);
 
-    if (window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/1#1"){
+    if (window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/1#1" && urlNou!="-1"){
+
 
  for(var i=0;i<x.length;i++){
       if (nr==2){
@@ -116,7 +117,7 @@ offset1 = target.offset();
   icon: "success",
   button: "Ok",
 });
-                      
+
                       }
 
                  });
@@ -131,10 +132,10 @@ return 0;
             eroareDegree=false;
         }
 
-   eroareShow("Incearca alt drum!") ;  
+   eroareShow("Incearca alt drum!") ;
 
-        
-   
+
+
         if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/1#2" || window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/5#1" ){
    $("#object1").css("left",pozitieInitiala-(6.7*pozitieInitiala)/100);
           $("#object1").css("top",pozitieInitiala1-(5.4*pozitieInitiala1)/100);
@@ -143,7 +144,7 @@ return 0;
           $("#object1").css("top",pozitieInitiala1-(7.7*pozitieInitiala1)/100);
         }
 
-                   
+
                     }
 
                 }
@@ -160,10 +161,21 @@ return 0;
         }
         else{
 eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drumul.");
- 
+
         }
-        
-        if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/1#2" || window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/5#1" ){
+          var urlPozitie="";
+
+                    for(i=0;i<urlSave.length;i++){
+                if (urlSave[i]!="/" && urlSave[i]!="#"){
+                    urlPozitie=urlPozitie+urlSave[i];
+                }
+            }
+
+     if (urlPozitie=="162" || urlPozitie=="164"){
+         $("#object1").css("left",pozitieInitiala-(8*pozitieInitiala)/100);
+          $("#object1").css("top",pozitieInitiala1-(5.4*pozitieInitiala1)/100);
+
+     } else if (urlPozitie=="112"|| urlPozitie=="151"  ){
    $("#object1").css("left",pozitieInitiala-(6.7*pozitieInitiala)/100);
           $("#object1").css("top",pozitieInitiala1-(5.4*pozitieInitiala1)/100);
         } else{
@@ -194,7 +206,7 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
      }
         if (pasiArray[i]==1){
         if((degree/90<1 && degree/90>=0)||(degree/90>-0.8 && degree/90<=0)){
-          
+
          $( "#object1" ).animate({
 
   left: "+="+z,
@@ -207,7 +219,7 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
     })
 
      } else if ((degree/90>=1 && degree/90<2) || (degree/90<=-3 && degree/90>-4)){
-    
+
                 $( "#object1" ).animate({
 
    top: "+="+z1,
@@ -218,7 +230,7 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
     })
      }
             else if((degree/90>=2 && degree/90<3)|| (degree/90<=-2 && degree/90>-3)){
-   
+
                 $( "#object1" ).animate({
 
    left: "-="+z,
@@ -282,7 +294,7 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
 
     }
     }
-      
+
     }
 
 
@@ -294,8 +306,9 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
 
 
 
-} else{
+}else if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/1#1"){
      tancId=(Math.floor(tancId/10));
+     if (tancId%1000>100){
       $.ajax({   type:"POST",
                      url:"paginaUtilizator/uploadTancId.php",
                      data:"Id=" + tancId ,
@@ -305,6 +318,7 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
                       }
 
                  });
+
      Id="";
                     //alert(urlSave);
                     for(i=0;i<urlSave.length;i++){
@@ -323,6 +337,9 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
                       }
 
                  });
+               } else{
+                 eroareShow("Trebuie sa introduci toate componentele");
+               }
 
 
 }
@@ -412,11 +429,11 @@ var nr=0,nr1=0;
    for (var i=10;i<=66;i++){
        if (limite[i]==1){nr++;
            var drum = $( "#id-"+i);
-                         
+
     var drumOffset = drum.offset();
   if (Math.abs(drumOffset.left-y)<20 && Math.abs(drumOffset.top-x)<30){
-     
-  } 
+
+  }
 else {
  nr1++;
 }
@@ -427,4 +444,3 @@ else {
         okSpatiu=0;
     }
 }
-

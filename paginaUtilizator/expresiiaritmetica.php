@@ -65,10 +65,10 @@ include ("functions.php");
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <div class="nav nav-tabs tabAplicatie1" id="nav-tab" role="tablist">
     <a class="nav-item nav-link active "  id="id-121" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicație Tip I</a>
-    <a class="nav-item nav-link " id="id-122" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicație Tip II</a>
-    <a class="nav-item nav-link" id="id-123" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicație Tip III</a>
+    <a class="nav-item nav-link tabAplicatie1" id="id-122" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicație Tip II</a>
+    <a class="nav-item nav-link tabAplicatie1" id="id-123" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicație Tip III</a>
 
   </div>
 </nav>

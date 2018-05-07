@@ -1,24 +1,26 @@
 var raspuns=false;
 function generareSemn(randomNr){
-  
+
     if (randomNr==1){
         return "maiMic";
     } else if (randomNr==2){
         return "maiMare";
     } else if (randomNr==3){
         return "egal";
-    } 
+    }
 }
+var c;
 function generareNumere(x){
     var a,b;
     a=Math.floor((Math.random() * 25) + 1);
+
     b=Math.floor((Math.random() * 25) + 2);
     if (x==1){
-     
+
         if(a>=b){
            b=formaCorecta(a,x);
         }
-       
+
     } else if (x==2){
       if(a<=b){
            b=formaCorecta(a,x);
@@ -26,31 +28,31 @@ function generareNumere(x){
     } else if(x==3){
         b=a;
     }
-    
-   $("#id---1").html(a); 
-        $("#id---2").html(b);  
+
+   $("#id---1").html(a);
+        $("#id---2").html(b);
 }
 function formaCorecta(b,y){
   var a;
     if (y==1){
-       a=Math.floor((Math.random() * 25) + 2); 
-     
+       a=Math.floor((Math.random() * 25) + 2);
+
         if (a>b){
             return a;
         } else{
             return (formaCorecta(b,y));
         }
-        
+
     } else if (y==2){
-       a=Math.floor((Math.random() * 25) + 2); 
-     
+       a=Math.floor((Math.random() * 25) + 2);
+
         if (a<b){
             return a;
         } else{
             return (formaCorecta(b,y));
         }
-        
-    } 
+
+    }
 }
 function corect(){
     if (raspuns==false){
@@ -62,24 +64,7 @@ $("#corect").show();
     if (nr1<5 && nr1>=0){
         $("#exercitiiRezolvate").html(nr1+1);
     } else{$("#exercitiiRezolvate").html(nr1+1);
-        var Id="";
-  var url= window.location.href;
-  for(i=0;i<url.length;i++){
-if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3)){
-  Id=Id+url[i];
-}
-}
-  $("#id-"+Id).css("background-color","#d8ffd6");
-
-$.ajax({   type:"POST",
-   url:"paginaUtilizator/testHttp.php",
-   data:"Id=" + Id ,
-success:function(result)
-   {
-     //  alert(result);
-    }
-
-});
+        succes();
     }
     }
 }
@@ -89,21 +74,24 @@ if (raspuns==false){
     $("#gresit").show();
 raspuns=true;
 }
-
+ eroareRezultat(semn);
 }
+var d;
+
 
 function afisareSemn(x){
 var y;
-    var a=Math.floor((Math.random() * 2) + 1); 
-    var b= Math.floor((Math.random() * 25) + 1); 
-    
+    var a=Math.floor((Math.random() * 2) + 1);
+    var b= Math.floor((Math.random() * 25) + 1);
+c=a;
     if (a==1){
         $("#id---1").val(b);
         $("#id---1").prop('disabled', true);
     } else{
        $("#id---2").val(b);
-        $("#id---2").prop('disabled', true); 
+        $("#id---2").prop('disabled', true);
     }
+d=x;
      if (x==1){
     y= "<";
     } else if (x==2){
@@ -116,7 +104,7 @@ var y;
     y= "==";
     } else if (x==6){
     y= "!=";
-    } 
+    }
     $("#semn1").html(y);
 }
 
@@ -124,40 +112,47 @@ function verificareRaspuns(x){
     ok=false;
  a=$("#id---1").val();
  b=$("#id---2").val();
-
-    if (a!=null && b!=null){
+a=parseInt(a);
+b=parseInt(b);
+    if (a!=0 && b!=0){
+      alert("a="+a+"b="+b+"x="+x);
     if (x==1){
       if(a<b){
           ok=true;
-      }
+      } else ok=false;
     } else if (x==2){
     if(a<=b){
           ok=true;
-      }
+      } else ok=false;
     } else if (x==3){
+
   if(a>b){
           ok=true;
+      } else{
+
+         ok=false;
       }
     } else if (x==4){
   if(a>=b){
           ok=true;
-      }
+      }else ok=false;
     } else if (x==5){
    if(a==b){
           ok=true;
-      }
+      }else ok=false;
     } else if (x==6){
-   if(a==b){ alert("pola");
+   if(a==b){
           ok=false;
       }
         else{
 
         ok=true;
         }
-    } 
+    }
     } else{
         ok=false;
     }
+
     if (ok==true){
         corect1();
     } else{
@@ -171,7 +166,7 @@ function corect1(){
   setTimeout(function(){
           numar=Math.floor((Math.random() * 6) + 1);
       $("#id---2").prop('disabled', false);
-           $("#id---1").prop('disabled', false); 
+           $("#id---1").prop('disabled', false);
           $("#id---1").val("");
 $("#id---2").val("");
       $("#corect").hide();
@@ -202,25 +197,43 @@ $.ajax({   type:"POST",
   data:"Id=" + Id ,
 success:function(result)
   {
-      alert("Ai terminat aceasta aplicatie");
+      eroareShow("Bravo!Ai terminat aceasta aplicatie.")
    }
 
 });
 }}
 }
 function gresit1(){
-  $("#gresit").show();
+  $("#gresit").show(); eroareRezultat( generareRaspunsCorect());
   setTimeout(function(){
           numar=Math.floor((Math.random() * 6) + 1);
        $("#id---2").prop('disabled', false);
-           $("#id---1").prop('disabled', false);  
+           $("#id---1").prop('disabled', false);
         $("#gresit").hide();
    $("#id---1").val("");
 $("#id---2").val("");
       afisareSemn(numar);
-   
-    
+
+
   } ,1500);
 
 
+}
+
+function generareRaspunsCorect(){
+var raspuns;
+raspuns=$("#id---"+c).val();
+if (d==1){
+  return Math.floor((Math.random() * raspuns-1) + 1);
+} else if (d==2){
+  return Math.floor((Math.random() * raspuns) + 1);
+} else if (d==3){
+  return Math.floor((Math.random() * raspuns*2+1) + raspuns+1);
+} else if (d==4){
+return Math.floor((Math.random() * raspuns*2+1) + raspuns+1);
+} else if (d==5){
+return raspuns;
+} else if (d==6){
+return Math.floor((Math.random() * raspuns*2+1) + raspuns+1);
+}
 }

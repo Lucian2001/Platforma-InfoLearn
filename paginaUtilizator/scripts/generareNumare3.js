@@ -37,6 +37,7 @@ if (c=="/"){
 
 function gresit(){
   $("#gresit1").show();
+  eroareRezultat(raspuns);
   setTimeout(function(){
         generareNumere4();
       $("#gresit1").hide();
@@ -63,23 +64,6 @@ if (nr1>=0 && nr1<=5){
 }
 if (nr1==6){
    $("#exercitiiRezolvate").html(6);
-var Id="";
- var url= window.location.href;
- for(i=0;i<url.length;i++){
-if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3)){
- Id=Id+url[i];
-}
-}
- $("#id-"+Id).css("background-color","#d8ffd6");
-
-$.ajax({   type:"POST",
-  url:"paginaUtilizator/testHttp.php",
-  data:"Id=" + Id ,
-success:function(result)
-  {
-      alert("Ai terminat aceasta aplicatie");
-   }
-
-});
+succes();
 }
 }

@@ -13,7 +13,7 @@
         </div>
           <h1 id="exercitii1"><span id="exercitiiRezolvate1">0</span>/6</h1>
     <div id="buttons">
-  <button id="raspuns1"><input id="raspuns2"></button>
+  <button id="raspuns1"><input id="raspuns2" value="0" maxlength="3"></button>
         </div>
 
       <img id="corect1" src="paginaUtilizator/assets/images/corect.png" >
@@ -26,26 +26,17 @@
 
 <script>
     $(document).ready(function(){
-redimensionare3();
+redimensionare123();
     });
 generareNumere4();
+raspuns=rezultat();
 
 $("#verificare1").click(function(){
-  if ($("#raspuns2").val()==rezultat()){
+  if ($("#raspuns2").val()==raspuns){
     corect();
   } else {
 gresit();
   }
 })
-    function redimensionare3(){
-        var height=$(document).height();
-        var width=$(document).width();
-     if (width>1800&&height>900){
-         $("#raspuns1").css("width","99%");
-         $("#raspuns1").css("margin-top","14%");
-         $("#verificare1").css("width","22%");
-         $("#verificare1").css("height","10%");
-          $("#verificare1").css("margin-top","-7%");
-     }
-    }
+
 </script>

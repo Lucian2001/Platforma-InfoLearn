@@ -80,6 +80,11 @@ include("loadTanc.php");
 <script src="paginaUtilizator/scripts/generareMapa1.6.2.js"></script>
 
 <script>
+if (tanc==0){
+  noTank();
+}
+for(var i=1;i<=66;i++)
+   limite[i]=0;
     //generate target
     var locatiiValide = new Array(36);
  var targetPlace= $( "#pozitie" );
@@ -91,7 +96,7 @@ target.css("top",offsettarget.top-(($(document).width()*1.2)/100));
 
 target.css("left",offsettarget.left-(($(document).width()*1.2)/100));
 target1=36;
- 
+
 
     var tanc;
 

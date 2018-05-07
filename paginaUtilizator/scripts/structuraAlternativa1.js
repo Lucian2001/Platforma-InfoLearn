@@ -158,7 +158,12 @@ $.ajax({   type:"POST",
    data:"Id=" + Id ,
 success:function(result)
    {
-       alert("Ai terminat aceasta aplicatie");
+     swal({
+  title: "Bravo!",
+  text: "Ai terminat această aplicație.",
+  icon: "success",
+  button: "Ok",
+});;
     }
 
 });

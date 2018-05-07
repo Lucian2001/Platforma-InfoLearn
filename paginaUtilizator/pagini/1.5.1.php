@@ -80,6 +80,9 @@ include("loadTanc.php");
 <script src="paginaUtilizator/scripts/generareMapa.js"></script>
 
 <script>
+if (tanc==0){
+  noTank();
+}
     //generate target
     var locatiiValide = new Array(35,36);
  var targetPlace= $( "#pozitie" );
@@ -107,19 +110,7 @@ $(".imagineComponentaTanc").hide();
   tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
-    var height=$(document).height();
-        var width=$(document).width();
-       if (width<1900&&height<950&&width>1500&&height>700){
-         $("#textError").css("font-size","15px");
-      $("#textError").css("margin-top","10%");
-          $("#butonError").css("margin-left","14%");
-          $("#butonError").css("margin-left","16%");
-     }
-    else if (width<1500&&height<800){
-         $("#textError").css("font-size","13px");
-      $("#textError").css("margin-top","15%");
-          $("#butonError").css("margin-left","15%");
-     }
+    redimensionare151();
    // $("#id:35").attr("src","paginaUtilizator/assets/images/road_target");
 // $("#id-35").attr('id', 'target');
 
@@ -132,10 +123,5 @@ $("#butonError").click(function(){
 
     $("#errorPanel").hide();
 })
-  function redimensionare4(){
-        var height=$(document).height();
-        var width=$(document).width();
-     if (width<1500&&height<800&&width>1400&&height>1000){
 
-     }}
 </script>

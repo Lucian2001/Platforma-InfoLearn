@@ -17,7 +17,7 @@
           <h1 id="exercitii1"><span id="exercitiiRezolvate1">0</span>/6</h1>
     <div id="buttons">
     <button id="true">A</button>
-    <button id="false"><input id="false1"></button>
+    <button id="false"><input maxlength="4" value="0" id="false1"></button>
         </div>
 
       <img id="corect1" src="paginaUtilizator/assets/images/corect.png" >
@@ -29,7 +29,11 @@
 <link rel="stylesheet" href="paginaUtilizator/css/expresiiAritmetice.css">
 <script src="paginaUtilizator/scripts/generareNumere2.js"></script>
 <script>
- generareNumere();
+    var array=new Array();   
+    var array1=new Array();  
+    
+var raspuns,raspuns1;
+ generareNumere(array,array1);
 
 $("#true").click(function(){
    $("#false1").prop('disabled', true);
@@ -41,22 +45,10 @@ $("#true").click(function(){
 })
     $("#verificare").click(function(){
        verificare();
+
     })
     $(document).ready(function(){
-redimensionare2();
+redimensionare122();
     });
-     function redimensionare2(){
-        var height=$(document).height();
-        var width=$(document).width();
-     if (width<1400&&height<700){
-         $("#verificare").css("margin-top","15%");
-         $("#buttons").css("margin-top","-15%");
-         $(".valoare2").css("font-size","35px");
-          $("#true").css("width","15%");
-          $("#false").css("width","30%");
-          $("#verificare").css("width","29%");
-        $("#verificare").css("height","15%");
-          $("#verificare").css("margin-left","50%");
-     }
-    }
+
 </script>

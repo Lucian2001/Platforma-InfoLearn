@@ -134,24 +134,7 @@ $("#corect").show();
         $("#exercitiiRezolvate").html(nr1);
     }
        else{$("#exercitiiRezolvate").html(6);
-var Id="";
-  var url= window.location.href;
-  for(i=0;i<url.length;i++){
-if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3||url[i]==6)){
-  Id=Id+url[i];
-}
-} alert(Id);
-  $("#id-"+Id).css("background-color","#d8ffd6");
-
-$.ajax({   type:"POST",
-   url:"paginaUtilizator/testHttp.php",
-   data:"Id=" + Id ,
-success:function(result)
-   {
-       alert("Ai terminat aceasta aplicatie");
-    }
-
-});
+succes();
           
       }
 

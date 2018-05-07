@@ -80,6 +80,9 @@ include("loadTanc.php");
 <script src="paginaUtilizator/scripts/generareMapa1.5.2.js"></script>
 
 <script>
+if (tanc==0){
+  noTank();
+}
     //generate target
     var locatiiValide = new Array(55);
  var targetPlace= $( "#pozitie" );
@@ -107,7 +110,7 @@ $(".imagineComponentaTanc").hide();
   tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
-    
+
    for(var i=1;i<=66;i++)
         limite[i]=0;
     generareTeren();
@@ -136,10 +139,5 @@ $("#butonError").click(function(){
 
     $("#errorPanel").hide();
 })
-  function redimensionare4(){
-        var height=$(document).height();
-        var width=$(document).width();
-     if (width<1500&&height<800&&width>1400&&height>1000){
 
-     }}
 </script>

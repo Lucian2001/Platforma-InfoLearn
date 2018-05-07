@@ -530,3 +530,14 @@ margin-top: 10%;
 margin-left:5%;
 display: none;
     }
+.tabAplicatie{
+    width: 25%;
+    text-indent: -5px;
+    font-size: 15px;
+    text-align: center;
+    cursor:pointer;
+}
+.tabAplicatie1{
+ 
+    cursor:pointer;
+}

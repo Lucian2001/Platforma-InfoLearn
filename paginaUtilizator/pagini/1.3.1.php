@@ -22,17 +22,19 @@
 <script src="paginaUtilizator/scripts/operatoriRelationali.js"  ></script>
 
 
-<script>
+<script> var semn;
 $(document).ready(function(){
       var randomNr1=Math.floor((Math.random() * 3) + 1);
 generareNumere(randomNr1);
-   var semn= generareSemn(randomNr1);
+  semn= generareSemn(randomNr1);
+
     dragAndDrop(semn);
-  redimensionare4();
+
+  redimensionare131();
 
 })
     $("#generare3").click(function(){
-      
+
          var randomNr1=Math.floor((Math.random() * 3) + 1);
 generareNumere(randomNr1);
    var semn= generareSemn(randomNr1);
@@ -42,20 +44,5 @@ generareNumere(randomNr1);
     raspuns=false;
     })
 
-     function redimensionare4(){
-        var height=$(document).height();
-        var width=$(document).width();
-     if (width<1500&&height<800){ 
-         $("#droppable").css("margin-left","19%");
-    
-         $("#exercitii").css("float","left");
-          $("#exercitii").css("margin-top","-10%");
-                                 $("#exercitii").css("margin-left","2%");
-         $("#numarIncercari").css("font-size","33px");
-           $("#generare3").css("font-size","18px");
-         $("#id---1").css("margin-left","1%");
-         $("#id---2").css("margin-left","23%");
-     
-           $(".valoare").css("margin-top","-6%");
-     }}
+
 </script>

@@ -74,7 +74,7 @@ include("imageUpload.php")
  <li class="listaText" id="username1">Username:</li>
             <li class="listaText"  id="email1" style="font-size:16px;">Email:</li>
 
-  <li class="listaText"  id="varsta1">Varsta:</li>
+
 
 </ul>  <div class="clear-float"></div>
       <div id="butoane">

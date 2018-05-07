@@ -26,39 +26,12 @@
 
 <script>    var numar=Math.floor((Math.random() * 6) + 1);
 $(document).ready(function(){
-redimensionare5();
-    afisareSemn(numar);
+redimensionare132();
+  afisareSemn(numar)
 })
     $("#generare4").click(function(){
         verificareRaspuns(numar);
 
     })
-function redimensionare5(){
-        var height=$(document).height();
-        var width=$(document).width();
-     if (width<1500&&height<800){ 
 
-    
-      
-         $("#semn1").css("margin-top","-4%");                        
-         $("#exercitii").css("margin-top","2%");
-     
-           $("#generare4").css("font-size","18px");
-         $("#id---1").css("margin-left","1%");
-      
-           $("#generare4").css("margin-top","-9%");
-         $(".input").css("font-size","32px");
-     }
-if(width<1700&&height<900){
-      $("#semn1").css("margin-top","-2%");                        
-         $("#exercitii").css("margin-top","2%");
-     
-           $("#generare4").css("font-size","22px");
-         $("#id---1").css("margin-left","1%");
-      
-           $("#generare4").css("margin-top","-6%");
-   $(".expl-box-fi2 ").css("height","24%");
-    
-}
-}
 </script>

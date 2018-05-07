@@ -60,7 +60,7 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
 spatiu="---";
              spatiu1="---";
          }
-        $scope.records[i] =n1+spatiu+spatiu1+" "+"mergi-inainte";
+        $scope.records[i] =n1+spatiu+spatiu1+" "+"mergi-înainte";
     i=i+1;
        if (bucla==false && repetaOn==false){
        n1=n1+1;n=n+1;
@@ -78,15 +78,15 @@ spatiu="---";
    var ifOn=0;
    $scope.if=function(){
   if (ifOn==0){
-       $scope.records[i] =n1+spatiu+spatiu1+" "+"Daca (soseaua nu este blocata) atunci";
+       $scope.records[i] =n1+spatiu+spatiu1+" "+"Dacă (șoseaua nu este blocată) atunci";
      i=i+1;n1=n1+1;}
        else{
-eroareShow("Poti introduce un singur ,,if'' ");
+eroareShow("Poți introduce un singur ,,if'' ");
        }
        ifOn=1;
    }
      $scope.ocolire=function(){
-        
+
     if(repetaOn==false){
          if (ifOn==1){
        spatiu="--";
@@ -102,24 +102,24 @@ eroareShow("Poti introduce un singur ,,if'' ");
            spatiu="";
     spatiu1="";
        ifOn=1;}
-         else{ 
+         else{
              if (ifOn==1){
        spatiu="---";
     spatiu1="---";
         $scope.records[i] =n1+spatiu+spatiu1+" "+"Ocolire-obstacol";
     //   if(pattern==11){
 
-                 patternRepeta=patternRepeta+"31211213";     
+                 patternRepeta=patternRepeta+"31211213";
       i=i+1;n1=n1+1;n=n+8;
     } else{
 
     }
-    
+
            spatiu="--";
     spatiu1="--";
        ifOn=1;
-             
-         } 
+
+         }
    }
    $scope.intoarcere=function(){
 
@@ -151,9 +151,9 @@ eroareShow("Poti introduce un singur ,,if'' ");
     }
      $scope.repeta=function(){
 if (repetaOn==true){
-eroareShow("Poti sa introduci o singura bucla!");
+eroareShow("Poți să introduci o singură buclă!");
 } else{
-        $scope.records[i] =n1+spatiu+spatiu1+"    "+"repeta de "+$scope.numarRepetari +" ori"
+        $scope.records[i] =n1+spatiu+spatiu1+"    "+"repetă de "+$scope.numarRepetari +" ori"
     i=i+1; n1=n1+1;n=n+1;pattern=pattern+"4";
          spatiu="--";
          spatiu1="--";
@@ -163,13 +163,13 @@ repetaOn=true;
 }
      var endOn=0;var patternString,patternRepetaString,patternRepetaString1="";var patternRepetaLenght;
      $scope.end=function(){
-      
+
        if (endOn==0){
          $scope.records[i] =n1+"    "+"end";
     i=i+1; n1=n1+1;
            spatiu="";
          spatiu1="";
-          
+
          patternString=pattern.toString();
          patternRepetaString=patternRepeta.toString();
 
@@ -192,20 +192,20 @@ bucla=false;
       $scope.altfel=function(){
   spatiu="--";
           spatiu1="--";
-        
+
         $scope.records[i] =n1+spatiu+spatiu1+"    "+"altfel";
     i=i+1; n1=n1+1;
            spatiu="---";
          spatiu1="---";
-          
-      
+
+
        // alert($scope.numarRepetari)
          // alert(patternRepetaString);
     //alert(pattaernString);
 
 
          //alert(n);
-      
+
 //alert(pattern);
     }
 
@@ -214,7 +214,7 @@ bucla=false;
  $scope.Run=function(){
 
 if (paginaUpload=="1.1.1"){
-textTanc1="Tancul facut de tine este acesta";
+textTanc1="Tancul facut de tine este acesta.";
 if (idComponenta==513){
 $scope.tancComplet="paginaUtilizator/assets/images/tanc_albastru.png";
 $scope.textTanc=textTanc1;
@@ -243,49 +243,49 @@ else {
     var patternRepetaLenght;
 
          patternRepetaLenght=patternRepetaString.length;
-        
-  if (ifOn==1){  
+
+  if (ifOn==1){
       var eroarePattern=0;
         patternRepetaString1= patternRepetaString1+patternRepetaString.slice(0,1);
- 
+
       if (patternRepetaString1!="1"){
           alert("eroare");eroarePattern=1;
       }
-  }  if (eroarePattern!=1){ 
+  }  if (eroarePattern!=1){
 
          var nrIf=0,nrIf1=0,ok=true,i1,nr2=0;
       for(var i3=1;i3<=$scope.numarRepetari;i3++){
-          if (ifOn==1 ){  
-                   
+          if (ifOn==1 ){
+
        nrIf1=0;
               i1=0;
               if (nrIf==0){
-                  
-              do{ 
+
+              do{
                   if (patternRepetaString1=="11"){
-                 
+
                   nrIf1=1;
-                
+
               } else{
                   ok=false;
               }
 
               } while(ok==true);}
-        
+
                        if (nrIf1==1 && nrIf==0){
     patternRepetaString1 = patternRepetaString1.slice(0, - 1);
-                                   nrIf=1;      
+                                   nrIf=1;
                               patternRepetaString1=patternRepetaString1+patternRepetaString;
-                          
+
                        }  else{
                        nr2++;
                      if(nr2>1)
                            patternRepetaString1=patternRepetaString1+"1";
                        }
-                
+
           }else
           patternRepetaString1=patternRepetaString1+patternRepetaString;
- 
+
          }
 
                  patternString=patternString.replace("4",patternRepetaString1);
@@ -304,23 +304,28 @@ else {
 
 
          if (n==1){
-        eroareShow("Pune si tu ceva cod!") ;
-         pattern="";
+        eroareShow("Pune și tu ceva cod!") ;
+   $location.url('#'+"-1");
      }else{
-
+var patternSave;
+         patternSave=pattern;
        pattern=pattern+parseInt($location.absUrl().substr($location.absUrl().length - 1));
       $scope.error="";
      $location.url('#'+pattern);
          pattern=pattern.substr(1);
     $scope.error="Nu e nicio eroare" ;
-
+pattern=patternSave;
            //alert("boss");
      }
  }
 }
   $scope.clear=function(){
-  $scope.records = []
-      n1=1;
+
+      clear1();
+ }
+  function clear1(){
+      $scope.records = []
+          n1=1;
       n=1;
       i=0;
       pattern="";
@@ -332,7 +337,7 @@ else {
   patternRepetaString1="";
   patternRepetaString="";
   patternRepeta="";
- }
+  }
     $scope.deleteLine=function(){
 
    //alert(pattern);
@@ -394,7 +399,7 @@ else {
         i=i-1;
 
       //alert(pattern);
-
+alert("dsa");
 
 }
     //dreapta stanga
@@ -408,7 +413,7 @@ else {
     $scope.stanga=function(){
 
     rotire="stanga";
-   $scope.rotireText="stanga";
+   $scope.rotireText="stânga";
 
    }
 
@@ -417,7 +422,7 @@ else {
     // functii load surse {
     //$scope.src="paginaUtilizator/test.html";
     $scope.a1=function(){
-
+clear1();
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
     pagina1=pagina1.charAt(0);
    $location.url("1/"+pagina1+"#1");
@@ -431,7 +436,7 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
 
     }
     $scope.a2=function(){
-
+clear1();
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
 
         pagina1=pagina1.charAt(0);
@@ -446,7 +451,7 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
 
     }
     $scope.a3=function(){
-
+clear1();
         pagina1=$location.absUrl().substr($location.absUrl().length - 3);
      pagina1=pagina1.charAt(0);
 
@@ -459,7 +464,7 @@ $scope.src="paginaUtilizator/pagini/"+paginaUpload+".php";
  $scope.blocuriSrc="paginaUtilizator/blocuri/"+paginaUpload +"bloc.html";
     }
     $scope.a4=function(){
-
+clear1();
         pagina1=$location.absUrl().substr($location.absUrl().length - 3);
      pagina1=pagina1.charAt(0);
 
@@ -706,7 +711,7 @@ var raspuns;
       $scope.verificare=function(){
        var input1=$scope.input;
           input1.toLowerCase();
-   alert(raspuns);
+
           if (raspuns==1){
           if (input1=="and" || input1=="si"){
               corect();
@@ -752,6 +757,11 @@ $timeout( 1500);
       $timeout( function(){
         $scope.visible1=0;
           load();
+          if (raspuns==2){
+            eroareRezultat("ori");
+          } else{
+           eroareRezultat("and");
+          }
         }, 1500);
 
 
@@ -759,6 +769,307 @@ $timeout( 1500);
 $timeout( 1500);
   }
   function terminat(){
-
+succes();
 }
 })
+
+
+angular.module('myApp').controller('evaluare', function ($scope,$http,$location,$timeout){
+    var x=2;var exercitiuOn=0;
+    var punctaj=0; var raspunsOn1=0;
+    var raspunsOn=0,raspunsOn1=0;var intrebare,intrebare1,raspuns,enunt,raspuns11;
+    $scope.procente=0;
+    $scope.x1=x-1;
+    $scope.y1=x;
+    $(".btn-info").css("background-color","#17A2B8");
+var idIntrebari = new Array(); 
+var idRaspunsuri=new Array();
+var raspunsuri=new Array();  
+var idEx1=new Array();
+var id1Ex1=new Array();
+    var idRaspunsuri1=new Array(); 
+    var idRaspunsuri2=new Array(); 
+    for(var i=1;i<=20;i++){
+        idIntrebari[i]=0;
+    }
+    
+   generareIntrebari(20,idIntrebari,1);
+    generareRaspunsuri(4,idRaspunsuri,1);
+  $http({
+  method: 'POST',
+  url: '/paginaUtilizator/generareIntrebari.php',
+  data: {id1:idIntrebari[1],id2:idIntrebari[2]},
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+}).then(function successCallback(response) {
+     
+
+  intrebare=response.data.Intrebare;
+     if (intrebare.slice(0,-1)=="##&##"){
+         exercitiuOn=1;
+         raspuns=generareNumere(idEx1,id1Ex1);
+          for (i=1;i<=3;i++){
+              id1Ex1[i]=semnGenerator(id1Ex1[i]);
+          }
+         enunt="Care este raspunsul expresiei ";
+         for(i=1;i<=3;i++){
+             enunt=enunt+idEx1[i]+id1Ex1[i];
+         }
+         enunt=enunt+idEx1[4]+"!";
+           $scope.intrebare=enunt;
+     alert(raspuns);
+   
+     generareRezultate(raspunsuri,raspuns);
+     
+     idRaspunsuri1[1]=raspunsuri[1];
+        idRaspunsuri1[2]=raspunsuri[2];
+        idRaspunsuri1[3]=raspunsuri[3];
+        idRaspunsuri1[4]=raspunsuri[4];
+     }else{
+           $scope.intrebare=response.data.Intrebare;
+                 idRaspunsuri1[1]=response.data.R1;
+        idRaspunsuri1[2]=response.data.R2;
+        idRaspunsuri1[3]=response.data.R3;
+        idRaspunsuri1[4]=response.data.R4;
+     }
+      
+     
+      
+      
+      
+      
+      
+      
+      
+      
+intrebare1=response.data.Intrebare1;
+      if (intrebare1.slice(0,-1)=="##&##"){
+          enunt="";
+         raspuns11=generareNumere(idEx1,id1Ex1);
+          for (i=1;i<=3;i++){
+              id1Ex1[i]=semnGenerator(id1Ex1[i]);
+          }
+         enunt="Care este raspunsul expresiei ";
+         for(i=1;i<=3;i++){
+             enunt=enunt+idEx1[i]+id1Ex1[i];
+         }
+         enunt=enunt+idEx1[4]+"!";
+           $scope.intrebare1=enunt;
+     
+  $scope.intrebare1=enunt;
+          
+           generareRezultate(raspunsuri,raspuns11);
+     alert(raspuns11);
+     idRaspunsuri1[5]=raspunsuri[1];
+        idRaspunsuri1[6]=raspunsuri[2];
+        idRaspunsuri1[7]=raspunsuri[3];
+        idRaspunsuri1[8]=raspunsuri[4];
+      }else{  
+         $scope.intrebare1=response.data.Intrebare1;;
+      idRaspunsuri1[5]=response.data.R11;
+        idRaspunsuri1[6]=response.data.R21;
+        idRaspunsuri1[7]=response.data.R31;
+        idRaspunsuri1[8]=response.data.R41;
+     }
+    
+      
+      for (i=1;i<=4;i++){
+        idRaspunsuri2[idRaspunsuri[i]]=idRaspunsuri1[i];
+    }
+          generareRaspunsuri(4,idRaspunsuri,1);
+    
+      for (i=5;i<=8;i++){
+        idRaspunsuri2[idRaspunsuri[i-4]+4]=idRaspunsuri1[i];
+    }
+        $scope.raspuns1=idRaspunsuri2[1];
+         $scope.raspuns2=idRaspunsuri2[2];
+         $scope.raspuns3=idRaspunsuri2[3];
+         $scope.raspuns4=idRaspunsuri2[4];
+         $scope.raspuns5=idRaspunsuri2[5];
+         $scope.raspuns6=idRaspunsuri2[6];
+         $scope.raspuns7=idRaspunsuri2[7];
+            $scope.raspuns8=idRaspunsuri2[8];
+     //   $scope.enunt=response.data.Intrebare;
+ // raspuns=response.data.Raspuns;
+
+
+  }, function errorCallback(response) {
+      
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
+    
+   
+    
+    
+    
+     $("label.btn").on('click',function () {
+      
+         $("#"+$(this).attr('id')).css("background-color","#138496");
+    if($(this).attr('id')<5){
+        if (raspunsOn==0){
+            raspunsOn=1;
+          if(exercitiuOn==1){
+              if (idRaspunsuri2[$(this).attr('id')]==raspuns){
+          punctaj=punctaj+10;
+            
+            }
+          } else{    
+            if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
+          punctaj=punctaj+10;
+            
+            }
+          }   }     
+        else {
+        
+            eroareShow("Poti apasa un singur rapuns!");
+        }
+       
+          
+    } else{
+        if (raspunsOn1==0){
+            raspunsOn1=1;
+        if(exercitiuOn==1){
+               if (idRaspunsuri2[$(this).attr('id')]==raspuns11){
+          punctaj=punctaj+10;
+            
+            }
+          } else{  
+            if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
+          punctaj=punctaj+10; 
+            
+            }
+          }
+        }else {
+            
+            eroareShow("Poti apasa un singur rapuns!");
+        }
+            
+          }
+        
+ 
+    
+    });
+var procente1=0;
+$scope.resetare= function(){
+  alert(punctaj);
+    procente1=procente1+20;
+    $(".progress-bar").css("width",(procente1+"%"));
+    $scope.procente=procente1;
+    raspunsOn=0;
+    raspunsOn1=0;
+        $scope.x1=x-1;
+    $scope.y1=x;
+        $(".btn-info").css("background-color","#17A2B8");   
+    x=x+2;
+    if (x<12){
+     $http({
+  method: 'POST',
+  url: '/paginaUtilizator/generareIntrebari.php',
+  data: {id1:idIntrebari[x-1],id2:idIntrebari[x]},
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+}).then(function successCallback(response) {
+        
+  $scope.intrebare=response.data.Intrebare;
+  $scope.intrebare1=response.data.Intrebare1;
+ idRaspunsuri1[1]=response.data.R11;
+        idRaspunsuri1[1]=response.data.R1;
+        idRaspunsuri1[2]=response.data.R2;
+        idRaspunsuri1[3]=response.data.R3;
+        idRaspunsuri1[4]=response.data.R4;
+        idRaspunsuri1[5]=response.data.R11;
+        idRaspunsuri1[6]=response.data.R21;
+        idRaspunsuri1[7]=response.data.R31;
+        idRaspunsuri1[8]=response.data.R41;
+    for (i=1;i<=4;i++){
+        idRaspunsuri2[idRaspunsuri[i]]=idRaspunsuri1[i];
+    }
+          generareRaspunsuri(4,idRaspunsuri,1);
+    
+      for (i=5;i<=8;i++){
+        idRaspunsuri2[idRaspunsuri[i-4]+4]=idRaspunsuri1[i];
+    }
+        $scope.raspuns1=idRaspunsuri2[1];
+         $scope.raspuns2=idRaspunsuri2[2];
+         $scope.raspuns3=idRaspunsuri2[3];
+         $scope.raspuns4=idRaspunsuri2[4];
+         $scope.raspuns5=idRaspunsuri2[5];
+         $scope.raspuns6=idRaspunsuri2[6];
+         $scope.raspuns7=idRaspunsuri2[7];
+            $scope.raspuns8=idRaspunsuri2[8];
+     //   $scope.enunt=response.data.Intrebare;
+ // raspuns=response.data.Raspuns;
+
+
+  }, function errorCallback(response) {
+      
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
+    
+}else{
+    alert("stop");
+}
+} 
+})
+
+
+
+
+
+
+function generareIntrebari(nr,idIntrebari,i){
+    if (i==11 ) return 0;
+    else{ 
+       x=Math.floor((Math.random() *nr) + 1);
+        idIntrebari[i]=x;
+        for(var j=1;j<=i-1;j++){
+             if (idIntrebari[j]==x){
+             generareIntrebari(nr,idIntrebari,i);      
+             }
+            }
+    generareIntrebari(nr,idIntrebari,i+1);  
+    }
+}
+
+function generareRaspunsuri(nr,idRaspunsuri,i){
+    if (i==5 ) return 0;
+    else{ 
+       x=Math.floor((Math.random() *4) + 1);
+        idRaspunsuri[i]=x;
+        for(var j=1;j<=i-1;j++){
+             if (idRaspunsuri[j]==x){
+             generareRaspunsuri(4,idRaspunsuri,i);      
+             }
+            }
+    generareRaspunsuri(4,idRaspunsuri,i+1);  
+    }
+}
+
+function semnGenerator(semn){
+if(semn==1){
+        return "+";
+    } else if(semn==2){
+        return "-";
+    } else if(semn==3){
+        return "%";
+    } else if(semn==4){
+        return "*";
+    } else if(semn==5){
+        return "/";
+    }
+
+}
+
+function generareRezultate(raspunsuri,x){
+    var nr,nr1,nr2,nr3;
+    nr=Math.floor((Math.random() *10) + 1);
+     nr1=Math.floor((Math.random() *10) + 1);
+     nr2=Math.floor((Math.random() *10) + 1);
+     nr3=Math.floor((Math.random() *10) + 1);
+    raspunsuri[1]=x+nr-nr2-nr3;
+    raspunsuri[2]=x+nr1-nr3+nr+nr2;
+    raspunsuri[3]=x;
+    raspunsuri[4]=x-nr+nr2-nr3+2;
+}

@@ -60,7 +60,7 @@ include ("functions.php");
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >
     <nav id="tab-aplicatii">
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <div class="nav nav-tabs tabAplicatie1" id="nav-tab" role="tablist">
     <a class="nav-item nav-link active "  id="id-141" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicația 1</a>
 
 
