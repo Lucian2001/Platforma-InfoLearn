@@ -69,7 +69,7 @@ color:black;
         </div>
 
     <div id="buttons1">
-    <p id="inputText">x=<input id="input"></p>
+    <p id="inputText">x=<input id="input" value="0"></p>
         </div>
 
       <img id="corect" src="paginaUtilizator/assets/images/corect.png" >
@@ -83,7 +83,7 @@ color:black;
 <script src="paginaUtilizator/scripts/structuraAlternativa3.js"></script>
 
 <script>
- var dificultate=10;   var raspuns;
+ var dificultate=10;   var raspuns;var buttonActive=1;
     $(document).ready(function(){
 
        raspuns=generareNumere(dificultate);
@@ -93,7 +93,8 @@ color:black;
 redimensionare153();
     });
     $("#generare").click(function(){
-
+if (buttonActive==1){
+    buttonActive=0;
         if ($("#input").val()==raspuns){
             corect();
 $("#input").val("");
@@ -101,6 +102,7 @@ $("#input").val("");
             gresit();
             $("#input").val("");
         }
+}
     })
 
 </script>

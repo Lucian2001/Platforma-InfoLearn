@@ -13,7 +13,7 @@
         </div>
           <h1 id="exercitii1"><span id="exercitiiRezolvate1">0</span>/6</h1>
     <div id="buttons">
-  <button id="raspuns1"><input id="raspuns2" value="0" maxlength="3"></button>
+  <button id="raspuns1" style="width:30%;"><input id="raspuns2" value="0" maxlength="3"></button>
         </div>
 
       <img id="corect1" src="paginaUtilizator/assets/images/corect.png" >
@@ -24,19 +24,24 @@
 <script src="paginaUtilizator/scripts/generareNumare3.js"></script>
 <link rel="stylesheet" href="paginaUtilizator/css/expresiiAritmetice.css">
 
-<script>
+<script>var buttonActive=1;
+var array=new Array();
+var aray=1;
+
     $(document).ready(function(){
 redimensionare123();
     });
-generareNumere4();
-raspuns=rezultat();
+generareNumere4(array,aray);
+raspuns=rezultat23();
 
 $("#verificare1").click(function(){
+    if (buttonActive==1){
+            buttonActive=0;
   if ($("#raspuns2").val()==raspuns){
     corect();
   } else {
 gresit();
-  }
+  }}
 })
 
 </script>

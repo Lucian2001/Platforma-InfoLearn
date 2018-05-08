@@ -64,7 +64,7 @@ color:black;
 
 <script src="paginaUtilizator/scripts/structuraAlternativa1.js"></script>
 
-<script>
+<script>var buttonActive=1; 
     var raspuns;
 $(document).ready(function(){
   redimensionare151();
@@ -76,20 +76,24 @@ var dificultate;
    raspuns=generareNumere(dificultate);
 
     $("#true2").click(function(){
+        if (buttonActive==1){
+        buttonActive=0; 
         if (raspuns==true){
             corect();
         } else{
             gresit();
         }
-
+        }
     })
         $("#false2").click(function(){
+            if (buttonActive==1){
+        buttonActive=0; 
         if (raspuns!=true){
             corect();
         } else{
             gresit();
         }
-
+            }
     })
 
 

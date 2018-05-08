@@ -28,14 +28,15 @@
 
 <link rel="stylesheet" href="paginaUtilizator/css/expresiiAritmetice.css">
 <script src="paginaUtilizator/scripts/generareNumere2.js"></script>
-<script>
-    var array=new Array();   
-    var array1=new Array();  
-    
+<script>var buttonActive=1;
+    var array=new Array();
+    var array1=new Array();
+
 var raspuns,raspuns1;
  generareNumere(array,array1);
 
 $("#true").click(function(){
+    
    $("#false1").prop('disabled', true);
    if (adevarat==true){
     corect2();
@@ -44,8 +45,10 @@ $("#true").click(function(){
 
 })
     $("#verificare").click(function(){
-       verificare();
-
+      if (buttonActive==1){
+            buttonActive=0;
+        verificare();
+      }
     })
     $(document).ready(function(){
 redimensionare122();

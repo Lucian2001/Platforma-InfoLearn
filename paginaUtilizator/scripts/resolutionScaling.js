@@ -29,7 +29,19 @@ function redimensionare121(){
 function redimensionare122(){
    var height=$(document).height();
    var width=$(document).width();
-if (width<1400&&height<700){
+if (width<1900&&height<950&&width>1400&&height>700){
+  $("#verificare").css("margin-top","-9%");
+  $("#buttons").css("margin-top","15%");
+  $("#corect1").css("width","15%");
+$("#gresit1").css("height","17%");
+$("#corect1").css("height","17%");
+$("#gresit1").css("width","15%");
+$("#corect1").css("margin-top","-25%");
+$("#gresit1").css("margin-top","-25%");
+$(".valoare2").css("font-size","45px");
+$("#spatiuExercitii1").css("margin-left","-20px");
+}
+else if (width<1400&&height<700){
     $("#verificare").css("margin-top","15%");
     $("#buttons").css("margin-top","-15%");
     $(".valoare2").css("font-size","35px");
@@ -55,11 +67,11 @@ function redimensionare123(){
 function redimensionare131(){
    var height=$(document).height();
    var width=$(document).width();
-if (width<1500&&height<800){
-    $("#droppable").css("margin-left","19%");
+if (width<1650&&height<800){
+    $("#droppable").css("margin-left","16%");
 
     $("#exercitii").css("float","left");
-     $("#exercitii").css("margin-top","-10%");
+     $("#exercitii").css("margin-top","0%");
                             $("#exercitii").css("margin-left","2%");
     $("#numarIncercari").css("font-size","33px");
       $("#generare3").css("font-size","18px");
@@ -127,15 +139,15 @@ else if (width<1500&&height<800 ){
 function redimensionare153(){
    var height=$(document).height();
    var width=$(document).width();
-if (width<1601&&height<800 && width>1400 && height>650){ 
- 
+if (width<1601&&height<800 && width>1400 && height>650){
+
     $("#spatiuExercitii").css("margin-top","5%");
     $(".valoare").css("font-size","21px");
      $("#exercitii1").css("float","left");
     $("#exercitii1").css("margin-top","-2%");
           $("#generare").css("margin-top","-10%");
 } else if(width<1900&&height<950){
-     
+
     $("#spatiuExercitii").css("margin-top","5%");
     $(".valoare").css("font-size","17px");
      $("#exercitii1").css("float","left");
@@ -143,4 +155,27 @@ if (width<1601&&height<800 && width>1400 && height>650){
           $("#generare").css("margin-top","-10%");
        $("#generare").css("width","40%");
 }
+}
+function redimensionareEvaluare(){
+    var height=$(document).height();
+   var width=$(document).width();
+    if (width<1601&&height<900 && width>1400 && height>650){
+    $(".modal-dialog").css("width","30%");
+       $(".modal-dialog").css("margin-top","4%");
+    $(".intrebare").css("font-size","20px");
+$(".progress").css("height","20px");
+    $(".progress").css("font-size","17px");
+      } else if(width<1400&&height<750){
+          $("#titluEvaluare").css("font-size","40px");
+             $(".modal-dialog").css("width","30%");
+       $(".modal-dialog").css("margin-top","2%");
+    $(".intrebare").css("font-size","17px");
+$(".progress").css("height","15px");
+          $(".modal-dialog").css("height","76%");
+    $(".progress").css("font-size","15px");
+         $(".progress").css("margin-top","-3%");
+          $("#continua").css("float","right");
+          $("#continua").css("margin-top","-49%");
+          $("#continua").css("margin-right","3%");
+      }
 }

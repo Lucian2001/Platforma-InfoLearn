@@ -15,7 +15,7 @@ function eroareRezultat(x){
 }
     swal({
   title: "Raspuns corect",
-  text: "Raspunsul corect era "+x,
+  text: x,
   icon: "error",
 });
 }

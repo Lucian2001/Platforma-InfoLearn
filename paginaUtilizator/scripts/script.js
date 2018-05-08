@@ -1,6 +1,7 @@
 
-var x="",y="";var nr=0;var  pasi=0;var urlNou=""; var capatUrl;var tancId; var  eroareDegree;   var Id; var limite = new Array();var okSpatiu;
+var x="",y="";var nr=0;var  pasi=0;var urlNou=""; var capatUrl;var tancId; var  eroareDegree;   var Id; var limite = new Array();var okSpatiu;butonActiv=1;
 $("#butonsmecher").click(function(){
+
 y="";
 nr=0;
 okSpatiu=true;
@@ -34,7 +35,8 @@ urlNou="";
 urlNou="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#"+urlNou;
 
   window.location.replace(urlNou);
-
+  if (butonActiv==1){
+    butonActiv=0;
     if (window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/1#1" && urlNou!="-1"){
 
 
@@ -74,6 +76,10 @@ urlNou="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=
     var offsetLimit = targetLimit.offset();
     var targetLimit1 = $( "#limit2" );
     var offsetLimit1 = targetLimit1.offset();
+         var targetLimit3 = $( "#limit3" );
+    var offsetLimit3 = targetLimit3.offset();
+         var targetLimit4 = $( "#limit4" );
+    var offsetLimit4 = targetLimit4.offset();
 
 
  var target = $( "#object1" );
@@ -110,7 +116,7 @@ offset1 = target.offset();
                      url:"paginaUtilizator/testHttp.php",
                      data:"Id=" + Id ,
                   success:function(result)
-                     {
+                     {   butonActiv=1;
                     swal({
   title: "Bravo!",
   text: "Ai terminat această aplicație.Acum poți sa-ți continui aventura.",
@@ -131,7 +137,7 @@ return 0;
         if (degree!=0 || degree1!=0){
             eroareDegree=false;
         }
-
+ butonActiv=1;
    eroareShow("Incearca alt drum!") ;
 
 
@@ -157,9 +163,13 @@ return 0;
         }
 
         if (okSpatiu==1){
+            $("#object1").css({'transform': 'rotate(0deg)'});
+           butonActiv=1;
          eroareShow("Nu ai ajuns in locul indicat!");
         }
         else{
+           butonActiv=1;
+            $("#object1").css({'transform': 'rotate(0deg)'});
 eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drumul.");
 
         }
@@ -188,13 +198,15 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
 
     }
           }
-        if ((offset1.left/(($(document).width())/100))>(offsetLimit.left/(($(document).width())/100)+1) || (offset1.top/(($(document).width())/100))>(offsetLimit1.top/(($(document).width())/100))+1.1){
-           eroare=true;
+        if ((offset1.left/(($(document).width())/100))>(offsetLimit.left/(($(document).width())/100)+1) || (offset1.top/(($(document).width())/100))>(offsetLimit1.top/(($(document).width())/100))+1.1 ||(offset1.left/(($(document).width())/100))<(offsetLimit3.left/(($(document).width())/100)-1.5) || (offset1.top/(($(document).width())/100))<(offsetLimit4.top/(($(document).width())/100))-1.5){
+        
+            eroare=true;
 
               $("#object1").css("top",pozitieInitiala1-(6.7*pozitieInitiala1)/100);
-
+$("#object1").css({'transform': 'rotate(0deg)'});
         eroareShow("Comenzile pe care le-ai dat au scos tancul în afara spațiului de lucru.Incearcă alt algoritm!");
-        showthings();
+         butonActiv=1;
+     
               $("#object1").css("left",pozitieInitiala-(7*pozitieInitiala)/100);
        }
      // alert(degree);
@@ -343,7 +355,7 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
 
 
 }
-}
+}}
 } ,200);
 
 })

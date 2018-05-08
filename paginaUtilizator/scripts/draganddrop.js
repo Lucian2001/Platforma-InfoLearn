@@ -12,9 +12,12 @@
           if(semn1==semn){
 
                 $( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "valid" });
-
-
-corect();
+              $("#plus").draggable( 'disable' );
+               $("#minus").draggable( 'disable' );
+               $("#divide").draggable( 'disable' );
+               $("#multiply").draggable( 'disable' );
+               $("#slash").draggable( 'disable' );
+corect(); 
           } else{
               $( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "valid" });
               incercari();

@@ -74,7 +74,7 @@ if (raspuns==false){
     $("#gresit").show();
 raspuns=true;
 }
- eroareRezultat(semn);
+ eroareRezultat("Răspunsul corect era "+semn);
 }
 var d;
 
@@ -115,7 +115,7 @@ function verificareRaspuns(x){
 a=parseInt(a);
 b=parseInt(b);
     if (a!=0 && b!=0){
-      alert("a="+a+"b="+b+"x="+x);
+     
     if (x==1){
       if(a<b){
           ok=true;
@@ -173,7 +173,7 @@ $("#id---2").val("");
       afisareSemn(numar);
 
 
-
+buttonActive=1; 
   } ,1500);
   var nr=$("#exercitiiRezolvate").html();
   var nr1=parseInt(nr);
@@ -204,7 +204,7 @@ success:function(result)
 }}
 }
 function gresit1(){
-  $("#gresit").show(); eroareRezultat( generareRaspunsCorect());
+  $("#gresit").show(); eroareRezultat( "Un raspuns corect ar putea fi   "+generareRaspunsCorect());
   setTimeout(function(){
           numar=Math.floor((Math.random() * 6) + 1);
        $("#id---2").prop('disabled', false);
@@ -214,26 +214,41 @@ function gresit1(){
 $("#id---2").val("");
       afisareSemn(numar);
 
-
+buttonActive=1; 
   } ,1500);
 
 
 }
 
 function generareRaspunsCorect(){
-var raspuns;
+var raspuns;var nr;
 raspuns=$("#id---"+c).val();
+    raspuns=parseInt(raspuns);
+ nr=Math.floor((Math.random() * 10) + 1);
+    if (c==1){
+        nr=0-nr;
+    }
+    
 if (d==1){
-  return Math.floor((Math.random() * raspuns-1) + 1);
+    nr=raspuns-nr;
+    nr=parseInt(nr);
+  return nr;
 } else if (d==2){
-  return Math.floor((Math.random() * raspuns) + 1);
+     nr=raspuns-nr;
+     nr=parseInt(nr);
+  return nr;
 } else if (d==3){
-  return Math.floor((Math.random() * raspuns*2+1) + raspuns+1);
+     nr=raspuns+nr;
+     nr=parseInt(nr);
+  return nr;
 } else if (d==4){
-return Math.floor((Math.random() * raspuns*2+1) + raspuns+1);
+     nr=raspuns+nr;
+     nr=parseInt(nr);
+return nr;
 } else if (d==5){
 return raspuns;
 } else if (d==6){
-return Math.floor((Math.random() * raspuns*2+1) + raspuns+1);
+     nr=parseInt(nr);
+return raspuns-nr;
 }
 }

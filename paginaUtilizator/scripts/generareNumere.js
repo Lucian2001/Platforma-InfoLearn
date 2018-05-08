@@ -122,11 +122,17 @@ function incercari(){
       nr1=nr1-1;
         $("#numarIncercari").html(nr1);}
         else{
-           eroareRezultat(semn1);
+                  $("#plus").draggable( 'disable' );
+               $("#minus").draggable( 'disable' );
+               $("#divide").draggable( 'disable' );
+               $("#multiply").draggable( 'disable' );
+               $("#slash").draggable( 'disable' );
+           eroareRezultat("Raspunsul corect era"+semn1);
             $("#gresit").show();
             $("#numarIncercari").html(0);
             $("#invisibleObject").html(1);
                   $("#invisibleObject1").html(0);
+        buttonActive=1;
         }
 }
 function corect(){
@@ -142,6 +148,7 @@ $("#corect").show();
     }
 $("#invisibleObject").html(1);
       $("#invisibleObject1").html(1);
+    buttonActive=1;
 }
 function fixOperatiiMultipleBug(x,y,z,semn){
 

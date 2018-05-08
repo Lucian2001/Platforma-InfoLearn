@@ -20,18 +20,23 @@
   <p id="invisibleObject1">0<p>
 <link rel="stylesheet" href="paginaUtilizator/css/expresiiAritmetice.css">
       <link rel="stylesheet" href="paginaUtilizator/css/operatorirelationali.css">
-<script src="paginaUtilizator/scripts/draganddrop1.js"></script>
+
 <script src="paginaUtilizator/scripts/operatoriRelationali.js"  ></script>
 
 
-<script>    var numar=Math.floor((Math.random() * 6) + 1);
-$(document).ready(function(){
+<script>var buttonActive=1;    
+    var numar=Math.floor((Math.random() * 6) + 1);
+$(document).ready(function(){ 
 redimensionare132();
   afisareSemn(numar)
 })
     $("#generare4").click(function(){
+        if (buttonActive==1){
+            
+         buttonActive=0;   
+        
         verificareRaspuns(numar);
-
+        }
     })
 
 </script>

@@ -243,7 +243,7 @@ function verificare(){
                   generareNumere(array,array1);
                 $("#corect1").hide();
            $("#false1").prop('disabled', false);
-
+  buttonActive=1;
             } ,1500);
          var nr=$("#exercitiiRezolvate1").html();
          var nr1=parseInt(nr);
@@ -253,7 +253,7 @@ function verificare(){
     }
 
         }else  {
-            $("#gresit1").show();  eroareRezultat(raspuns1);
+            $("#gresit1").show();  eroareRezultat("Raspunsul corect era"+raspuns1);
             setTimeout(function(){
 
 
@@ -273,6 +273,7 @@ $("#corect1").show();
                   $("#false1").prop('disabled', false);
                 $("#corect1").hide();
               $("#false1").val("");
+                  buttonActive=1;
             } ,1500);
          var nr=$("#exercitiiRezolvate1").html();
          var nr1=parseInt(nr);
@@ -287,6 +288,7 @@ $("#corect1").show();
                 $("#gresit1").hide();
               $("#false1").val("");
                  $("#false1").prop('disabled', false);
+                  buttonActive=1;
             } ,1500);
       }
 

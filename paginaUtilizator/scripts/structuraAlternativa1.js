@@ -9,46 +9,46 @@ function generareNumere(x){
      var nr6=Math.floor((Math.random() * 10) + 1);
     var true1=Math.floor((Math.random() * 10) + 1);
     var true2=Math.floor((Math.random() * 10) + 1);
-    $("#id--1").html(nr); 
+    $("#id--1").html(nr);
     $("#id--3").html(nr1);
     $("#id--7").html(nr2);
 
    if (nr6<8){
-         $("#id--6").html("and"); 
+         $("#id--6").html("and");
    } else{
-           $("#id--6").html("or"); 
+           $("#id--6").html("or");
    }
     if (true1<8){
-          $("#id--5").html(expresie(nr4,nr,nr1)); 
+          $("#id--5").html(expresie(nr4,nr,nr1));
     } else{
         var nr7=Math.floor((Math.random() * 10) + 1);
         nr7=nr7+1+expresie(nr4,nr,nr1);
-        $("#id--5").html(nr7); 
+        $("#id--5").html(nr7);
     }
 
-    if (true2<7){ 
-      $("#id--9").html(operator(nr5,nr2)); 
+    if (true2<7){
+      $("#id--9").html(operator(nr5,nr2));
     }else{
         if (nr5==1 || nr5==3){
-              $("#id--9").html(operator(nr5+1,nr2)); 
+              $("#id--9").html(operator(nr5+1,nr2));
         }else if (nr5==2 || nr5==4){
-             $("#id--9").html(operator(nr5-1,nr2));  
+             $("#id--9").html(operator(nr5-1,nr2));
         }
-    
+
     }
-    
+
     nr4=generareSemn(nr4);
     nr5=generareOperator(nr5);
-    if ((true1<7 && true2<6 && nr6<8) || (true1<7 && true2<6 && nr6>=8) || 
+    if ((true1<7 && true2<6 && nr6<8) || (true1<7 && true2<6 && nr6>=8) ||
        (true1<7 && true2>=6 && nr6>=8) || (true1>=7 && true2<6 && nr6>=8)){
         return true;
-    } else 
+    } else
         return false;
 
 }
 
 
-    
+
     function generareSemn(semn){
     if(semn==1){
          $("#id--2").html("+");
@@ -67,7 +67,7 @@ function generareNumere(x){
         return "slash";
     }
 }
-    
+
     function generareOperator(x){
     if(x==1){
               $("#id--8").html(">");
@@ -81,29 +81,29 @@ function generareNumere(x){
     } else if(x==4){
               $("#id--8").html("<=");
         return "maiMicSauEgal";
-    } 
+    }
 }
 
  function expresie(semn,x,y){
     if(semn==1){
-         
+
         return x+y;
     } else if(semn==2){
-        
+
         return x-y;
     } else if(semn==3){
-     
+
         return x%y;
     } else if(semn==4){
-     
+
         return x*y;
     } else if(semn==5){
-       
+
         return Math.floor(x/y);
     }
 }
  function operator(x,y){
-    var z; 
+    var z;
      if(x==1){
              do {
                 z=Math.floor((Math.random() * (y*2)) + 1);
@@ -124,20 +124,20 @@ function generareNumere(x){
                 z=Math.floor((Math.random() * (y*2)) + 1);
              } while(y>z);
         return z;
-    } 
+    }
 }
 function corect(){
-    
+
 $("#corect").show();
             setTimeout(function(){
                  $("#corect").hide();
-                dificultate=dificultate+7;  
-               raspuns= generareNumere(dificultate);   
-             
-             
-  
+                dificultate=dificultate+7;
+               raspuns= generareNumere(dificultate);
+
+buttonActive=1;
+
             } ,1500);
-         var nr=$("#exercitiiRezolvate").html();   
+         var nr=$("#exercitiiRezolvate").html();
          var nr1=parseInt(nr);
     if (nr1>=0 && nr1<=5){
         nr1++;
@@ -150,7 +150,7 @@ var Id="";
 if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3||url[i]==6)){
   Id=Id+url[i];
 }
-} alert(Id);
+} 
   $("#id-"+Id).css("background-color","#d8ffd6");
 
 $.ajax({   type:"POST",
@@ -167,7 +167,7 @@ success:function(result)
     }
 
 });
-          
+
       }
 
 }
@@ -175,10 +175,10 @@ function gresit(){
     $("#gresit").show();
             setTimeout(function(){
                  $("#gresit").hide();
-                dificultate=dificultate-1;  
-               raspuns=generareNumere(dificultate);   
-             
-               
-  
+                dificultate=dificultate-1;
+               raspuns=generareNumere(dificultate);
+
+buttonActive=1;
+
             } ,1500);
 }

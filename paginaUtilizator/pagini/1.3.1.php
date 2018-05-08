@@ -23,7 +23,10 @@
 
 
 <script> var semn;
+     
+               
 $(document).ready(function(){
+   
       var randomNr1=Math.floor((Math.random() * 3) + 1);
 generareNumere(randomNr1);
   semn= generareSemn(randomNr1);
@@ -34,7 +37,9 @@ generareNumere(randomNr1);
 
 })
     $("#generare3").click(function(){
-
+ $("#maiMic").draggable( 'enable' );
+               $("#maiMare").draggable( 'enable' );
+               $("#egal").draggable( 'enable' );
          var randomNr1=Math.floor((Math.random() * 3) + 1);
 generareNumere(randomNr1);
    var semn= generareSemn(randomNr1);

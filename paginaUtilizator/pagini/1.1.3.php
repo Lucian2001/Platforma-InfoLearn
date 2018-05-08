@@ -9,8 +9,8 @@ include("loadTanc.php");
  <div class="container12"style="z-index:1;">
 
   <div class="row" id ="rowMatrice" style="z-index:2;margin-top:0%;">
-    <div  class="col1" ><img id="id-11" src="" width="100%" height="100%"></div>
-    <div  class="col1" ><img id="id-12" src="" width="100%" height="100%"></div>
+    <div  class="col1" id="limit3"><img id="id-11" src="" width="100%" height="100%"></div>
+    <div  class="col1" id="limit4"><img id="id-12" src="" width="100%" height="100%"></div>
       <div  class="col1" ><img id="id-13" src="" width="100%" height="100%"></div>
     <div  class="col1"><img id="id-14" src="" width="100%" height="100%"></div>
       <div  class="col1" ><img id="id-15" src="" width="100%" height="100%"></div>
@@ -81,6 +81,7 @@ include("loadTanc.php");
 </style>
 <script src="paginaUtilizator/scripts/generareMapa.js"></script>
 <script>
+       
 if (tanc==0){
   noTank();
 }
@@ -121,7 +122,5 @@ $("#object1").show();
 
 })
 
-$("#butonError").click(function(){
- hidethings();
-});
+
 </script>

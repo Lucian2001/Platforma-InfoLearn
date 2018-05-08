@@ -24,7 +24,10 @@
 <script src="paginaUtilizator/scripts/draganddrop.js"></script>
 <script src="paginaUtilizator/scripts/generareNumere.js"></script>
 
-<script>var semn1;
+<script>buttonActive=1;
+    var semn1;
+    dragAndDrop(semn1);
+       
 var corectValue;
     var numarNumereGenerate=2;
 var numarSemneGenerate=1;
@@ -41,6 +44,13 @@ semn1=generareSemn(semn);
 dragAndDrop(semn1);
 
     $("#generare").click(function(){
+        if (buttonActive==1){
+            buttonActive=0;
+            $("#plus").draggable( 'enable' );
+               $("#minus").draggable( 'enable' );
+               $("#divide").draggable( 'enable' );
+               $("#multiply").draggable( 'enable' );
+               $("#slash").draggable( 'enable' );
 var nr2=$("#invisibleObject").html();
 if (nr2=="1"){
 var ok=0;
@@ -66,7 +76,7 @@ $("#invisibleObject").html(0);
   $("#gresit").hide();
     $("#corect").hide();
       $("#numarIncercari").html("3");
-}}
+}}}
     })
 
 })

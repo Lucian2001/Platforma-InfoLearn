@@ -125,7 +125,7 @@ $("#corect").show();
                raspuns= generareNumere(dificultate);   
              
             
-  
+  buttonActive=1;
             } ,1500);
          var nr=$("#exercitiiRezolvate").html();   
          var nr1=parseInt(nr);
@@ -146,7 +146,7 @@ function gresit(){
                 dificultate=dificultate-1;  
                raspuns=generareNumere(dificultate);   
              
-          
+          buttonActive=1;
 
             } ,1500);
 }

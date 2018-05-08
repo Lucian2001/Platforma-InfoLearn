@@ -11,15 +11,15 @@
 
 
 <div ng-controller="evaluare">
-    
+
 
  <div class="modal-dialog" >
       <div class="modal-content">
          <div class="modal-header">
-            <h3><span class="label label-warning" id="qid">{{x1}}.</span> {{intrebare}}</h3>
+            <h3 class="intrebare"><span class="label label-warning" id="qid">{{x1}}.</span> {{intrebare}}</h3>
         </div>
         <div class="modal-body">
-       
+
 
           <div class="quiz" id="quiz" data-toggle="buttons">
            <label id="1"  class="element-animation1 btn btn-lg btn-info btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>A.     {{raspuns1}}</label>
@@ -36,10 +36,10 @@
      <div class="modal-dialog" >
       <div class="modal-content">
          <div class="modal-header">
-            <h3><span class="label label-warning" id="qid">{{y1}}.</span> {{intrebare1}}</h3>
+            <h3 class="intrebare"><span class="label label-warning" id="qid">{{y1}}.</span> {{intrebare1}}</h3>
         </div>
         <div class="modal-body">
-       
+
 
           <div class="quiz" id="quiz" data-toggle="buttons">
            <label id="5" class="element-animation1 btn btn-lg btn-info btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>A.     {{raspuns5}}</label>
@@ -53,26 +53,29 @@
 </div>
 </div>
 </div>
-  
+
 
     <div class="progress">
   <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%">{{procente}}%</div>
-        
-           
+
+
 </div>
- <button type="button" class="btn btn-warning" ng-click="resetare()">Continua</button>
+ <button type="button" id="continua"class="btn btn-warning" ng-click="resetare()">Continua</button>
 </div>
 
 
-      
+
 
 </body>
 
-   
+
 
 <script src="paginaUtilizator/scripts/generareNumere2.js"></script>
-<script>
+<script src="paginaUtilizator/scripts/generareNumare3.js"></script>
+<script src="paginaUtilizator/scripts/structuraAlternativa1.js"></script>
 
+<script>
+redimensionareEvaluare();
 
 
 </script>
