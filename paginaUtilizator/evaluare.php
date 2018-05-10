@@ -11,7 +11,16 @@
 
 
 <div ng-controller="evaluare">
-
+ 
+<div id="evaluareEnding" >
+<h1 id="rezultat">Ai obtinut {{punctajShow}} de puncte.</h1>    
+  <ol ng-repeat="x in intrebariSiRaspunsuri">
+    <li>{{ x.intrebare2 }}</li>
+    <li>{{ x.raspuns12 }}</li>
+  </ol>
+    </div>
+    
+    
 
  <div class="modal-dialog" >
       <div class="modal-content">
@@ -64,7 +73,7 @@
 </div>
 
 
-
+ 
 
 </body>
 

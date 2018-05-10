@@ -1,11 +1,11 @@
 
- 
+
 
  function dragAndDrop(semn) {
-   
+
     $( "#maiMic,#maiMare,#maiMicSauEgal,#maiMareSauEgal,#egal,#diferit").draggable({ revert: "invalid" });
     $( "#droppable" ).droppable({
-        
+
     //accept: "#plus",
 
       drop: function( event, ui ) {
@@ -20,7 +20,7 @@
 
 
 corect();
-          } else{ 
+          } else{
                 $("#maiMic").draggable( 'disable' );
                $("#maiMare").draggable( 'disable' );
                $("#egal").draggable( 'disable' );

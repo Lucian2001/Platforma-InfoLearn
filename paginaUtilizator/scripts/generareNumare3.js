@@ -47,6 +47,7 @@ function gresit(){
   eroareRezultat("Raspunsul corect era"+raspuns);
   setTimeout(function(){
         generareNumere4(array,aray);
+        raspuns=rezultat23();
       $("#gresit1").hide();
  $("#raspuns2").val(0);
 buttonActive=1;
@@ -59,6 +60,7 @@ function corect(){
   $("#corect1").show();
   setTimeout(function(){
         generareNumere4(array,aray);
+        raspuns=rezultat23();
       $("#corect1").hide();
 buttonActive=1;
       $("#raspuns2").val(0);

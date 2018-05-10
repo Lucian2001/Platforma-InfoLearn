@@ -1,3 +1,11 @@
+#evaluareEnding{
+    
+display: none;
+}
+#rezultat{
+   text-align: center;
+    margin-top: 2%;
+}
 #titluEvaluare{
     text-align: center;
        margin-top: 1.5%;

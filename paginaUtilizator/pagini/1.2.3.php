@@ -13,7 +13,7 @@
         </div>
           <h1 id="exercitii1"><span id="exercitiiRezolvate1">0</span>/6</h1>
     <div id="buttons">
-  <button id="raspuns1" style="width:30%;"><input id="raspuns2" value="0" maxlength="3"></button>
+  <button id="raspuns1" style="width:30%;"><input id="raspuns2" placeholder="0" maxlength="3"></button>
         </div>
 
       <img id="corect1" src="paginaUtilizator/assets/images/corect.png" >
@@ -37,6 +37,8 @@ raspuns=rezultat23();
 $("#verificare1").click(function(){
     if (buttonActive==1){
             buttonActive=0;
+
+
   if ($("#raspuns2").val()==raspuns){
     corect();
   } else {

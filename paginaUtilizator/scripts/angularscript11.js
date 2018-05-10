@@ -6,7 +6,7 @@ angular.module('myApp').controller('blocuri', function ($scope,$location,$route,
 
 
       $scope.error="Nu ai nicio eroare";
-      $scope.records = []
+      $scope.records = [];
      //surse aplicatiii {
     var srcCounter=0;
     var srcId=1;
@@ -686,7 +686,7 @@ app.directive('header123', function () {
 
 angular.module('myApp').controller('expresiiLogice', function ($scope,$http,$location,$timeout){
 
-var buttonActive=1; 
+var buttonActive=1;
 var raspuns;
     load();
       $scope.visible=0;
@@ -712,7 +712,7 @@ var raspuns;
           if (buttonActive==1 ){
               buttonActive=0;
        var input1=$scope.input;
-              
+
               if (input1!=null){
           input1.toLowerCase();
 
@@ -751,9 +751,9 @@ var raspuns;
       $scope.numarExercitii++;
       $timeout( function(){
         $scope.visible=0;
-          buttonActive=1; 
+          buttonActive=1;
           load();
-          
+
         }, 1500);
 
 
@@ -772,7 +772,7 @@ $timeout( 1500);
           } else{
            eroareRezultat("Raspunsul corect era AND");
           }
-          buttonActive=1; 
+          buttonActive=1;
         }, 1500);
 
 
@@ -792,6 +792,18 @@ angular.module('myApp').controller('evaluare', function ($scope,$http,$location,
     $scope.procente=0;
     $scope.x1=x-1;
     $scope.y1=x;
+    var corecte= new Array();
+   corecte[1]=new Array(3);
+    corecte[2]=new Array(3);
+    corecte[3]=new Array(3);
+    corecte[4]=new Array(3);
+    corecte[5]=new Array(3);
+    corecte[6]=new Array(3);
+    corecte[7]=new Array(3);
+    corecte[8]=new Array(3);
+    corecte[9]=new Array(3);
+    corecte[10]=new Array(3);
+    
     $(".btn-info").css("background-color","#17A2B8");
 var idIntrebari = new Array();
 var idRaspunsuri=new Array();
@@ -817,13 +829,14 @@ var numarIntermediar=0;
 
 
   intrebare=response.data.Intrebare;
- if (intrebare.slice(0,-1)=="##&##"){
+
+ if (intrebare.slice(0,-1) =="##&##"){
 numarExercitiu= intrebare.substr(intrebare.length - 1);
 exercitiuOn=1;
-numarExercitiu=2;
+
 enunt="";
  if (numarExercitiu==1){
-         raspuns=generareNumere(idEx1,id1Ex1);
+         raspuns=generareNumere12(idEx1,id1Ex1);
           for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
@@ -834,6 +847,8 @@ enunt="";
          enunt=enunt+idEx1[4]+"!";
            $scope.intrebare=enunt;
             generareRezultate(raspunsuri,raspuns);
+     corecte[x-1][1]=enunt;
+     corecte[x-1][2]=raspuns;
 } else if (numarExercitiu==2){
 generareNumere4(idEx1,numarIntermediar);
 numarIntermediar=Math.floor((Math.random() *2) + 1);
@@ -867,6 +882,8 @@ if(numarIntermediar==1){
 }
  $scope.intrebare=enunt;
 raspunsuri[1]=raspuns;
+    corecte[x-1][1]=enunt;
+     corecte[x-1][2]=raspuns;
 } else if(numarExercitiu==3){
 var a,b;
   a=Math.floor((Math.random() * 6) + 1);
@@ -876,6 +893,8 @@ enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"
  $scope.intrebare=enunt;
  generareRaspunsuri124(raspunsuri,a,b);
  raspuns=raspunsuri[1];
+    corecte[x-1][1]=enunt;
+     corecte[x-1][2]=raspuns;
 } else if(numarExercitiu==4){
   var nr=Math.floor((Math.random() * 20) + 1);
   var nr1=Math.floor((Math.random() * 20) + 1);
@@ -883,6 +902,13 @@ enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"
   var nr4=Math.floor((Math.random() * 5) + 1);
   var nr5=Math.floor((Math.random() * 6) + 1);
   var nr6=Math.floor((Math.random() * 2) + 1);
+  var nr7=Math.floor((Math.random() * 2) + 1);
+if(nr7==1){
+  raspuns="adevarat";
+} else{
+  raspuns="fals";
+}
+ var nr8=Math.floor((Math.random() * 3) + 1);
   if (nr6==1){
     numarIntermediar="and";
   }else{
@@ -891,10 +917,45 @@ enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"
   }
   var semn=semnGenerator(nr4);
   var operator=generareOperator11(nr5);
+  if (numarIntermediar=="and"  && raspuns=="adevarat"){
+        nr4=rezultat1234(nr4,nr,nr1);
+        nr5=rezultat12345(nr5,nr2);
+  } else if(numarIntermediar=="and"  && nr7=="fals"){
+    if (nr8==1){
+    nr4=rezultat1234(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  } else if(nr8==2){
+    nr4=rezultat1234(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  } else if (nr8==3){
+    nr4=rezultatGresit123(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  }
+
+} else if(numarIntermediar=="ori"  && nr7=="adevarat"){
+  if (nr8==1){
   nr4=rezultat1234(nr4,nr,nr1);
-    nr5=rezultat12345(nr5,nr2);
-enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
+  nr5=rezultatGresit1234(nr5,nr2);
+} else {
+  nr4=rezultatGresit123(nr4,nr,nr1);
+  nr5=rezultat12345(nr5,nr2);
+}
+
+} else if(numarIntermediar=="ori"  && nr7=="fals"){
+  nr4=rezultatGresit123(nr4,nr,nr1);
+  nr5=rezultatGresit1234(nr5,nr2);
+
+}
+
+
+enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
  $scope.intrebare=enunt;
+ raspunsuri[1]="adevarat";
+  raspunsuri[2]="fals";
+   raspunsuri[3]="adevarat";
+    raspunsuri[4]="fals";
+corecte[x-1][1]=enunt;
+     corecte[x-1][2]=raspuns;
 }
 
 
@@ -909,6 +970,8 @@ enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"="+ nr4+") 
         idRaspunsuri1[2]=response.data.R2;
         idRaspunsuri1[3]=response.data.R3;
         idRaspunsuri1[4]=response.data.R4;
+         corecte[x-1][1]=response.data.Intrebare;
+     corecte[x-1][2]=response.data.R1;
      }
 
 
@@ -943,11 +1006,11 @@ intrebare1=response.data.Intrebare1;
       if (intrebare1.slice(0,-1)=="##&##"){
         numarExercitiu= intrebare1.substr(intrebare1.length - 1);
         exercitiuOn=1;
-        numarExercitiu=3;
+
 
           enunt="";
  if (numarExercitiu==1){
-         raspuns11=generareNumere(idEx1,id1Ex1);
+         raspuns11=generareNumere12(idEx1,id1Ex1);
           for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
@@ -961,6 +1024,8 @@ intrebare1=response.data.Intrebare1;
   $scope.intrebare1=enunt;
 
            generareRezultate(raspunsuri,raspuns11);
+     corecte[x][1]=enunt;
+     corecte[x][2]=raspuns11;
 } else if (numarExercitiu==2){
   generareNumere4(idEx1,numarIntermediar);
   numarIntermediar=Math.floor((Math.random() *2) + 1);
@@ -996,7 +1061,8 @@ intrebare1=response.data.Intrebare1;
   raspunsuri[5]=raspuns11;
 
 
-
+corecte[x][1]=enunt;
+     corecte[x][2]=raspuns11;
 } else if(numarExercitiu==3){
   var a,b;
     a=Math.floor((Math.random() * 6) + 1);
@@ -1005,7 +1071,69 @@ intrebare1=response.data.Intrebare1;
   enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"__ .";
    $scope.intrebare1=enunt;
    generareRaspunsuri124(raspunsuri,a,b);
-   raspuns11=raspunsuri[5];
+   raspuns11=raspunsuri[5];corecte[x][1]=enunt;
+     corecte[x][2]=raspuns11;
+} else if(numarExercitiu==4){
+  var nr=Math.floor((Math.random() * 20) + 1);
+  var nr1=Math.floor((Math.random() * 20) + 1);
+  var nr2=Math.floor((Math.random() * 20) + 1);
+  var nr4=Math.floor((Math.random() * 5) + 1);
+  var nr5=Math.floor((Math.random() * 6) + 1);
+  var nr6=Math.floor((Math.random() * 2) + 1);
+  var nr7=Math.floor((Math.random() * 2) + 1);
+if(nr7==1){
+  raspuns11="adevarat";
+} else{
+  raspuns11="fals";
+}
+ var nr8=Math.floor((Math.random() * 3) + 1);
+  if (nr6==1){
+    numarIntermediar="and";
+  }else{
+    numarIntermediar="ori";
+
+  }
+  var semn=semnGenerator(nr4);
+  var operator=generareOperator11(nr5);
+  if (numarIntermediar=="and"  && raspuns=="adevarat"){
+        nr4=rezultat1234(nr4,nr,nr1);
+        nr5=rezultat12345(nr5,nr2);
+  } else if(numarIntermediar=="and"  && nr7=="fals"){
+    if (nr8==1){
+    nr4=rezultat1234(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  } else if(nr8==2){
+    nr4=rezultat1234(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  } else if (nr8==3){
+    nr4=rezultatGresit123(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  }
+
+} else if(numarIntermediar=="ori"  && nr7=="adevarat"){
+  if (nr8==1){
+  nr4=rezultat1234(nr4,nr,nr1);
+  nr5=rezultatGresit1234(nr5,nr2);
+} else {
+  nr4=rezultatGresit123(nr4,nr,nr1);
+  nr5=rezultat12345(nr5,nr2);
+}
+
+} else if(numarIntermediar=="ori"  && nr7=="fals"){
+  nr4=rezultatGresit123(nr4,nr,nr1);
+  nr5=rezultatGresit1234(nr5,nr2);
+
+}
+
+
+enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
+ $scope.intrebare1=enunt;
+ raspunsuri[5]="adevarat";
+  raspunsuri[6]="fals";
+   raspunsuri[7]="adevarat";
+    raspunsuri[8]="fals";
+corecte[x][1]=enunt;
+     corecte[x][2]=raspuns11;
 }
      idRaspunsuri1[5]=raspunsuri[5];
         idRaspunsuri1[6]=raspunsuri[6];
@@ -1017,6 +1145,8 @@ intrebare1=response.data.Intrebare1;
         idRaspunsuri1[6]=response.data.R21;
         idRaspunsuri1[7]=response.data.R31;
         idRaspunsuri1[8]=response.data.R41;
+          corecte[x][1]=response.data.Intrebare1;
+     corecte[x][2]=response.data.R11;
      }
 
 
@@ -1057,7 +1187,9 @@ intrebare1=response.data.Intrebare1;
         if (raspunsOn==0){
             raspunsOn=1;
           if(exercitiuOn==1){
+
               if (idRaspunsuri2[$(this).attr('id')]==raspuns){
+
           punctaj=punctaj+10;
 
             }
@@ -1065,10 +1197,12 @@ intrebare1=response.data.Intrebare1;
             if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
           punctaj=punctaj+10;
 
+
             }
           }   }
         else {
-
+ $("#"+$(this).attr('id')).css("background-color","#17A2B8");
+         $(".btn-info").css("border-color","#17A2B8");
             eroareShow("Poti apasa un singur rapuns!");
         }
 
@@ -1088,7 +1222,8 @@ intrebare1=response.data.Intrebare1;
             }
           }
         }else {
-
+        $("#"+$(this).attr('id')).css("background-color","#17A2B8");
+                 $(".btn-info").css("border-color","#17A2B8");
             eroareShow("Poti apasa un singur rapuns!");
         }
 
@@ -1099,8 +1234,12 @@ intrebare1=response.data.Intrebare1;
     });
 var procente1=0;
 $scope.resetare= function(){
-  alert(punctaj);
-    procente1=procente1+20;
+
+  
+    
+    if (x<10){
+        x=x+2;
+        procente1=procente1+20;
     $(".progress-bar").css("width",(procente1+"%"));
     $scope.procente=procente1;
     raspunsOn=0;
@@ -1108,8 +1247,9 @@ $scope.resetare= function(){
         $scope.x1=x-1;
     $scope.y1=x;
         $(".btn-info").css("background-color","#17A2B8");
-    x=x+2;
-    if (x<12){
+       $(".btn-info").css("border-color","#17A2B8");
+    
+        
      $http({
   method: 'POST',
   url: '/paginaUtilizator/generareIntrebari.php',
@@ -1118,18 +1258,306 @@ $scope.resetare= function(){
 
 }).then(function successCallback(response) {
 
-  $scope.intrebare=response.data.Intrebare;
-  $scope.intrebare1=response.data.Intrebare1;
- idRaspunsuri1[1]=response.data.R11;
-        idRaspunsuri1[1]=response.data.R1;
+  intrebare=response.data.Intrebare;
+
+  if (intrebare.slice(0,-1) =="##&##"){
+  numarExercitiu= intrebare.substr(intrebare.length - 1);
+  exercitiuOn=1;
+  enunt="";
+  if (numarExercitiu==1){
+         raspuns=generareNumere12(idEx1,id1Ex1);
+          for (i=1;i<=3;i++){
+              id1Ex1[i]=semnGenerator(id1Ex1[i]);
+          }
+         enunt="Care este raspunsul expresiei ";
+         for(i=1;i<=3;i++){
+             enunt=enunt+idEx1[i]+id1Ex1[i];
+         }
+         enunt=enunt+idEx1[4]+"!";
+           $scope.intrebare=enunt;
+            generareRezultate(raspunsuri,raspuns);
+      corecte[x-1][1]=enunt;
+     corecte[x-1][2]=raspuns;
+  } else if (numarExercitiu==2){
+  generareNumere4(idEx1,numarIntermediar);
+  numarIntermediar=Math.floor((Math.random() *2) + 1);
+  if(numarIntermediar==1){
+  raspuns=(idEx1[1]%idEx1[2]);
+     if (idEx1[2]==10){
+          raspunsuri[2]=idEx1[1]%100;
+            raspunsuri[3]=Math.floor(idEx1[1]/idEx1[2]);
+              raspunsuri[4]=Math.floor(idEx1[1]/100);
+     } else{
+       raspunsuri[2]=idEx1[1]%10;
+         raspunsuri[3]=Math.floor(idEx1[1]/idEx1[2]);
+           raspunsuri[4]=Math.floor(idEx1[1]/10);
+     }
+  } else{
+  if (idEx1[2]==10){
+       raspunsuri[2]=Math.floor(idEx1[1]/100);
+         raspunsuri[3]=idEx1[1]%idEx1[2];
+           raspunsuri[4]=idEx1[1]%100;
+  } else{
+    raspunsuri[2]=Math.floor(idEx1[1]/10);
+      raspunsuri[3]=idEx1[1]%idEx1[2];
+        raspunsuri[4]=idEx1[1]%10;
+  }
+  raspuns=Math.floor(idEx1[1]/idEx1[2]);
+  }
+  if(numarIntermediar==1){
+  enunt="Care este raspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
+  } else{
+  enunt="Care este raspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
+  }
+  $scope.intrebare=enunt;
+  raspunsuri[1]=raspuns;
+      corecte[x-1][1]=enunt;
+     corecte[x-1][2]=raspuns;
+  } else if(numarExercitiu==3){
+  var a,b;
+  a=Math.floor((Math.random() * 6) + 1);
+  b=Math.floor((Math.random() * 30) + 10);
+  numarIntermediar=generareOperator11(a);
+  enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"__ .";
+  $scope.intrebare=enunt;
+  generareRaspunsuri124(raspunsuri,a,b);
+  raspuns=raspunsuri[1];
+      corecte[x-1][1]=enunt;
+     corecte[x-1][2]=raspuns;
+  } else if(numarExercitiu==4){
+  var nr=Math.floor((Math.random() * 20) + 1);
+  var nr1=Math.floor((Math.random() * 20) + 1);
+  var nr2=Math.floor((Math.random() * 20) + 1);
+  var nr4=Math.floor((Math.random() * 5) + 1);
+  var nr5=Math.floor((Math.random() * 6) + 1);
+  var nr6=Math.floor((Math.random() * 2) + 1);
+  var nr7=Math.floor((Math.random() * 2) + 1);
+  if(nr7==1){
+  raspuns="adevarat";
+  } else{
+  raspuns="fals";
+  }
+  var nr8=Math.floor((Math.random() * 3) + 1);
+  if (nr6==1){
+    numarIntermediar="and";
+  }else{
+    numarIntermediar="ori";
+
+  }
+  var semn=semnGenerator(nr4);
+  var operator=generareOperator11(nr5);
+  if (numarIntermediar=="and"  && raspuns=="adevarat"){
+        nr4=rezultat1234(nr4,nr,nr1);
+        nr5=rezultat12345(nr5,nr2);
+  } else if(numarIntermediar=="and"  && nr7=="fals"){
+    if (nr8==1){
+    nr4=rezultat1234(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  } else if(nr8==2){
+    nr4=rezultat1234(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  } else if (nr8==3){
+    nr4=rezultatGresit123(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  }
+
+  } else if(numarIntermediar=="ori"  && nr7=="adevarat"){
+  if (nr8==1){
+  nr4=rezultat1234(nr4,nr,nr1);
+  nr5=rezultatGresit1234(nr5,nr2);
+  } else {
+  nr4=rezultatGresit123(nr4,nr,nr1);
+  nr5=rezultat12345(nr5,nr2);
+  }
+
+  } else if(numarIntermediar=="ori"  && nr7=="fals"){
+  nr4=rezultatGresit123(nr4,nr,nr1);
+  nr5=rezultatGresit1234(nr5,nr2);
+
+  }
+
+
+  enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
+  $scope.intrebare=enunt;
+  raspunsuri[1]="adevarat";
+  raspunsuri[2]="fals";
+   raspunsuri[3]="adevarat";
+    raspunsuri[4]="fals";
+corecte[x-1][1]=enunt;
+     corecte[x-1][2]=raspuns;
+  }
+
+
+
+     idRaspunsuri1[1]=raspunsuri[1];
+        idRaspunsuri1[2]=raspunsuri[2];
+        idRaspunsuri1[3]=raspunsuri[3];
+        idRaspunsuri1[4]=raspunsuri[4];
+     }else{
+           $scope.intrebare=response.data.Intrebare;
+                 idRaspunsuri1[1]=response.data.R1;
         idRaspunsuri1[2]=response.data.R2;
         idRaspunsuri1[3]=response.data.R3;
         idRaspunsuri1[4]=response.data.R4;
-        idRaspunsuri1[5]=response.data.R11;
+         corecte[x-1][1]=response.data.Intrebare;
+     corecte[x-1][2]=response.data.R1;
+     }
+
+
+
+
+
+
+  intrebare1=response.data.Intrebare1;
+      if (intrebare1.slice(0,-1)=="##&##"){
+        numarExercitiu= intrebare1.substr(intrebare1.length - 1);
+        exercitiuOn=1;
+
+
+          enunt="";
+  if (numarExercitiu==1){
+         raspuns11=generareNumere12(idEx1,id1Ex1);
+          for (i=1;i<=3;i++){
+              id1Ex1[i]=semnGenerator(id1Ex1[i]);
+          }
+         enunt="Care este raspunsul expresiei ";
+         for(i=1;i<=3;i++){
+             enunt=enunt+idEx1[i]+id1Ex1[i];
+         }
+         enunt=enunt+idEx1[4]+"!";
+           $scope.intrebare1=enunt;
+
+  $scope.intrebare1=enunt;
+
+           generareRezultate(raspunsuri,raspuns11);
+      corecte[x][1]=enunt;
+     corecte[x][2]=raspuns;
+  } else if (numarExercitiu==2){
+  generareNumere4(idEx1,numarIntermediar);
+  numarIntermediar=Math.floor((Math.random() *2) + 1);
+  if(numarIntermediar==1){
+    raspuns11=(idEx1[1]%idEx1[2]);
+       if (idEx1[2]==10){
+            raspunsuri[6]=idEx1[1]%100;
+              raspunsuri[7]=Math.floor(idEx1[1]/idEx1[2]);
+                raspunsuri[8]=Math.floor(idEx1[1]/100);
+       } else{
+         raspunsuri[6]=idEx1[1]%10;
+           raspunsuri[7]=Math.floor(idEx1[1]/idEx1[2]);
+             raspunsuri[8]=Math.floor(idEx1[1]/10);
+       }
+  } else{
+    if (idEx1[2]==10){
+         raspunsuri[6]=Math.floor(idEx1[1]/100);
+           raspunsuri[7]=idEx1[1]%idEx1[2];
+             raspunsuri[8]=idEx1[1]%100;
+    } else{
+      raspunsuri[6]=Math.floor(idEx1[1]/10);
+        raspunsuri[7]=idEx1[1]%idEx1[2];
+          raspunsuri[8]=idEx1[1]%10;
+    }
+    raspuns11=Math.floor(idEx1[1]/idEx1[2]);
+  }
+  if(numarIntermediar==1){
+    enunt="Care este raspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
+  } else{
+    enunt="Care este raspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
+  }
+   $scope.intrebare1=enunt;
+  raspunsuri[5]=raspuns11;
+
+
+corecte[x][1]=enunt;
+     corecte[x][2]=raspuns;
+  } else if(numarExercitiu==3){
+  var a,b;
+    a=Math.floor((Math.random() * 6) + 1);
+    b=Math.floor((Math.random() * 30) + 10);
+  numarIntermediar=generareOperator11(a);
+  enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"__ .";
+   $scope.intrebare1=enunt;
+   generareRaspunsuri124(raspunsuri,a,b);
+   raspuns11=raspunsuri[5];
+      corecte[x][1]=enunt;
+     corecte[x][2]=raspuns;
+  } else if(numarExercitiu==4){
+  var nr=Math.floor((Math.random() * 20) + 1);
+  var nr1=Math.floor((Math.random() * 20) + 1);
+  var nr2=Math.floor((Math.random() * 20) + 1);
+  var nr4=Math.floor((Math.random() * 5) + 1);
+  var nr5=Math.floor((Math.random() * 6) + 1);
+  var nr6=Math.floor((Math.random() * 2) + 1);
+  var nr7=Math.floor((Math.random() * 2) + 1);
+  if(nr7==1){
+  raspuns11="adevarat";
+  } else{
+  raspuns11="fals";
+  }
+  var nr8=Math.floor((Math.random() * 3) + 1);
+  if (nr6==1){
+    numarIntermediar="and";
+  }else{
+    numarIntermediar="ori";
+
+  }
+  var semn=semnGenerator(nr4);
+  var operator=generareOperator11(nr5);
+  if (numarIntermediar=="and"  && raspuns=="adevarat"){
+        nr4=rezultat1234(nr4,nr,nr1);
+        nr5=rezultat12345(nr5,nr2);
+  } else if(numarIntermediar=="and"  && nr7=="fals"){
+    if (nr8==1){
+    nr4=rezultat1234(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  } else if(nr8==2){
+    nr4=rezultat1234(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  } else if (nr8==3){
+    nr4=rezultatGresit123(nr4,nr,nr1);
+    nr5=rezultatGresit1234(nr5,nr2);
+  }
+
+  } else if(numarIntermediar=="ori"  && nr7=="adevarat"){
+  if (nr8==1){
+  nr4=rezultat1234(nr4,nr,nr1);
+  nr5=rezultatGresit1234(nr5,nr2);
+  } else {
+  nr4=rezultatGresit123(nr4,nr,nr1);
+  nr5=rezultat12345(nr5,nr2);
+  }
+
+  } else if(numarIntermediar=="ori"  && nr7=="fals"){
+  nr4=rezultatGresit123(nr4,nr,nr1);
+  nr5=rezultatGresit1234(nr5,nr2);
+
+  }
+
+
+  enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
+  $scope.intrebare1=enunt;
+  raspunsuri[5]="adevarat";
+  raspunsuri[6]="fals";
+   raspunsuri[7]="adevarat";
+    raspunsuri[8]="fals";
+corecte[x][1]=enunt;
+     corecte[x][2]=raspuns;
+  }
+     idRaspunsuri1[5]=raspunsuri[5];
+        idRaspunsuri1[6]=raspunsuri[6];
+        idRaspunsuri1[7]=raspunsuri[7];
+        idRaspunsuri1[8]=raspunsuri[8];
+      }else{
+         $scope.intrebare1=response.data.Intrebare1;;
+      idRaspunsuri1[5]=response.data.R11;
         idRaspunsuri1[6]=response.data.R21;
         idRaspunsuri1[7]=response.data.R31;
         idRaspunsuri1[8]=response.data.R41;
-    for (i=1;i<=4;i++){
+     corecte[x][1]=response.data.Intrebare1;
+     corecte[x][2]=response.data.R11;
+      }
+
+
+      for (i=1;i<=4;i++){
         idRaspunsuri2[idRaspunsuri[i]]=idRaspunsuri1[i];
     }
           generareRaspunsuri(4,idRaspunsuri,1);
@@ -1146,7 +1574,7 @@ $scope.resetare= function(){
          $scope.raspuns7=idRaspunsuri2[7];
             $scope.raspuns8=idRaspunsuri2[8];
      //   $scope.enunt=response.data.Intrebare;
- // raspuns=response.data.Raspuns;
+  // raspuns=response.data.Raspuns;
 
 
   }, function errorCallback(response) {
@@ -1156,10 +1584,36 @@ $scope.resetare= function(){
   });
 
 }else{
-    alert("stop");
+   // for(i=1;i<=10;i++){
+   // alert("intrebare="+corecte[i][1]+"raspuns="+corecte[i][2]);    
+  //  }
+$(".modal-dialog").hide();
+    $(".progress").hide();  
+     $("#continua").hide();  
+    $("#evaluareEnding").show();
+                   
+    var inlocuitor,inlocuitor1;
+    for(i=1;i<=10;i++){
+       inlocuitor=corecte[i][1]; 
+    inlocuitor1=corecte[i][2]; 
+    $scope.intrebariSiRaspunsuri[i]={intrebare2:inlocuitor,raspuns12:inlocuitor1};
+    }
+    
 }
 }
-})
+$scope.punctajShow=punctaj;
+    
+    $scope.intrebariSiRaspunsuri=[
+    {
+        intrebare2:"das",
+        raspuns12:"adsas",
+    },
+      {
+        intrebare2:"dadass",
+        raspuns12:"adsdasas",
+    },  ];
+    
+    })
 
 
 
@@ -1348,4 +1802,43 @@ function rezultat12345(semn,x){
       }
 
 
+}
+function rezultatGresit1234(semn,x){
+    nr=Math.floor((Math.random() *10) + 1);
+  if(semn==1){
+          return x+nr;
+      } else if(semn==2){
+          return x+nr;
+      } else if(semn==3){
+          return x-nr;
+      } else if(semn==4){
+          return x-nr;
+      } else if(semn==5){
+          return x+nr;
+      } else if(semn==6){
+            return x;
+      }
+
+
+}
+
+
+function rezultatGresit123(semn,x,y){
+  nr=Math.floor((Math.random() *10) + 1);
+   if(semn==1){
+
+       return x+y-nr;
+   } else if(semn==2){
+
+       return x-y+nr;
+   } else if(semn==3){
+
+       return x%y+nr;
+   } else if(semn==4){
+
+       return x*y-nr;
+   } else if(semn==5){
+
+       return Math.floor(x/y)+nr;
+   }
 }

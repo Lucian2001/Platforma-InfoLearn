@@ -1,5 +1,5 @@
 var rezultat1,adevarat,corect=false,optiune=0;
-function generareNumere(numereEvaluare,semneEvaluare){
+function generareNumere12(numereEvaluare,semneEvaluare){
  var nr,nr1,nr2;
 var semneRepetitie = new Array();
 var numere=new Array();
@@ -240,7 +240,7 @@ function verificare(){
     if (corect==true )
         {$("#corect1").show();
             setTimeout(function(){
-                  generareNumere(array,array1);
+                  generareNumere12(array,array1);
                 $("#corect1").hide();
            $("#false1").prop('disabled', false);
   buttonActive=1;
@@ -257,7 +257,7 @@ function verificare(){
             setTimeout(function(){
 
 
-              raspuns=    generareNumere(array,array1);
+              raspuns=generareNumere12(array,array1);
                 $("#gresit1").hide();
                 $("#false1").prop('disabled', false);
 
@@ -269,7 +269,7 @@ function verificare(){
       if (nr2==rezultat1){
 $("#corect1").show();
             setTimeout(function(){
-                  generareNumere(array,array1);
+                  generareNumere12(array,array1);
                   $("#false1").prop('disabled', false);
                 $("#corect1").hide();
               $("#false1").val("");
@@ -284,7 +284,7 @@ $("#corect1").show();
       } else{
   $("#gresit1").show();
             setTimeout(function(){
-                  generareNumere(array,array1);
+                  generareNumere12(array,array1);
                 $("#gresit1").hide();
               $("#false1").val("");
                  $("#false1").prop('disabled', false);

@@ -2,9 +2,9 @@
    <div class="expl-box-fi-enunt" ng-fi-text="Scrie în caseta liberă un număr astfel încât expresia de mai jos să fie corectă."></div>
 
     <div id="spatiuExercitii">
-<input class="input" id="id---1" >
+<input class="input" id="id---1" maxlength="3">
         <h1 id="semn1">></h1>
-       <input class="input" id="id---2" >
+       <input class="input" id="id---2" maxlength="3">
 
         <img id="corect" src="paginaUtilizator/assets/images/corect.png" >
          <img id="gresit" src="paginaUtilizator/assets/images/gresit.png" >
@@ -24,17 +24,17 @@
 <script src="paginaUtilizator/scripts/operatoriRelationali.js"  ></script>
 
 
-<script>var buttonActive=1;    
+<script>var buttonActive=1;
     var numar=Math.floor((Math.random() * 6) + 1);
-$(document).ready(function(){ 
+$(document).ready(function(){
 redimensionare132();
   afisareSemn(numar)
 })
     $("#generare4").click(function(){
         if (buttonActive==1){
-            
-         buttonActive=0;   
-        
+
+         buttonActive=0;
+
         verificareRaspuns(numar);
         }
     })

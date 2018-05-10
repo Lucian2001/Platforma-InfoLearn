@@ -143,11 +143,15 @@ return 0;
 
 
         if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/1#2" || window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?paginaUtilizator=inceput#/1/5#1" ){
+    $("#object1").css({'transform': 'rotate(0deg)'});
    $("#object1").css("left",pozitieInitiala-(6.7*pozitieInitiala)/100);
           $("#object1").css("top",pozitieInitiala1-(5.4*pozitieInitiala1)/100);
-        } else{
+return 0;
+        } else{    $("#object1").css({'transform': 'rotate(0deg)'});
                $("#object1").css("left",pozitieInitiala-(6.7*pozitieInitiala)/100);
+
           $("#object1").css("top",pozitieInitiala1-(7.7*pozitieInitiala1)/100);
+          return 0;
         }
 
 
@@ -182,15 +186,20 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
             }
 
      if (urlPozitie=="162" || urlPozitie=="164"){
+           $("#object1").css({'transform': 'rotate(0deg)'});
          $("#object1").css("left",pozitieInitiala-(8*pozitieInitiala)/100);
           $("#object1").css("top",pozitieInitiala1-(5.4*pozitieInitiala1)/100);
-
+return 0;
      } else if (urlPozitie=="112"|| urlPozitie=="151"  ){
+           $("#object1").css({'transform': 'rotate(0deg)'});
    $("#object1").css("left",pozitieInitiala-(6.7*pozitieInitiala)/100);
           $("#object1").css("top",pozitieInitiala1-(5.4*pozitieInitiala1)/100);
+return 0;
         } else{
+              $("#object1").css({'transform': 'rotate(0deg)'});
                $("#object1").css("left",pozitieInitiala-(6.7*pozitieInitiala)/100);
           $("#object1").css("top",pozitieInitiala1-(7.7*pozitieInitiala1)/100);
+return 0;
         }
 
 
@@ -199,14 +208,14 @@ eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drum
     }
           }
         if ((offset1.left/(($(document).width())/100))>(offsetLimit.left/(($(document).width())/100)+1) || (offset1.top/(($(document).width())/100))>(offsetLimit1.top/(($(document).width())/100))+1.1 ||(offset1.left/(($(document).width())/100))<(offsetLimit3.left/(($(document).width())/100)-1.5) || (offset1.top/(($(document).width())/100))<(offsetLimit4.top/(($(document).width())/100))-1.5){
-        
+
             eroare=true;
 
               $("#object1").css("top",pozitieInitiala1-(6.7*pozitieInitiala1)/100);
 $("#object1").css({'transform': 'rotate(0deg)'});
         eroareShow("Comenzile pe care le-ai dat au scos tancul în afara spațiului de lucru.Incearcă alt algoritm!");
          butonActiv=1;
-     
+
               $("#object1").css("left",pozitieInitiala-(7*pozitieInitiala)/100);
        }
      // alert(degree);

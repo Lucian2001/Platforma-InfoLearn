@@ -33,13 +33,13 @@
     var array1=new Array();
 
 var raspuns,raspuns1;
- generareNumere(array,array1);
+ generareNumere12(array,array1);
 
 $("#true").click(function(){
     
    $("#false1").prop('disabled', true);
    if (adevarat==true){
-    corect2();
+    corect2(); 
    }else
        gresit2()
 
