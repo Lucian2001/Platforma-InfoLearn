@@ -2,7 +2,7 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-<script src="paginaUtilizator/scripts/angularscript11.js"></script>
+<script src="fisiere/scripts/angularscript11.js"></script>
 
 </head>
     
@@ -11,13 +11,13 @@
     
      <div id="left-bar">
         
-       <img id="title" src="paginaUtilizator/assets/images/titlu.png" width="90%"
+       <img id="title" src="fisiere/assets/images/titlu.png" width="90%"
         height= "6%" >
         
    
     </div>      
         <?php 
-         include("paginaUtilizator/functions.php");if ($_SESSION['id']) { ?>
+         include("fisiere/functions.php");if ($_SESSION['id']) { ?>
       
       
             
@@ -27,7 +27,7 @@
       
     <div id="myaccount" data-toggle="modal" data-target="#myModal"> 
             <p class="top-text" id="login-text"   font-weight=" normal;">Contul meu</p>   
-            <img id="login-image" src="paginaUtilizator/assets/images/user-icon-placeholder.png"  height="22" width="22">
+            <img id="login-image" src="fisiere/assets/images/user-icon-placeholder.png"  height="22" width="22">
          </div>
    
       
@@ -76,20 +76,13 @@
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#" id="utilizator1">Utilizator normal</a>
- <!--   <a class="dropdown-item" href="#" id="utilizator2">Profesor</a>
-    <a class="dropdown-item" href="#" id="utilizator3">Elev</a> -->
+   <a class="dropdown-item" href="#" id="utilizator2">Profesor</a>
+
   </div>
 </div>
 
  </fieldset>
-  <fieldset id="showLogin2">
-    <label for="varsta">Vârstă</label>
-    <input type="text" class="form-control" id="varsta" placeholder="Vârsta dumneavoastră">
-  </fieldset>
-    <fieldset id="showLogin3" >
-    <label for="clasa">Clasă</label>
-    <input type="text" class="form-control" id="clasa" placeholder="Clasa dumneavoastra(5-12)">
-  </fieldset>
+  
 </form>
       </div>
       
@@ -107,7 +100,7 @@
    
     
 
-  <script type="text/javascript" src="paginaUtilizator/scripts/head_script.js"></script>  
+  <script type="text/javascript" src="fisiere/scripts/head_script.js"></script>  
     
 
 <div id="pagina">
@@ -122,32 +115,32 @@
   <div class="row">
     <div class="col-sm">
       <div class="presentation-panel" id="presentation-panel1">
-       <img class="presentation-image" src="paginaUtilizator/assets/images/imaginiPrezentare/1.PNG"  >
+       <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/1.PNG"  >
         <div class="expl-box-fi-text" ng-fi-text="Interfața este atractivă și ușor de folosit. Butoanele sunt bine plasate și facilitează rezolvarea exercițiilor, sarcinilor de lucru, ele devenind astfel nu doar ușoare, ci și atractive."></div>
 </div>
     <div class="presentation-panel"id="presentation-panel1">
-        <img class="presentation-image" src="paginaUtilizator/assets/images/imaginiPrezentare/2.PNG"  >
+        <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/2.PNG"  >
    <div class="expl-box-fi-text" ng-fi-text="Informația pentru fiecare lecție este clară și organizată în așa fel încât să permită o descriere foarte bună. Sursa de unde a fost preluată o constituie manualul de informatică de clasa a V-a, ceea ce asigură corectitudinea infomației. "></div>
         
 </div>
       </div>
     <div class="col-sm">
       <div class="presentation-panel" id="presentation-panel2">
-          <img class="presentation-image" src="paginaUtilizator/assets/images/imaginiPrezentare/3.PNG"  >
+          <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/3.PNG"  >
      <div class="expl-box-fi-text" ng-fi-text="Pentru înțelegerea căt mai bună a conținutului, au fost create aplicații ușor de utilizat de către elev. Folosirea acestora îi ușurează învățarea, ajutându-l, într-o formă interactivă, să rețină informațiile importante."></div>
 </div>
     <div class="presentation-panel" id="presentation-panel2">
-        <img class="presentation-image" src="paginaUtilizator/assets/images/imaginiPrezentare/4.PNG"  >
+        <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/4.PNG"  >
   <div class="expl-box-fi-text" ng-fi-text="Un alt avantaj al aplicațiilor create este acela că ele diferă de la un utilizator la altul, evitându-se astfel preluarea informației fără efort.Deoarece acestea se generează aleatoriu și nu sunt identice, fiecare elev este pus în ipostaza de a rezolva singur."></div>
 </div>
     </div>
     <div class="col-sm">
      <div class="presentation-panel"id="presentation-panel3">
-         <img class="presentation-image" src="paginaUtilizator/assets/images/imaginiPrezentare/5.PNG"  >
+         <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/5.PNG"  >
    <div class="expl-box-fi-text" ng-fi-text="Platforma are un sistem de logare, ceea ce oferă fiecărui elev o serie de beneficii, cum ar fi : exercițiile rezolvate vor fi salvate,se rețin o serie de date despre utilizator care au anumite utilizări."></div>
 </div>
     <div class="presentation-panel" id="presentation-panel3">
-        <img class="presentation-image" src="paginaUtilizator/assets/images/imaginiPrezentare/6.PNG"  >
+        <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/6.PNG"  >
   <div class="expl-box-fi-text" ng-fi-text="Pentru fiecare exercițiu rezolvat elevul va primi un feedback, putându-se astfel evalua nivelul cunoștințelor în acel moment."></div>
 </div>
     </div>

@@ -15,15 +15,16 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="paginaUtilizator/css/style.css"> 
+<link rel="stylesheet" href="fisiere/css/style.css"> 
 
-<script src="paginaUtilizator/scripts/head_script.js"></script>
+<script src="fisiere/scripts/head_script.js"></script>
+    <script src="fisiere/scripts/resolutionScaling.js"></script>
 
 </head>
 <?php
-include("paginaUtilizator/functions.php");
+include("fisiere/functions.php");
 
-//($_GET['paginaUtilizator'] == 'timeline' and $_GET['tip_de_utilizator'] == 1 
+//($_GET['fisiere'] == 'timeline' and $_GET['tip_de_utilizator'] == 1 
 $id1=$_SESSION['id'];
 $query="SELECT *FROM users WHERE id = $id1";
 if ($result1 = mysqli_query($link,$query)){
@@ -31,25 +32,20 @@ if ($result1 = mysqli_query($link,$query)){
    }  
 
 if ( $_SESSION['id'] !="" and $row1[4]==1) {
-         include("paginaUtilizator/meniu.php");
+         include("fisiere/meniu.php");
 
-        include("paginaUtilizator/paginaUtilizator.php");
-//include("paginaUtilizator/meniuDreapta.html");
+        include("paginaUtilizator.php");
+//include("fisiere/meniuDreapta.html");
 
 }
 else if ( $_SESSION['id'] !="" and $row1[4]==2){
-        include("paginaUtilizator/meniu.html");
-        include("paginaUtilizator/paginaProfesor.php");
-        include("paginaUtilizator/meniuDreapta.html");
-}
-else if ( $_SESSION['id'] !="" and $row1[4]==3){
-include("paginaUtilizator/meniu.html");
-        include("paginaUtilizator/paginaElev.php");
-include("paginaUtilizator/meniuDreapta.html");
-} else if ($_SESSION['id'] == -1){
-    include("paginaVizitator/meniu.php");
+        include("fisiere/meniu.php");
+        include("paginaProfesor.php");
+   
+}else if ($_SESSION['id'] == -1){
+    include("fisiere/meniu.php");
 
-        include("paginaVizitator/paginaUtilizator.php");
+        include("paginaVizitator.php");
    
 }else 
 include("head.php");
