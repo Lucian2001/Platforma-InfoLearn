@@ -11,16 +11,26 @@
 
 
 <div ng-controller="evaluare">
- 
+
 <div id="evaluareEnding" >
-<h1 id="rezultat">Ai obtinut {{punctajShow}} de puncte.</h1>    
-  <ol ng-repeat="x in intrebariSiRaspunsuri">
-    <li>{{ x.intrebare2 }}</li>
-    <li>{{ x.raspuns12 }}</li>
-  </ol>
+    
+<h1 id="rezultat">Ai obtinut {{punctajShow}} de puncte.</h1>
+   <h2 id="titluIntrebari">Intrebari</h2>
+<h2 id="titluRaspunsuri">Raspunsuri</h2>
+<div class="container">
+  <div id="#rowEvaluare"class="row" ng-repeat="x in intrebariSiRaspunsuri">
+    <div class="col-sm coloana1" ng-style="{'background-color':($index===x.corect12-1 ?'#ffd1d1':'#d1ffdd'),'border-color':($index===x.corect12-1 ?'#d84747':'#24a53a')}">
+      {{x.numar1234}} {{x.intrebare2}}
     </div>
-    
-    
+    <div class="col-sm coloana2"ng-style="{'background-color':($index===x.corect12-1 ?'#ffd1d1':'#d1ffdd'),'border-color':($index===x.corect12-1 ?'#d84747':'#24a53a')}" >
+       {{ x.raspuns12 }}
+    </div>
+  </div>
+</div>
+
+    </div>
+
+
 
  <div class="modal-dialog" >
       <div class="modal-content">
@@ -73,7 +83,6 @@
 </div>
 
 
- 
 
 </body>
 

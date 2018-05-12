@@ -1,5 +1,55 @@
+#titluRaspunsuri{
+    float:right;
+    margin-top: -2%;
+    margin-right: 25%;
+        padding-top: 2%;
+}
+#titluIntrebari{  
+    padding-top: 2%;
+    margin-top: -2%;
+    margin-left:25%;
+    float:left;
+}
+.red{
+  background-color: red;
+  font-size: 40px;
+}
+.container{
+      
+  width:55%;
+  margin-left: 16%;
+margin-top:4%;
+
+    height: 70%;
+    border-bottom-width: 0px;
+}
+
+.coloana1{
+background-color:#FDFDFD;
+border-color:#ff4949;
+border-radius: 0.2px;
+border-style:solid;
+
+height: 9.8%;
+font-size: 20px;
+width:80%;
+
+}
+.coloana2{
+background-color:#FDFDFD;
+border-color:#ff4949;
+border-radius: 0.2px;
+border-style:solid;
+border-left-width: 0px;
+
+height: 9.8%;
+font-size: 20px;
+width:80%;
+
+}
+
 #evaluareEnding{
-    
+
 display: none;
 }
 #rezultat{
@@ -22,7 +72,7 @@ font-size: 60px;
     margin-top: 7%;
     float:left;
     width: 500px;
-    margin-left:8%; 
+    margin-left:8%;
      z-index: 1;
 }
 .progress{
@@ -31,7 +81,7 @@ font-size: 60px;
     margin-left: 20%;
     width:50%;
     font-size: 20px;
-    
+
 }
 .progress-bar{
     color:black;

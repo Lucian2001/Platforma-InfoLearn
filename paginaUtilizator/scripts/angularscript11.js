@@ -803,7 +803,7 @@ angular.module('myApp').controller('evaluare', function ($scope,$http,$location,
     corecte[8]=new Array(3);
     corecte[9]=new Array(3);
     corecte[10]=new Array(3);
-    
+
     $(".btn-info").css("background-color","#17A2B8");
 var idIntrebari = new Array();
 var idRaspunsuri=new Array();
@@ -1171,7 +1171,9 @@ corecte[x][1]=enunt;
 
 
   }, function errorCallback(response) {
-
+alert("eroare!Reload page!");
+      alert(idIntrebari[1]+" sdaasd "+idIntrebari[2]);
+      alert(response);
     // called asynchronously if an error occurs
     // or server returns response with an error status.
   });
@@ -1179,7 +1181,7 @@ corecte[x][1]=enunt;
 
 
 
-
+var buton12=0;
      $("label.btn").on('click',function () {
 
          $("#"+$(this).attr('id')).css("background-color","#138496");
@@ -1189,19 +1191,22 @@ corecte[x][1]=enunt;
           if(exercitiuOn==1){
 
               if (idRaspunsuri2[$(this).attr('id')]==raspuns){
-
+         corecte[x-1][3]=1;
           punctaj=punctaj+10;
-
+buton12=$(this).attr('id');
+              
             }
           } else{
             if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
           punctaj=punctaj+10;
-
-
+ corecte[x-1][3]=1;
+buton12=$(this).attr('id');
             }
           }   }
         else {
- $("#"+$(this).attr('id')).css("background-color","#17A2B8");
+         
+       if(buton12!=$(this).attr('id'))    { 
+ $("#"+$(this).attr('id')).css("background-color","#17A2B8");}
          $(".btn-info").css("border-color","#17A2B8");
             eroareShow("Poti apasa un singur rapuns!");
         }
@@ -1213,16 +1218,17 @@ corecte[x][1]=enunt;
         if(exercitiuOn==1){
                if (idRaspunsuri2[$(this).attr('id')]==raspuns11){
           punctaj=punctaj+10;
-
+ corecte[x][3]=1;buton12=$(this).attr('id'); 
             }
           } else{
             if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
           punctaj=punctaj+10;
-
+ corecte[x][3]=1;buton12=$(this).attr('id');
             }
           }
         }else {
-        $("#"+$(this).attr('id')).css("background-color","#17A2B8");
+        if(buton12!=$(this).attr('id')){
+            $("#"+$(this).attr('id')).css("background-color","#17A2B8");}
                  $(".btn-info").css("border-color","#17A2B8");
             eroareShow("Poti apasa un singur rapuns!");
         }
@@ -1235,8 +1241,8 @@ corecte[x][1]=enunt;
 var procente1=0;
 $scope.resetare= function(){
 
-  
-    
+
+
     if (x<10){
         x=x+2;
         procente1=procente1+20;
@@ -1248,8 +1254,8 @@ $scope.resetare= function(){
     $scope.y1=x;
         $(".btn-info").css("background-color","#17A2B8");
        $(".btn-info").css("border-color","#17A2B8");
-    
-        
+
+
      $http({
   method: 'POST',
   url: '/paginaUtilizator/generareIntrebari.php',
@@ -1585,34 +1591,40 @@ corecte[x][1]=enunt;
 
 }else{
    // for(i=1;i<=10;i++){
-   // alert("intrebare="+corecte[i][1]+"raspuns="+corecte[i][2]);    
+   // alert("intrebare="+corecte[i][1]+"raspuns="+corecte[i][2]);
   //  }
 $(".modal-dialog").hide();
-    $(".progress").hide();  
-     $("#continua").hide();  
+    $(".progress").hide();
+     $("#continua").hide();
     $("#evaluareEnding").show();
-                   
-    var inlocuitor,inlocuitor1;
+$scope.punctajShow=punctaj;
+    var inlocuitor,inlocuitor1,inlocuitor2;
     for(i=1;i<=10;i++){
-       inlocuitor=corecte[i][1]; 
-    inlocuitor1=corecte[i][2]; 
-    $scope.intrebariSiRaspunsuri[i]={intrebare2:inlocuitor,raspuns12:inlocuitor1};
+       inlocuitor=corecte[i][1];
+    inlocuitor1=corecte[i][2];
+     if(corecte[i][3]==1){
+       inlocuitor2=-1;
+         inlocuitor1="Ai raspuns corect la aceasta intrebare!";
+        
+     } else{
+       inlocuitor2=i;
+        inlocuitor1="Raspuns corect:  "+inlocuitor1;
+     }
+        
+    $scope.intrebariSiRaspunsuri[i-1]={numar1234:(i+".  "),intrebare2:inlocuitor,raspuns12:inlocuitor1,corect12:inlocuitor2};
     }
-    
+
 }
 }
 $scope.punctajShow=punctaj;
-    
+
     $scope.intrebariSiRaspunsuri=[
-    {
-        intrebare2:"das",
-        raspuns12:"adsas",
-    },
-      {
-        intrebare2:"dadass",
-        raspuns12:"adsdasas",
-    },  ];
-    
+    {   numar1234:"",
+        intrebare2:"",
+        raspuns12:"",
+    }
+    ];
+
     })
 
 
