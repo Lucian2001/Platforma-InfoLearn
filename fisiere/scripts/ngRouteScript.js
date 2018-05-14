@@ -35,5 +35,10 @@ templateUrl : "fisiere/evaluare.php",
 reloadOnSearch: false,
 
 })
+        .when("/profesor", {
+templateUrl : "fisiere/profesor.php",
+reloadOnSearch: false,
+
+})
 
 }]);

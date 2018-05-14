@@ -89,7 +89,7 @@ $("#operatorirelationali").click(function(){
       if(username1!="")
             $(location).attr('href', loadHref(1,username1,vector,id1));
             else
-              $(location).attr('href', "http://infolearn-com.stackstaging.com/index.php?page=inceput#/1/3#1");
+              $(location).attr('href', "http://infolearnchestie-com.stackstaging.com/index.php?page=inceput#/1/3#1");
   //alert(loadHref(id1,username,vector));
       //  }
 

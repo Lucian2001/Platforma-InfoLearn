@@ -4,7 +4,7 @@
 
 angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams,$http,$timeout){
 
-
+var eroareRun=false;
       $scope.error="Nu ai nicio eroare";
       $scope.records = [];
      //surse aplicatiii {
@@ -150,7 +150,13 @@ eroareShow("Poți introduce un singur ,,if'' ");
             }
     }
      $scope.repeta=function(){
-if (repetaOn==true){
+if ($scope.numarRepetari>1 && $scope.numarRepetari<9 ){
+eroareRun=false;
+} else{
+    eroareRun=true;
+    return 0;
+}
+         if (repetaOn==true){
 eroareShow("Poți să introduci o singură buclă!");
 } else{
         $scope.records[i] =n1+spatiu+spatiu1+"    "+"repetă de "+$scope.numarRepetari +" ori"
@@ -211,8 +217,17 @@ bucla=false;
 
 
    //
- $scope.Run=function(){
+      var terminat=true;
 
+    $scope.Run=function(){
+     if (eroareRun==true){
+         alert("eroareasdaS");
+         clear1();
+         return 0;
+     }
+    
+     terminat=false;
+ isRunning=true;
 if (paginaUpload=="1.1.1"){
 textTanc1="Tancul facut de tine este acesta.";
 if (idComponenta==513){
@@ -235,7 +250,7 @@ $scope.tancComplet="fisiere/assets/images/tanc_gri.png";
 $scope.textTanc=textTanc1;
 $scope.eroare="";
 }
-   $location.url('#'+idComponenta+srcCounter);
+  RunAlgorritm(idComponenta); 
 }
 else {
 
@@ -249,7 +264,7 @@ else {
         patternRepetaString1= patternRepetaString1+patternRepetaString.slice(0,1);
 
       if (patternRepetaString1!="1"){
-          alert("eroare");eroarePattern=1;
+         eroarePattern=1;
       }
   }  if (eroarePattern!=1){
 
@@ -309,13 +324,11 @@ else {
      }else{
 var patternSave;
          patternSave=pattern;
-       pattern=pattern+parseInt($location.absUrl().substr($location.absUrl().length - 1));
-      $scope.error="";
-     $location.url('#'+pattern);
-         pattern=pattern.substr(1);
+      
+      
     $scope.error="Nu e nicio eroare" ;
 pattern=patternSave;
-           //alert("boss");
+           RunAlgorritm(pattern);
      }
  }
 }
@@ -324,6 +337,7 @@ pattern=patternSave;
       clear1();
  }
   function clear1(){
+      eroareRun=false;
       $scope.records = []
           n1=1;
       n=1;
@@ -399,7 +413,7 @@ pattern=patternSave;
         i=i-1;
 
       //alert(pattern);
-alert("dsa");
+
 
 }
     //dreapta stanga
@@ -422,6 +436,7 @@ alert("dsa");
     // functii load surse {
     //$scope.src="fisiere/test.html";
     $scope.a1=function(){
+         if (isRunning==false){
 clear1();
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
     pagina1=pagina1.charAt(0);
@@ -432,10 +447,11 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
 
  $scope.src="fisiere/pagini/"+paginaUpload+".php";
  $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";
-
+         }
 
     }
     $scope.a2=function(){
+         if (isRunning==false){
 clear1();
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
 
@@ -448,9 +464,10 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
  $scope.src="fisiere/pagini/"+paginaUpload+".php";
  $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";
         //daca este diferit de o pagina care nu are nevoie de target
-
+         }
     }
     $scope.a3=function(){
+         if (isRunning==false){
 clear1();
         pagina1=$location.absUrl().substr($location.absUrl().length - 3);
      pagina1=pagina1.charAt(0);
@@ -461,9 +478,10 @@ $location.url("1/"+pagina1+"#3");
               srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
           paginaUpload="1."+pagina1+"."+srcCounter;
 $scope.src="fisiere/pagini/"+paginaUpload+".php";
- $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";
+ $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";}
     }
     $scope.a4=function(){
+        if (isRunning==false){
 clear1();
         pagina1=$location.absUrl().substr($location.absUrl().length - 3);
      pagina1=pagina1.charAt(0);
@@ -474,24 +492,27 @@ clear1();
               srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
           paginaUpload="1."+pagina1+"."+srcCounter;
   $scope.src="fisiere/pagini/"+paginaUpload+".php";
-  $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";
+  $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";}
     }
 // aplicatie tancuri
 
-
+$scope.resetare13=function(){
+resetare12();
+ clear1();   
+}
 
 
 $scope.eroare="";
 nrComponenta=1;
 idComponenta=0;
-    $scope.corpTanc1=function(){
+    $scope.corpTanc1=function(){ 
       if (nrComponenta == 2){
         $scope.eroare="";
         $scope.tancPart2="fisiere/assets/images/corp_albastru.png";
 nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+1;
       }
-      else {
+      else if (terminat==true) {
       $scope.eroare = "  Mai întâi ar trebui sa pui roțile deoarece,și aici, ca la un algoritm, pașii trebuie să respecte o ordine logică!";
 
       }
@@ -503,7 +524,7 @@ idComponenta=idComponenta*10+1;
 nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+2;
       }
-      else {
+      else if (terminat==true) {
       $scope.eroare =  "  Mai întâi ar trebui sa pui roțile deoarece,și aici, ca la un algoritm, pașii trebuie să respecte o ordine logică!";
 
       }
@@ -515,19 +536,20 @@ idComponenta=idComponenta*10+2;
 nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+3;
       }
-      else {
+      else if (terminat==true){ 
       $scope.eroare = "Aceasta nu este piesa care ar trebui pusă!";
 
       }
     }
     $scope.capTanc2=function(){
       if (nrComponenta == 3){
+          
         $scope.eroare="";
         $scope.tancPart3="fisiere/assets/images/cap_gri.png";
 nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+4;
       }
-      else {
+      else if (terminat==true){
       $scope.eroare = "Aceasta nu este piesa care ar trebui pusă!Mai întâi ar trebui să pui roțile deoarece, și aici, ca la un algoritm, pașii trebuie să respecte o ordine logică!";
 
       }
@@ -540,7 +562,7 @@ idComponenta=idComponenta*10+4;
    nrComponenta=nrComponenta+1;
    idComponenta=idComponenta*10+5;
     }
-    else {
+    else if (terminat==true){
   $scope.eroare = "Ai pus deja niște roți. Un tanc poate să aibă doar o singură pereche de roți!";
 
     }
@@ -617,6 +639,8 @@ if(counterSursa>1 && counterSursa<=numarSurse) {
 }
 }
 //                           //
+
+
 
 });
 
@@ -714,7 +738,7 @@ var raspuns;
        var input1=$scope.input;
 
               if (input1!=null){
-          input1.toLowerCase();
+          input1=input1.toLowerCase();
 
           if (raspuns==1){
           if (input1=="and" || input1=="si"){

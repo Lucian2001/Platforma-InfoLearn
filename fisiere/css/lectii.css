@@ -53,6 +53,12 @@ background-color: ghostwhite;
 }
     #butonsmecher{
         margin-top:-15%;
+        
+    }
+#resetareAplicatie{
+        margin-top:-18%;
+    float:right;
+    margin-right: 2%;display: none;
     }
     #deleteLine{
 

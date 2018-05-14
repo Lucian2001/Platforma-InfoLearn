@@ -28,5 +28,5 @@
 <script>
 $("#object1").hide();
     $(".imagineComponentaTanc").show();
-    
+   timer(); 
 </script>

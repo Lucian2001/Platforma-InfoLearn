@@ -1,4 +1,7 @@
-
+#scorePanel{
+    float:right;
+    margin-right: 10%;
+}
 #left-bar{
  position: fixed;
   top: -5;

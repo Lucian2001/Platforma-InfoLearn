@@ -24,7 +24,14 @@
 <script src="fisiere/scripts/draganddrop.js"></script>
 <script src="fisiere/scripts/generareNumere.js"></script>
 
-<script>buttonActive=1;
+<script>
+    
+    $("#plus").draggable( 'enable' );
+               $("#minus").draggable( 'enable' );
+               $("#divide").draggable( 'enable' );
+               $("#multiply").draggable( 'enable' );
+               $("#slash").draggable( 'enable' );
+    buttonActive=1;
     var semn1;
     dragAndDrop(semn1);
        

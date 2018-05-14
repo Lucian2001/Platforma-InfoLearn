@@ -112,6 +112,9 @@ if ($result1 = mysqli_query($link,$query)){
         <button class="btn btn-primary " class="button_text" id="butonsmecher" ng-click="Run()" ><span class="button_text" >Run</span>
           <img  class="image_button" src="fisiere/assets/images/button-play-icon.png"  float="right">
             </button>
+         <button class="btn btn-primary "ng-click="resetare13()" class="button_text" id="resetareAplicatie" ng-click="Resetare()" ><span class="button_text" >Resetare</span>
+          
+            </button>
    </div>
 
     <div id="code-aplicatie" >
