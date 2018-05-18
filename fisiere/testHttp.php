@@ -29,7 +29,7 @@ if (mysqli_query($link, $query)) {
 
             }
 
-$query="SELECT *FROM completat WHERE id = $id";
+$query="SELECT *FROM completat WHERE id = '$id'";
 
 if ($result1 = mysqli_query($link,$query)){
     $row = mysqli_fetch_array($result1);

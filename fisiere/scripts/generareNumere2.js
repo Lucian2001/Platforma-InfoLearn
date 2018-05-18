@@ -59,7 +59,7 @@ var nr3=randomNumber(2);
 rezultat(semneRepetitie,numere);
 
 
-    nr1=randomNumber(2); 
+    nr1=randomNumber(2);
     if (nr1==1){
         adevarat=true;
         $("#id--5").html(rezultat1);
@@ -297,5 +297,6 @@ optiune=0;corect=0;
  if (nr1==6){
     $("#exercitiiRezolvate").html(6);
 succes();
+    creereScor(timp,raspunsuriGresite,0,0,6);
  }
 }

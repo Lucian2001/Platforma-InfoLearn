@@ -225,7 +225,7 @@ bucla=false;
          clear1();
          return 0;
      }
-    
+
      terminat=false;
  isRunning=true;
 if (paginaUpload=="1.1.1"){
@@ -250,7 +250,7 @@ $scope.tancComplet="fisiere/assets/images/tanc_gri.png";
 $scope.textTanc=textTanc1;
 $scope.eroare="";
 }
-  RunAlgorritm(idComponenta); 
+  RunAlgorritm(idComponenta);
 }
 else {
 
@@ -320,12 +320,12 @@ else {
 
          if (n==1){
         eroareShow("Pune și tu ceva cod!") ;
-   $location.url('#'+"-1");
+
      }else{
 var patternSave;
          patternSave=pattern;
-      
-      
+
+
     $scope.error="Nu e nicio eroare" ;
 pattern=patternSave;
            RunAlgorritm(pattern);
@@ -498,14 +498,14 @@ clear1();
 
 $scope.resetare13=function(){
 resetare12();
- clear1();   
+ clear1();
 }
 
 
 $scope.eroare="";
 nrComponenta=1;
 idComponenta=0;
-    $scope.corpTanc1=function(){ 
+    $scope.corpTanc1=function(){
       if (nrComponenta == 2){
         $scope.eroare="";
         $scope.tancPart2="fisiere/assets/images/corp_albastru.png";
@@ -536,14 +536,14 @@ idComponenta=idComponenta*10+2;
 nrComponenta=nrComponenta+1;
 idComponenta=idComponenta*10+3;
       }
-      else if (terminat==true){ 
+      else if (terminat==true){
       $scope.eroare = "Aceasta nu este piesa care ar trebui pusă!";
 
       }
     }
     $scope.capTanc2=function(){
       if (nrComponenta == 3){
-          
+
         $scope.eroare="";
         $scope.tancPart3="fisiere/assets/images/cap_gri.png";
 nrComponenta=nrComponenta+1;
@@ -1218,7 +1218,7 @@ var buton12=0;
          corecte[x-1][3]=1;
           punctaj=punctaj+10;
 buton12=$(this).attr('id');
-              
+
             }
           } else{
             if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
@@ -1228,8 +1228,8 @@ buton12=$(this).attr('id');
             }
           }   }
         else {
-         
-       if(buton12!=$(this).attr('id'))    { 
+
+       if(buton12!=$(this).attr('id'))    {
  $("#"+$(this).attr('id')).css("background-color","#17A2B8");}
          $(".btn-info").css("border-color","#17A2B8");
             eroareShow("Poti apasa un singur rapuns!");
@@ -1242,7 +1242,7 @@ buton12=$(this).attr('id');
         if(exercitiuOn==1){
                if (idRaspunsuri2[$(this).attr('id')]==raspuns11){
           punctaj=punctaj+10;
- corecte[x][3]=1;buton12=$(this).attr('id'); 
+ corecte[x][3]=1;buton12=$(this).attr('id');
             }
           } else{
             if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
@@ -1629,12 +1629,12 @@ $scope.punctajShow=punctaj;
      if(corecte[i][3]==1){
        inlocuitor2=-1;
          inlocuitor1="Ai raspuns corect la aceasta intrebare!";
-        
+
      } else{
        inlocuitor2=i;
         inlocuitor1="Raspuns corect:  "+inlocuitor1;
      }
-        
+
     $scope.intrebariSiRaspunsuri[i-1]={numar1234:(i+".  "),intrebare2:inlocuitor,raspuns12:inlocuitor1,corect12:inlocuitor2};
     }
 
@@ -1878,3 +1878,56 @@ function rezultatGresit123(semn,x,y){
        return Math.floor(x/y)+nr;
    }
 }
+angular.module('myApp').controller('paginaProfesor', function ($scope,$location,$route,$window,$location,$routeParams,$http,$timeout){
+var numeClasa;
+var clase=[];var nr1=1;
+  $scope.src1="fisiere/profesor/inregistrareElevi.html";
+  $scope.adaugaClasa = function(){
+    swal("Introdu numele clasei pe care vrei sa o adaugi!", {
+  content: "input",
+})
+.then((value) => {
+  numeClasa=  value;
+
+      if (nr1<10){
+    $http({
+ 
+ method: 'POST',
+ url: '/fisiere/incarcareClase.php',
+ data: {clasa:numeClasa,nr:nr1},
+ headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+ }).then(function successCallback(response) {
+alert(response.data);
+})
+      } else {
+          alert ("Nu poti creea mai multer clase!");
+      }
+});
+
+  }
+  $scope.clase=[{clasa:""}];
+    
+
+ 
+$scope.loadClase= function(){
+  $http({
+  method: 'GET',
+  url: '/fisiere/loadClase.php',
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+  }).then(function successCallback(response) {
+      clase1=response.data; 
+      nr1= clase1.substr(clase1.length - 1);
+      clase1=clase1.slice(0,clase1.length-1);
+      var j=1;
+      for(var i=0;i<=clase1.length;i++){
+          if(clase1[i]=="#"){
+         $scope.clase[j]={clasa:clase1.slice(0,i)};
+              clase1=clase1.slice(i+1,clase1.length);
+              i=0;j++;
+          }
+      }
+  })
+}
+})

@@ -112,10 +112,14 @@ function verificareRaspuns(x){
     ok=false;
  a=$("#id---1").val();
  b=$("#id---2").val();
+if (parseInt(a).toString()!=a || parseInt(a)==null){
+  ok=false;
+} else{
 a=parseInt(a);
+
 b=parseInt(b);
     if (a!=0 && b!=0){
-     
+
     if (x==1){
       if(a<b){
           ok=true;
@@ -152,7 +156,7 @@ b=parseInt(b);
     } else{
         ok=false;
     }
-
+}
     if (ok==true){
         corect1();
     } else{
@@ -173,7 +177,7 @@ $("#id---2").val("");
       afisareSemn(numar);
 
 
-buttonActive=1; 
+buttonActive=1;
   } ,1500);
   var nr=$("#exercitiiRezolvate").html();
   var nr1=parseInt(nr);
@@ -214,7 +218,7 @@ function gresit1(){
 $("#id---2").val("");
       afisareSemn(numar);
 
-buttonActive=1; 
+buttonActive=1;
   } ,1500);
 
 
@@ -228,7 +232,7 @@ raspuns=$("#id---"+c).val();
     if (c==1){
         nr=0-nr;
     }
-    
+
 if (d==1){
     nr=raspuns-nr;
     nr=parseInt(nr);

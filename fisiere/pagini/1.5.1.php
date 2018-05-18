@@ -80,6 +80,7 @@ include("loadTanc.php");
 <script src="fisiere/scripts/generareMapa.js"></script>
 
 <script>
+start();
 if (tanc==0){
   noTank();
 }

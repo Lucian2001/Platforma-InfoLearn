@@ -108,7 +108,11 @@ $(".imagineComponentaTanc").hide();
   tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
+  $("#butonsmecher").show();
+  $("#resetareAplicatie").hide();
+start();
    if (tanc==0){
+
      noTank();
    }
   redimensionare13();

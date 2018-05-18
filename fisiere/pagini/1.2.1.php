@@ -25,16 +25,12 @@
 <script src="fisiere/scripts/generareNumere.js"></script>
 
 <script>
-    
-    $("#plus").draggable( 'enable' );
-               $("#minus").draggable( 'enable' );
-               $("#divide").draggable( 'enable' );
-               $("#multiply").draggable( 'enable' );
-               $("#slash").draggable( 'enable' );
+start();
+timerCorect(1);
     buttonActive=1;
     var semn1;
     dragAndDrop(semn1);
-       
+
 var corectValue;
     var numarNumereGenerate=2;
 var numarSemneGenerate=1;
@@ -51,6 +47,8 @@ semn1=generareSemn(semn);
 dragAndDrop(semn1);
 
     $("#generare").click(function(){
+       coeficientDificultate=coeficientDificultate+1;
+        timerCorect(1);
         if (buttonActive==1){
             buttonActive=0;
             $("#plus").draggable( 'enable' );
@@ -63,10 +61,10 @@ if (nr2=="1"){
 var ok=0;
   var nr4=$("#exercitiiRezolvate").html();
    var nr5=parseInt(nr4);
-if (nr5==5 && nr2==1){
+if (nr5==6 && nr2==1){
  // alert("done"); ok=1;
   $("#exercitiiRezolvate").html(6);
-  
+    creereScor(timp,raspunsuriGresite,6,Math.round( (coeficientCorect/6) * 10 ) / 10,5); 
 succes();
 }
 if(ok==0){
@@ -87,6 +85,10 @@ $("#invisibleObject").html(0);
     })
 
 })
-
+$("#plus").draggable( 'enable' );
+   $("#minus").draggable( 'enable' );
+   $("#divide").draggable( 'enable' );
+   $("#multiply").draggable( 'enable' );
+   $("#slash").draggable( 'enable' );
 
 </script>

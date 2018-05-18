@@ -115,6 +115,7 @@ function generareSemn(semn){
 }
 
 function incercari(){
+  raspunsuriGresite=raspunsuriGresite+1;
     var nr=$("#numarIncercari").html();
     nr1=parseInt(nr);
     if (nr1<=3 && nr1>1){
@@ -136,7 +137,10 @@ function incercari(){
         }
 }
 function corect(){
-$("#corect").show();
+    coeficientCorect=coeficientCorect+(400-timp1)/(coeficientDificultate*100);
+    
+    timp1=-1;
+    $("#corect").show();
 
     semn=Math.floor((Math.random() * 2) + 1);
    var nr=$("#exercitiiRezolvate").html();

@@ -33,10 +33,10 @@ urlNou="";
 
 urlNou="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#"+urlNou;
 
-  window.location.replace(urlNou); 
+  window.location.replace(urlNou);
   if (butonActiv==1){
-    butonActiv=0; 
-    if (window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#1" && urlNou!="-1"){
+    butonActiv=0;
+    if (window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#1" ){
 
 
   pasi=parseInt(y);
@@ -99,14 +99,55 @@ offset1 = target.offset();
                 }
             }
                     $("#id-"+Id).css("background-color","#d8ffd6");
+var idScor=0;
+Id=parseInt(Id);
+
+if ((Math.floor(Id/10))%10==1){
+  idScor=Id%10;
+    if(idScor==1){
+        dificultateScor=2;
+    } else if(idScor==2){
+        dificultateScor=3;
+    }else if(idScor==2){
+        dificultateScor=8;
+    }else if(idScor==2){
+        dificultateScor=8;
+    }
+} else if((Math.floor(Id/10))%10==5){
+  idScor=13+Id%10;
+     if(Id%10==1){
+        dificultateScor=4;
+    } else if(Id%10==2){
+        dificultateScor=9;
+    }else if(Id%10==2){
+        dificultateScor=7;
+    }else if(Id%10==2){
+        dificultateScor=8;
+    }
+}else if((Math.floor(Id/10))%10==6){
+  idScor=9+Id%10;
+    if(Id%10==1){
+        dificultateScor=5;
+    } else if(Id%10==2){
+        dificultateScor=6;
+    }else if(Id%10==2){
+        dificultateScor=9;
+    }else if(Id%10==2){
+        dificultateScor=8;
+    }
+}
 
             $.ajax({   type:"POST",
                      url:"fisiere/testHttp.php",
                      data:"Id=" + Id ,
                   success:function(result)
-                     {   butonActiv=1; isRunning=false;
+                  {
+                      butonActiv=1; isRunning=false;
                       $("#butonsmecher").hide();
                       $("#resetareAplicatie").show();
+alert(dificultateScor); alert(idScor);
+                      creereScor(timp,raspunsuriGresite,dificultateScor,0,idScor);
+                    //  timer(0);
                     swal({
   title: "Bravo!",
   text: "Ai terminat această aplicație.Acum poți sa-ți continui aventura.",
@@ -159,15 +200,16 @@ return 0;
         if (okSpatiu==1){
             $("#object1").css({'transform': 'rotate(0deg)'});
            butonActiv=1;isRunning=false;
+           raspunsGresit();
          eroareShow("Nu ai ajuns in locul indicat!");
         }
         else{
            butonActiv=1;isRunning=false;
             $("#object1").css({'transform': 'rotate(0deg)'});
 eroareShow("Nu ai reușit să ajungi în locul indicat!.Ar trebui sa urmezi drumul.");
-
+raspunsGresit();
         }
-       
+
 urlPozitie="";
                     for(i=0;i<urlSave.length;i++){
                 if (urlSave[i]!="/" && urlSave[i]!="#"){
@@ -205,7 +247,7 @@ return 0;
 $("#object1").css({'transform': 'rotate(0deg)'});isRunning=false;
         eroareShow("Comenzile pe care le-ai dat au scos tancul în afara spațiului de lucru.Incearcă alt algoritm!");
          butonActiv=1;
-
+raspunsGresit();
               $("#object1").css("left",pozitieInitiala-(7*pozitieInitiala)/100);
        }
      // alert(degree);
@@ -317,9 +359,9 @@ $("#object1").css({'transform': 'rotate(0deg)'});isRunning=false;
 
 
 
-}else if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#1"){ 
-    tancId=y; 
-
+}else if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#1"){
+    tancId=y;
+isRunning=false;
      if (tancId%1000>100){
       $.ajax({   type:"POST",
                      url:"fisiere/uploadTancId.php",
@@ -458,6 +500,9 @@ else {
 }
 
 function resetare12(){
+timp=0;
+raspunsuriGresite=0;
+timer(1);
     urlPozitie="";
                     for(i=0;i<window.location.href.length;i++){
                 if (window.location.href[i]!="/" && window.location.href[i]!="#"){
@@ -465,7 +510,7 @@ function resetare12(){
                 }
             }
        $("#object1").css({'transform': 'rotate(0deg)'});
-urlPozitie=urlPozitie.substr(urlPozitie.length - 3); 
+urlPozitie=urlPozitie.substr(urlPozitie.length - 3);
      if (urlPozitie=="162" || urlPozitie=="164"){
            $("#object1").css({'transform': 'rotate(0deg)'});
          $("#object1").css("left",pozitieInitiala-(8*pozitieInitiala)/100);
@@ -484,7 +529,5 @@ urlPozitie=urlPozitie.substr(urlPozitie.length - 3);
         }
     $("#butonsmecher").show();
     $("#resetareAplicatie").hide();
-     
- } 
 
-
+ }

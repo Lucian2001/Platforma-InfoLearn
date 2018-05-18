@@ -81,7 +81,7 @@ include("loadTanc.php");
 </style>
 <script src="fisiere/scripts/generareMapa.js"></script>
 <script>
-       
+
 if (tanc==0){
   noTank();
 }
@@ -113,6 +113,9 @@ $(".imagineComponentaTanc").hide();
 tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
+  start();
+  $("#butonsmecher").show();
+  $("#resetareAplicatie").hide();
    redimensionare13();
    // $("#id:35").attr("src","fisiere/assets/images/road_target");
 // $("#id-35").attr('id', 'target');

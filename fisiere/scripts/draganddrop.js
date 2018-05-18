@@ -1,7 +1,7 @@
 
 
  function dragAndDrop(semn) {
-    $( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "invalid" });
+  $( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "invalid" });
     $( "#droppable" ).droppable({
     //accept: "#plus",
 
@@ -17,7 +17,7 @@
                $("#divide").draggable( 'disable' );
                $("#multiply").draggable( 'disable' );
                $("#slash").draggable( 'disable' );
-corect(); 
+corect();
           } else{
               $( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "valid" });
               incercari();

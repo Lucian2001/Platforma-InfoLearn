@@ -31,18 +31,19 @@
 <script>var buttonActive=1;
     var array=new Array();
     var array1=new Array();
-
+start();
 var raspuns,raspuns1;
  generareNumere12(array,array1);
 
 $("#true").click(function(){
-    
+
    $("#false1").prop('disabled', true);
    if (adevarat==true){
-    corect2(); 
-   }else
+    corect2();
+  }else{
        gresit2()
-
+raspunsuriGresite=raspunsuriGresite+1;
+}
 })
     $("#verificare").click(function(){
       if (buttonActive==1){

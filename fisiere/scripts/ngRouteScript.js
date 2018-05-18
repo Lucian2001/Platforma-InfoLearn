@@ -37,6 +37,7 @@ reloadOnSearch: false,
 })
         .when("/profesor", {
 templateUrl : "fisiere/profesor.php",
+templateUrl : "fisiere/profesor.php",
 reloadOnSearch: false,
 
 })

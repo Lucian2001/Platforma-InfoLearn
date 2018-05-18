@@ -95,12 +95,17 @@ redimensionare153();
     $("#generare").click(function(){
 if (buttonActive==1){
     buttonActive=0;
+  if ($("#input").val()!=parseInt($("#input").val()).toString()){
+gresit();
+$("#input").val("0");
+
+  } else
         if ($("#input").val()==raspuns){
             corect();
-$("#input").val("");
+$("#input").val("0");
         } else{
             gresit();
-            $("#input").val("");
+            $("#input").val("0");
         }
 }
     })
