@@ -27,14 +27,16 @@ if ($result1 = mysqli_query($link,$query)){
 		}
 
 		.expl-box-fi {
+            margin-top: 1%;
 			margin-left: 10px;
             border-style: none;
-			height: 95%;
+			height: 70%;
             width:99%;
              text-align: left;
              text-indent: 30px;
             color:black;
              z-index: 1;
+            text-align: justify;
 		}
     .expl-box-fi1 {
 
@@ -56,7 +58,7 @@ if ($result1 = mysqli_query($link,$query)){
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1> Bucla repetitiva</h1>
+  <h1 class="titluCapitol"> Bucla repetitivă</h1>
 </div>
 
 
@@ -68,8 +70,7 @@ if ($result1 = mysqli_query($link,$query)){
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="   Algoritmul reprezintă o succesiune de pași ce trebuie parcurși pentru a rezolva un anumit tip de problemă.Un algoritm are următoarele proprietăți:
-  Finitudine-Algorimul trebuie să se termine după un număr finit de pași, atunci nu ar putea da o rezolvare pentru problema respectivă.Generalitate-Algorimul trebuie să rezolve toate problemele de același tip. Claritate-Algoritmul trebuie să fie clar descris, fără ambiguități. La fiecare pas al algoritmului,trebuie precizat exact ce trebuie făcut și care este următorul pas ce se va realiza."></div>
+<div class="expl-box-fi" ng-fi-text="   O structura repetitiva se caracterizeaza prin posibilitatea efectuarii repetitive a unei secvenţe de instrucţiuni, cat timp este îndeplinita o anumită condiţie sau pana când se îndeplineşte o anumită condiţie. Repetitia secvenţei de instructiuni se numeşte iteratie  bucla sau ciclu."></div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >
@@ -112,6 +113,9 @@ if ($result1 = mysqli_query($link,$query)){
     </div>
         <button class="btn btn-primary " class="button_text" id="butonsmecher" ng-click="Run()" ><span class="button_text" >Run</span>
           <img  class="image_button" src="fisiere/assets/images/button-play-icon.png"  float="right">
+            </button>
+         <button class="btn btn-primary "ng-click="resetare13()" class="button_text" id="resetareAplicatie" ng-click="Resetare()" ><span class="button_text" >Resetare</span>
+          
             </button>
    </div>
 

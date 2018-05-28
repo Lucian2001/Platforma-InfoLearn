@@ -4,10 +4,35 @@
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 <div ng-repeat="x in clase">
-    <a class="dropdown-item" >{{x.clasa}}</a>
+    <a class="dropdown-item" ng-click="selectareClasa(x.id)">{{x.clasa}}</a>
 
 </div>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" id="adaugareClasa" ng-click="adaugaClasa()">Adauga clasa</a>
+          
   </div>
+     <button id="adaugaElev" ng-click="adaugareElev()" type="button" class="btn btn-primary">Adauga elev</button>
+    <h1 id="clasaTitlu">{{titluClasa}}</h1>
+    <div id="tabelElevi" >
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nume elev</th>
+      <th scope="col">Parola</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="y in elevi">
+    <tr>
+      <th scope="row">{{y.numar}}</th>
+      <td>{{y.nume}}</td>
+      <td>{{y.parola}}</td>
+      
+    </tr>
+   
+    
+  </tbody>
+</table>
+    </div>
+    
 </div>

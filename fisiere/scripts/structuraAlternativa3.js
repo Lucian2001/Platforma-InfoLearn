@@ -1,5 +1,6 @@
 function generareNumere(x) {
-      var nr=Math.floor((Math.random() * x) + 1);
+     
+    var nr=Math.floor((Math.random() * x) + 1);
      var nr1=Math.floor((Math.random() * 4) + 1);
      var nr2=Math.floor((Math.random() * 10) + 1);
      var nr4=Math.floor((Math.random() * x) + 1);
@@ -38,7 +39,7 @@ if (nr2<7){
              $("#id--2").html(operator(nr1-1,nr));  }
         return (expresie(semn2,nr6,nr7));
 }
-
+   
 }
  function generareOperator(x){
     if(x==1){
@@ -57,26 +58,18 @@ if (nr2<7){
 }
 
  function operator(x,y){
-    var z;
+    var z;  var nr=Math.floor((Math.random() * 10) + 1);
      if(x==1){
-             do {
-                z=Math.floor((Math.random() * (y*2)) + 1);
-             } while(y<=z);
+z=y-nr;
         return z;
     } else if(x==2){
-             do {
-                z=Math.floor((Math.random() * (y*2)) + 1);
-             } while(y>=z);
+            z=y+nr;
         return z;
     } else if(x==3){
-            do {
-                z=Math.floor((Math.random() * (y*2)) + 1);
-             } while(y<=z);
+            z=y-nr;
         return z;
     } else if(x==4){
-             do {
-                z=Math.floor((Math.random() * (y*2)) + 1);
-             } while(y>=z);
+             z=y+nr;
         return z;
     }
 }
@@ -117,7 +110,9 @@ if (nr2<7){
     }
 }
 function corect(){
-
+coeficientCorect=coeficientCorect+timp1;
+     
+timp1=-1;
 $("#corect").show();
             setTimeout(function(){
                  $("#corect").hide();
@@ -129,18 +124,21 @@ $("#corect").show();
             } ,1500);
          var nr=$("#exercitiiRezolvate").html();
          var nr1=parseInt(nr);
-    if (nr1>=0 && nr1<=5){
+    if (nr1>=0 && nr1<5){
         nr1++;
         $("#exercitiiRezolvate").html(nr1);
     }
        else{$("#exercitiiRezolvate").html(6);
-succes();
+succes(); timpOver=0;
+ creereScor(timp,raspunsuriGresite,4,coeficientCorect,13);            
 
       }
 
 }
 function gresit(){
-    $("#gresit").show(); eroareRezultat("Raspunsul era "+raspuns);
+     timp1=-1;
+        raspunsuriGresite=raspunsuriGresite+1;
+    $("#gresit").show(); eroareRezultat("Răspunsul corect era "+raspuns);
             setTimeout(function(){
                  $("#gresit").hide();
                 dificultate=dificultate-1;

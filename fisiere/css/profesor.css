@@ -2,3 +2,16 @@
   margin-left:4%;
   margin-top: 2%;
 }
+#tabelElevi{
+    overflow-y: scroll; 
+    height:76%;
+    margin-top: 5%;
+}
+#adaugaElev{
+    margin-left: 1%;
+}
+#clasaTitlu{
+float:right;
+    margin-top: -0.5%;
+    margin-right: 50%;
+}

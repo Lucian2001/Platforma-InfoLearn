@@ -26,7 +26,7 @@
 
 </style>
 <script>
-    $("#score").html(generareScor(1));
+    generareScor(1,8);    
 $("#object1").hide();
     $(".imagineComponentaTanc").show();
    timer();

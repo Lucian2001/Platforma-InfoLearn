@@ -80,6 +80,7 @@ include("loadTanc.php");
 <script src="fisiere/scripts/generareMapa.js"></script>
 
 <script>
+     generareScor(2,20);  
     //generate target
     var locatiiValide = new Array(34,35,36);
  var targetPlace= $( "#pozitie" );
@@ -111,6 +112,7 @@ $(document).ready(function(){
   $("#butonsmecher").show();
   $("#resetareAplicatie").hide();
 start();
+
    if (tanc==0){
 
      noTank();

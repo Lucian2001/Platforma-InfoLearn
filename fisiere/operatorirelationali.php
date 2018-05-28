@@ -62,7 +62,7 @@ include ("functions.php");
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1>Operatori relaționali</h1>
+  <h1 class="titluCapitol">Operatori relaționali</h1>
 </div>
 
 

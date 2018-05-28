@@ -29,7 +29,7 @@ color:black;
 
 </style>
 <div id="animation-side">
-  <div class="expl-box-fi-enunt" ng-fi-text="Trage casetele din panoul cu blocuri în locurile corespunzătoare pentru ca expresia să fie corectă."></div>
+  <div class="expl-box-fi-enunt" ng-fi-text="Stabilește valoarea de adevăr a expresiei de mai jos!"></div>
 
 
     <div id="spatiuExercitii">
@@ -58,7 +58,7 @@ color:black;
 
       <h1 id="exercitii"><span id="exercitiiRezolvate">0</span>/6</h1>
 </div>
-<div class="expl-box-fi2" ng-fi-text="    După ce ai pus un bloc vei afla dacă ai răspuns corect sau nu. După aceea apasă butonul de mai sus pentru a genera un nou exercițiu. Aplicația va fi completă după ce ai răspuns corect la 6 itemi."></div>
+<div class="expl-box-fi2" ng-fi-text="  Pentru a rezolva acestă aplicație trebuie sa apeși pe unul dintre cele doua butoane disponibile pentru a stabili care este valoarea de adevăr a expresiei. După ce ai apăsat butonul vei primi răspunsul și apoi se va genera un alt exercițiu."></div>
 
 <link rel="stylesheet" href="fisiere/css/structuraAlternativa1.css">
 
@@ -66,32 +66,45 @@ color:black;
 
 <script>var buttonActive=1; 
     var raspuns;
+
+      generareScor(11,35);
+start();
+timerCorect(1); 
 $(document).ready(function(){
   redimensionare151();
     $("#object1").hide();
     $("#butonsmecher").hide();
+     $("#resetareAplicatie").hide();
 })
 var dificultate;
     dificultate=10;
    raspuns=generareNumere(dificultate);
 
     $("#true2").click(function(){
+  
+        
         if (buttonActive==1){
         buttonActive=0; 
         if (raspuns==true){
             corect();
+            timerCorect(1);
         } else{
             gresit();
+             timerCorect(1);
         }
         }
     })
         $("#false2").click(function(){
+           
+
             if (buttonActive==1){
         buttonActive=0; 
         if (raspuns!=true){
             corect();
+        timerCorect(1);
         } else{
             gresit();
+             timerCorect(1);
         }
             }
     })

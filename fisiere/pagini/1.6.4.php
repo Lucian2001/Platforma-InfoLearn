@@ -80,7 +80,9 @@ include("loadTanc.php");
 <script src="fisiere/scripts/generareMapa1.6.2.js"></script>
 
 <script>
+    swal("Pentru a face acestă aplicație ar trebui mai întâi sa faci exercțiile de la capitolul următor!");
 start();
+      generareScor(13,35);  
 if (tanc==0){
   noTank();
 }

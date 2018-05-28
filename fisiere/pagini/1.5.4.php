@@ -62,7 +62,7 @@ include("loadTanc.php");
 </div>
 
 
-<div class="expl-box-fi7" ng-fi-text="   Acum trebuie sa te folosești de încă un bloc care întoarce tancul. Tu trebuie să-ți conduci tancul în punctul care trebuie urmând drumul fără sa te duci pe iarbă."></div>
+<div class="expl-box-fi7" ng-fi-text="   Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
 <style>
     .expl-box-fi7 {
 		margin-top: -3%;;
@@ -79,6 +79,7 @@ include("loadTanc.php");
 </style>
 <script src="fisiere/scripts/generareMapa.js"></script>
 <script>
+      generareScor(17,66); 
 start();
 if (tanc==0){
   noTank();

@@ -127,7 +127,8 @@ function generareNumere(x){
     }
 }
 function corect(){
-
+coeficientCorect=coeficientCorect+timp1;
+    timp1=-1;
 $("#corect").show();
             setTimeout(function(){
                  $("#corect").hide();
@@ -139,39 +140,20 @@ buttonActive=1;
             } ,1500);
          var nr=$("#exercitiiRezolvate").html();
          var nr1=parseInt(nr);
-    if (nr1>=0 && nr1<=5){
+    if (nr1>=0 && nr1<5){
         nr1++;
         $("#exercitiiRezolvate").html(nr1);
     }
        else{$("#exercitiiRezolvate").html(6);
-var Id="";
-  var url= window.location.href;
-  for(i=0;i<url.length;i++){
-if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3||url[i]==6)){
-  Id=Id+url[i];
-}
-} 
-  $("#id-"+Id).css("background-color","#d8ffd6");
-
-$.ajax({   type:"POST",
-   url:"fisiere/testHttp.php",
-   data:"Id=" + Id ,
-success:function(result)
-   {
-     swal({
-  title: "Bravo!",
-  text: "Ai terminat această aplicație.",
-  icon: "success",
-  button: "Ok",
-});;
-    }
-
-});
-
+            
+succes(); timpOver=0;
+    creereScor(timp,raspunsuriGresite,4,Math.round( (coeficientCorect/6) * 10 ),11); 
       }
 
 }
 function gresit(){
+    timp1=-1;
+    raspunsuriGresite=raspunsuriGresite+1;
     $("#gresit").show();
             setTimeout(function(){
                  $("#gresit").hide();

@@ -33,7 +33,7 @@ $query="SELECT *FROM completat WHERE id = '$id'";
 
 if ($result1 = mysqli_query($link,$query)){
     $row = mysqli_fetch_array($result1);
-    //echo $row[2];
+   // echo $row[2];
 
 
 }
@@ -47,7 +47,7 @@ $query = "UPDATE completat SET complet='$newId'
  WHERE id='$id'";
 if (mysqli_query($link, $query)) {
 
-                  echo "done";
+                //  echo "done";
 
 }
 

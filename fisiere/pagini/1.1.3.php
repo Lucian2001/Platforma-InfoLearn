@@ -64,7 +64,7 @@ include("loadTanc.php");
 </div>
 
 
-<div class="expl-box-fi6" ng-fi-text="   Acum trebuie sa te folosești de încă un bloc care întoarce tancul. Tu trebuie să-ți conduci tancul în punctul care trebuie urmând drumul fără sa te duci pe iarbă."></div>"></div>
+<div class="expl-box-fi6" ng-fi-text="   Acum trebuie sa te folosești de încă un bloc care întoarce tancul. Tu trebuie să-ți conduci tancul în punctul care trebuie urmând drumul fără sa te duci pe iarbă."></div>
 <style>
     .expl-box-fi6 {
 		margin-top: -3%;;
@@ -81,10 +81,11 @@ include("loadTanc.php");
 </style>
 <script src="fisiere/scripts/generareMapa.js"></script>
 <script>
+start();
+    generareScor(3,52); 
+  //start();
+   
 
-if (tanc==0){
-  noTank();
-}
      for(var i=1;i<=66;i++)
         limite[i]=0;
    var locatiiValide = new Array(33,34,35,36,23,24,25,26,43,44,45,46,54,53,55,56,63,64,65,66);
@@ -113,7 +114,7 @@ $(".imagineComponentaTanc").hide();
 tanc= "<?php echo $row2[1]?>";
 
 $(document).ready(function(){
-  start();
+  
   $("#butonsmecher").show();
   $("#resetareAplicatie").hide();
    redimensionare13();
@@ -124,6 +125,9 @@ $(document).ready(function(){
 $("#object1").show();
 
 })
-
+if (tanc==0||tanc==undefined){
+    
+  noTank();
+}
 
 </script>

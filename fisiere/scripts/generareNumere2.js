@@ -228,22 +228,26 @@ function semne1(nr,a,b){
     }
 }
 function corect2(){
+    coeficientCorect=coeficientCorect+timp1;
+   
       corect=true;
     optiune=1;
 }
 function gresit2(){
    corect=false;
-    optiune=1;
+    optiune=2;
 }
 function verificare(){
    if (optiune==1){
     if (corect==true )
         {$("#corect1").show();
             setTimeout(function(){
+                
                   generareNumere12(array,array1);
                 $("#corect1").hide();
            $("#false1").prop('disabled', false);
   buttonActive=1;
+                timerCorect(1);
             } ,1500);
          var nr=$("#exercitiiRezolvate1").html();
          var nr1=parseInt(nr);
@@ -252,15 +256,15 @@ function verificare(){
         $("#exercitiiRezolvate1").html(nr1);
     }
 
-        }else  {
-            $("#gresit1").show();  eroareRezultat("Raspunsul corect era"+raspuns1);
+        }else  {  timp1=-1;
+            $("#gresit1").show();  eroareRezultat("Răspunsul corect era"+raspuns1);
             setTimeout(function(){
 
 
               raspuns=generareNumere12(array,array1);
                 $("#gresit1").hide();
                 $("#false1").prop('disabled', false);
-
+timerCorect(1);
             } ,1500);
         }
 } else
@@ -274,6 +278,7 @@ $("#corect1").show();
                 $("#corect1").hide();
               $("#false1").val("");
                   buttonActive=1;
+                timerCorect(1);
             } ,1500);
          var nr=$("#exercitiiRezolvate1").html();
          var nr1=parseInt(nr);
@@ -282,6 +287,7 @@ $("#corect1").show();
         $("#exercitiiRezolvate1").html(nr1);
     }
       } else{
+           timp1=-1;
   $("#gresit1").show();
             setTimeout(function(){
                   generareNumere12(array,array1);
@@ -289,6 +295,7 @@ $("#corect1").show();
               $("#false1").val("");
                  $("#false1").prop('disabled', false);
                   buttonActive=1;
+                timerCorect(1);
             } ,1500);
       }
 
@@ -296,7 +303,7 @@ $("#corect1").show();
 optiune=0;corect=0;
  if (nr1==6){
     $("#exercitiiRezolvate").html(6);
-succes();
-    creereScor(timp,raspunsuriGresite,0,0,6);
+succes(); timpOver=0;
+    creereScor(timp,raspunsuriGresite,4,coeficientCorect,6);
  }
 }

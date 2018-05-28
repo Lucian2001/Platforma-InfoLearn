@@ -115,6 +115,7 @@ function generareSemn(semn){
 }
 
 function incercari(){
+    
   raspunsuriGresite=raspunsuriGresite+1;
     var nr=$("#numarIncercari").html();
     nr1=parseInt(nr);
@@ -128,16 +129,17 @@ function incercari(){
                $("#divide").draggable( 'disable' );
                $("#multiply").draggable( 'disable' );
                $("#slash").draggable( 'disable' );
-           eroareRezultat("Raspunsul corect era"+semn1);
+           eroareRezultat("Răspunsul corect era"+semn1);
             $("#gresit").show();
             $("#numarIncercari").html(0);
             $("#invisibleObject").html(1);
                   $("#invisibleObject1").html(0);
         buttonActive=1;
+             timp1=-1;
         }
 }
 function corect(){
-    coeficientCorect=coeficientCorect+(400-timp1)/(coeficientDificultate*100);
+    coeficientCorect=coeficientCorect+timp1;
     
     timp1=-1;
     $("#corect").show();

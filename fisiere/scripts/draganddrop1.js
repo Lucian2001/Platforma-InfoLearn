@@ -1,9 +1,9 @@
-
+    $( "#maiMic,#maiMare,#maiMicSauEgal,#maiMareSauEgal,#egal,#diferit").draggable({ revert: "invalid" });
 
 
  function dragAndDrop(semn) {
 
-    $( "#maiMic,#maiMare,#maiMicSauEgal,#maiMareSauEgal,#egal,#diferit").draggable({ revert: "invalid" });
+
     $( "#droppable" ).droppable({
 
     //accept: "#plus",

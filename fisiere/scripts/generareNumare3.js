@@ -43,13 +43,15 @@ if (c=="/"){
 }
 
 function gresit(){
+     timp1=-1;
+    raspunsuriGresite=raspunsuriGresite+1;
   $("#gresit1").show();
-  eroareRezultat("Raspunsul corect era"+raspuns);
+  eroareRezultat("Răspunsul corect era"+raspuns);
   setTimeout(function(){
         generareNumere4(array,aray);
         raspuns=rezultat23();
       $("#gresit1").hide();
- $("#raspuns2").val(0);
+ $("#raspuns2").val("");
 buttonActive=1;
   } ,1500);
 
@@ -57,13 +59,16 @@ buttonActive=1;
 }
 
 function corect(){
+      coeficientCorect=coeficientCorect+timp1;
+    
+    timp1=-1;
   $("#corect1").show();
   setTimeout(function(){
         generareNumere4(array,aray);
         raspuns=rezultat23();
       $("#corect1").hide();
 buttonActive=1;
-      $("#raspuns2").val(0);
+      $("#raspuns2").val("");
 
   } ,1500);
   var nr=$("#exercitiiRezolvate1").html();
@@ -74,6 +79,7 @@ if (nr1>=0 && nr1<=5){
 }
 if (nr1==6){
    $("#exercitiiRezolvate").html(6);
-succes();
+succes(); timpOver=0;
+      creereScor(timp,raspunsuriGresite,1,coeficientCorect,7); 
 }
 }

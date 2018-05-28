@@ -11,8 +11,8 @@ include("loadTanc.php");
 
 
   <div class="row"  id ="rowMatrice" style="z-index:2;margin-top:0%;">
-    <div  class="col1" ><img id="id-11" src="" width="100%" height="100%"></div>
-    <div  class="col1" ><img id="id-12" src="" width="100%" height="100%"></div>
+    <div  class="col1" id="limit3"><img id="id-11" src="" width="100%" height="100%"></div>
+    <div  class="col1"  id="limit4"><img id="id-12" src="" width="100%" height="100%"></div>
       <div  class="col1" ><img id="id-13" src="" width="100%" height="100%"></div>
     <div  class="col1"><img id="id-14" src="" width="100%" height="100%"></div>
       <div  class="col1" ><img id="id-15" src="" width="100%" height="100%"></div>
@@ -62,7 +62,7 @@ include("loadTanc.php");
 </div>
 
 </div>
-<div class="expl-box-fi5" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Ele se pot șterge la nevoie.Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
+<div class="expl-box-fi5" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
 <style>
     .expl-box-fi5 {
 		margin-top: -4%;;
@@ -80,6 +80,7 @@ include("loadTanc.php");
 <script src="fisiere/scripts/generareMapa1.5.2.js"></script>
 
 <script>
+     generareScor(16,55);   
 start();
 if (tanc==0){
   noTank();

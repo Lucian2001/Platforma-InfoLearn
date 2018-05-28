@@ -4,6 +4,11 @@
     margin-right: 25%;
         padding-top: 2%;
 }
+#reloadTest{
+    float: right;
+    margin-top: -50%;
+    margin-right: 5%;
+}
 #titluIntrebari{  
     padding-top: 2%;
     margin-top: -2%;
@@ -47,7 +52,10 @@ font-size: 20px;
 width:80%;
 
 }
-
+.intrebare{
+    max-height: 100px;
+    min-height: 100px;
+}
 #evaluareEnding{
 
 display: none;
@@ -75,7 +83,7 @@ font-size: 60px;
     margin-left:8%;
      z-index: 1;
 }
-.progress{
+#evaluareProgres{
     height: 30px;
     margin-top: 4%;
     margin-left: 20%;

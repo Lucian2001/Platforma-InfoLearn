@@ -4,6 +4,12 @@
 
 angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams,$http,$timeout){
 
+    function verificareLimita(){
+if (n1<13)
+    return false;
+        else
+            return true;
+    }
 var eroareRun=false;
       $scope.error="Nu ai nicio eroare";
       $scope.records = [];
@@ -13,10 +19,12 @@ var eroareRun=false;
 //alert($scope.src);
    srcCounter=$location.absUrl().substr($location.absUrl().length - 1);
    pagina1=$location.absUrl().substr($location.absUrl().length - 3);
+   
    pagina1=pagina1.charAt(0);
      paginaUpload="1."+pagina1+"."+srcCounter;
     //if ( srcCounter== "1"){
     var href12="1."+pagina1+"."+5;
+    
 
 
     $scope.src="fisiere/pagini/"+href12+".php";
@@ -41,6 +49,15 @@ var eroareRun=false;
 
 //} OLD SISTEM*/
     $scope.code = "Blocuri";
+    var idUrl=0,y1,z4;       
+    y1=$location.absUrl().substr($location.absUrl().length - 5);
+        for(var i=0;i<5;i++){
+            if (y1[i]!="/" && y1[i]!="#"){
+           
+                z4=parseInt(y1[i]);
+                idUrl=idUrl*10+z4;
+            }
+        }
     var i=0;
     var n=1,n1=1;
     var nr=0;
@@ -56,6 +73,23 @@ var eroareRun=false;
     rotire="dreapta";
  //adaugare linii
    $scope.inainte=function(){
+
+       if (verificareLimita()==true){
+           eroareShow("Nu poți introduce mai multe comenzi!");       
+           return 0;
+       }
+       if ((idUrl==164 && repetaOn==0)||(idUrl==151 && repetaOn==0)||(idUrl==152 && repetaOn==0)||(idUrl==153 && repetaOn==0)){
+           eroareShow("Comenzile ar trebui să le pui într-un bloc repetă!");
+           return 0;
+       }
+       if (idUrl==164 && ifOn==0){
+           eroareShow("Comenzile ar trebui să le pui într-un bloc DACĂ!");
+           return 0;
+       }
+       if(ifOn==1 && ocolireOn==0){
+           eroareShow("Nu ar trebui acest bloc acum!");
+return 0;
+       }
          if (ifOn==1 && repetaOn==1){
 spatiu="---";
              spatiu1="---";
@@ -77,31 +111,60 @@ spatiu="---";
     }
    var ifOn=0;
    $scope.if=function(){
+       if (verificareLimita()==true){
+           eroareShow("Nu poți introduce mai multe comenzi!");       
+           return 0;
+       }
+         if (idUrl==164 && repetaOn==0){
+           eroareShow("Comenzile ar trebui să le pui într-un bloc repetă!");
+           return 0;
+       }
   if (ifOn==0){
-       $scope.records[i] =n1+spatiu+spatiu1+" "+"Dacă (șoseaua nu este blocată) atunci";
+      
+      $scope.records[i] =n1+spatiu+spatiu1+" "+"Dacă (șoseaua este blocată) atunci";
      i=i+1;n1=n1+1;}
        else{
 eroareShow("Poți introduce un singur ,,if'' ");
+           raspunsuriGresite=raspunsuriGresite+1;
        }
        ifOn=1;
    }
+   ocolireOn=0;
      $scope.ocolire=function(){
-
+         if (verificareLimita()==true){
+           eroareShow("Nu poți introduce mai multe comenzi!");       
+           return 0;
+       }
+         
+           if (idUrl==164 && repetaOn==0){
+           eroareShow("Comenzile ar trebui să le pui într-un bloc repetă!");
+           return 0;
+       }
+           if (idUrl==164 && ifOn==0){
+           eroareShow("Comenzile ar trebui să le pui într-un bloc DACĂ!");
+           return 0;
+       }
+ if (ocolireOn==0){
     if(repetaOn==false){
          if (ifOn==1){
        spatiu="--";
     spatiu1="--";
         $scope.records[i] =n1+spatiu+spatiu1+" "+"Ocolire-obstacol";
        if(pattern==11){
-        pattern=pattern+"31211213";
            i=i+1;n1=n1+1;n=n+8;
+        pattern=pattern+"31211213";
+           
     } else{
-
+i=i+1;n1=n1+1;
     }
+    } else{
+        raspunsuriGresite=raspunsuriGresite+1;
+        eroareShow("Această instrucțiune trebuie pusă după structura 'Daca' ")
     }
            spatiu="";
     spatiu1="";
-       ifOn=1;}
+     
+    }
          else{
              if (ifOn==1){
        spatiu="---";
@@ -120,8 +183,25 @@ eroareShow("Poți introduce un singur ,,if'' ");
        ifOn=1;
 
          }
+     ocolireOn=1;
+     } else{
+         eroareShow("Poți sa pui un singur bloc de acest tip!");
+     }
+         
    }
    $scope.intoarcere=function(){
+       if (verificareLimita()==true){
+           eroareShow("Nu poți introduce mai multe comenzi!");       
+           return 0;
+       }
+        if ((idUrl==164 && repetaOn==0)||(idUrl==151 && repetaOn==0)||(idUrl==152 && repetaOn==0)||(idUrl==153 && repetaOn==0)){
+           eroareShow("Comenzile ar trebui să le pui într-un bloc repetă!");
+           return 0;
+       }
+         if (idUrl==164 && ifOn==0){
+           eroareShow("Comenzile ar trebui să le pui într-un bloc DACĂ!");
+           return 0;
+       }
 
         $scope.records[i] =n1+spatiu+spatiu1+" "+"rotire la "+rotire;
     i=i+1;
@@ -150,9 +230,14 @@ eroareShow("Poți introduce un singur ,,if'' ");
             }
     }
      $scope.repeta=function(){
+         if (verificareLimita()==true){
+           eroareShow("Nu poți introduce mai multe comenzi!");       
+           return 0;
+       }
 if ($scope.numarRepetari>1 && $scope.numarRepetari<9 ){
 eroareRun=false;
 } else{
+    eroareShow("Pune un număr de repetări!");
     eroareRun=true;
     return 0;
 }
@@ -169,7 +254,11 @@ repetaOn=true;
 }
      var endOn=0;var patternString,patternRepetaString,patternRepetaString1="";var patternRepetaLenght;
      $scope.end=function(){
-
+         if (verificareLimita()==true){
+           eroareShow("Nu poți introduce mai multe comenzi!");       
+           return 0;
+       }
+ if (repetaOn==1){
        if (endOn==0){
          $scope.records[i] =n1+"    "+"end";
     i=i+1; n1=n1+1;
@@ -192,11 +281,30 @@ repetaOn=true;
 bucla=false;
 //alert(pattern);
        endOn=1;
+       } else{
+           eroareShow("Poți să pui un singur bloc de acest tip!");
        }
+ } else{
+     eroareShow("Trebuie să pui mai întâi un bloc repetă!");
+return 0;
+ }
     }
-
+altfelOn=0;
       $scope.altfel=function(){
-  spatiu="--";
+          if (verificareLimita()==true){
+           eroareShow("Nu poți introduce mai multe comenzi!");       
+           return 0;
+       }
+  if ((idUrl==164 && repetaOn==0)){
+           eroareShow("Comenzile ar trebui să le pui într-un bloc repetă!");
+           return 0;
+       }
+            if ((idUrl==164 && ifOn==0)){
+           eroareShow("Ar trebui să pui un bloc DACĂ mai întâi!");
+           return 0;
+       }
+          if (altfelOn==1){
+          spatiu="--";
           spatiu1="--";
 
         $scope.records[i] =n1+spatiu+spatiu1+"    "+"altfel";
@@ -204,7 +312,7 @@ bucla=false;
            spatiu="---";
          spatiu1="---";
 
-
+  altfelOn=1;
        // alert($scope.numarRepetari)
          // alert(patternRepetaString);
     //alert(pattaernString);
@@ -213,15 +321,53 @@ bucla=false;
          //alert(n);
 
 //alert(pattern);
+          } else{
+              eroareShow("Poți să pui un singur bloc de acest tip!");
+          }
     }
 
 
    //
       var terminat=true;
-
+       
     $scope.Run=function(){
+        
+
+        if (idUrl==164||idUrl==151||idUrl==152||idUrl==153||idUrl==154){
+            if (repetaOn==0){
+                eroareShow("Trebuie să pui un bloc repetă!")
+                return 0;
+            }
+            if (endOn==0){
+                eroareShow("Trebuie să pui un bloc end!")
+                return 0;
+            }
+        }
+        if (idUrl==164){
+            if (altfelOn==0){
+                eroareShow="Trebuie să pui un bloc ALTFEL!";
+return 0;
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
      if (eroareRun==true){
-         alert("eroareasdaS");
+        eroareShow(z3);
          clear1();
          return 0;
      }
@@ -351,6 +497,7 @@ pattern=patternSave;
   patternRepetaString1="";
   patternRepetaString="";
   patternRepeta="";
+      ocolireOn=0;
   }
     $scope.deleteLine=function(){
 
@@ -436,6 +583,7 @@ pattern=patternSave;
     // functii load surse {
     //$scope.src="fisiere/test.html";
     $scope.a1=function(){
+    timpOver=0;
          if (isRunning==false){
 clear1();
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
@@ -448,9 +596,19 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
  $scope.src="fisiere/pagini/"+paginaUpload+".php";
  $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";
          }
-
+    idUrl=0;
+        y1=$location.absUrl().substr($location.absUrl().length - 5);
+        for(var i=0;i<5;i++){
+            if (y1[i]!="/" && y1[i]!="#"){
+           
+                z4=parseInt(y1[i]);
+                idUrl=idUrl*10+z4;
+            }
+        }
+     
     }
     $scope.a2=function(){
+     timpOver=0;
          if (isRunning==false){
 clear1();
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
@@ -465,8 +623,19 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
  $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";
         //daca este diferit de o pagina care nu are nevoie de target
          }
+       idUrl=0;
+        y1=$location.absUrl().substr($location.absUrl().length - 5);
+        for(var i=0;i<5;i++){
+            if (y1[i]!="/" && y1[i]!="#"){
+           
+                z4=parseInt(y1[i]);
+                idUrl=idUrl*10+z4;
+            }
+        }
+       
     }
     $scope.a3=function(){
+     timpOver=0;
          if (isRunning==false){
 clear1();
         pagina1=$location.absUrl().substr($location.absUrl().length - 3);
@@ -479,8 +648,20 @@ $location.url("1/"+pagina1+"#3");
           paginaUpload="1."+pagina1+"."+srcCounter;
 $scope.src="fisiere/pagini/"+paginaUpload+".php";
  $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";}
+      
+         idUrl=0;
+        y1=$location.absUrl().substr($location.absUrl().length - 5);
+   
+        for(var i=0;i<5;i++){
+            if (y1[i]!="/" && y1[i]!="#"){
+                z4=parseInt(y1[i]);
+                idUrl=idUrl*10+z4;
+            }
+        }
+      
     }
     $scope.a4=function(){
+       timpOver=0;
         if (isRunning==false){
 clear1();
         pagina1=$location.absUrl().substr($location.absUrl().length - 3);
@@ -493,6 +674,16 @@ clear1();
           paginaUpload="1."+pagina1+"."+srcCounter;
   $scope.src="fisiere/pagini/"+paginaUpload+".php";
   $scope.blocuriSrc="fisiere/blocuri/"+paginaUpload +"bloc.html";}
+      idUrl=0;
+        y1=$location.absUrl().substr($location.absUrl().length - 5);
+        for(var i=0;i<5;i++){
+            if (y1[i]!="/" && y1[i]!="#"){
+           
+                z4=parseInt(y1[i]);
+                idUrl=idUrl*10+z4;
+            }
+        }
+       
     }
 // aplicatie tancuri
 
@@ -733,6 +924,8 @@ var raspuns;
     // or server returns response with an error status.
   });}
       $scope.verificare=function(){
+          
+        
           if (buttonActive==1 ){
               buttonActive=0;
        var input1=$scope.input;
@@ -765,8 +958,12 @@ var raspuns;
           eroareShow("Introdu un raspuns!");
       }
           }
+            timerCorect(1);
  }
   function corect(){
+      coeficientCorect=coeficientCorect+timp1;
+    
+    timp1=-1;
       if ($scope.numarExercitii==3){
                 $scope.numarExercitii++;
           terminat();
@@ -786,15 +983,17 @@ $timeout( 1500);
   }
   }
   function gresit(){
+       timp1=-1;
+      raspunsuriGresite=raspunsuriGresite+1;
            $scope.visible1=1;
 
       $timeout( function(){
         $scope.visible1=0;
           load();
           if (raspuns==2){
-            eroareRezultat("Raspunsul corect era ORI");
+            eroareRezultat("Răspunsul corect era ORI");
           } else{
-           eroareRezultat("Raspunsul corect era AND");
+           eroareRezultat("Răspunsul corect era AND");
           }
           buttonActive=1;
         }, 1500);
@@ -804,7 +1003,8 @@ $timeout( 1500);
 $timeout( 1500);
   }
   function terminat(){
-succes();
+succes();  timpOver=0;
+       creereScor(timp,raspunsuriGresite,4,coeficientCorect,10);
 }
 })
 
@@ -864,7 +1064,7 @@ enunt="";
           for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
-         enunt="Care este raspunsul expresiei ";
+         enunt="Care este răspunsul expresiei ";
          for(i=1;i<=3;i++){
              enunt=enunt+idEx1[i]+id1Ex1[i];
          }
@@ -900,9 +1100,9 @@ if(numarIntermediar==1){
   raspuns=Math.floor(idEx1[1]/idEx1[2]);
 }
 if(numarIntermediar==1){
-  enunt="Care este raspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
+  enunt="Care este răspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
 } else{
-  enunt="Care este raspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
+  enunt="Care este răspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
 }
  $scope.intrebare=enunt;
 raspunsuri[1]=raspuns;
@@ -976,8 +1176,9 @@ enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+")
  $scope.intrebare=enunt;
  raspunsuri[1]="adevarat";
   raspunsuri[2]="fals";
-   raspunsuri[3]="adevarat";
-    raspunsuri[4]="fals";
+    raspunsuri[3]="";
+  raspunsuri[4]="";
+  
 corecte[x-1][1]=enunt;
      corecte[x-1][2]=raspuns;
 }
@@ -1038,7 +1239,7 @@ intrebare1=response.data.Intrebare1;
           for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
-         enunt="Care este raspunsul expresiei ";
+         enunt="Care este răspunsul expresiei ";
          for(i=1;i<=3;i++){
              enunt=enunt+idEx1[i]+id1Ex1[i];
          }
@@ -1077,9 +1278,9 @@ intrebare1=response.data.Intrebare1;
     raspuns11=Math.floor(idEx1[1]/idEx1[2]);
   }
   if(numarIntermediar==1){
-    enunt="Care este raspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
+    enunt="Care este răspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
   } else{
-    enunt="Care este raspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
+    enunt="Care este răspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
   }
    $scope.intrebare1=enunt;
   raspunsuri[5]=raspuns11;
@@ -1154,8 +1355,9 @@ enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+")
  $scope.intrebare1=enunt;
  raspunsuri[5]="adevarat";
   raspunsuri[6]="fals";
-   raspunsuri[7]="adevarat";
-    raspunsuri[8]="fals";
+     raspunsuri[7]="";
+  raspunsuri[8]="";
+   
 corecte[x][1]=enunt;
      corecte[x][2]=raspuns11;
 }
@@ -1270,7 +1472,7 @@ $scope.resetare= function(){
     if (x<10){
         x=x+2;
         procente1=procente1+20;
-    $(".progress-bar").css("width",(procente1+"%"));
+    $("#progresEvaluare").css("width",(procente1+"%"));
     $scope.procente=procente1;
     raspunsOn=0;
     raspunsOn1=0;
@@ -1299,7 +1501,7 @@ $scope.resetare= function(){
           for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
-         enunt="Care este raspunsul expresiei ";
+         enunt="Care este răspunsul expresiei ";
          for(i=1;i<=3;i++){
              enunt=enunt+idEx1[i]+id1Ex1[i];
          }
@@ -1335,9 +1537,9 @@ $scope.resetare= function(){
   raspuns=Math.floor(idEx1[1]/idEx1[2]);
   }
   if(numarIntermediar==1){
-  enunt="Care este raspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
+  enunt="Care este răspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
   } else{
-  enunt="Care este raspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
+  enunt="Care este răspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
   }
   $scope.intrebare=enunt;
   raspunsuri[1]=raspuns;
@@ -1348,7 +1550,7 @@ $scope.resetare= function(){
   a=Math.floor((Math.random() * 6) + 1);
   b=Math.floor((Math.random() * 30) + 10);
   numarIntermediar=generareOperator11(a);
-  enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"__ .";
+  enunt="Alege o variantă ca această expresie sa fie corectă "+b+numarIntermediar+"__ .";
   $scope.intrebare=enunt;
   generareRaspunsuri124(raspunsuri,a,b);
   raspuns=raspunsuri[1];
@@ -1411,8 +1613,9 @@ $scope.resetare= function(){
   $scope.intrebare=enunt;
   raspunsuri[1]="adevarat";
   raspunsuri[2]="fals";
-   raspunsuri[3]="adevarat";
-    raspunsuri[4]="fals";
+       raspunsuri[3]="";
+  raspunsuri[4]="";
+  
 corecte[x-1][1]=enunt;
      corecte[x-1][2]=raspuns;
   }
@@ -1450,7 +1653,7 @@ corecte[x-1][1]=enunt;
           for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
-         enunt="Care este raspunsul expresiei ";
+         enunt="Care este răspunsul expresiei? ";
          for(i=1;i<=3;i++){
              enunt=enunt+idEx1[i]+id1Ex1[i];
          }
@@ -1489,9 +1692,9 @@ corecte[x-1][1]=enunt;
     raspuns11=Math.floor(idEx1[1]/idEx1[2]);
   }
   if(numarIntermediar==1){
-    enunt="Care este raspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
+    enunt="Care este răspunsul expresiei "+idEx1[1]+"%"+idEx1[2]+".";
   } else{
-    enunt="Care este raspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
+    enunt="Care este răspunsul expresiei "+idEx1[1]+"/"+idEx1[2]+".";
   }
    $scope.intrebare1=enunt;
   raspunsuri[5]=raspuns11;
@@ -1567,8 +1770,9 @@ corecte[x][1]=enunt;
   $scope.intrebare1=enunt;
   raspunsuri[5]="adevarat";
   raspunsuri[6]="fals";
-   raspunsuri[7]="adevarat";
-    raspunsuri[8]="fals";
+       raspunsuri[7]="";
+  raspunsuri[8]="";
+   
 corecte[x][1]=enunt;
      corecte[x][2]=raspuns;
   }
@@ -1618,7 +1822,7 @@ corecte[x][1]=enunt;
    // alert("intrebare="+corecte[i][1]+"raspuns="+corecte[i][2]);
   //  }
 $(".modal-dialog").hide();
-    $(".progress").hide();
+    $("#evaluareProgres").hide();
      $("#continua").hide();
     $("#evaluareEnding").show();
 $scope.punctajShow=punctaj;
@@ -1879,38 +2083,52 @@ function rezultatGresit123(semn,x,y){
    }
 }
 angular.module('myApp').controller('paginaProfesor', function ($scope,$location,$route,$window,$location,$routeParams,$http,$timeout){
-var numeClasa;
-var clase=[];var nr1=1;
+loadClase();
+    var titluri= new Array;
+var clase=[];
+    var elevi=[];
+    var nr1=1;var clasa1234;var numarElev=1;var idElev;
+    nr1=1;
+    $scope.titluClasa="";
   $scope.src1="fisiere/profesor/inregistrareElevi.html";
+   
   $scope.adaugaClasa = function(){
     swal("Introdu numele clasei pe care vrei sa o adaugi!", {
   content: "input",
 })
-.then((value) => {
+.then((value) => { 
+         
+       
+        if (verificareInput(value)==true){
   numeClasa=  value;
 
       if (nr1<10){
+         
     $http({
- 
+
  method: 'POST',
  url: '/fisiere/incarcareClase.php',
  data: {clasa:numeClasa,nr:nr1},
  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 
  }).then(function successCallback(response) {
-alert(response.data);
+              $scope.elevi=[{nume:"",parola:"",numar:""}];
+loadClase();
 })
       } else {
           alert ("Nu poti creea mai multer clase!");
       }
+        } else{
+            alert("input error");
+        }
 });
 
   }
-  $scope.clase=[{clasa:""}];
+  $scope.clase=[{clasa:"",id:""}];
     
 
- 
-$scope.loadClase= function(){
+ function loadClase(){
+
   $http({
   method: 'GET',
   url: '/fisiere/loadClase.php',
@@ -1922,12 +2140,100 @@ $scope.loadClase= function(){
       clase1=clase1.slice(0,clase1.length-1);
       var j=1;
       for(var i=0;i<=clase1.length;i++){
-          if(clase1[i]=="#"){
-         $scope.clase[j]={clasa:clase1.slice(0,i)};
+          if(clase1[i]=="#"){ 
+              titluri[j]=clase1.slice(0,i);
+              $scope.titluClasa=clase1.slice(0,i);clasa1234=j;
+         $scope.clase[j]={clasa:clase1.slice(0,i),id:j};
               clase1=clase1.slice(i+1,clase1.length);
               i=0;j++;
           }
       }
+   
+     numarElev = loadElevi(clasa1234);
+
+    
   })
-}
+
+ }
+   
+ $scope.elevi=[{nume:"",parola:"",numar:""}];
+  
+    $scope.adaugareElev=function(){
+          swal("Introdu numele elevului pe care vrei sa-l adaugi!", {
+  content: "input",
 })
+.then((value) => {
+  if (verificareInput(value)==true){
+              numeElev=value;
+       
+idElev=clasa1234*10+numarElev;
+       //alert(idElev);    
+    $http({
+ 
+ method: 'POST',
+ url: '/fisiere/contElev.php',
+ data: {elev:numeElev,clasa:clasa1234,idElev:idElev},
+ headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+ }).then(function successCallback(response) {
+loadElevi(clasa1234);
+})
+  } else{
+      alert("input error");
+  }
+});
+}
+    
+  function loadElevi(x){
+   
+
+    $http({
+ 
+ method: 'POST',
+ url: '/fisiere/loadElevi1.php',
+ data: {clasa:x},
+ headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+ }).then(function successCallback(response) {
+
+       
+var data = jQuery.parseJSON(response.data+"}}");
+
+ numarElev=data.numar[1];
+
+        for(i=1;i<=numarElev-1;i++){
+             $scope.elevi[i-1]={nume:data.nume[i],parola:data.parola[i],numar:i};
+        }
+      
+        
+   
+})} 
+    
+    
+    
+    $scope.selectareClasa=function(x){
+         $scope.elevi=[{nume:"",parola:"",numar:""}];
+        clasa1234=x;
+        loadElevi(x);
+        $scope.titluClasa=titluri[x];
+    }
+    
+    
+    function verificareInput(x){
+     
+        if (x==""){
+         return 0;
+     }else {
+         for(var i=0;i<=x.length;i++){
+             if (x[i]=="#"){
+                 return 0;
+             }
+         }
+         
+     }
+    return 1;
+    }
+})
+
+
+

@@ -55,7 +55,7 @@ if ($result1 = mysqli_query($link,$query)){
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1> Algoritmul</h1>
+  <h1 class="titluCapitol"> Algoritmul</h1>
 </div>
 
 

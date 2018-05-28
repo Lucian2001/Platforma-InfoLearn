@@ -29,7 +29,7 @@ color:black;
 
 </style>
 <div id="animation-side">
- <div class="expl-box-fi-enunt" ng-fi-text="Stabilește valoarea de adevăr a expresiei de mai jos. În cazul în care crezi că expresia este adevărată apasă pe butonul adevărat. Dacă nu tastează rezultatul în caseta de lângă."></div>
+ <div class="expl-box-fi-enunt" ng-fi-text="Scrie în caseta de mai jos răspunsul corect care respectă structura de mai jos!"></div>
     <div id="spatiuExercitii">
 <p  class="valoare">Daca</p>
            <p class="valoare" >(</p>
@@ -69,7 +69,7 @@ color:black;
         </div>
 
     <div id="buttons1">
-    <p id="inputText">x=<input id="input" value="0"></p>
+    <p id="inputText">x=<input id="input" value="" placeholder="0"></p>
         </div>
 
       <img id="corect" src="fisiere/assets/images/corect.png" >
@@ -77,12 +77,15 @@ color:black;
     <button id="generare" class="btn btn-primary">Verificare</button>
     <h1 id="exercitii1"><span id="exercitiiRezolvate">0</span>/6</h1>
 </div>
-<div class="expl-box-fi2" ng-fi-text="   După ce ai scris o valoare, validează  raspunsul apăsând butonul Verificare. Programul îți va spune dacă ai răspuns corect iar după cateva secunde se va genera un nou exercițiu.Aplicația se va completa după ce se vor efectua 6 exerciții."></div>
+<div class="expl-box-fi2" ng-fi-text="   După ce ai scris o valoare, validează  răspunsul apăsând butonul Verificare. Programul îți va spune dacă ai răspuns corect iar după cateva secunde se va genera un nou exercițiu.Aplicația se va completa după ce se vor efectua 6 exerciții."></div>
 
 <link rel="stylesheet" href="fisiere/css/structuraAlternativa.css">
 <script src="fisiere/scripts/structuraAlternativa3.js"></script>
 
 <script>
+      generareScor(13,53);
+start();
+timerCorect(1);
  var dificultate=10;   var raspuns;var buttonActive=1;
     $(document).ready(function(){
 
@@ -90,24 +93,28 @@ color:black;
 
         $("#object1").hide();
     $("#butonsmecher").hide();
+         $("#resetareAplicatie").hide();
 redimensionare153();
     });
     $("#generare").click(function(){
+     
+
 if (buttonActive==1){
     buttonActive=0;
   if ($("#input").val()!=parseInt($("#input").val()).toString()){
 gresit();
-$("#input").val("0");
+$("#input").val("");
 
   } else
         if ($("#input").val()==raspuns){
             corect();
-$("#input").val("0");
+$("#input").val("");
         } else{
             gresit();
-            $("#input").val("0");
+            $("#input").val("");
         }
 }
+                timerCorect(1);
     })
 
 </script>

@@ -1,3 +1,10 @@
+function terminareExercitiu(x){
+   swal({
+  title: "Bravo!",
+  text: x,
+  icon: "success",
+});    
+}
 
 function eroareShow(x){
 
@@ -14,7 +21,7 @@ function eroareRezultat(x){
         x="restul";
 }
     swal({
-  title: "Raspuns corect",
+  title: "Ai răspuns greșit la acest exercițiu!",
   text: x,
   icon: "error",
 });
@@ -22,8 +29,8 @@ function eroareRezultat(x){
  function noTank(){window.location.replace("http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#1");
 
    swal({
- title: "Absenta tanc",
- text: "Trebuie sa-ti creezi un tanc pentru a face aceasta aplicatie",
+ title: "Absență tanc",
+ text: "Trebuie să-ți creezi un tanc pentru a face această aplicație!",
  icon: "error",
 })
 .then((value) => {

@@ -23,7 +23,9 @@
 
 
 <script> var semn;
-
+  generareScor(8,35);
+start();
+timerCorect(1);
 
 $(document).ready(function(){
 
@@ -41,6 +43,7 @@ generareNumere(randomNr1);
 })
     $("#generare3").click(function(){
 
+        
          var randomNr1=Math.floor((Math.random() * 3) + 1);
 generareNumere(randomNr1);
    var semn= generareSemn(randomNr1);
@@ -51,6 +54,7 @@ generareNumere(randomNr1);
     $("#maiMic").draggable( 'enable' );
                   $("#maiMare").draggable( 'enable' );
                   $("#egal").draggable( 'enable' );
+        timerCorect(1);
     })
 
 

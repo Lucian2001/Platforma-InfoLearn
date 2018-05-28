@@ -20,13 +20,15 @@ a[11]=0;
  a[64]=0;
 //
 function succes(){
+    
 var Id="";
  var url= window.location.href;
  for(i=0;i<url.length;i++){
-if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3)){
+if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3|| url[i]==4 || url[i]==5 || url[i]==6)){
  Id=Id+url[i];
 }
 }
+  
  $("#id-"+Id).css("background-color","#d8ffd6");
 
 $.ajax({   type:"POST",
@@ -57,14 +59,14 @@ if (a[Id%100]==1 || Id=="111"){
 
 
 
-eroareShow("Ai terminat aceasta aplicatie!");
+terminareExercitiu("Ai terminat aceasta aplicatie!");
 } else{
   $.ajax({   type:"POST",
     url:"fisiere/testHttp.php",
     data:"Id=" + Id ,
   success:function(result)
     {
-  eroareShow("Ai terminat aceasta aplicatie!");
+  terminareExercitiu("Ai terminat aceasta aplicatie!");
 
      }
 

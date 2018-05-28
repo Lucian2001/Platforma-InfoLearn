@@ -55,6 +55,8 @@ function formaCorecta(b,y){
     }
 }
 function corect(){
+      coeficientCorect=coeficientCorect+timp1;
+    timp1=-1;
     if (raspuns==false){
 $("#corect").show();
 
@@ -64,7 +66,8 @@ $("#corect").show();
     if (nr1<5 && nr1>=0){
         $("#exercitiiRezolvate").html(nr1+1);
     } else{$("#exercitiiRezolvate").html(nr1+1);
-        succes();
+        succes(); timpOver=0;
+            creereScor(timp,raspunsuriGresite,4,coeficientCorect,8);
     }
     }
 }
@@ -165,6 +168,9 @@ b=parseInt(b);
 
 }
 function corect1(){
+    coeficientCorect=coeficientCorect+timp1;
+    
+    timp1=-1;
     if ($("#exercitiiRezolvate").html()!=6){
   $("#corect").show();
   setTimeout(function(){
@@ -194,20 +200,12 @@ if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3)){
  Id=Id+url[i];
 }
 }
- $("#id-"+Id).css("background-color","#d8ffd6");
-
-$.ajax({   type:"POST",
-  url:"fisiere/testHttp.php",
-  data:"Id=" + Id ,
-success:function(result)
-  {
-      eroareShow("Bravo!Ai terminat aceasta aplicatie.")
-   }
-
-});
+ succes(); timpOver=0;
+     creereScor(timp,raspunsuriGresite,4,coeficientCorect,9);
 }}
 }
 function gresit1(){
+     timp1=-1;
   $("#gresit").show(); eroareRezultat( "Un raspuns corect ar putea fi   "+generareRaspunsCorect());
   setTimeout(function(){
           numar=Math.floor((Math.random() * 6) + 1);

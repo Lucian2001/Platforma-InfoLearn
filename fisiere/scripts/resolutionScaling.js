@@ -38,10 +38,11 @@ $("#corect1").css("height","17%");
 $("#gresit1").css("width","15%");
 $("#corect1").css("margin-top","-25%");
 $("#gresit1").css("margin-top","-25%");
-$(".valoare2").css("font-size","45px");
+$(".valoare2").css("font-size","41px");
 $("#spatiuExercitii1").css("margin-left","-20px");
 }
 else if (width<1400&&height<700){
+   
     $("#verificare").css("margin-top","15%");
     $("#buttons").css("margin-top","-15%");
     $(".valoare2").css("font-size","35px");
@@ -56,12 +57,14 @@ else if (width<1400&&height<700){
 function redimensionare123(){
     var height=$(document).height();
     var width=$(document).width();
- if (width>1800&&height>900){
+ if (width<1800&&height<900){
+      $(".valoare1").css("font-size","60px");
      $("#raspuns1").css("width","99%");
-     $("#raspuns1").css("margin-top","14%");
-     $("#verificare1").css("width","22%");
-     $("#verificare1").css("height","10%");
-      $("#verificare1").css("margin-top","-7%");
+     $("#raspuns1").css("margin-top","1%");
+     $("#verificare1").css("width","27%");
+     $("#verificare1").css("height","12%");
+      $("#verificare1").css("margin-top","-8%");
+       $("#verificare1").css("margin-left","50%");
  }
 }
 function redimensionare131(){
@@ -116,7 +119,7 @@ function redimensionare141(){
        var height=$(document).height();
        var width=$(document).width();
     if (width<1400&&height<800){
-
+$("#exercitii").css("font-size","28px");
         $("#verificare").css("font-size","16px");
                   $("#verificare").css("height","13%");
 
@@ -125,13 +128,19 @@ function redimensionare141(){
 function redimensionare151(){
 var height=$(document).height();
     var width=$(document).width();
-   if (width<1900&&height<950&&width>1500&&height>700){
-
+   if (width<1900&&height<900&&width>1500&&height>700){ 
+$(".valoare").css("font-size","38px");
   $("#exercitii").css("margin-top","18%");
+       $("#corect").css("margin-left","60%");
+        $("#corect").css("margin-top","-4%");
+       $("#gresit").css("margin-left","60%");
+        $("#gresit").css("margin-top","-4%");
 
  }
 else if (width<1500&&height<800 ){
-     $(".valoare").css("font-size","36px");
+    $("#exercitii").css("font-size","35px");
+    $("#exercitii").css("margin-top","30%");
+     $(".valoare").css("font-size","33px");
   $("#exercitii").css("margin-top","10%");
       $("#butonError").css("margin-left","15%");
  }
@@ -139,7 +148,7 @@ else if (width<1500&&height<800 ){
 function redimensionare153(){
    var height=$(document).height();
    var width=$(document).width();
-if (width<1601&&height<800 && width>1400 && height>650){
+if (width<1601&&height<770 && width>1400 && height>650){
 
     $("#spatiuExercitii").css("margin-top","5%");
     $(".valoare").css("font-size","21px");
@@ -161,21 +170,68 @@ function redimensionareEvaluare(){
    var width=$(document).width();
     if (width<1601&&height<900 && width>1400 && height>650){
     $(".modal-dialog").css("width","30%");
+           $(".quiz").css("max-height","265px");
+        $(".quiz").css("min-height","265px");
+       $(".raspuns").css("max-height","65px");
+        $(".raspuns").css("min-height","65px");    
+         $(".intrebare").css("max-height","30px");
+        $(".intrebare").css("min-height","30px");
        $(".modal-dialog").css("margin-top","4%");
-    $(".intrebare").css("font-size","20px");
+    $(".intrebare").css("font-size","18px");
+            $(".raspuns").css("font-size","16px");
+        $(".raspuns").css("margin-left","1px");
 $(".progress").css("height","20px");
     $(".progress").css("font-size","17px");
-      } else if(width<1400&&height<750){
-          $("#titluEvaluare").css("font-size","40px");
-             $(".modal-dialog").css("width","30%");
-       $(".modal-dialog").css("margin-top","2%");
-    $(".intrebare").css("font-size","17px");
+     $("#rezultat").css("font-size","25px");
+     $("#rezultat").css("margin-top","0");        
+        $(".titluIntrebari").css("font-size","17px");
+        $(".titluRezulatate").css("font-size","17px");
+          $("#titluEvaluare").css("font-size","45px");
+    $(".coloana1").css("height","58px");
+        $(".coloana2").css("height","58px");
+    
+    $(".coloana1").css("font-size","18px");
+        $(".coloana2").css("font-size","18px");
+    
+    } else if(width<1400&&height<750){
+   $(".modal-dialog").css("width","30%");
+           $(".quiz").css("max-height","265px");
+        $(".quiz").css("min-height","265px");
+       $(".raspuns").css("max-height","65px");
+        $(".raspuns").css("min-height","65px");    
+         $(".intrebare").css("max-height","36.5px");
+        $(".intrebare").css("min-height","36.5px");
+       $(".modal-dialog").css("margin-top","4%");
+    $(".intrebare").css("font-size","18px");
+            $(".raspuns").css("font-size","16px");
+        $(".raspuns").css("margin-left","1px");
 $(".progress").css("height","15px");
-          $(".modal-dialog").css("height","76%");
     $(".progress").css("font-size","15px");
-         $(".progress").css("margin-top","-3%");
-          $("#continua").css("float","right");
-          $("#continua").css("margin-top","-49%");
-          $("#continua").css("margin-right","3%");
+         $(".progress").css("margin-top","20px");
+     $("#rezultat").css("font-size","25px");
+     $("#rezultat").css("margin-top","0");        
+      $("#continua").css("margin-top","-45%");
+        $(".titluRezulatate").css("font-size","17px");
+                $("#titluRaspunsuri").css("margin-right","20%");
+          $("#titluEvaluare").css("font-size","45px");
+    $(".coloana1").css("height","46px");
+        $(".coloana2").css("height","46px");
+     $(".container").css("margin-top","60px");
+            $(".container").css("margin-left","15%");
+    $(".coloana1").css("font-size","14px");
+        $(".coloana2").css("font-size","14px");
+      }
+}
+function redimensionareMain(){
+    var height=$(document).height();
+   var width=$(document).width();
+    if (width<1601&&height<900 && width>1400 && height>650){
+  $("#score").css("font-size","28px");
+$("#scorePanel").css("font-size","28px");         
+      } else if(width<1400&&height<750){
+        $("#score").css("font-size","20px");
+$("#scorePanel").css("font-size","20px"); 
+          $("#scorePanel").css("margin-top","70px"); 
+          $(".titluCapitol").css("font-size","20px");
       }
 }

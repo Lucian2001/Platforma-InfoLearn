@@ -79,6 +79,7 @@ include("loadTanc.php");
 </style>
 <script src="fisiere/scripts/generareMapa.js"></script>
 <script>
+    generareScor(4,52); 
 start();
 if (tanc==0){
   noTank();

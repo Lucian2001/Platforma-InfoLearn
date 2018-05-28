@@ -99,41 +99,53 @@ offset1 = target.offset();
                 }
             }
                     $("#id-"+Id).css("background-color","#d8ffd6");
-var idScor=0;
+var idScor=0;var timpCorect;var dificultateScor;
 Id=parseInt(Id);
 
 if ((Math.floor(Id/10))%10==1){
   idScor=Id%10;
+                               
     if(idScor==1){
+        timpCorect=8;
         dificultateScor=2;
     } else if(idScor==2){
+        timpCorect=20;
+        dificultateScor=2;
+    }else if(idScor==3){ 
+        timpCorect=52;
         dificultateScor=3;
-    }else if(idScor==2){
-        dificultateScor=8;
-    }else if(idScor==2){
-        dificultateScor=8;
+    }else if(idScor==4){
+           timpCorect=52;
+        dificultateScor=3;
     }
 } else if((Math.floor(Id/10))%10==5){
   idScor=13+Id%10;
      if(Id%10==1){
-        dificultateScor=4;
+          timpCorect=20;
+        dificultateScor=2;
     } else if(Id%10==2){
-        dificultateScor=9;
-    }else if(Id%10==2){
-        dificultateScor=7;
-    }else if(Id%10==2){
-        dificultateScor=8;
+         timpCorect=58;
+        dificultateScor=4;
+    }else if(Id%10==3){
+         timpCorect=55;
+        dificultateScor=3;
+    }else if(Id%10==4){
+         timpCorect=66;
+        dificultateScor=4;
     }
 }else if((Math.floor(Id/10))%10==6){
   idScor=9+Id%10;
     if(Id%10==1){
         dificultateScor=5;
     } else if(Id%10==2){
-        dificultateScor=6;
-    }else if(Id%10==2){
-        dificultateScor=9;
-    }else if(Id%10==2){
-        dificultateScor=8;
+        timpCorect=34;
+        dificultateScor=2;
+    }else if(Id%10==3){
+        
+        dificultateScor=4;
+    }else if(Id%10==4){
+         timpCorect=35;
+        dificultateScor=4;
     }
 }
 
@@ -145,9 +157,14 @@ if ((Math.floor(Id/10))%10==1){
                       butonActiv=1; isRunning=false;
                       $("#butonsmecher").hide();
                       $("#resetareAplicatie").show();
-alert(dificultateScor); alert(idScor);
+                      alert(timp);
+timpOver=0;
+                     
+                      
                       creereScor(timp,raspunsuriGresite,dificultateScor,0,idScor);
-                    //  timer(0);
+                     
+                      generareScor(idScor,timpCorect);  
+                    timp=0;
                     swal({
   title: "Bravo!",
   text: "Ai terminat această aplicație.Acum poți sa-ți continui aventura.",
@@ -363,6 +380,7 @@ raspunsGresit();
     tancId=y;
 isRunning=false;
      if (tancId%1000>100){
+         creereScor(timp,raspunsuriGresite,2,0,1);
       $.ajax({   type:"POST",
                      url:"fisiere/uploadTancId.php",
                      data:"Id=" + tancId ,
@@ -388,9 +406,12 @@ isRunning=false;
                   success:function(result)
                      {
                       //   alert(result);
-                      }
+                       generareScor(1,8);   
+                     }
 
                  });
+         
+         
                } else{
                  eroareShow("Trebuie sa introduci toate componentele");
                }

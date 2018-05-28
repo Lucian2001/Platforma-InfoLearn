@@ -62,7 +62,7 @@ include("loadTanc.php");
 </div>
 
 </div>
-<div class="expl-box-fi5" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Ele se pot șterge la nevoie.Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
+<div class="expl-box-fi5" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
 <style>
     .expl-box-fi5 {
 		margin-top: -4%;;
@@ -80,6 +80,7 @@ include("loadTanc.php");
 <script src="fisiere/scripts/generareMapa.js"></script>
 
 <script>
+     generareScor(14,20);   
 start();
 if (tanc==0){
   noTank();

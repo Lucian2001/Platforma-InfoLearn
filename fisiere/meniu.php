@@ -110,7 +110,7 @@ margin-top: 20%;
           <ul id="lista1">
 
            <li class="menu-title">
-             <div class="text-design" >Invatare</div></li>
+             <div class="text-design" >Învățare</div></li>
               <li class="menu-item">
              <div class="item-design" id="inceput"><p class="menu-text">Algoritmul</p> </div>
              </li>

@@ -48,7 +48,7 @@ include ("functions.php");
 </style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
-  <h1>Expresii aritmetice</h1>
+  <h1 class="titluCapitol">Expresii aritmetice</h1>
 </div>
 
 

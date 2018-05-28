@@ -25,14 +25,16 @@
 <script src="fisiere/scripts/generareNumere.js"></script>
 
 <script>
+       
+generareScor(5,30);
 start();
 timerCorect(1);
     buttonActive=1;
     var semn1;
-    dragAndDrop(semn1);
+    
 
 var corectValue;
-    var numarNumereGenerate=2;
+var numarNumereGenerate=2;
 var numarSemneGenerate=1;
 var dificultateCalcul=5;
 $(document).ready(function(){
@@ -48,7 +50,7 @@ dragAndDrop(semn1);
 
     $("#generare").click(function(){
        coeficientDificultate=coeficientDificultate+1;
-        timerCorect(1);
+
         if (buttonActive==1){
             buttonActive=0;
             $("#plus").draggable( 'enable' );
@@ -64,8 +66,10 @@ var ok=0;
 if (nr5==6 && nr2==1){
  // alert("done"); ok=1;
   $("#exercitiiRezolvate").html(6);
-    creereScor(timp,raspunsuriGresite,6,Math.round( (coeficientCorect/6) * 10 ) / 10,5); 
+    timpOver=0;
+    creereScor(timp,raspunsuriGresite,4,coeficientCorect,5); 
 succes();
+    generareScor(5,30);
 }
 if(ok==0){
       semn=Math.floor((Math.random() * 5) + 1);  //alert("semn="+semn);
@@ -82,6 +86,7 @@ $("#invisibleObject").html(0);
     $("#corect").hide();
       $("#numarIncercari").html("3");
 }}}
+                timerCorect(1);
     })
 
 })
