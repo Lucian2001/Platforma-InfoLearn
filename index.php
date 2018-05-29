@@ -19,6 +19,10 @@
 
 <script src="fisiere/scripts/head_script.js"></script>
     <script src="fisiere/scripts/resolutionScaling.js"></script>
+     <script src="fisiere/scripts/alerte.js"></script>
+<script src="fisiere/scripts/scor.js"></script>
+<script src="fisiere/scripts/terminareExercitiu.js"></script>
+      <script src="bower_components\sweetalert\docs\assets\sweetalert\sweetalert.min.js"></script>
 
 </head>
 <?php
@@ -31,7 +35,7 @@ if ($result1 = mysqli_query($link,$query)){
     $row1 = mysqli_fetch_array($result1);
    }  
 
-if ( $_SESSION['id'] !="" and $row1[4]==1) {
+if ( $_SESSION['id'] !="" and ($row1[4]==1||$row1[4]==3)) {
          include("fisiere/meniu.php");
 
         include("paginaUtilizator.php");

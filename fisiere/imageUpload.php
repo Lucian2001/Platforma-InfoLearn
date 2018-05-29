@@ -1,6 +1,6 @@
 <?php 
 
-echo "mama";
+
   /*$query = "INSERT INTO images (`image`) VALUES ('mama')";
                 
                  if (mysqli_query($link, $query)) {

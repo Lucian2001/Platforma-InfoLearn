@@ -1,6 +1,17 @@
 <?php
-
+include("fisiere/functions.php");
 $id=$_SESSION['id'];
+include("fisiere/testHttp.php");
+$query="SELECT *FROM completat WHERE id = $id";
+
+if ($result2 = mysqli_query($link,$query)){
+    $row2= mysqli_fetch_array($result2);
+
+
+
+}
+
+
 
 $query="SELECT *FROM users WHERE id = $id";
 
@@ -13,7 +24,7 @@ if ($result1 = mysqli_query($link,$query)){
     // echo "your username is ".$row[1] . "hello ".$row[1];
 
 }
-include("imageUpload.php")
+include("fisiere/imageUpload.php")
 ?>
  <?php
 
@@ -72,7 +83,7 @@ include("imageUpload.php")
 
  <p class="listaText"  id="profil">    Profil utilizator</p>
  <li class="listaText" id="username1">Username:</li>
-            <li class="listaText"  id="email1" style="font-size:16px;">Email:</li>
+            <li class="listaText"  id="email1" style="font-size:23px;">Email:</li>
 
 
 
@@ -95,8 +106,8 @@ include("imageUpload.php")
   <div class="clear-float"></div>
        <b id="completat">Completat %</b >
         <div class="clear-float"></div>
-     <div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+     <div class="progress" >
+  <div id="progresTotal" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
 </div>
 
 
@@ -124,7 +135,9 @@ include("compilator.php");
 
 </body>
     <script>
+        
       $("#myaccount").mouseout(function(){
+         
 
         $(this).css("background-color","#2669d6");
         $("#login-text").css ("color","white")  ;
@@ -138,9 +151,13 @@ include("compilator.php");
     var panelOn=false;
 
         $("#myaccount").click(function(){
+     
+            
+            
            if (panelOn == false){
             $("#panel").show();
            panelOn=true;
+                      progres(); 
            }else{
              $("#panel").hide();
            panelOn=false;
@@ -180,8 +197,63 @@ include("compilator.php");
 
 });
 
+    var vector1=[];
+    // DECLARARE VECTOR CU TOATE PAGINILE
+    vector1[11]=0;
+     vector1[12]=0;
+     vector1[13]=0;
+     vector1[21]=0;
+     vector1[22]=0;
+     vector1[23]=0;
+     vector1[31]=0;
+     vector1[32]=0;
+     vector1[41]=0;
+     vector1[51]=0;
+     vector1[52]=0;
+     vector1[53]=0;
+     vector1[54]=0;
+     vector1[61]=0;
+     vector1[62]=0;
+     vector1[63]=0;
+     vector1[64]=0;
+    //
+        
+function progres(){ var x=0;
+    username="<?php echo  $row2[1]?>";
+    username=username.toString();
+   // alert((username.length)/3);
+    if (username!=""){
+     var usernameLength=username.length;
+    var id1; 
+    for( i=1;i<=usernameLength/3;i++){
+      id1=username.substr(username.length - 3);
+        username=username.slice(0,-3);
+       // alert(username);
 
-    </script>
+id1=parseInt(id1);
+        id1=id1%100;
+    
+        vector1[id1]++;
+     }
+    for(var i=10;i<=64;i++){
+ if(vector1[i]==0){
+x++;
+ }
+        
+    }
+   x=((18-x)/18)*100;
+    x=parseInt(x);
+        $("#completat").html("Completat: "+x+"%");
+        $("#progresTotal").css("width",x+"%");
+    } else{
+x=0;
+        $("#completat").html("Completat: "+x+"%");
+        $("#progresTotal").css("width",x+"%");
+    }
+    
+}        
+        
+</script>
 
 
     </html>

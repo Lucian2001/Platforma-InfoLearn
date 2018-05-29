@@ -17,7 +17,7 @@
   <li class="componentaLista"><h5 class="textLista">&nbsp;&nbsp;&nbsp;Societatea actuală este într-o continuă modernizare, iar domeniul IT cunoaște o dezvoltare rapidă. Informatica devine tot mai mult o necesitate, iar formarea competențelor în această direcție este o preocupare constantă la nivelul sistemului de învățământ. </h5></li>
   <li class="componentaLista"><h5 class="textLista">&nbsp;&nbsp;&nbsp;Această platformă a fost creată avându-se în vedere această orientare și tendința actuală de a iniția elevii de vârste cât mai mici în tainele informaticii. Ea a fost gândită în forma unui site pentru a fi orcând la îndemâna oricărui utilizator, accesul făcându-se rapid, nefiind nevoie de instalarea unor programe adiționale.</h5></li>
   <ul style="  list-style-type:circle;"><h5 class="textLista">Pentru realizarea acestui proiect s-au folosit:
-      <li class="componentaLista1" style="margin-top:1.5%;"><h5 class="textLista">Html</h5 class="textLista"></li>
+      <li class="componentaLista1" style="margin-top:1.5%;"><h5 class="textLista">Html</h5 ></li>
       <li class="componentaLista1"><h5 class="textLista">Css</h5></li>
       <li class="componentaLista1"><h5 class="textLista">Bootstrap</h5></li>
       <li class="componentaLista1"><h5 class="textLista">JavaScript</h5></li>
@@ -83,7 +83,9 @@
             } else{
                     $("#continutInfo").hide();
             }
-    
+    $("#myaccount").click(function(){
+     window.location.replace("http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/profesor");
+    })
 
 });
 

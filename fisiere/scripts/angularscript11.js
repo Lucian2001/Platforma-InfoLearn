@@ -331,7 +331,7 @@ altfelOn=0;
       var terminat=true;
        
     $scope.Run=function(){
-        
+      
 
         if (idUrl==164||idUrl==151||idUrl==152||idUrl==153||idUrl==154){
             if (repetaOn==0){
@@ -367,14 +367,16 @@ return 0;
         
         
      if (eroareRun==true){
+         isRunning=false;
         eroareShow(z3);
          clear1();
          return 0;
      }
 
      terminat=false;
- isRunning=true;
+
 if (paginaUpload=="1.1.1"){
+   
 textTanc1="Tancul facut de tine este acesta.";
 if (idComponenta==513){
 $scope.tancComplet="fisiere/assets/images/tanc_albastru.png";
@@ -397,6 +399,7 @@ $scope.textTanc=textTanc1;
 $scope.eroare="";
 }
   RunAlgorritm(idComponenta);
+   
 }
 else {
 
@@ -466,7 +469,7 @@ else {
 
          if (n==1){
         eroareShow("Pune și tu ceva cod!") ;
-
+isRunning=false;
      }else{
 var patternSave;
          patternSave=pattern;
@@ -479,7 +482,7 @@ pattern=patternSave;
  }
 }
   $scope.clear=function(){
-
+isRunning=false;
       clear1();
  }
   function clear1(){
@@ -608,6 +611,7 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
      
     }
     $scope.a2=function(){
+    
      timpOver=0;
          if (isRunning==false){
 clear1();
@@ -635,7 +639,7 @@ pagina1=$location.absUrl().substr($location.absUrl().length - 3);
        
     }
     $scope.a3=function(){
-     timpOver=0;
+     timpOver=0; 
          if (isRunning==false){
 clear1();
         pagina1=$location.absUrl().substr($location.absUrl().length - 3);

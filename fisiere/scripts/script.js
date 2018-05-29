@@ -5,6 +5,7 @@ y=z111;
 nr=0;
 okSpatiu=true;
 setTimeout(function (){
+   
  if (window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#2" || window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#3"|| window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#4"){
 x=window.location.href;
 
@@ -157,7 +158,7 @@ if ((Math.floor(Id/10))%10==1){
                       butonActiv=1; isRunning=false;
                       $("#butonsmecher").hide();
                       $("#resetareAplicatie").show();
-                      alert(timp);
+                   
 timpOver=0;
                      
                       
@@ -378,7 +379,7 @@ raspunsGresit();
 
 }else if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/1#1"){
     tancId=y;
-isRunning=false;
+
      if (tancId%1000>100){
          creereScor(timp,raspunsuriGresite,2,0,1);
       $.ajax({   type:"POST",
@@ -407,13 +408,16 @@ isRunning=false;
                      {
                       //   alert(result);
                        generareScor(1,8);   
+                         butonActiv=1;
+                         isRunning=false;
                      }
 
                  });
-         
-         
+          
+          isRunning=false;
                } else{
                  eroareShow("Trebuie sa introduci toate componentele");
+                   isRunning=false;
                }
 
 

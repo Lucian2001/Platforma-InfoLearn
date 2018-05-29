@@ -80,6 +80,7 @@ include("loadTanc.php");
 <script src="fisiere/scripts/generareMapa.js"></script>
 
 <script>
+    isRunning=false;
      generareScor(2,20);  
     //generate target
     var locatiiValide = new Array(34,35,36);

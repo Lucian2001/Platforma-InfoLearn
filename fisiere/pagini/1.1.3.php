@@ -81,6 +81,7 @@ include("loadTanc.php");
 </style>
 <script src="fisiere/scripts/generareMapa.js"></script>
 <script>
+       isRunning=false;
 start();
     generareScor(3,52); 
   //start();

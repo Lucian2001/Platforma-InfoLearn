@@ -91,7 +91,7 @@
             <button class="btn btn-primary"  class="Signup" id="SignUp">Sign Up</button> 
     
         <button type="button" id="loginSignupButton"  class="btn btn-primary" >Login</button>
-              <button type="button" id="loginVizitator"  class="btn btn-primary" >Logheaza-te ca vizitator</button>
+              <button type="button" id="loginVizitator"  class="btn btn-primary" >Loghează-te ca vizitator</button>
         </div>
     </div>
   </div>
