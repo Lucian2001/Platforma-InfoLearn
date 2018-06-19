@@ -39,14 +39,14 @@ if (vectorIds[i]==0){
     href="#/"+nr.toString()+"/"+Math.floor(i/10).toString()+"#"+(i%10).toString();
 }
  }
-    href="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput"+href;
+    href="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true"+href;
    
     return(href); 
  // return nr;
 }
 
 function submenuhref(id){
-    var href1="http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#";
+    var href1="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#";
     href1=href1+id;
     return href1;
 }

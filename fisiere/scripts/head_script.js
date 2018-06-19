@@ -24,7 +24,7 @@ var mesaj="";
        
          
           $.ajax({   type:"POST",
-                     url:"fisiere/signUp.php",  
+                     url:"fisiere/php/signUp.php",  
                      data:"username=" + $("#username").val() + "&email=" + $("#email").val() + "&password=" + $("#password").val() +"&password1="+$("#password1").val()+ "&tipul=" + post_tip+"&varsta="+$("#varsta").val()+"&clasa=" + $("#clasa").val(), 
                   success:function(result)  
                      {   
@@ -66,7 +66,7 @@ var mesaj="";
             if (inLogin==1){
                 
                  $.ajax({   type:"POST",
-                     url:"fisiere/logIn.php",  
+                     url:"fisiere/php/logIn.php",  
                      data:"&email=" + $("#email").val() + "&password=" + $("#password").val() ,
                   success:function(result)  
                      {   mesaj=result;
@@ -99,7 +99,7 @@ var mesaj="";
             if (inLogin==1){
                 
                  $.ajax({   type:"POST",
-                     url:"fisiere/logIn.php",  
+                     url:"fisiere/php/logIn.php",  
                      data:"&email=" + "vizitator" + "&password=" + "vizitator" ,
                   success:function(result)  
                      { 

@@ -5,7 +5,7 @@ var href1;
     vector[11]=0;
      vector[12]=0;
      vector[13]=0;
- vector[14]=0;
+     vector[14]=0;
      vector[21]=0;
      vector[22]=0;
      vector[23]=0;
@@ -24,23 +24,16 @@ var href1;
 
 
     $("#evaluare").click(function(){
-
-              $(location).attr('href', "http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/evaluare");
- 
-
-    })
+$(location).attr('href', "http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/evaluare");
+  })
     $("#structuraAlternativa").click(function(){
 loadSave(6);
-       
-    })
+ })
 
     $("#buclarepetitiva").click(function(){
 loadSave(5);
-
-
-    })
+})
 $("#operatorirelationali").click(function(){
- 
   loadSave(3);
     })
     $("#inceput").click(function(){
@@ -56,21 +49,8 @@ loadSave(1);
         
 
     })
-    $(document).ready( function(){
-
-
-//alert(username);
-        // loadHref(id1,username);
-                      })
-    var meniuInceput=1;
-    var id1=0;
-    $("#compilator").click(function(){
-
-        $(location).attr('href',"http://infolearnchestie-com.stackstaging.com/index.php?fisiere=compilator");
-
-
-    })
-
+ var meniuInceput=1;
+ var id1=0;
 
 
 $("#id--111").click(function(){
@@ -96,7 +76,7 @@ $("#id--111").click(function(){
 function loadSave(nr1){
     
      $.ajax({   type:"POST",
-                     url:"fisiere/loadSaves.php",  
+                     url:"fisiere/php/loadSaves.php",  
                      
                   success:function(result)  
                      {   
@@ -105,7 +85,7 @@ function loadSave(nr1){
       if(username1!="")
             $(location).attr('href', loadHref(1,username1,vector,nr1));
             else
-              $(location).attr('href', "http://infolearnchestie-com.stackstaging.com/index.php?fisiere=inceput#/1/"+nr1+"#1");
+              $(location).attr('href', "http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/"+nr1+"#1");
                       }  
                 
                  });

@@ -53,7 +53,7 @@ string1="";
 }
 
 $.ajax({   type:"POST",
-                 url:"fisiere/inserScore.php",
+                 url:"fisiere/php/inserScore.php",
                  data:"scor=" + string +"&nr="+nr ,
               success:function(result)
                  {
@@ -94,7 +94,7 @@ function generareScor(nr,timp){
 var valori2 = new Array;var scor;var calificativ;
 var a,b;    var x,y,z2;
     $.ajax({   type:"POST",
-                 url:"fisiere/loadScore.php",
+                 url:"fisiere/php/loadScore.php",
                  data:"nr=" + nr,
               success:function(result)
                  {
