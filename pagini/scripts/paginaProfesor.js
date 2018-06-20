@@ -1,4 +1,14 @@
- $("#myaccount").mouseout(function(){
+ 
+ 
+  $.ajax({   type:"GET",
+  url:"fisiere/php/loadSaves.php",
+success:function(result)
+  {
+      progresul=result;
+      
+  }
+})
+$("#myaccount").mouseout(function(){
 
         $(this).css("background-color","#2669d6");
         $("#login-text").css ("color","white")  ;

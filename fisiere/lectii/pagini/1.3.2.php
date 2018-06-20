@@ -24,25 +24,6 @@
 <script src="fisiere/lectii/operatoriRelationali/operatoriRelationali.js"  ></script>
 
 
-<script>var buttonActive=1;
-generareScor(9,25);
-start();
-timerCorect(1);
-    var numar=Math.floor((Math.random() * 6) + 1);
-$(document).ready(function(){
-redimensionare132();
-  afisareSemn(numar)
-})
-    $("#generare4").click(function(){
-        
-
-        if (buttonActive==1){
-
-         buttonActive=0;
-
-        verificareRaspuns(numar);
-        }
-                timerCorect(1);
-    })
-
+<script>
+aplicatia2();
 </script>

@@ -1,9 +1,4 @@
-<?php
 
-include($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
-include($_SERVER['DOCUMENT_ROOT']."/fisiere/lectii/loadTanc.php");
-
-?>
 <div id="animation-side">
 
 
@@ -62,84 +57,11 @@ include($_SERVER['DOCUMENT_ROOT']."/fisiere/lectii/loadTanc.php");
 </div>
 
 </div>
-<div class="expl-box-fi5" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
-<style>
-    .expl-box-fi5 {
-		margin-top: -4%;;
-            border-style: none;
-			height: 23%;
-            width:70%;
-             text-align: justify;
-             margin-left:3%;
-            color:black;
-         text-indent: 10px;
+<div class="expl-box-fi152" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
 
-		}
-
-</style>
 <script src="fisiere/lectii/buclaRepetitiva/generareMapa1.5.2.js"></script>
 
 <script>
-     generareScor(15,58);   
-start();
-if (tanc==0){
-  noTank();
-}
-    //generate target
-    var locatiiValide = new Array(55);
- var targetPlace= $( "#pozitie" );
-    var offsettarget= targetPlace.offset();
-    //alert((($(document).width()*1.33)/100));
-    var target = $( "#object1" );
-
-target.css("top",offsettarget.top-(($(document).width()*8)/100));
-
-target.css("left",offsettarget.left-(($(document).width()*1.2)/100));
-target1=55;
-    $("#id-"+target1).attr('src','fisiere/assets/images/curba.png');
-
-    var tanc;
-
-$(".imagineComponentaTanc").hide();
-//alert(($("#object1").attr('src')));
-  //if (($("#object1").attr('src'))==""){
-    //location.reload();
-  //}
-//if (reload==1){
-//location.reload();
-//reload=2;
-//}
-  tanc= "<?php echo $row2[1]?>";
-
-$(document).ready(function(){
-
-   for(var i=1;i<=66;i++)
-        limite[i]=0;
-    generareTeren();
-    var height=$(document).height();
-        var width=$(document).width();
-       if (width<1900&&height<950&&width>1500&&height>700){
-         $("#textError").css("font-size","15px");
-      $("#textError").css("margin-top","10%");
-          $("#butonError").css("margin-left","14%");
-          $("#butonError").css("margin-left","16%");
-     }
-    else if (width<1500&&height<800){
-         $("#textError").css("font-size","13px");
-      $("#textError").css("margin-top","15%");
-          $("#butonError").css("margin-left","15%");
-     }
-   // $("#id:35").attr("src","fisiere/assets/images/road_target");
-// $("#id-35").attr('id', 'target');
-
-
-    $("#object1").attr('src','fisiere/assets/images/'+tanc+'.png');
-$("#object1").show();
-
-})
-$("#butonError").click(function(){
-
-    $("#errorPanel").hide();
-})
+    aplicatia2();
 
 </script>

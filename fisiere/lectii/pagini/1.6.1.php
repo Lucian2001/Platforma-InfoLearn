@@ -1,35 +1,6 @@
-<style>
-    .expl-box-fi-enunt{
-    margin-top: 1%;
-margin-left:1%;
- text-align:justify;
-position: relative;
-height: 20%;
-width: 99%;
-color:black;
-  text-indent: 20px;
 
-
-}
-[class^="expl-box"] {
-    position: relative;
-
-}
-    .expl-box-fi2 {
-		margin-top: -5%;;
-            border-style: none;
-			height: 23%;
-            width:95%;
-             text-align: left;
-             margin-left:3%;
-            color:black;
-         text-indent: 10px;
-
-		}
-
-</style>
 <div id="animation-side">
-  <div class="expl-box-fi-enunt" ng-fi-text="Stabilește valoarea de adevăr a expresiei de mai jos!"></div>
+  <div class="expl-box-fi-enunt161" ng-fi-text="Stabilește valoarea de adevăr a expresiei de mai jos!"></div>
 
 
     <div id="spatiuExercitii">
@@ -58,56 +29,12 @@ color:black;
 
       <h1 id="exercitii"><span id="exercitiiRezolvate">0</span>/6</h1>
 </div>
-<div class="expl-box-fi2" ng-fi-text="  Pentru a rezolva acestă aplicație trebuie sa apeși pe unul dintre cele doua butoane disponibile pentru a stabili care este valoarea de adevăr a expresiei. După ce ai apăsat butonul vei primi răspunsul și apoi se va genera un alt exercițiu."></div>
+<div class="expl-box-fi161" ng-fi-text="  Pentru a rezolva acestă aplicație trebuie sa apeși pe unul dintre cele doua butoane disponibile pentru a stabili care este valoarea de adevăr a expresiei. După ce ai apăsat butonul vei primi răspunsul și apoi se va genera un alt exercițiu."></div>
 
 <link rel="stylesheet" href="fisiere/lectii/structuraAlternativa/structuraAlternativa1.css">
 
 <script src="fisiere/lectii/structuraAlternativa/structuraAlternativa1.js"></script>
 
-<script>var buttonActive=1; 
-    var raspuns;
-
-      generareScor(11,35);
-start();
-timerCorect(1); 
-$(document).ready(function(){
-  redimensionare151();
-    $("#object1").hide();
-    $("#butonsmecher").hide();
-     $("#resetareAplicatie").hide();
-})
-var dificultate;
-    dificultate=10;
-   raspuns=generareNumere(dificultate);
-
-    $("#true2").click(function(){
-  
-        
-        if (buttonActive==1){
-        buttonActive=0; 
-        if (raspuns==true){
-            corect();
-            timerCorect(1);
-        } else{
-            gresit();
-             timerCorect(1);
-        }
-        }
-    })
-        $("#false2").click(function(){
-           
-
-            if (buttonActive==1){
-        buttonActive=0; 
-        if (raspuns!=true){
-            corect();
-        timerCorect(1);
-        } else{
-            gresit();
-             timerCorect(1);
-        }
-            }
-    })
-
-
+<script>
+aplicatia1();
 </script>

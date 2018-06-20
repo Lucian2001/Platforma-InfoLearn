@@ -24,6 +24,7 @@
     <script src="fisiere/scripts/alerte.js"></script>
     <script src="fisiere/scripts/scor.js"></script>
     <script src="fisiere/scripts/terminareExercitiu.js"></script>
+    <script src="fisiere/scripts/functiiGlobale.js"></script>
 </head>
 <?php
 include($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");

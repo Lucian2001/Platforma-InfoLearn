@@ -28,38 +28,5 @@
 
 <link rel="stylesheet" href="fisiere/lectii/expresiiAritmetice/expresiiAritmetice.css">
 <script src="fisiere/lectii/expresiiAritmetice/generareNumere2.js"></script>
-<script>var buttonActive=1;
-    var array=new Array();
-    var array1=new Array();
-start();
-    generareScor(6,360);
-    timerCorect(1);
-var raspuns,raspuns1;
- generareNumere12(array,array1);
-
-$("#true").click(function(){
-
-   $("#false1").prop('disabled', true);
-   if (adevarat==true){
-    corect2();
-  }else{
-       gresit2()
-raspunsuriGresite=raspunsuriGresite+1;
-}
-})
-    $("#verificare").click(function(){
-
-             coeficientDificultate=coeficientDificultate+1;
-        
-       
-      if (buttonActive==1){
-            buttonActive=0;
-        verificare();
-      }
-          timerCorect(1);
-    })
-    $(document).ready(function(){
-redimensionare122();
-    });
-
+<script> aplicatia2();
 </script>

@@ -1,16 +1,4 @@
-<?php
- include("testHttp.php");
-$query="SELECT *FROM completat WHERE id = $id";
 
-if ($result1 = mysqli_query($link,$query)){
-    $row = mysqli_fetch_array($result1);
-    //echo $row[2];
-
-
-}
-
-
-?>
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -157,7 +145,7 @@ margin-top: 20%;
         window.location.replace("http://infolearnchestie-com.stackstaging.com/index.php");
 
     })
-    var username= "<?php echo  $row[1]?>";
+
     </script>
 <script src="fisiere/scripts/loadSaves.js"></script>
 <script src=fisiere/scripts/meniuScript.js></script>

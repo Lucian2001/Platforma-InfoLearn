@@ -24,31 +24,6 @@
 <script src="fisiere/lectii/expresiiAritmetice/generareNumare3.js"></script>
 <link rel="stylesheet" href="fisiere/lectii/expresiiAritmetice/expresiiAritmetice.css">
 
-<script>var buttonActive=1;
-var array=new Array();
-var aray=1;
-  generareScor(8,40);
-start();
-timerCorect(1);
-    $(document).ready(function(){
-redimensionare123();
-    });
-generareNumere4(array,aray);
-raspuns=rezultat23();
-
-$("#verificare1").click(function(){
- 
-  
-    if (buttonActive==1){
-            buttonActive=0;
-
-
-  if ($("#raspuns2").val()==raspuns){
-    corect();
-  } else {
-gresit();
-  }}
-      timerCorect(1);
-})
-
+<script>
+aplicatia3();
 </script>

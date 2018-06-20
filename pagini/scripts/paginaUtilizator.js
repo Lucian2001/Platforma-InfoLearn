@@ -1,3 +1,13 @@
+ 
+  $.ajax({   type:"GET",
+  url:"fisiere/php/loadSaves.php",
+success:function(result)
+  {
+      progresul=result;
+      
+  }
+})
+
 $("#myaccount").mouseout(function(){
          
 
@@ -94,7 +104,9 @@ var data = jQuery.parseJSON(result);
      vector1[64]=0;
     //
         
-function progres(){ var x=0;
+function progres(){ 
+         $("#progresTotal").css("width","0%");
+    var x=0;
                     $.ajax({   type:"GET",
   url:"pagini/scripts/loadDateUtilizator.php",
 success:function(result)

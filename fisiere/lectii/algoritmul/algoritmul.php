@@ -1,66 +1,12 @@
-<?php include ($_SERVER['DOCUMENT_ROOT']."/fisiere/php/saveProgres.php");
-$query="SELECT *FROM completat WHERE id = $id";
-
-if ($result1 = mysqli_query($link,$query)){
-    $row = mysqli_fetch_array($result1);
-    //echo $row[2];
-
-
-}
-
-?>
-
 <head>
 <link rel="stylesheet" href="fisiere/css/lectii.css">
+    <link rel="stylesheet" href="fisiere/lectii/lectii.css">
 </head>
-<style>
 
-		[class^="expl-box"] {
-		text-align: justify;
-            position: relative;
-			height: 10%;
-            color:white;
-			/*margin: 15px;*/
-			/*border: 2px solid gray;*/
-             z-index: 1;
-
-		}
-
-		.expl-box-fi {
-			margin-left: 10px;
-            border-style: none;
-			height: 95%;
-            width:99%;
-             text-align: left;
-             text-indent: 30px;
-            color:black;
-             z-index: 1;
-		}
-    .expl-box-fi1 {
-
-            border-style: none;
-			height: 7%;
-            width:100%;
-             text-align: left;
-
-            color:black;
-            z-index: 1;
-
-		}
-
-		}
-
-
-
-</style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
   <h1 class="titluCapitol"> Algoritmul</h1>
 </div>
-
-
-
-
 
 <div id="frame-aplicatie"  >
 
@@ -92,18 +38,8 @@ if ($result1 = mysqli_query($link,$query)){
 <div class="container">
   <div class="box rotate"></div>
 </div>
-
-
-
-
 <!--<img src="fisiere/assets/images/masina.png" width="70px"  height="40px" > -->
-
-
-  <!--
-
-      -->
-
-        <div>
+<div>
        <!-- <div class="alert alert-danger">{{error}}</div>  -->
 
       </div>
@@ -142,21 +78,5 @@ if ($result1 = mysqli_query($link,$query)){
 </body>
 <script src="fisiere/lectii/algoritmul/script.js"></script>
 <script src="fisiere/scripts/loadSaves.js"></script>
-<script>
-
-$(document).ready(function(){
-	var tanc;
-	tanc= "<?php echo $row2[1]?>";
-	if (tanc!="")
-    $("#object1").attr('src','fisiere/assets/images/'+tanc+'.png');
-
-
-$('.dropdown-toggle').dropdown();
-     })
-
-    var username= "<?php echo  $row[1]?>";
-      loadsaves(username);
-$("#sub-menu").show();
-
-
-</script>
+<script src="fisiere/lectii/algoritmul/paginiScripts.js"></script>
+<script>var tanc; algoritmul();</script>

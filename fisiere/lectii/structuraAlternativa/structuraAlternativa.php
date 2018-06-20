@@ -1,60 +1,10 @@
-<?php include ($_SERVER['DOCUMENT_ROOT']."/fisiere/php/saveProgres.php");
-$query="SELECT *FROM completat WHERE id = $id";
 
-if ($result1 = mysqli_query($link,$query)){
-    $row = mysqli_fetch_array($result1);
-    //echo $row[2];
-
-
-}
-
-?>
 
 <head>
 <link rel="stylesheet" href="fisiere/css/lectii.css">
+    <link rel="stylesheet" href="fisiere/lectii/lectii.css">
 </head>
-<style>
 
-		[class^="expl-box"] {
-		text-align: justify;
-            position: relative;
-			height: 10%;
-            color:white;
-			/*margin: 15px;*/
-			/*border: 2px solid gray;*/
-             z-index: 1;
-
-		}
-
-		.expl-box-fi {
-            margin-top: 1%;
-			margin-left: 10px;
-            border-style: none;
-			height: 70%;
-            width:99%;
-             text-align: left;
-             text-indent: 30px;
-            color:black;
-             z-index: 1;
-            text-align: justify;
-		}
-    .expl-box-fi1 {
-
-            border-style: none;
-			height: 7%;
-            width:100%;
-             text-align: left;
-
-            color:black;
-            z-index: 1;
-
-		}
-
-		}
-
-
-
-</style>
   <body ng-app="myApp" >
 <div class="titlu-sectiune">
   <h1 class="titluCapitol">Structura alternativă</h1>
@@ -141,18 +91,9 @@ if ($result1 = mysqli_query($link,$query)){
 </body>
 <script src="fisiere/lectii/algoritmul/script.js"></script>
 <script src="fisiere/scripts/loadSaves.js"></script>
+<script src="fisiere/lectii/structuraAlternativa/paginiScripts6.js"></script>
 <script>
 
-$(document).ready(function(){
 
-
-
-$('.dropdown-toggle').dropdown();
-     })
-
-    var username= "<?php echo  $row[1]?>";
-      loadsaves(username);
-$("#sub-menu").show();
-
-
+var tanc; structuraAlternativa();
 </script>

@@ -1,32 +1,13 @@
 <!DOCTYPE html>
 <html >
-
-<!-- <script src="scripturi/angularscript.js"></script> -->
-
-
-
-
 <body  ng-app="myApp">
-
-   
-   <h2 id="scorePanel">Score:<span id="score">0</span></h2>
-
-
-
-    <!--<img id="info_button"  src="fisiere/assets/images/info.png" width="50px" height="50px" style="float:right;margin-right:-17.5%;margin-top:3.3%;"  >
--->
-    <div id="view" ng-view >
-
-    </div>
-
-
-    </body>
-
+<h2 id="scorePanel">Score:<span id="score">0</span></h2>
+<div id="view" ng-view >
+</div>
+</body>
 <script src="fisiere/lectii/angularscript11.js"></script>
-   
 <script src="fisiere/scripts/ngRouteScript.js"></script>
-
-    <style >
+<style >
         #view.ng-enter{
             transition: 0.5s linear all;
             opacity: 0;
@@ -35,11 +16,10 @@
             opacity:1;
         }
 
-    </style>
-
-
-    <script>
-       redimensionareMain(); 
+</style>
+<script>
+   
+redimensionareMain(); 
 $("#sub-menu").show();
 $("#info_button").click(function(){
 

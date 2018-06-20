@@ -235,3 +235,15 @@ $("#scorePanel").css("font-size","20px");
           $(".titluCapitol").css("font-size","20px");
       }
 }
+function redimensionareBloc111(){
+    var height=$(document).height();
+   var width=$(document).width();
+    if (width<1401&&height<800 ){
+$(".corp").width("36%");
+$(".cap").width("21%");
+$(".roti").width("35%");
+$(".corp").height("17%");
+$(".cap").height("17%");  
+$(".roti").height("15%");
+    }
+}

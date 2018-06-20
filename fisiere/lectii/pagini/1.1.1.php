@@ -7,27 +7,5 @@
 
   </div>
 </div>
-
-
-<div class="expl-box-fi2" ng-fi-text="   Pentru a putea să-ți începi aventura învățarii trebuie mai întâi trebuie să-ți creezi un tanc.Trebuie să apeși pe fiecare bloc, punând toate componentele necesare unui tanc. Când ai terminat apasă pe butonul Run."></div>
-
-<style>
-    .expl-box-fi2 {
-		margin-top: -4.5%;;
-            border-style: none;
-			height: 25%;
-            width:70%;
-             text-align: justify;
-             margin-left:3%;
-            color:black;
-         text-indent: 10px;
-
-		}
-
-</style>
-<script>
-    generareScor(1,8);    
-$("#object1").hide();
-    $(".imagineComponentaTanc").show();
-   timer();
-</script>
+<div class="expl-box-fi111" ng-fi-text="   Pentru a putea să-ți începi aventura învățarii trebuie mai întâi trebuie să-ți creezi un tanc.Trebuie să apeși pe fiecare bloc, punând toate componentele necesare unui tanc. Când ai terminat apasă pe butonul Run."></div>
+<script>pagina111()</script>

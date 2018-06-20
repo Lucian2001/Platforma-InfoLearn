@@ -332,7 +332,7 @@ altfelOn=0;
        
     $scope.Run=function(){
       
-
+isRunning=true;
         if (idUrl==164||idUrl==151||idUrl==152||idUrl==153||idUrl==154){
             if (repetaOn==0){
                 eroareShow("Trebuie să pui un bloc repetă!")
@@ -586,7 +586,7 @@ isRunning=false;
     // functii load surse {
     //$scope.src="fisiere/test.html";
     $scope.a1=function(){
-    timpOver=0;
+    timpOver=0; 
          if (isRunning==false){
 clear1();
 pagina1=$location.absUrl().substr($location.absUrl().length - 3);
@@ -771,16 +771,17 @@ var numarSurse;
 var counterSursa=1;
 
 
-    var href2;
+ var href2;
    var href1=$location.absUrl();
        href1=href1.charAt(href1.length-3);
+      $(".expl-box-fi-col").css("height","80%");
         if (href1=="2")
          $scope.codeSrc="fisiere/lectii/expresiiAritmetice/expresieAritmetica2.html";
           else if(href1=="3"){
              $scope.codeSrc="fisiere/lectii/operatoriRelationali/operatoriRelationali2.html";
           } else if(href1=="4"){
              $scope.codeSrc="fisiere/lectii/expresiiLogice/expresiiLogice2.html";
-          }
+          } 
      $timeout( function(){
          if (href1=="2")
          $scope.codeSrc="fisiere/lectii/expresiiAritmetice/expresieAritmetica1.html";
@@ -789,7 +790,6 @@ var counterSursa=1;
           } else if(href1=="4"){
              $scope.codeSrc="fisiere/lectii/expresiiLogice/expresiiLogice1.html";
           }
-
         }, 200);
 
         //time
