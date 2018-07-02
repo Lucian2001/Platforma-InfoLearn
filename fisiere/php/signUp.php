@@ -1,4 +1,5 @@
 <?php
+
 $_POST["username"]=ucfirst($_POST["username"]);
 $error=0;
 if ($_POST["email"]=="" or $_POST["password"]=="" or $_POST["username"]=="" or $_POST["password1"]==""){
@@ -25,6 +26,23 @@ $error=$error+1;}
         echo "Adresa de mail nu este validă. ";
     $error=$error+1;
     }
+if(!preg_match("#[0-9]+#",$_POST["password"])) {
+    $error=$error+1;   
+    echo "Parola necesita cateva cifre!";
+    }
+    else if(!preg_match("#[A-Z]+#",$_POST["password"])) {
+        $error=$error+1;
+        echo "Parola necesita o litera mica!";
+    }
+    else if(!preg_match("#[a-z]+#",$_POST["password"])) {
+       $error=$error+1;
+        echo "Parola necesita o litera mare!";
+    }
+if (strlen($_POST["password"])<8 or strlen($_POST["password"])>24)
+{
+   echo "Parola nu este valida!";
+    $error=$error+1;
+}
 if ($_POST["password"]!=$_POST["password1"])
 {
    echo "Cele două parole nu coincid. ";
@@ -45,7 +63,7 @@ $query = "SELECT * FROM users WHERE email = '". mysqli_real_escape_string($link,
             $error=$error+1;
             }
 
-if ($error==0){
+if ($error==0 and $_POST["eroare"]==0){
 
 $query = "INSERT INTO users (`username`, `email`,`password`,`tip`,`clasa`,`varsta`) VALUES ('". mysqli_real_escape_string($link, $_POST['username'])."', '". mysqli_real_escape_string($link, $_POST['email'])."','". mysqli_real_escape_string($link, $_POST['password'])."','". mysqli_real_escape_string($link, $_POST['tipul'])."','". mysqli_real_escape_string($link, $_POST['clasa'])."','". mysqli_real_escape_string($link, $_POST['varsta'])."')";
 
@@ -63,6 +81,8 @@ $query = "INSERT INTO users (`username`, `email`,`password`,`tip`,`clasa`,`varst
                 }
 
 
-}
+}else if($error==0) {
+echo "Eroare!";
+} 
 
 ?>

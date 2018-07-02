@@ -1,6 +1,13 @@
 <?php
 
 include("functions.php");
+$query = "SELECT * FROM users WHERE email = '". mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+                    if($result2 = mysqli_query($link, $query)) {
+                      $row1 = mysqli_fetch_array($result2);  
+                        $incercari=$row1[5]; //echo $incercari;
+                    } else{
+                      
+                    }
 
  if ($_POST['email']=="vizitator" and  $_POST['password']=="vizitator"){
      $_SESSION['id'] = -1;
@@ -15,13 +22,33 @@ $query = "SELECT * FROM users WHERE email = '". mysqli_real_escape_string($link,
                 if ($row['password'] == md5(md5($row['id']).$_POST['password'])) {
                    
                     echo "1";
+                    $incercari=1;
                     $_SESSION['id'] = $row['id'];
-                    
+                    $query = "UPDATE users SET incercari=$incercari WHERE email = '". mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
                 } else {
                     
-                    echo "Datele sunt incorecte!";
                     
-                }
+                   
+                    $incercari=$incercari+1;
+                    if ($incercari>10){
+                        $incercari=1;
+                        $query = "UPDATE users SET incercari=$incercari WHERE email = '". mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+                    if($result1 = mysqli_query($link, $query)) {
+                        
+                    } else{
+                       
+                    }
+                        echo "1";
+                    } else{
+                        echo "Datele sunt incorecte!";
+                    }
+                    $query = "UPDATE users SET incercari=$incercari WHERE email = '". mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+                    if($result1 = mysqli_query($link, $query)) {
+                        
+                    } else{
+                       
+                    }
+                       }
  }
 
 ?>

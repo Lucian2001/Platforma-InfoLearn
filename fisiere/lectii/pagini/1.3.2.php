@@ -20,7 +20,6 @@
   <p id="invisibleObject1">0<p>
 <link rel="stylesheet" href="fisiere/lectii/expresiiAritmetice/expresiiAritmetice.css">
       <link rel="stylesheet" href="fisiere/lectii/operatoriRelationali/operatorirelationali.css">
-
 <script src="fisiere/lectii/operatoriRelationali/operatoriRelationali.js"  ></script>
 
 
