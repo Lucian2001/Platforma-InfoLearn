@@ -28,5 +28,6 @@
 
 <link rel="stylesheet" href="fisiere/lectii/expresiiAritmetice/expresiiAritmetice.css">
 <script src="fisiere/lectii/expresiiAritmetice/generareNumere2.js"></script>
+<script src="fisiere/lectii/expresiiAritmetice/paginiScripts2.js"></script>
 <script> aplicatia2();
 </script>

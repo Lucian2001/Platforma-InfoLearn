@@ -71,16 +71,25 @@ $("#plus").draggable( 'enable' );
    $("#slash").draggable( 'enable' );
 
 }
+var buttonActive122=1;
 function aplicatia2(){
-    var buttonActive=1;
+  
     var array=new Array();
     var array1=new Array();
 start();
     generareScor(6,360);
     timerCorect(1);
 var raspuns,raspuns1;
- generareNumere12(array,array1);
-
+ eroare=generareNumere12(array,array1);
+    alert(eroare);  
+ if ($("#id--5").html() ==""){
+    
+do{ alert("das");
+eroare=generareNumere12(array,array1);
+} while($("#id--5").html() =="" );
+}
+    
+    
 $("#true").click(function(){
 
    $("#false1").prop('disabled', true);
@@ -96,8 +105,8 @@ raspunsuriGresite=raspunsuriGresite+1;
              coeficientDificultate=coeficientDificultate+1;
         
        
-      if (buttonActive==1){
-            buttonActive=0;
+      if (buttonActive122==1){
+            buttonActive122=0;
         verificare();
       }
           timerCorect(1);

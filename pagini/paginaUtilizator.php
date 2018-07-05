@@ -37,7 +37,7 @@
     </div>
     <div id="panel">
 
-        <img id ="profileImage" >
+      
 
 
         <ul id="lista">
@@ -50,19 +50,7 @@
 
 </ul>  <div class="clear-float"></div>
       <div id="butoane">
- <form method="post" action="index.php" enctype="multipart/form-data">
 
-   <button id="fileupload-example-5"  class="btn btn-primary" >
-    <input type="file"  name="uploadFile"  class="btn btn-primary">
-    <span>Add image</span>
-</button>
-   <!-- <input type="file"  name="uploadFile" value="" id="addImage" />
-   -->
-
-
-<button  type="submit" name="submitBtn" value="Upload" class="btn btn-primary">Upload</button>
-
-          </form>
      </div>
   <div class="clear-float"></div>
        <b id="completat">Completat %</b >

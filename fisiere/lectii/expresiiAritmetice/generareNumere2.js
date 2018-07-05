@@ -238,15 +238,19 @@ function gresit2(){
     optiune=2;
 }
 function verificare(){
-   if (optiune==1){
+ 
+   var array=new Array();
+    var array1=new Array();
+    if (optiune==1){
     if (corect==true )
         {$("#corect1").show();
             setTimeout(function(){
                 
-                  generareNumere12(array,array1);
+                  eroare=generareNumere12(array,array1);
+                verificareEroare(eroare);
                 $("#corect1").hide();
            $("#false1").prop('disabled', false);
-  buttonActive=1;
+  buttonActive122=1;
                 timerCorect(1);
             } ,1500);
          var nr=$("#exercitiiRezolvate1").html();
@@ -261,10 +265,10 @@ function verificare(){
             setTimeout(function(){
 
 
-              raspuns=generareNumere12(array,array1);
+              raspuns=generareNumere12(array,array1); verificareEroare(raspuns);
                 $("#gresit1").hide();
                 $("#false1").prop('disabled', false);
-timerCorect(1);
+timerCorect(1);buttonActive122=1;
             } ,1500);
         }
 } else
@@ -273,11 +277,12 @@ timerCorect(1);
       if (nr2==rezultat1){
 $("#corect1").show();
             setTimeout(function(){
-                  generareNumere12(array,array1);
+                  eroare=generareNumere12(array,array1);
+                 verificareEroare(eroare);
                   $("#false1").prop('disabled', false);
                 $("#corect1").hide();
               $("#false1").val("");
-                  buttonActive=1;
+                  buttonActive122=1;
                 timerCorect(1);
             } ,1500);
          var nr=$("#exercitiiRezolvate1").html();
@@ -290,11 +295,12 @@ $("#corect1").show();
            timp1=-1;
   $("#gresit1").show();
             setTimeout(function(){
-                  generareNumere12(array,array1);
+                  eroare=generareNumere12(array,array1);
+                 verificareEroare(eroare);
                 $("#gresit1").hide();
               $("#false1").val("");
                  $("#false1").prop('disabled', false);
-                  buttonActive=1;
+                  buttonActive122=1;
                 timerCorect(1);
             } ,1500);
       }
@@ -306,4 +312,14 @@ optiune=0;corect=0;
 succes(); timpOver=0;
     creereScor(timp,raspunsuriGresite,4,coeficientCorect,6);
  }
+}
+function verificareEroare(eroare){
+      alert(eroare);   var array=new Array();
+    var array1=new Array(); 
+ if ($("#id--5").html() ==""){
+    
+do{ alert("das");
+eroare=generareNumere12(array,array1);
+} while($("#id--5").html() =="" );
+}
 }

@@ -1065,6 +1065,22 @@ exercitiuOn=1;
 enunt="";
  if (numarExercitiu==1){
          raspuns=generareNumere12(idEx1,id1Ex1);
+     
+    
+     if (isFinite(raspuns)==false){
+  do{
+ raspuns=generareNumere12(idEx1,id1Ex1);
+             
+         }while(isFinite(raspuns)==false && isNaN(raspuns)!=true )
+      }
+      
+     if(isNaN(raspuns)==true){
+         
+           do{  
+ raspuns=generareNumere12(idEx1,id1Ex1);
+             
+         }while(isFinite(raspuns)==false && isNaN(raspuns)!=true );
+}
           for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
@@ -1240,6 +1256,20 @@ intrebare1=response.data.Intrebare1;
           enunt="";
  if (numarExercitiu==1){
          raspuns11=generareNumere12(idEx1,id1Ex1);
+   
+     if (isFinite(raspuns11)==false){
+  do{
+ raspuns11=generareNumere12(idEx1,id1Ex1);
+             
+         }while(isFinite(raspuns11)==false && isNaN(raspuns11)!=true )
+      }
+      
+     if(isNaN(raspuns11)==true){
+           do{  
+ raspuns11=generareNumere12(idEx1,id1Ex1);
+             
+         }while(isFinite(raspuns11)==false && isNaN(raspuns11)!=true );
+}
           for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
@@ -1402,8 +1432,8 @@ corecte[x][1]=enunt;
 
   }, function errorCallback(response) {
 alert("eroare!Reload page!");
-      alert(idIntrebari[1]+" sdaasd "+idIntrebari[2]);
-      alert(response);
+     // alert(idIntrebari[1]+" sdaasd "+idIntrebari[2]);
+     // alert(response);
     // called asynchronously if an error occurs
     // or server returns response with an error status.
   });
@@ -1500,9 +1530,26 @@ $scope.resetare= function(){
   numarExercitiu= intrebare.substr(intrebare.length - 1);
   exercitiuOn=1;
   enunt="";
+ 
   if (numarExercitiu==1){
          raspuns=generareNumere12(idEx1,id1Ex1);
-          for (i=1;i<=3;i++){
+       
+    
+     if (isFinite(raspuns)==false){
+  do{
+ raspuns=generareNumere12(idEx1,id1Ex1);
+             
+         }while(isFinite(raspuns)==false && isNaN(raspuns)!=true )
+      }
+      
+     if(isNaN(raspuns)==true){
+         
+           do{  
+ raspuns=generareNumere12(idEx1,id1Ex1);
+             
+         }while(isFinite(raspuns)==false && isNaN(raspuns)!=true );
+}
+      for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
          enunt="Care este răspunsul expresiei ";
@@ -1654,7 +1701,21 @@ corecte[x-1][1]=enunt;
           enunt="";
   if (numarExercitiu==1){
          raspuns11=generareNumere12(idEx1,id1Ex1);
-          for (i=1;i<=3;i++){
+          
+       
+     if (isFinite(raspuns11)==false){
+  do{
+ raspuns11=generareNumere12(idEx1,id1Ex1);
+             
+         }while(isFinite(raspuns11)==false && isNaN(raspuns11)!=true );
+      }
+      
+     if(isNaN(raspuns11)==true){
+         do{
+ raspuns11=generareNumere12(idEx1,id1Ex1);
+             
+         }while(isFinite(raspuns11)==false && isNaN(raspuns11)!=true );
+}for (i=1;i<=3;i++){
               id1Ex1[i]=semnGenerator(id1Ex1[i]);
           }
          enunt="Care este răspunsul expresiei? ";
@@ -1921,6 +1982,14 @@ function generareRezultate(raspunsuri,x){
     raspunsuri[6]=x+nr1-nr3+nr+nr2;
     raspunsuri[7]=x;
     raspunsuri[8]=x-nr+nr2-nr3+2;
+    
+    
+    if (raspunsuri[1]==raspunsuri[2]|| raspunsuri[1]==raspunsuri[3] || raspunsuri[1]==raspunsuri[4] || raspunsuri[2]==raspunsuri[3]|| raspunsuri[2]==raspunsuri[4] ||raspunsuri[3]==raspunsuri[4]){
+generareRezultate(raspunsuri,x); 
+    }
+    if (raspunsuri[5]==raspunsuri[6]|| raspunsuri[5]==raspunsuri[7] || raspunsuri[5]==raspunsuri[8] || raspunsuri[6]==raspunsuri[7]|| raspunsuri[6]==raspunsuri[8] ||raspunsuri[7]==raspunsuri[8]){
+generareRezultate(raspunsuri,x); 
+    }
 }
 function generareOperator11(semn){
   if(semn==1){
@@ -2004,7 +2073,12 @@ function generareRaspunsuri124(raspunsuri,semn,x) {
         raspunsuri[8]=x;
       }
 
-
+if ((raspunsuri[1]==raspunsuri[2]|| raspunsuri[1]==raspunsuri[3] || raspunsuri[1]==raspunsuri[4] || raspunsuri[2]==raspunsuri[3]|| raspunsuri[2]==raspunsuri[4] ||raspunsuri[3]==raspunsuri[4])&& (semn!=6 && semn!=5)){ 
+generareRaspunsuri124(raspunsuri,semn,x);
+    }
+    if ((raspunsuri[5]==raspunsuri[6]|| raspunsuri[5]==raspunsuri[7] || raspunsuri[5]==raspunsuri[8] || raspunsuri[6]==raspunsuri[7]|| raspunsuri[6]==raspunsuri[8] ||raspunsuri[7]==raspunsuri[8]) && (semn!=6 && semn!=5)){
+generareRaspunsuri124(raspunsuri,semn,x);
+    }
 
 }
 
