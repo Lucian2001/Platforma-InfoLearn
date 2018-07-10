@@ -1,5 +1,9 @@
 function buclaRepetitiva(){
-
+  if ( window.location.href=="https://infolearn.ml/index.php"){
+                $("#continutInfo").show();
+            } else{
+                    $("#continutInfo").hide();
+            }
 $(".expl-box-fi").css("height","95%");
       $.ajax({   type:"GET",
   url:"fisiere/lectii/loadTanc.php",

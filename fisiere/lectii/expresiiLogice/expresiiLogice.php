@@ -79,7 +79,7 @@
 </body>
 <script src="fisiere/lectii/algoritmul/script.js"></script>
 <script src="fisiere/scripts/loadSaves.js"></script>
-<script src="fisiere/lectii/operatoriLogici/paginiScripts4.js"></script>
+<script src="fisiere/lectii/expresiiLogice/paginiScripts4.js"></script>
 <script>
 
 		loadsaves(progresul);

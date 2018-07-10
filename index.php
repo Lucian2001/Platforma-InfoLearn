@@ -27,6 +27,13 @@
     <script src="fisiere/scripts/functiiGlobale.js"></script>
 </head>
 <?php
+header("X-XSS-Protection: 1; mode=block");
+header("Strict-Transport-Security: max-age=31536000");
+//header("Content-Security-Policy: policy");
+header("X-Frame-Options: DENY");
+header("X-Content-Type-Options: nosniff");
+header("Referrer-Policy: no-referrer");
+
 include($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
 $id1=$_SESSION['id'];
 $query="SELECT *FROM users WHERE id = $id1";

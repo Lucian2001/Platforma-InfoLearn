@@ -26,7 +26,7 @@ function eroareRezultat(x){
   icon: "error",
 });
 }
- function noTank(){window.location.replace("http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/1#1");
+ function noTank(){window.location.replace("https://infolearn.ml/index.php#/1/1#1");
 
    swal({
  title: "Absență tanc",

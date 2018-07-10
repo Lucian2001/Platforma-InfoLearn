@@ -6,7 +6,7 @@ nr=0;
 okSpatiu=true;
 setTimeout(function (){
    
- if (window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/1#2" || window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/1#3"|| window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/1#4"){
+ if (window.location.href!="https://infolearn.ml/index.php#/1/1#2" || window.location.href!="https://infolearn.ml/index.php#/1/1#3"|| window.location.href!="https://infolearn.ml/index.php#/1/1#4"){
 x=window.location.href;
 
 tancId=x.substr(x.length - 4);
@@ -32,12 +32,12 @@ urlNou="";
  urlNou=urlNou+"#"+capatUrl;
    urlSave=urlNou;
 
-urlNou="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#"+urlNou;
+urlNou="https://infolearn.ml/index.php#"+urlNou;
 
   window.location.replace(urlNou);
   if (butonActiv==1){
     butonActiv=0;
-    if (window.location.href!="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/1#1" ){
+    if (window.location.href!="https://infolearn.ml/index.php#/1/1#1" ){
 
 
   pasi=parseInt(y);
@@ -191,7 +191,7 @@ return 0;
 
 
 
-        if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/1#2" || window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/5#1" ){
+        if (window.location.href=="https://infolearn.ml/index.php#/1/1#2" || window.location.href=="https://infolearn.ml/index.php#/1/5#1" ){
     $("#object1").css({'transform': 'rotate(0deg)'});
    $("#object1").css("left",pozitieInitiala-(6.7*pozitieInitiala)/100);
           $("#object1").css("top",pozitieInitiala1-(5.4*pozitieInitiala1)/100);isRunning=false;
@@ -377,7 +377,7 @@ raspunsGresit();
 
 
 
-}else if (window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/1#1"){
+}else if (window.location.href=="https://infolearn.ml/index.php#/1/1#1"){
     tancId=y;
 
      if (tancId%1000>100){

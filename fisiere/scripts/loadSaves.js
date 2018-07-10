@@ -39,14 +39,14 @@ if (vectorIds[i]==0){
     href="#/"+nr.toString()+"/"+Math.floor(i/10).toString()+"#"+(i%10).toString();
 }
  }
-    href="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true"+href;
+    href="https://infolearn.ml/index.php"+href;
    
     return(href); 
  // return nr;
 }
 
 function submenuhref(id){
-    var href1="http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#";
+    var href1="https://infolearn.ml/index.php";
     href1=href1+id;
     return href1;
 }

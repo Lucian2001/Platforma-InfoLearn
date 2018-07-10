@@ -30,7 +30,7 @@
           $(".textLista").css("font-size","15px");
 }
             
-            if ( window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php"){
+            if ( window.location.href=="https://infolearn.ml/index.php"){
                 $("#continutInfo").show();
             } else{
                     $("#continutInfo").hide();

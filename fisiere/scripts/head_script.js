@@ -103,7 +103,7 @@ eroare=1;
                       if ((parseInt(mesaj)+1)!=2){
                           $( "#alert" ).text(result); 
                       }else{
-                         window.location.assign("http://infolearnchestie-com.stackstaging.com/index.php");
+                         window.location.assign("https://infolearn.ml/index.php");
                       }
                      }
                          
@@ -135,7 +135,7 @@ eroare=1;
                      { 
                           
                     
-                          window.location.assign("http://infolearnchestie-com.stackstaging.com/index.php");
+                          window.location.assign("https://infolearn.ml/index.php");
                       }
                          
                       

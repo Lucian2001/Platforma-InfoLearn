@@ -142,7 +142,7 @@ margin-top: 20%;
      }
     })
     $("#title").click(function(){
-        window.location.replace("http://infolearnchestie-com.stackstaging.com/index.php");
+        window.location.replace("https://infolearn.ml/index.php");
 
     })
 

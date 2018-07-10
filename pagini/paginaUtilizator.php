@@ -66,15 +66,9 @@
     </div>
 
     </div>
-
-
-    <?php
-    if ($_GET['inceput'] == 'true'){
-    include("fisiere/main.html");
-
-    } 
-
-    ?>
+<?php
+include("fisiere/main.html");    
+?>
 
 
     </div>

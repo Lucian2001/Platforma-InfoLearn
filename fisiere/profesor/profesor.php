@@ -21,4 +21,9 @@
 </body>
 <script>
 $("#scorePanel").hide();
+      if ( window.location.href=="https://infolearn.ml/index.php"){
+                $("#continutInfo").show();
+            } else{
+                    $("#continutInfo").hide();
+            }
 </script>

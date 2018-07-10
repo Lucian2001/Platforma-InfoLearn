@@ -79,6 +79,11 @@
 <script src="fisiere/lectii/operatoriRelationali/paginiScripts3.js"></script>
 
 <script>
+      if ( window.location.href=="https://infolearn.ml/index.php"){
+                $("#continutInfo").show();
+            } else{
+                    $("#continutInfo").hide();
+            }
 loadsaves(progresul);
 $(".expl-box-fi").css("height","95%");
 </script>

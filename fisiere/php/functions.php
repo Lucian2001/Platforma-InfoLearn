@@ -2,7 +2,7 @@
 
 
 session_start();
-$link = mysqli_connect("shareddb-g.hosting.stackcp.net","InfolearnUsers-32374ebf","gigelfrone2001" ,"InfolearnUsers-32374ebf");
+$link = mysqli_connect("localhost","lucian_infolearn","gigelfrone2001" ,"lucian_infolearn");
 
 if (mysqli_connect_error()){
     print_r(mysqli_connect_error());

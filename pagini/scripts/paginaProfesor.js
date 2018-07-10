@@ -29,13 +29,13 @@ $("#myaccount").mouseout(function(){
           $(".textLista").css("font-size","15px");
 }
             
-            if ( window.location.href=="http://infolearnchestie-com.stackstaging.com/index.php"){
+            if ( window.location.href=="https://infolearn.ml/index.php"){
                 $("#continutInfo").show();
             } else{
                     $("#continutInfo").hide();
             }
     $("#myaccount").click(function(){
-     window.location.replace("http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/profesor");
+     window.location.replace("https://infolearn.ml/index.php#/profesor");
     })
 
 });

@@ -1,3 +1,8 @@
+  if ( window.location.href=="https://infolearn.ml/index.php"){
+                $("#continutInfo").show();
+            } else{
+                    $("#continutInfo").hide();
+            }
 function aplicatia1(){
            
 generareScor(5,30);

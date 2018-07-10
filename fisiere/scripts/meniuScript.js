@@ -24,7 +24,7 @@ var href1;
 
 
     $("#evaluare").click(function(){
-$(location).attr('href', "http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/evaluare");
+$(location).attr('href', "https://infolearn.ml/index.php#/evaluare");
   })
     $("#structuraAlternativa").click(function(){
 loadSave(6);
@@ -85,7 +85,7 @@ function loadSave(nr1){
       if(username1!="")
             $(location).attr('href', loadHref(1,username1,vector,nr1));
             else
-              $(location).attr('href', "http://infolearnchestie-com.stackstaging.com/index.php?inceput=true#/1/"+nr1+"#1");
+              $(location).attr('href', "https://infolearn.ml/index.php#/1/"+nr1+"#1");
                       }  
                 
                  });

@@ -15,7 +15,7 @@
 <div class="expl-box-fi2" style="color:black;text-align:justify;;height:25%;margin-top:-5%;margin-left:1%;text-indent:30px;"ng-fi-text="   Răspunsul se scrie în caseta de mai sus. După ce ai scris un raspuns apasă butonul ”Verificare” pentru a vedea dacă ai răspuns corect. Exercițiul este complet când ai răspuns corect la 4 itemi."></div>
 </body>
 <link rel="stylesheet" href="fisiere/lectii/expresiiLogice/expresiiLogice.css">
-
+<script src="fisiere/lectii/expresiiLogice/paginiScripts4.js"> </script>
 <script>
 aplicatia1();
 
