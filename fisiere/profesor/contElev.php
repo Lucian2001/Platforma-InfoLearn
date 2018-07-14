@@ -19,10 +19,14 @@ for ($x = 0; $x < strlen($parola); $x++) {
   $y=$parola[$x];
    
     $y=intval($y);
-    $y=$y+96;
+    $y=$y+95;
     $z=chr($y);
     $parolaNoua.=$z;
 } 
+$bytes = random_bytes(5);
+$parolaNoua=bin2hex($parolaNoua);
+
+echo $parolaNoua;
 
 $query = "INSERT INTO users (`username`, `email`,`password`,`tip`) VALUES ('". mysqli_real_escape_string($link, "elev")."','".mysqli_real_escape_string($link, $elev)."','".mysqli_real_escape_string($link,$parolaNoua)."','". mysqli_real_escape_string($link, "3")."')";
 if (mysqli_query($link,$query)){

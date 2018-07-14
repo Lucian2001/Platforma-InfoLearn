@@ -24,9 +24,9 @@ $query = "SELECT * FROM elevi WHERE idProfesor = $idElev";
             $result = mysqli_query($link, $query);
             if (mysqli_num_rows($result) > 0)  {
                    $row = mysqli_fetch_array($result);
-          
+   $data['username'][$nr]=$row[2];       
 $data['nume'][$nr]=$row[1];
-$data['parola'][$nr]=$row[2];
+$data['parola'][$nr]=$row[4];
 
 $nr=$nr+1;
 if($nr<10){

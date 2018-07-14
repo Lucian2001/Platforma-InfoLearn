@@ -19,13 +19,16 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nume elev</th>
+        <th scope="col">Email</th>
       <th scope="col">Parola</th>
     </tr>
   </thead>
   <tbody ng-repeat="y in elevi">
     <tr>
       <th scope="row">{{y.numar}}</th>
-      <td>{{y.nume}}</td>
+      <td>{{y.username}}</td>
+        <td>{{y.nume}}</td>
+        
       <td>{{y.parola}}</td>
       
     </tr>

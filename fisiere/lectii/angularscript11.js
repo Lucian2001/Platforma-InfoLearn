@@ -2306,7 +2306,7 @@ var data = jQuery.parseJSON(response.data+"}}");
  numarElev=data.numar[1];
 
         for(i=1;i<=numarElev-1;i++){
-             $scope.elevi[i-1]={nume:data.nume[i],parola:data.parola[i],numar:i};
+             $scope.elevi[i-1]={username:data.username[i],nume:data.nume[i],parola:data.parola[i],numar:i};
         }
       
         
@@ -2338,7 +2338,7 @@ var data = jQuery.parseJSON(response.data+"}}");
     return 1;
     }
     $scope.statistici = function(){
-        
+        incarcareScoruri();
        $scope.src1="fisiere/profesor/statistici.html";
     angular.element(document.querySelector( '#statistici' )).addClass ("active");
           angular.element(document.querySelector( '#inregistrare' )).removeClass ("active");
@@ -2351,7 +2351,9 @@ var data = jQuery.parseJSON(response.data+"}}");
         angular.element(document.querySelector( '#statistici' )).removeClass ("active");
     };
     
-
+   function incarcareScoruri(){
+       alert("eu");
+}
 })
 
 
