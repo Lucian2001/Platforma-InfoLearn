@@ -86,10 +86,10 @@ start();
     timerCorect(1);
 var raspuns,raspuns1;
  eroare=generareNumere12(array,array1);
-    alert(eroare);  
+    
  if ($("#id--5").html() ==""){
     
-do{ alert("das");
+do{ 
 eroare=generareNumere12(array,array1);
 } while($("#id--5").html() =="" );
 }

@@ -774,15 +774,15 @@ var counterSursa=1;
  var href2;
    var href1=$location.absUrl();
        href1=href1.charAt(href1.length-3);
-      $(".expl-box-fi-col").css("height","80%");
-        if (href1=="2")
+    //  $(".expl-box-fi-col").css("height","80%");
+    /*    if (href1=="2")
          $scope.codeSrc="fisiere/lectii/expresiiAritmetice/expresieAritmetica2.html";
           else if(href1=="3"){
              $scope.codeSrc="fisiere/lectii/operatoriRelationali/operatoriRelationali2.html";
           } else if(href1=="4"){
              $scope.codeSrc="fisiere/lectii/expresiiLogice/expresiiLogice2.html";
           } 
-     $timeout( function(){
+     $timeout( function(){ */
          if (href1=="2")
          $scope.codeSrc="fisiere/lectii/expresiiAritmetice/expresieAritmetica1.html";
           else if(href1=="3"){
@@ -790,7 +790,7 @@ var counterSursa=1;
           } else if(href1=="4"){
              $scope.codeSrc="fisiere/lectii/expresiiLogice/expresiiLogice1.html";
           }
-        }, 200);
+      /*  }, 200);
 
         //time
         $scope.time = 0;
@@ -804,8 +804,7 @@ var counterSursa=1;
         }
 
 
-        $timeout(timer, 100);
-
+        $timeout(timer, 100); */
     if(href1=="2"){
     numarSurse=5;
 

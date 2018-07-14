@@ -4,7 +4,12 @@ include($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
 
 //echo $_POST["Id"];
 
-$id=$_SESSION['id'];
+$id1=$_SESSION['id'];
+  $query="SELECT *FROM users WHERE token = '$id1'";
+if ($result1 = mysqli_query($link,$query)){
+    $row3 = mysqli_fetch_array($result1);
+   } 
+$id=$row3[0]; 
 $doi=2;
 
 //$query1="insert into `completed` set  `complete` = '".$doi."'";;
@@ -14,7 +19,7 @@ $doi=2;
 //echo "dv";
 //}
 if($_POST["Id"] != 0){
-$query = "SELECT * FROM completat WHERE id = '". mysqli_real_escape_string($link, $_SESSION['id'])."' LIMIT 1";
+$query = "SELECT * FROM completat WHERE id = '". mysqli_real_escape_string($link,$id)."' LIMIT 1";
             $result = mysqli_query($link, $query);
             if (mysqli_num_rows($result) > 0)  {
 

@@ -19,7 +19,7 @@
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="   Structura alternativă este folosită pentru a face alegerea între două operații/instrucțiuni (sau secvențe de operații/instrucțiuni) după ce evaluezi o condiție. Condiția sau expresia evaluată poate fi adevărată sau falsă. În unele cazuri, ramura altfel poate să lipsească."></div>
+<div class="expl-box-fia" > Structura alternativă este folosită pentru a face alegerea între două operații/instrucțiuni (sau secvențe de operații/instrucțiuni) după ce evaluezi o condiție. Condiția sau expresia evaluată poate fi adevărată sau falsă. În unele cazuri, ramura altfel poate să lipsească.</div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >

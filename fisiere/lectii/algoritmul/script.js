@@ -151,7 +151,7 @@ if ((Math.floor(Id/10))%10==1){
 }
 
             $.ajax({   type:"POST",
-                     url:"fisiere/testHttp.php",
+                     url:"fisiere/saveProgres.php",
                      data:"Id=" + Id ,
                   success:function(result)
                   {
@@ -403,7 +403,7 @@ tanc=tancId;
                     $("#id-"+Id).css("background-color","#d8ffd6");
                   //  alert(Id);
     $.ajax({   type:"POST",
-                     url:"fisiere/testHttp.php",
+                     url:"fisiere/saveProgres.php",
                      data:"Id=" + Id ,
                   success:function(result)
                      {

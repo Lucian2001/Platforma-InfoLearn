@@ -57,7 +57,7 @@
 </div>
 
 </div>
-<div class="expl-box-fi5" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
+<div class="expl-box-fi152" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
 
 <script src="fisiere/lectii/buclaRepetitiva/generareMapa1.5.2.js"></script>
 <script>aplicatia3();</script>

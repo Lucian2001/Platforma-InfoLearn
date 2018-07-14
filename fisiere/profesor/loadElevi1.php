@@ -5,7 +5,12 @@ $data = array();
 $data['nume'] = array();
 $data['parola'] = array();
 $data['numar'] = array();
-$id=$_SESSION['id'];
+$id1=$_SESSION['id'];
+  $query="SELECT *FROM users WHERE token = '$id1'";
+if ($result1 = mysqli_query($link,$query)){
+    $row3 = mysqli_fetch_array($result1);
+   } 
+$id=$row3[0]; 
 $clasa=$_POST['clasa'];
 
 $i=true;$nr=1;

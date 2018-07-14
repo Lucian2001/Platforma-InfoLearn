@@ -17,7 +17,7 @@
    
     </div>      
         <?php 
-         include(fisiere/$_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");if ($_SESSION['id']) { ?>
+         include(fisiere/$_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");if ($idSesiune) { ?>
       
       
             
@@ -116,7 +116,7 @@
     <div class="col-sm">
       <div class="presentation-panel" id="presentation-panel1">
        <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/1.PNG"  >
-        <div class="expl-box-fi-text" ng-fi-text="Interfața este atractivă și ușor de folosit. Butoanele sunt bine plasate și facilitează rezolvarea exercițiilor, sarcinilor de lucru, ele devenind astfel nu doar ușoare, ci și atractive."></div>
+        <div class="expl-box-fi-text1" ng-fi-text="Interfața este atractivă și ușor de folosit. Butoanele sunt bine plasate și facilitează rezolvarea exercițiilor, sarcinilor de lucru, ele devenind astfel nu doar ușoare, ci și atractive."></div>
 </div>
     <div class="presentation-panel"id="presentation-panel1">
         <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/2.PNG"  >
@@ -141,7 +141,7 @@
 </div>
     <div class="presentation-panel" id="presentation-panel3">
         <img class="presentation-image" src="fisiere/assets/images/imaginiPrezentare/6.PNG"  >
-  <div class="expl-box-fi-text" ng-fi-text="Pentru fiecare exercițiu rezolvat elevul va primi un feedback, putându-se astfel evalua nivelul cunoștințelor în acel moment."></div>
+  <div class="expl-box-fi-text6" ng-fi-text="Pentru fiecare exercițiu rezolvat elevul va primi un feedback, putându-se astfel evalua nivelul cunoștințelor în acel moment."></div>
 </div>
     </div>
   </div>

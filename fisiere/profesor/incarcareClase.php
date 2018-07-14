@@ -1,7 +1,12 @@
 <?php
 $_POST = json_decode(file_get_contents('php://input'), true);
 include ($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
-$id=$_SESSION['id'];
+$id1=$_SESSION['id'];
+  $query="SELECT *FROM users WHERE token = '$id1'";
+if ($result1 = mysqli_query($link,$query)){
+    $row3 = mysqli_fetch_array($result1);
+   } 
+$id=$row3[0]; 
 $clasa=$_POST['clasa'];
 $nr=$_POST['nr'];
 echo $nr;

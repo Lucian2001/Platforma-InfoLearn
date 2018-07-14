@@ -314,11 +314,11 @@ succes(); timpOver=0;
  }
 }
 function verificareEroare(eroare){
-      alert(eroare);   var array=new Array();
+       var array=new Array();
     var array1=new Array(); 
  if ($("#id--5").html() ==""){
     
-do{ alert("das");
+do{ 
 eroare=generareNumere12(array,array1);
 } while($("#id--5").html() =="" );
 }

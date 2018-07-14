@@ -1,6 +1,10 @@
 <?php
-
-$id=$_SESSION['id'];
+$id1=$_SESSION['id'];
+  $query="SELECT *FROM users WHERE token = '$id1'";
+if ($result1 = mysqli_query($link,$query)){
+    $row3 = mysqli_fetch_array($result1);
+   } 
+$id=$row3[0]; 
 $query="SELECT *FROM Tancuri WHERE id = $id";
 
 if ($result2 = mysqli_query($link,$query)){

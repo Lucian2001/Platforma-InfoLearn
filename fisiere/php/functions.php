@@ -11,11 +11,17 @@ if (mysqli_connect_error()){
 
 
     if ($_GET['function']== "logout"){
-session_unset();
-    
-    }
 
-  
+        $id=$_SESSION['id'];
+        $query = "UPDATE users SET  token=NULL WHERE token='$id'";
+                    
+                if($result2 = mysqli_query($link, $query)) {
+                       
+                    } else{
+                    
+                    }
+    session_unset();
+    }
 
 ?>
 

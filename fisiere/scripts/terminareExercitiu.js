@@ -62,7 +62,7 @@ if (a[Id%100]==1 || Id=="111"){
 terminareExercitiu("Ai terminat aceasta aplicatie!");
 } else{
   $.ajax({   type:"POST",
-    url:"fisiere/testHttp.php",
+    url:"fisiere/saveProgres.php",
     data:"Id=" + Id ,
   success:function(result)
     {

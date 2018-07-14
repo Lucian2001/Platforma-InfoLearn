@@ -493,14 +493,37 @@ width: 45%;
 .expl-box-fi-text{
     margin-top: 1%;
 margin-left:1%;
-text-align: left;
+text-align: justify;
 
-height: 35%;
-width: 99%;
+height: 33%;
+width: 96%;
 color:black;
   text-indent: 20px;
 
 }
+.expl-box-fi-text1{
+    margin-top: 5%;
+margin-left:1%;
+text-align: justify;
+
+height: 25%;
+width: 96%;
+color:black;
+  text-indent: 20px;
+
+}
+.expl-box-fi-text6{
+    margin-top: 4%;
+margin-left:1%;
+text-align: justify;
+
+height: 20%;
+width: 96%;
+color:black;
+  text-indent: 20px;
+
+}
+
 #titluInfo{
 
     margin-left: 5%;

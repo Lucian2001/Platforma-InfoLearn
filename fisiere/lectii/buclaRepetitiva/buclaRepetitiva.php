@@ -19,7 +19,7 @@
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="   O structura repetitiva se caracterizeaza prin posibilitatea efectuarii repetitive a unei secvenţe de instrucţiuni, cat timp este îndeplinita o anumită condiţie sau pana când se îndeplineşte o anumită condiţie. Repetitia secvenţei de instructiuni se numeşte iteratie  bucla sau ciclu."></div>
+<div class="expl-box-fia">O structura repetitiva se caracterizeaza prin posibilitatea efectuarii repetitive a unei secvenţe de instrucţiuni, cat timp este îndeplinita o anumită condiţie sau pana când se îndeplineşte o anumită condiţie. Repetitia secvenţei de instructiuni se numeşte iteratie  bucla sau ciclu.</div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >

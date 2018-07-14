@@ -25,8 +25,10 @@
     <script src="fisiere/scripts/scor.js"></script>
     <script src="fisiere/scripts/terminareExercitiu.js"></script>
     <script src="fisiere/scripts/functiiGlobale.js"></script>
+
 </head>
 <?php
+
 header("X-XSS-Protection: 1; mode=block");
 header("Strict-Transport-Security: max-age=31536000");
 //header("Content-Security-Policy: policy");
@@ -35,26 +37,47 @@ header("X-Content-Type-Options: nosniff");
 header("Referrer-Policy: no-referrer");
 
 include($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
-$id1=$_SESSION['id'];
-$query="SELECT *FROM users WHERE id = $id1";
+$id1=$_SESSION['id']; 
+
+if ($id1!=""){
+$query="SELECT *FROM users WHERE token = '$id1'";
 if ($result1 = mysqli_query($link,$query)){
     $row1 = mysqli_fetch_array($result1);
-   }  
+   }
+$timestamp = $row1[9];
+$timestamp1 = time();
+
+if ($timestamp1-$timestamp>7200){
+$id=$_SESSION['id'];
+        $query = "UPDATE users SET  token=NULL WHERE token='$id'";
+                    
+                if($result2 = mysqli_query($link, $query)) {
+                       
+                    } else{
+                    
+                    }
+    session_unset();
+}
+    
+}
+
+
+
 if ( $_SESSION['id'] !="" and ($row1[4]==1||$row1[4]==3)) {
          include("fisiere/meniu.php");
 include("pagini/paginaUtilizator.php");
-}
+} 
 else if ( $_SESSION['id'] !="" and $row1[4]==2){
         include("fisiere/meniu.php");
         include("pagini/paginaProfesor.php");
    
-}else if ($_SESSION['id'] == -1){
+} else if ($_SESSION['id'] == -1){
     include("fisiere/meniu.php");
 
         include("pagini/paginaVizitator.php");
    
-}else 
+}else {
 include("pagini/paginaPrincipala.php");
-
+}
 
 ?>

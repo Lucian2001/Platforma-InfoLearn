@@ -7,7 +7,7 @@ if ($_POST["email"]=="" or $_POST["password"]=="" or $_POST["username"]=="" or $
 echo "Completează toate câmpurile.     ";
     $error=$error+1;
 }else
-if ( $_POST["tipul"]=="1" and  $_POST["varsta"]==""){
+if ( $_POST["tipul"]=="0"){
 
     $error=$error+1;
 echo "Completează toate câmpurile.     ";
@@ -68,12 +68,12 @@ if ($error==0 and $_POST["eroare"]==0){
 $query = "INSERT INTO users (`username`, `email`,`password`,`tip`,`clasa`,`varsta`) VALUES ('". mysqli_real_escape_string($link, $_POST['username'])."', '". mysqli_real_escape_string($link, $_POST['email'])."','". mysqli_real_escape_string($link, $_POST['password'])."','". mysqli_real_escape_string($link, $_POST['tipul'])."','". mysqli_real_escape_string($link, $_POST['clasa'])."','". mysqli_real_escape_string($link, $_POST['varsta'])."')";
 
                 if (mysqli_query($link, $query)) {
-                    $_SESSION['id'] = mysqli_insert_id($link);
-                     $query = "UPDATE users SET password = '". md5(md5($_SESSION['id']).$_POST['password']) ."' WHERE id = ".$_SESSION['id']." LIMIT 1";
+                   $id= mysqli_insert_id($link);
+                     $query = "UPDATE users SET password = '". md5(md5($id).$_POST['password']) ."' WHERE id = ".$id." LIMIT 1";
                       mysqli_query($link, $query);
                     echo "Contul  a fost creat cu succes. ";
                     echo "   Puteți să vă logați acum! ";
-                    $_SESSION['id'] = mysqli_insert_id($link);
+                    $id = mysqli_insert_id($link);
                 } else {
 
                    echo "Nu s-a putut creea contul.Incearcă mai târziu!";

@@ -15,7 +15,7 @@
     <div id="informatie-aplicatie" >
 
 
-<div class="expl-box-fi" ng-fi-text="Operatorii relaționali utilizați în scrierea algoritmilor sunt aceiași ca la matematică, având doar mici modificări ale modului de scriere datorită faptului că limbajul de programare nu conține unele dintre semnele matematice."></div>
+<div class="expl-box-fia">Operatorii relaționali utilizați în scrierea algoritmilor sunt aceiași ca la matematică, având doar mici modificări ale modului de scriere datorită faptului că limbajul de programare nu conține unele dintre semnele matematice.</div>
 
    </div>  <div ng-controller=blocuri>
     <div id="exe-aplicatie" >

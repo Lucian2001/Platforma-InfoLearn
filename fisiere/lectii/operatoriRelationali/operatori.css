@@ -49,11 +49,9 @@ margin:0;
    
 }
 
-.expl-box-fi-col{
-   
-    position: relative;
-height: 80%;
-width: 90%;
-  
-color:black;
+.coloana{
+    
+    margin-top: -0.5vw;;
+    text-align: center;
+   font-size:2.5vw;
 }

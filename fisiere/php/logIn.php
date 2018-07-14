@@ -21,10 +21,31 @@ $query = "SELECT * FROM users WHERE email = '". mysqli_real_escape_string($link,
     
                 if ($row['password'] == md5(md5($row['id']).$_POST['password'])) {
                    
-                    echo "1";
+               echo "1";
                     $incercari=1;
-                    $_SESSION['id'] = $row['id'];
+                     
+                   $current_timestamp = time();
+                   
+                $salt=openssl_random_pseudo_bytes(20);
+                  $token = openssl_random_pseudo_bytes(16);
+                $token=$token.base64_encode($email);                    
+              $token1 = bin2hex($token);
+              $token2=bin2hex($salt.base64_encode($row[2]));    
+          
+                    $token=$token1.$token2;
+      
+                    $query = "UPDATE users SET time=$current_timestamp, token='$token' WHERE email = '". mysqli_real_escape_string($link, $_POST['email'])."'";
+                    
+                if($result2 = mysqli_query($link, $query)) {
+                       
+                    } else{
+                    
+                    }
+                    
+                    
+                    $_SESSION['id'] =$token;
                     $query = "UPDATE users SET incercari=$incercari WHERE email = '". mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+                
                 } else {
                     
                     
@@ -41,6 +62,8 @@ $query = "SELECT * FROM users WHERE email = '". mysqli_real_escape_string($link,
                         echo "1";
                     } else{
                         echo "Datele sunt incorecte!";
+            
+
                     }
                     $query = "UPDATE users SET incercari=$incercari WHERE email = '". mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
                     if($result1 = mysqli_query($link, $query)) {

@@ -20,6 +20,20 @@
             color:black;
              z-index: 1;
 		}
+.expl-box-fia {
+			margin-left: 10px;
+            border-style: none;
+			height: 80%;
+            width:99%;
+             text-align: justify;
+             text-indent: 30px;
+            color:black;
+             z-index: 1;
+            font-size: 1.3vw;
+    
+		}
+
+
     .expl-box-fi1 {
 
             border-style: none;
