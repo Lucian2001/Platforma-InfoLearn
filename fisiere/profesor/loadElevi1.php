@@ -14,6 +14,9 @@ $id=$row3[0];
 $clasa=$_POST['clasa'];
 
 $i=true;$nr=1;
+if($nr<10){
+   $idElev=$id.$clasa."0".$nr; 
+} else
 $idElev=$id.$clasa.$nr;
 
 while ($i==true){
@@ -26,6 +29,9 @@ $data['nume'][$nr]=$row[1];
 $data['parola'][$nr]=$row[2];
 
 $nr=$nr+1;
+if($nr<10){
+   $idElev=$id.$clasa."0".$nr; 
+} else
 $idElev=$id.$clasa.$nr;
 } else{
     

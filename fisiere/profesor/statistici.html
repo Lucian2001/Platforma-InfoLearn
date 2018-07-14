@@ -1,0 +1,80 @@
+<style>
+
+</style>
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Selecteza clasa
+  </button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+<div ng-repeat="x in clase">
+    <a class="dropdown-item" ng-click="selectareClasa(x.id)">{{x.clasa}}</a>
+
+</div>
+
+          
+  </div>
+
+<div class="btn-group">
+   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Statistici
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+<div class="dropdown" >
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" >HTML</a></li>
+      <li><a class="dropdown-item" >CSS</a></li>
+      <li class="dropdown-submenu">
+        <a  class="dropdown-item test" >New dropdown <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item"  >2nd level dropdown</a></li>
+          <li><a class="dropdown-item" >2nd level dropdown</a></li>
+          <li class="dropdown-submenu">
+            <a class="dropdown-item test">Another dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item">3rd level dropdown</a></li>
+              <li><a class="dropdown-item">3rd level dropdown</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+<div id="tabelEleviStatistici" >
+        <table class="table">
+  <thead>
+    <tr>
+      
+      <th scope="col">Nume elev</th>
+      
+    </tr>
+  </thead>
+  <tbody ng-repeat="y in elevi">
+    <tr>
+    
+     <td> <button type="button" class="btn btn-light">{{y.nume}}</button></td>
+      
+      
+    </tr>
+   
+    
+  </tbody>
+</table>
+    </div>
+
+          
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>

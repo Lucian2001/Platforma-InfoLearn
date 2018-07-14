@@ -1,20 +1,18 @@
 <link rel="stylesheet" href="fisiere/profesor/profesor.css">
+<body ng-app="myApp"><div ng-controller="paginaProfesor">
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" ng-click="">Inregistreaza Elevi</a>
+    <a id="inregistrare"class="nav-link active" ng-click="inregistrare()">Inregistreaza Elevi</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" ng-click="">Scoruri Elevi</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" ng-click="">Statistici</a>
+    <a id="statistici" class="nav-link" ng-click="statistici()">Statistici</a>
   </li>
   <li class="nav-item">
     <a class="nav-link " ng-click="">Evaluare</a>
   </li>
 </ul>
-<body ng-app="myApp">
-<div ng-controller="paginaProfesor">
+
+
   <div ng-include src="src1">
   </div>
 </div>

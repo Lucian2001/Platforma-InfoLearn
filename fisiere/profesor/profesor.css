@@ -15,3 +15,17 @@ float:right;
     margin-top: -0.5%;
     margin-right: 50%;
 }
+.nav-link{
+cursor: pointer;
+}
+#claseStatistici{
+margin-top: 2%;
+margin-left: 4%;
+}
+#tabelEleviStatistici{
+    float:right;
+    overflow-y: scroll; 
+    height:76%;
+    margin-top: 5%;
+   width:15%;
+}

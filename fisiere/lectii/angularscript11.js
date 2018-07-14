@@ -2256,9 +2256,22 @@ loadClase();
 .then((value) => {
   if (verificareInput(value)==true){
               numeElev=value;
-       
-idElev=clasa1234*10+numarElev;
-       //alert(idElev);    
+       if (numarElev>9){
+idElev=clasa1234+numarElev.toString();
+       } else{
+idElev=clasa1234*10;
+      idElev=idElev+numarElev.toString();
+      }
+      numeElev=numeElev.toString();
+      for(i=0;i<numeElev.length;i++){
+          
+if(numeElev[i]==" "){
+
+    numeElev= numeElev.replace(" ", "_");
+}
+          
+      }
+   
     $http({
  
  method: 'POST',
@@ -2324,6 +2337,21 @@ var data = jQuery.parseJSON(response.data+"}}");
      }
     return 1;
     }
+    $scope.statistici = function(){
+        
+       $scope.src1="fisiere/profesor/statistici.html";
+    angular.element(document.querySelector( '#statistici' )).addClass ("active");
+          angular.element(document.querySelector( '#inregistrare' )).removeClass ("active");
+        
+    };
+    $scope.inregistrare = function(){
+        
+       $scope.src1="fisiere/profesor/inregistrareElevi.html";
+    angular.element(document.querySelector( '#inregistrare' )).addClass ("active");
+        angular.element(document.querySelector( '#statistici' )).removeClass ("active");
+    };
+    
+
 })
 
 
