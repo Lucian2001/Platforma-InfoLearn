@@ -125,7 +125,7 @@ function aplicatia3(){
     var buttonActive=1;
 var array=new Array();
 var aray=1;
-  generareScor(8,40);
+  generareScor(7,40);
 start();
 timerCorect(1);
     $(document).ready(function(){

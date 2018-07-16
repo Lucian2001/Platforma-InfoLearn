@@ -2160,10 +2160,11 @@ function rezultatGresit123(semn,x,y){
    }
 }
 angular.module('myApp').controller('paginaProfesor', function ($scope,$location,$route,$window,$location,$routeParams,$http,$timeout){
-loadClase();
+loadClase();$scope.statistici="Stasadtistici";
     var titluri= new Array;
 var clase=[];
     var elevi=[];
+    var mesaje=[];
     var nr1=1;var clasa1234;var numarElev=1;var idElev;
     nr1=1;
     $scope.titluClasa="";
@@ -2287,7 +2288,7 @@ loadElevi(clasa1234);
   }
 });
 }
-    
+    var data
   function loadElevi(x){
    
 
@@ -2301,7 +2302,7 @@ loadElevi(clasa1234);
  }).then(function successCallback(response) {
 
        
-var data = jQuery.parseJSON(response.data+"}}");
+ data = jQuery.parseJSON(response.data+"}}");
 
  numarElev=data.numar[1];
 
@@ -2316,7 +2317,7 @@ var data = jQuery.parseJSON(response.data+"}}");
     
     
     $scope.selectareClasa=function(x){
-         $scope.elevi=[{nume:"",parola:"",numar:""}];
+         $scope.elevi=[{nume:"",parola:"",numar:"",mesaj:""}];
         clasa1234=x;
         loadElevi(x);
         $scope.titluClasa=titluri[x];
@@ -2336,9 +2337,102 @@ var data = jQuery.parseJSON(response.data+"}}");
          
      }
     return 1;
+        
     }
+     var dificultate=new Array();
+dificultate[1]=8;
+dificultate[2]=20;
+dificultate[3]=52;
+dificultate[4]=52;
+dificultate[5]=30;
+dificultate[6]=360;
+dificultate[7]=40;
+dificultate[8]=35;
+dificultate[9]=25;
+dificultate[10]=50;
+dificultate[11]=35;
+dificultate[12]=53;
+dificultate[13]=35;
+dificultate[14]=20;
+dificultate[15]=58;  
+dificultate[16]=55;
+dificultate[17]=66;
+dificultate[18]=66;
+
+var matrice= new Array(31)
+
+for (i=1; i <=30; i++)
+matrice[i]=new Array(21)
+var optiune1,optiune2;    
+$scope.media=function(){
+    $scope.alegeri="Media";
+optiune1=1;
+
+}
+  var elemente=new Array();
+$scope.toateExercitiile=function(){
+ var nr1=0,nr2=0,nr3=0,nr4=0,nr5=0,y;
+     if(optiune1==1){
+         
+    for (i=0; i <=numarElev-2; i++){
+          $scope.elevi[i]={username:data.username[i+1],nume:"",parola:"",numar:"",mesaj:matrice[i+1][19]};
+          }
+     $scope.alegeri=$scope.alegeri+" clasei la toate exercițiile";
+     
+         for(i=1;i<=numarElev-1;i++){
+          for(j=1;j<=18;j++){
+              if(matrice[i][j]!=null && matrice[i][j]!=""){
+            y=generareCalificativ1(matrice[i][j],j,dificultate[j]);
+            if (y=="Experimentat"){
+                nr1++;
+            } else if(y=="Bun"){
+                nr2++;
+            }else if(y=="Mediu"){
+                nr3++;
+            }else if(y=="Mai lucreaza"){
+                nr4++;
+            }else if(y=="Slab"){
+                nr5++;
+            }
+              }
+            }
+            elemente[i]=media(nr1,nr2,nr3,nr4,nr5);
+             nr1=0;
+             nr2=0;
+             nr3=0;
+             nr4=0;
+             nr5=0;
+         }
+         
+         for(i=1;i<=4;i++){
+alert(elemente[i]);
+         }
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+ } else{
+       swal({
+  title: "Eroare!",
+  text: "Trebuie sa alegi un tip de statistică!",
+  icon: "error",
+});
+ }
+}
+
     $scope.statistici = function(){
-        incarcareScoruri();
+       incarcareScoruri(1);
        $scope.src1="fisiere/profesor/statistici.html";
     angular.element(document.querySelector( '#statistici' )).addClass ("active");
           angular.element(document.querySelector( '#inregistrare' )).removeClass ("active");
@@ -2350,11 +2444,153 @@ var data = jQuery.parseJSON(response.data+"}}");
     angular.element(document.querySelector( '#inregistrare' )).addClass ("active");
         angular.element(document.querySelector( '#statistici' )).removeClass ("active");
     };
+   
+  function incarcareScoruri(clasa){
+      
+      
+      $http({
+ 
+ method: 'POST',
+ url: '/fisiere/profesor/loadStatistici.php',
+ data:{clasa:clasa},
+ //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+ }).then(function successCallback(response) {
+
+       
+var data1 =JSON.parse(JSON.stringify(response.data));
+var numarExercitiiRezolvate=0;
+numarExercitiiRezolvate=0;
+for(var j=2;j<=numarElev;j++){
+for(var i=1;i<=18;i++)
+    { matrice[j-1][i]=data1.scoruri[j][i];
+   if(data1.scoruri[j][i]!=null && data1.scoruri[j][i]!="") {
+     numarExercitiiRezolvate++;
+   
+   }
+    } 
+   
+     matrice[j-1][19]=numarExercitiiRezolvate;
+        numarExercitiiRezolvate=0;
+    }
+        for (i=1; i <=4; i++){
+            for (j=1; j <=19; j++){
+               
+            }
+        
+        }
+          
     
-   function incarcareScoruri(){
-       alert("eu");
-}
+      
+      
+        
+   
 })
+}
+
+
+
+
+function generareCalificativ1(x,nr,timp){
+var calificativ;var scor;var a;var j;var valori2= new Array()
+var result;
+result=x;
+
+
+                     for(var i=1;i<=4;i++){
+                         a=result.slice(0,4);
+                        //alert(a);
+                         for(var j=0;j<a.length;j++){
+                             if(a[j]=="a"){
+                                 a=a.slice(j+1,a.length);
+                                 j=-1;
+                             }
+                         }
+                     valori2[i]=a;
+                         result=result.slice(4,result.length);
+                     }
+                 for(var i=1;i<=4;i++){
+                   valori2[i]=parseInt(valori2[i]);
+                 } 
+          
+               
+                    if (!isNaN(valori2[1])){
+                      
+                     //scor=((valori2[4]*100-valori2[1])/valori2[4]-valori2[2])*100;
+                    x=valori2[1]/timp;//alert(x);
+                    y=valori2[2]/valori2[3];
+                    z=valori2[4];                     // alert(y);
+                     z2=valori2[1]/6;
+                     
+                     calificativ= generareCalificativ(x,y,z,timp*2);
+                         x=x*(10-valori2[3]);
+                         y=y*(5-valori2[3]);
+                         scor=x+y*y;
+                         
+                     scor=(20-scor)*100;
+            if (scor<0){ 
+scor=Math.abs(scor)+scor/2;
+            }
+                     if (scor!=0){
+                    //$("#score").html(Math.round(scor)+"  ("+calificativ+")");
+                      ///   var scor1; 
+                        // scor1="&nbsp Aplicatia "+nr+" <br/>"+Math.round(scor)+"  ("+calificativ+")";
+                        
+                       //  $("#i-"+nr).html(scor1);
+                   return calificativ;
+                     } else{
+                     //      $("#score").html(0);
+                         return 0;
+                     }
+                    } else{
+ //$("#score").html(0);
+                    }
+                   
+                 }
+
+
+function generareCalificativ(x,y,z,z1){
+    if (z==0){
+    if(x<1 && y<1){
+return "Experimentat";
+    } else if (x<2 && y<2){
+        return "Bun";
+}
+    else if (x<3 && y<3){
+        return "Mediu";
+}
+    else if (x<3 && y<3){
+        return "Mai lucreza";
+}
+    else {
+        return "Slab";
+}
+    } else{
+          if(x<1 && y<1 && z<z1){
+return "Experimentat";
+    } else if (x<2 && y<2 &&z<z1+z1/2){
+        return "Bun";
+}
+    else if (x<3 && y<3){
+        return "Mediu";
+}
+    else if (x<3 && y<3){
+        return "Mai lucreza";
+}
+    else {
+        return "Slab";
+} 
+    }
+}
+
+    function media(a,b,c,d,e){
+        var x;
+        x=5*a+4*b+3*c+2*d+1*e;
+        return x/(a+b+c+d+e);
+    }
+
+})
+
 
 
 

@@ -139,7 +139,7 @@ $("#butonError").click(function(){
      }}
 }
 function aplicatia3(){
-      generareScor(13,53);
+      generareScor(12,53);
 start();
 timerCorect(1);
  var dificultate=10;   var raspuns;var buttonActive=1;

@@ -32,13 +32,16 @@ var id; var ok=true;href="#/1/"+id1+"#1";
       ids=  ids.substring(0, ids.length-3);
 
     }
-
- for ( var i=id1*10+1;i<id1*10+11 && ok==true;i++){
+var i;
+ for (  i=id1*10+1;i<id1*10+11 && ok==true;i++){
 if (vectorIds[i]==0){
    ok=false;
     href="#/"+nr.toString()+"/"+Math.floor(i/10).toString()+"#"+(i%10).toString();
 }
  }
+ var caseta=(nr.toString()+Math.floor((i-1)/10).toString()+((i-1)%10).toString()).toString();
+    
+   $("#id-"+caseta).css("background-color","#dsf5d6"); 
     href="https://infolearn.ml/index.php"+href;
    
     return(href); 

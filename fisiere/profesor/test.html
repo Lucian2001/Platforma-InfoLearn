@@ -1,0 +1,36 @@
+<script data-require="chart.js@2.6.0" data-semver="2.6.0" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<canvas id="mycanvas" width="400" height="400"></canvas>
+<script>
+$(document).ready(function(){
+    
+    var ctx =$("#mycanvas");
+  data = {
+    datasets: [{
+        data: [10, 20, 30, 50 ],
+        backgroundColor:["red","green"]
+      
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        'Red',
+        'Yellow',
+        'Blue',
+        'Green'
+    ]
+};
+
+	var myDoughnutChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options:{
+responsive:false
+    }
+   
+});
+     
+    
+    
+});
+</script>

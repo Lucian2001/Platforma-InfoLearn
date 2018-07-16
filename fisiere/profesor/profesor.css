@@ -18,7 +18,7 @@ float:right;
 .nav-link{
 cursor: pointer;
 }
-#claseStatistici{
+#dropdownMenuButton2{
 margin-top: 2%;
 margin-left: 4%;
 }
@@ -27,5 +27,22 @@ margin-left: 4%;
     overflow-y: scroll; 
     height:76%;
     margin-top: 5%;
-   width:15%;
+   width:20%;
+}
+#butonAplicatii{
+    float:left;
+    margin-left: 20%;
+    margin-top: -2.3%;
+}
+#butonStatistici{
+margin-left: 2%;
+    margin-top: 32%;
+
+}
+#titlu{
+float:left;
+margin-top: 1%;    
+}
+#mycanvas{
+margin-top:2%;
 }

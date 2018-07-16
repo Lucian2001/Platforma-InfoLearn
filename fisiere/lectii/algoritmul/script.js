@@ -151,7 +151,7 @@ if ((Math.floor(Id/10))%10==1){
 }
 
             $.ajax({   type:"POST",
-                     url:"fisiere/saveProgres.php",
+                     url:"fisiere/php/saveProgres.php",
                      data:"Id=" + Id ,
                   success:function(result)
                   {
@@ -378,6 +378,7 @@ raspunsGresit();
 
 
 }else if (window.location.href=="https://infolearn.ml/index.php#/1/1#1"){
+  alert(y);
     tancId=y;
 
      if (tancId%1000>100){
@@ -387,6 +388,7 @@ raspunsGresit();
                      data:"Id=" + tancId ,
                   success:function(result)
                      {
+                         alert("eu");
 tanc=tancId;
                        
                       }
@@ -403,7 +405,7 @@ tanc=tancId;
                     $("#id-"+Id).css("background-color","#d8ffd6");
                   //  alert(Id);
     $.ajax({   type:"POST",
-                     url:"fisiere/saveProgres.php",
+                     url:"fisiere/php/saveProgres.php",
                      data:"Id=" + Id ,
                   success:function(result)
                      {

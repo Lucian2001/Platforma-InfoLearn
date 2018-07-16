@@ -62,7 +62,8 @@ $query = "SELECT * FROM users WHERE email = '". mysqli_real_escape_string($link,
                 echo "Acest mail este deja folosit. ";
             $error=$error+1;
             }
-
+ $_POST['varsta']="0";
+ $_POST['clasa']="0";
 if ($error==0 and $_POST["eroare"]==0){
 
 $query = "INSERT INTO users (`username`, `email`,`password`,`tip`,`clasa`,`varsta`) VALUES ('". mysqli_real_escape_string($link, $_POST['username'])."', '". mysqli_real_escape_string($link, $_POST['email'])."','". mysqli_real_escape_string($link, $_POST['password'])."','". mysqli_real_escape_string($link, $_POST['tipul'])."','". mysqli_real_escape_string($link, $_POST['clasa'])."','". mysqli_real_escape_string($link, $_POST['varsta'])."')";
@@ -76,7 +77,7 @@ $query = "INSERT INTO users (`username`, `email`,`password`,`tip`,`clasa`,`varst
                     $id = mysqli_insert_id($link);
                 } else {
 
-                   echo "Nu s-a putut creea contul.Incearcă mai târziu!";
+                   echo "Nu s-a putut creea contul!";
 
                 }
 

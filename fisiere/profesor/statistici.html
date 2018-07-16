@@ -14,37 +14,83 @@
   </div>
 
 <div class="btn-group">
-   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <button id="butonStatistici"type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Statistici
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    <a class="dropdown-item" ng-click="media()">Media</a>
+    <a class="dropdown-item" href="#">Număr răspunsuri greșite</a>
+    <a class="dropdown-item" href="#">Timpul în care a fost făcut exercițiul</a>
+       <a class="dropdown-item" href="#">Calificative</a>
   </div>
 </div>
 <div class="dropdown" >
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+    <button id="butonAplicatii" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Exerciții
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" >HTML</a></li>
-      <li><a class="dropdown-item" >CSS</a></li>
-      <li class="dropdown-submenu">
-        <a  class="dropdown-item test" >New dropdown <span class="caret"></span></a>
+      <li><a class="dropdown-item" ng-click="toateExercitiile()" >Toate exercițiile</a></li>
+     <li class="dropdown-submenu">
+        <a  class="dropdown-item test" >Algoritmul <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item"  >2nd level dropdown</a></li>
-          <li><a class="dropdown-item" >2nd level dropdown</a></li>
-          <li class="dropdown-submenu">
-            <a class="dropdown-item test">Another dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item">3rd level dropdown</a></li>
-              <li><a class="dropdown-item">3rd level dropdown</a></li>
-            </ul>
-          </li>
+            <li><a class="dropdown-item"  >Algoritmul</a></li>
+          <li><a class="dropdown-item"  >Aplicația 1</a></li>
+          <li><a class="dropdown-item" >Aplicația 2</a></li>
+              <li><a class="dropdown-item"  >Aplicația 3</a></li>
+          <li><a class="dropdown-item" >Aplicația 4</a></li>
+          
         </ul>
-      </li>
+         
+         <a  class="dropdown-item test" >Expresii Aritmetice <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        <li><a class="dropdown-item"  >Expresii Aritmetice</a></li>
+          <li><a class="dropdown-item"  >Aplicația 1</a></li>
+          <li><a class="dropdown-item" >Aplicația 2</a></li>
+              <li><a class="dropdown-item"  >Aplicația 3</a></li>
+         
+          
+        </ul>
+         <a  class="dropdown-item test" >Operatori Relaționali <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item"  >Operatori Relaționali</a></li>
+          <li><a class="dropdown-item"  >Aplicația 1</a></li>
+          <li><a class="dropdown-item" >Aplicația 2</a></li>
+            
+          
+        </ul>
+           <a  class="dropdown-item test" >Structura Alternativă <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item"  >Structura Alternativă</a></li>
+          <li><a class="dropdown-item"  >Aplicația 1</a></li>
+          <li><a class="dropdown-item" >Aplicația 2</a></li>
+              <li><a class="dropdown-item"  >Aplicația 3</a></li>
+          <li><a class="dropdown-item" >Aplicația 4</a></li>
+          
+        </ul>
+           <a  class="dropdown-item test" >Structura Repetitivă <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+             <li><a class="dropdown-item"  >Structura Repetitivă</a></li>
+          <li><a class="dropdown-item"  >Aplicația 1</a></li>
+          <li><a class="dropdown-item" >Aplicația 2</a></li>
+              <li><a class="dropdown-item"  >Aplicația 3</a></li>
+          <li><a class="dropdown-item" >Aplicația 4</a></li>
+          
+        </ul>
+         <li><a class="dropdown-item" >Expresii Logice</a></li>
+        
+         
+         
+         
+      
     </ul>
   </div>
+<div >
+    
+
+    
+       
+<h1 id="titlu">{{alegeri}}</h1>
+
+
 <div id="tabelEleviStatistici" >
         <table class="table">
   <thead>
@@ -57,7 +103,9 @@
   <tbody ng-repeat="y in elevi">
     <tr>
     
-     <td> <button type="button" class="btn btn-light">{{y.username}}</button></td>
+     <td> {{y.username}} </td>
+         <td> {{y.mesaj}} exercitii rezolvate </td>
+        
       
       
     </tr>
@@ -67,14 +115,57 @@
 </table>
     </div>
 
-          
+    <canvas id="mycanvas" height="500px" width="500px"></canvas>
+
+       
 
 <script>
 $(document).ready(function(){
-  $('.dropdown-submenu a.test').on("click", function(e){
+   
+    var ctx =$("#mycanvas");
+  data = {
+    datasets: [{
+        data: [1, 0, 1, 2 ],
+        backgroundColor:["red","green","blue","yellow"]
+      
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        'Red',
+        'Yellow',
+        'Blue',
+        'Green'
+    ]
+};
+
+	var myDoughnutChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options:{
+responsive:false
+    }
+   
+});
+      myDoughnutChart.data.labels[4]="ADsadas";
+   myDoughnutChart.data.datasets[0].data[4]=6; 
+    myDoughnutChart.data.datasets[0].backgroundColor[4]="pink"; 
+     myDoughnutChart.update();
+    
+    
+    
+    
+    
+    
+    $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();
     e.stopPropagation();
     e.preventDefault();
   });
+    
 });
+    
+   
+
+    
 </script>
