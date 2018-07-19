@@ -2365,12 +2365,125 @@ var matrice= new Array(31)
 for (i=1; i <=30; i++)
 matrice[i]=new Array(21)
 var optiune1,optiune2;    
-  $scope.optiuni=[{optiune:"",functie1:"",functie2:""}];
+  $scope.optiuni=[{optiune:"",functie1:"",functie2:"",functie3:""}];
 $scope.media=function(){
     $scope.alegeri="Media";
-    $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18"};
+    $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"1"};
+    $scope.optiuni[1]={optiune:"Algoritmul",functie1:"1",functie2:"4",functie3:"1"};
+    $scope.optiuni[2]={optiune:"Aplicația 1",functie1:"1",functie2:"0",functie3:"1"};
+    $scope.optiuni[3]={optiune:"Aplicația 2",functie1:"2",functie2:"0",functie3:"1"};
+    $scope.optiuni[4]={optiune:"Aplicația 3",functie1:"3",functie2:"0",functie3:"1"};
+    $scope.optiuni[5]={optiune:"Aplicația 4",functie1:"4",functie2:"0",functie3:"1"};
+    $scope.optiuni[6]={optiune:"Expresii aritmetice",functie1:"5",functie2:"7",functie3:"1"};
+    $scope.optiuni[7]={optiune:"Aplicația 1",functie1:"5",functie2:"0",functie3:"1"};
+    $scope.optiuni[8]={optiune:"Aplicația 2",functie1:"6",functie2:"0",functie3:"1"};
+    $scope.optiuni[9]={optiune:"Aplicația 3",functie1:"7",functie2:"0",functie3:"1"};
+    $scope.optiuni[10]={optiune:"Operatori relaționali",functie1:"8",functie2:"9",functie3:"1"};
+    $scope.optiuni[11]={optiune:"Aplicația 1",functie1:"8",functie2:"0",functie3:"1"};
+    $scope.optiuni[12]={optiune:"Aplicația 2",functie1:"9",functie2:"0",functie3:"1"};
+    $scope.optiuni[13]={optiune:"Expresii logice",functie1:"10",functie2:"0",functie3:"1"};
+    $scope.optiuni[14]={optiune:"Structura alternativă",functie1:"11",functie2:"14",functie3:"1"};
+    $scope.optiuni[15]={optiune:"Aplicația 1",functie1:"11",functie2:"0",functie3:"1"};
+    $scope.optiuni[16]={optiune:"Aplicația 2",functie1:"12",functie2:"0",functie3:"1"};
+    $scope.optiuni[17]={optiune:"Aplicația 3",functie1:"13",functie2:"0",functie3:"1"};
+    $scope.optiuni[18]={optiune:"Aplicația 4",functie1:"14",functie2:"0",functie3:"1"};
+    $scope.optiuni[19]={optiune:"Bucla repetitivă",functie1:"15",functie2:"18",functie3:"1"};
+    $scope.optiuni[20]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"1"};
+    $scope.optiuni[21]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"1"};
+    $scope.optiuni[22]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"1"};
+    $scope.optiuni[23]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"1"};
+    
     
 }
+$scope.rGresite=function(){
+    $scope.alegeri="Răspunsuri greșite";
+    $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"2"};
+    $scope.optiuni[1]={optiune:"Algoritmul",functie1:"1",functie2:"4",functie3:"2"};
+    $scope.optiuni[2]={optiune:"Aplicația 1",functie1:"1",functie2:"0",functie3:"2"};
+    $scope.optiuni[3]={optiune:"Aplicația 2",functie1:"2",functie2:"0",functie3:"2"};
+    $scope.optiuni[4]={optiune:"Aplicația 3",functie1:"3",functie2:"0",functie3:"2"};
+    $scope.optiuni[5]={optiune:"Aplicația 4",functie1:"4",functie2:"0",functie3:"2"};
+    $scope.optiuni[6]={optiune:"Expresii aritmetice",functie1:"5",functie2:"7",functie3:"2"};
+    $scope.optiuni[7]={optiune:"Aplicația 1",functie1:"5",functie2:"0",functie3:"2"};
+    $scope.optiuni[8]={optiune:"Aplicația 2",functie1:"6",functie2:"0",functie3:"2"};
+    $scope.optiuni[9]={optiune:"Aplicația 3",functie1:"7",functie2:"0",functie3:"2"};
+    $scope.optiuni[10]={optiune:"Operatori relaționali",functie1:"8",functie2:"9",functie3:"2"};
+    $scope.optiuni[11]={optiune:"Aplicația 1",functie1:"8",functie2:"0",functie3:"2"};
+    $scope.optiuni[12]={optiune:"Aplicația 2",functie1:"9",functie2:"0",functie3:"2"};
+    $scope.optiuni[13]={optiune:"Expresii logice",functie1:"10",functie2:"0",functie3:"2"};
+    $scope.optiuni[14]={optiune:"Structura alternativă",functie1:"11",functie2:"14",functie3:"2"};
+    $scope.optiuni[15]={optiune:"Aplicația 1",functie1:"11",functie2:"0",functie3:"2"};
+    $scope.optiuni[16]={optiune:"Aplicația 2",functie1:"12",functie2:"0",functie3:"2"};
+    $scope.optiuni[17]={optiune:"Aplicația 3",functie1:"13",functie2:"0",functie3:"2"};
+    $scope.optiuni[18]={optiune:"Aplicația 4",functie1:"14",functie2:"0",functie3:"2"};
+    $scope.optiuni[19]={optiune:"Bucla repetitivă",functie1:"15",functie2:"18",functie3:"2"};
+    $scope.optiuni[20]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"2"};
+    $scope.optiuni[21]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"2"};
+    $scope.optiuni[22]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"2"};
+    $scope.optiuni[23]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"2"};
+    
+    
+}
+$scope.calificative=function(){
+    $scope.alegeri="Calificative";
+    $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"3"};
+    $scope.optiuni[1]={optiune:"Algoritmul",functie1:"0",functie2:"0",functie3:"0"};
+    $scope.optiuni[2]={optiune:"Aplicația 1",functie1:"1",functie2:"0",functie3:"1"};
+    $scope.optiuni[3]={optiune:"Aplicația 2",functie1:"2",functie2:"0",functie3:"1"};
+    $scope.optiuni[4]={optiune:"Aplicația 3",functie1:"3",functie2:"0",functie3:"1"};
+    $scope.optiuni[5]={optiune:"Aplicația 4",functie1:"4",functie2:"0",functie3:"1"};
+    $scope.optiuni[6]={optiune:"Expresii aritmetice",functie1:"0",functie2:"0",functie3:"0"};
+    $scope.optiuni[7]={optiune:"Aplicația 1",functie1:"5",functie2:"0",functie3:"1"};
+    $scope.optiuni[8]={optiune:"Aplicația 2",functie1:"6",functie2:"0",functie3:"1"};
+    $scope.optiuni[9]={optiune:"Aplicația 3",functie1:"7",functie2:"0",functie3:"1"};
+    $scope.optiuni[10]={optiune:"Operatori relaționali",functie1:"0",functie2:"0",functie3:"0"};
+    $scope.optiuni[11]={optiune:"Aplicația 1",functie1:"8",functie2:"0",functie3:"1"};
+    $scope.optiuni[12]={optiune:"Aplicația 2",functie1:"9",functie2:"0",functie3:"1"};
+    $scope.optiuni[13]={optiune:"Expresii logice",functie1:"10",functie2:"0",functie3:"1"};
+    $scope.optiuni[14]={optiune:"Structura alternativă",functie1:"0",functie2:"0",functie3:"0"};
+    $scope.optiuni[15]={optiune:"Aplicația 1",functie1:"11",functie2:"0",functie3:"1"};
+    $scope.optiuni[16]={optiune:"Aplicația 2",functie1:"12",functie2:"0",functie3:"1"};
+    $scope.optiuni[17]={optiune:"Aplicația 3",functie1:"13",functie2:"0",functie3:"1"};
+    $scope.optiuni[18]={optiune:"Aplicația 4",functie1:"14",functie2:"0",functie3:"1"};
+    $scope.optiuni[19]={optiune:"Bucla repetitivă",functie1:"0",functie2:"0",functie3:"0"};
+    $scope.optiuni[20]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"1"};
+    $scope.optiuni[21]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"1"};
+    $scope.optiuni[22]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"1"};
+    $scope.optiuni[23]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"1"};
+    
+    
+}
+
+$scope.timp=function(){
+    $scope.alegeri="Timp";
+    $scope.optiuni[0]={optiune:"Algoritmul",functie1:"1",functie2:"4",functie3:"4"};
+    $scope.optiuni[1]={optiune:"Aplicația 1",functie1:"1",functie2:"0",functie3:"4"};
+    $scope.optiuni[2]={optiune:"Aplicația 2",functie1:"2",functie2:"0",functie3:"4"};
+    $scope.optiuni[3]={optiune:"Aplicația 3",functie1:"3",functie2:"0",functie3:"4"};
+    $scope.optiuni[4]={optiune:"Aplicația 4",functie1:"4",functie2:"0",functie3:"4"};
+    $scope.optiuni[5]={optiune:"Expresii aritmetice",functie1:"4",functie2:"7",functie3:"4"};
+    $scope.optiuni[6]={optiune:"Aplicația 1",functie1:"5",functie2:"0",functie3:"4"};
+    $scope.optiuni[7]={optiune:"Aplicația 2",functie1:"6",functie2:"0",functie3:"4"};
+    $scope.optiuni[8]={optiune:"Aplicația 3",functie1:"7",functie2:"0",functie3:"4"};
+    $scope.optiuni[9]={optiune:"Operatori relaționali",functie1:"7",functie2:"9",functie3:"4"};
+    $scope.optiuni[10]={optiune:"Aplicația 1",functie1:"8",functie2:"0",functie3:"4"};
+    $scope.optiuni[11]={optiune:"Aplicația 2",functie1:"9",functie2:"0",functie3:"4"};
+    $scope.optiuni[12]={optiune:"Expresii logice",functie1:"10",functie2:"0",functie3:"4"};
+    $scope.optiuni[13]={optiune:"Structura alternativă",functie1:"11",functie2:"14",functie3:"4"};
+    $scope.optiuni[14]={optiune:"Aplicația 1",functie1:"11",functie2:"0",functie3:"4"};
+    $scope.optiuni[15]={optiune:"Aplicația 2",functie1:"12",functie2:"0",functie3:"4"};
+    $scope.optiuni[16]={optiune:"Aplicația 3",functie1:"13",functie2:"0",functie3:"4"};
+    $scope.optiuni[17]={optiune:"Aplicația 4",functie1:"14",functie2:"0",functie3:"4"};
+    $scope.optiuni[18]={optiune:"Bucla repetitivă",functie1:"15",functie2:"18",functie3:"4"};
+    $scope.optiuni[19]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"4"};
+    $scope.optiuni[20]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"4"};
+    $scope.optiuni[21]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"4"};
+    $scope.optiuni[22]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"4"};
+    
+    
+}
+
+
 
 
 
@@ -2540,13 +2653,14 @@ return "Experimentat";
       
           
      
- $scope.mediaAplicatii=function(x,y){
-     
-$("#mycanvas").remove(); 
+ $scope.Statistici=function(x,y,z){
+     $("#mycanvas").remove(); 
      $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
-
+  var nr=0; var numar=new Array(); var numar1=new Array();
+     if (z==1){
+               
      if(y>0){
- var nr=0; var numar=new Array();
+
    var a; var nr1=0,nr2=0,nr3=0,nr4=0,nr5=0;
     for(var i=1;i<numarElev;i++){
      for(var j=x;j<=y;j++){
@@ -2700,11 +2814,208 @@ responsive:false
        
          myDoughnutChart.update();
      
+     
+        
        
-  
+     } else if(z==2){
+         nr=0; 
+         for(i=1;i<=30;i++){
+             numar1[i]=0;
+         numar[i]=0;
+         }
+         if(x==1 && y==18){
+         for(var i=1;i<numarElev;i++){
+             for(var j=x;j<=y;j++){
+               nr1=0;
+                 if(matrice[i][j]!=null && matrice[i][j]!=""){
+                nr=nr+extragereValaore(matrice[i][j],2); 
+                  nr1=extragereValaore(matrice[i][j],2);
+                    numar[i]=numar[i]+nr1;
+                if(j>=1 &&j<=4){
+                    numar1[1]=numar1[1]+nr1;
+                } else if (j>=5 &&j<=7){
+                   numar1[2]=numar1[2]+nr1;
+                } else if (j>=8 &&j<=9){
+                   numar1[3]=numar1[3]+nr1;
+                } else if (j==10){
+                    numar1[4]=numar1[4]+nr1;
+                } else if (j>=11 &&j<=14){
+                    numar1[5]=numar1[5]+nr1;
+                } else if (j>=15 &&j<=18){
+                    numar1[6]=numar1[6]+nr1;
+                }
+                    
+        }
+    
+             }
+    
+         
+         
+         }
+         
+       
+     var ctx =$("#mycanvas");
+  data1 = {
+    datasets: [{
+        data: [],
+        backgroundColor:[]
+      
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        
+    ]
+};  
+    var myDoughnutChart = new Chart(ctx, {
+    type: 'pie',
+    data: data1,
+    options:{
+responsive:false
+    }
+   
+});
+	 myDoughnutChart.data.labels[0]="Algoritmul";
+         myDoughnutChart.data.labels[1]="Expresii aritmetice";
+         myDoughnutChart.data.labels[2]="Operatori relaționali";
+         myDoughnutChart.data.labels[3]="Expresii logice";
+         myDoughnutChart.data.labels[4]="Structura alternativă";
+             myDoughnutChart.data.labels[5]="Structura repetivă";
+      
+
+         myDoughnutChart.data.datasets[0].data[0]=numar1[1];
+         myDoughnutChart.data.datasets[0].data[1]=numar1[2];
+         myDoughnutChart.data.datasets[0].data[2]=numar1[3];
+         myDoughnutChart.data.datasets[0].data[3]=numar1[4];
+         myDoughnutChart.data.datasets[0].data[4]=numar1[5];
+         myDoughnutChart.data.datasets[0].data[5]=numar1[6];
+         myDoughnutChart.data.datasets[0].backgroundColor[2]="blue";
+         myDoughnutChart.data.datasets[0].backgroundColor[1]="red"; 
+      myDoughnutChart.data.datasets[0].backgroundColor[3]="green";
+         myDoughnutChart.data.datasets[0].backgroundColor[0]="pink"; 
+      myDoughnutChart.data.datasets[0].backgroundColor[4]="yellow";
+             myDoughnutChart.data.datasets[0].backgroundColor[5]="brown";
+         myDoughnutChart.update();  
+         
+         for(i=0;i<numarElev-1;i++){
+          $scope.elevi[i]={username:dataElevi.username[i+1],nume:"",parola:"",numar:"",mesaj:numar[i+1]};
+           $scope.mesaj1=" greseli";
+     }
+        } else if ((x!=i || y!=18) && y!=0){
+              nr=0; 
+         for(i=1;i<=30;i++){
+             numar1[i]=0;
+         numar[i]=0;
+         }x=parseInt(x);
+            for(var i=1;i<numarElev;i++)
+             for(var j=x;j<=y;j++){
+               nr1=0;
+                 if(matrice[i][j]!=null && matrice[i][j]!=""){
+                nr=nr+extragereValaore(matrice[i][j],2); 
+                  nr1=extragereValaore(matrice[i][j],2);
+                    numar[i]=numar[i]+nr1;
+                 
+                     if(j==x){
+                    numar1[1]=numar1[1]+nr1;
+                }  if (j==x+1){
+                    
+                    numar1[2]=numar1[2]+nr1;
+                }  if (j==x+2){
+                     
+                    numar1[3]=numar1[3]+nr1;
+                }  if (j==x+3){
+                   numar1[4]=numar1[4]+nr1;
+                } }} 
+         var ctx =$("#mycanvas");
+  data1 = {
+    datasets: [{
+        data: [],
+        backgroundColor:[]
+      
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        
+    ]
+};  
+    var myDoughnutChart = new Chart(ctx, {
+    type: 'pie',
+    data: data1,
+    options:{
+responsive:false
+    }
+   
+});
+	      
+         myDoughnutChart.data.labels[0]="Aplicația 1";
+         myDoughnutChart.data.labels[1]="Aplicația 2";
+         myDoughnutChart.data.labels[2]="Aplicația 3";
+         myDoughnutChart.data.labels[3]="Aplicația 4";
+         
+      
+
+         myDoughnutChart.data.datasets[0].data[0]=numar1[1];
+         myDoughnutChart.data.datasets[0].data[1]=numar1[2];
+         myDoughnutChart.data.datasets[0].data[2]=numar1[3];
+         myDoughnutChart.data.datasets[0].data[3]=numar1[4];
+         
+         myDoughnutChart.data.datasets[0].backgroundColor[2]="blue";
+         myDoughnutChart.data.datasets[0].backgroundColor[1]="red"; 
+      myDoughnutChart.data.datasets[0].backgroundColor[3]="green";
+         myDoughnutChart.data.datasets[0].backgroundColor[0]="pink"; 
+   
+         myDoughnutChart.update(); 
+                 for(i=0;i<numarElev-1;i++){
+          $scope.elevi[i]={username:dataElevi.username[i+1],nume:"",parola:"",numar:"",mesaj:numar[i+1]};
+           $scope.mesaj1=" greseli";
+     }
+        } else if(y==0){
+            
+            $("#tabelEleviStatistici").css("width","50%");
+              $("#tabelEleviStatistici").css("float","left");
+            $(".textStatistici").css("font-size","20px");
+         for (i=1;i<numarElev;i++){
+            nr=extragereValaore(matrice[i][x],2);
+$scope.elevi[i-1]={username:dataElevi.username[i],nume:"",parola:"",numar:"",mesaj:nr};
+           $scope.mesaj1=" greseli";
+         }
+        
+        
+        }
+        
+     } else if (z==3){
+         
+     } else if (z==4){
+         
+     }
  }
  
 
+ function extragereValaore(x,y){
+   var i,a,b,nr=0,nr1=0;
+     for (i=1;i<=4;i++){
+  x=x.substr(0,x.length-4);
+    nr++;
+       
+          if (nr==4-y){
+     b=x.substr(x.length-4);
+  
+              
+            }
+         
+
+ }
+  for (i=3;i>=0;i--){
+     
+if (b[i]!='a'){
+nr1=nr1*10+parseInt(b[i]);
+}
+  }
+ return nr1;
+ }
+    
+ 
 })
 
 

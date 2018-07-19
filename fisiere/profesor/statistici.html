@@ -19,9 +19,9 @@
   </button>
   <div class="dropdown-menu">
     <a class="dropdown-item" ng-click="media()">Media</a>
-    <a class="dropdown-item" href="#">Număr răspunsuri greșite</a>
-    <a class="dropdown-item" href="#">Timpul în care a fost făcut exercițiul</a>
-       <a class="dropdown-item" href="#">Calificative</a>
+    <a class="dropdown-item" ng-click="rGresite()">Număr răspunsuri greșite</a>
+    <a class="dropdown-item" ng-click="timp()">Timpul în care a fost făcut exercițiul</a>
+       <a class="dropdown-item" ng-click="calificative()">Calificative</a>
   </div>
 </div>
 <div class="btn-group">
@@ -30,71 +30,11 @@
   </button>
   <div class="dropdown-menu" >
       <div ng-repeat="x in optiuni">
-    <a class="dropdown-item" ng-click="mediaAplicatii(x.functie1,x.functie2)">{{x.optiune}}</a>
+    <a class="dropdown-item" ng-click="Statistici(x.functie1,x.functie2,x.functie3)">{{x.optiune}}</a>
           </div>
   </div>
 </div>
-<!--
-<div class="dropdown" >
-    <button id="butonAplicatii" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Exerciții
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" ng-click="toateExercitiile()" >Toate exercițiile</a></li>
-     <li class="dropdown-submenu">
-        <a  class="dropdown-item test" >Algoritmul <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" ng-click="mediaAplicatii(1,4)" >Algoritmul</a></li>
-          <li><a class="dropdown-item" ng-click="mediaAplicatii(1,0)" >Aplicația 1</a></li>
-          <li><a class="dropdown-item"ng-click="mediaAplicatii(2,0)" >Aplicația 2</a></li>
-              <li><a class="dropdown-item" ng-click="mediaAplicatii(3,0)" >Aplicația 3</a></li>
-          <li><a class="dropdown-item" ng-click="mediaAplicatii(4,0)">Aplicația 4</a></li>
-          
-        </ul>
-         
-         <a  class="dropdown-item test" >Expresii Aritmetice <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-        <li><a class="dropdown-item" ng-click="mediaAplicatii(5,7)" >Expresii Aritmetice</a></li>
-          <li><a class="dropdown-item"  ng-click="mediaAplicatii(5,0)">Aplicația 1</a></li>
-          <li><a class="dropdown-item" ng-click="mediaAplicatii(6,0)">Aplicația 2</a></li>
-              <li><a class="dropdown-item" ng-click="mediaAplicatii(7,0)" >Aplicația 3</a></li>
-         
-          
-        </ul>
-         <a  class="dropdown-item test" >Operatori Relaționali <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" ng-click="mediaAplicatii(8,9)" >Operatori Relaționali</a></li>
-          <li><a class="dropdown-item"  ng-click="mediaAplicatii(8,0)">Aplicația 1</a></li>
-          <li><a class="dropdown-item"ng-click="mediaAplicatii(9,0)" >Aplicația 2</a></li>
-            
-          
-        </ul>
-           <a  class="dropdown-item test" >Structura Alternativă <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" ng-click="mediaAplicatii(11,14)" >Structura Alternativă</a></li>
-          <li><a class="dropdown-item" ng-click="mediaAplicatii(11,0)" >Aplicația 1</a></li>
-          <li><a class="dropdown-item"ng-click="mediaAplicatii(12,0)">Aplicația 2</a></li>
-              <li><a class="dropdown-item" ng-click="mediaAplicatii(13,0)"  >Aplicația 3</a></li>
-          <li><a class="dropdown-item" ng-click="mediaAplicatii(14,0)">Aplicația 4</a></li>
-          
-        </ul>
-           <a  class="dropdown-item test" >Structura Repetitivă <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-             <li><a class="dropdown-item"  ng-click="mediaAplicatii(15,18)">Structura Repetitivă</a></li>
-          <li><a class="dropdown-item" ng-click="mediaAplicatii(15,0)" >Aplicația 1</a></li>
-          <li><a class="dropdown-item"ng-click="mediaAplicatii(16,0)"  >Aplicația 2</a></li>
-              <li><a class="dropdown-item" ng-click="mediaAplicatii(17,0)" >Aplicația 3</a></li>
-          <li><a class="dropdown-item" ng-click="mediaAplicatii(18,0)">Aplicația 4</a></li>
-          
-        </ul>
-         <li><a class="dropdown-item" ng-click="mediaAplicatii(10,0)">Expresii Logice</a></li>
-        
-         
-         
-         
-      
-    </ul>
-  </div>
--->
+
 <div >
     
 
@@ -108,15 +48,15 @@
   <thead>
     <tr>
       
-      <th scope="col">Nume elev</th>
+      <th scope="col" class="textStatistici">Nume elev</th>
       
     </tr>
   </thead>
   <tbody ng-repeat="y in elevi">
     <tr>
     
-     <td> {{y.username}} </td>
-         <td> {{y.mesaj}}{{mesaj1}} </td>
+     <td class="textStatistici"> {{y.username}} </td>
+         <td class="textStatistici"> {{y.mesaj}}{{mesaj1}} </td>
         
       
       
@@ -131,25 +71,5 @@
     </div>
        
 
-<script>
-$(document).ready(function(){
-   
-   
-    
-    
-    
-    
-    
-    
-    $('.dropdown-submenu a.test').on("click", function(e){
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
-    
-});
-    
-   
-
-    
+<script>    
 </script>
