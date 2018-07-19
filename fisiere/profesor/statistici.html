@@ -24,6 +24,18 @@
        <a class="dropdown-item" href="#">Calificative</a>
   </div>
 </div>
+<div class="btn-group">
+   <button id="butonStatistici"type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Statistici
+  </button>
+  <div class="dropdown-menu" ng-repeat="x in optiuni">
+    <a class="dropdown-item" >dsasad</a>
+    <a class="dropdown-item" >Număr dsarăspunsuri greșite</a>
+    <a class="dropdown-item" href="#">Timpuldasost făcut exercițiul</a>
+       <a class="dropdown-item" href="#">Calificative</a>
+  </div>
+</div>
+<!--
 <div class="dropdown" >
     <button id="butonAplicatii" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Exerciții
     <span class="caret"></span></button>
@@ -32,50 +44,50 @@
      <li class="dropdown-submenu">
         <a  class="dropdown-item test" >Algoritmul <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item"  >Algoritmul</a></li>
-          <li><a class="dropdown-item"  >Aplicația 1</a></li>
-          <li><a class="dropdown-item" >Aplicația 2</a></li>
-              <li><a class="dropdown-item"  >Aplicația 3</a></li>
-          <li><a class="dropdown-item" >Aplicația 4</a></li>
+            <li><a class="dropdown-item" ng-click="mediaAplicatii(1,4)" >Algoritmul</a></li>
+          <li><a class="dropdown-item" ng-click="mediaAplicatii(1,0)" >Aplicația 1</a></li>
+          <li><a class="dropdown-item"ng-click="mediaAplicatii(2,0)" >Aplicația 2</a></li>
+              <li><a class="dropdown-item" ng-click="mediaAplicatii(3,0)" >Aplicația 3</a></li>
+          <li><a class="dropdown-item" ng-click="mediaAplicatii(4,0)">Aplicația 4</a></li>
           
         </ul>
          
          <a  class="dropdown-item test" >Expresii Aritmetice <span class="caret"></span></a>
         <ul class="dropdown-menu">
-        <li><a class="dropdown-item"  >Expresii Aritmetice</a></li>
-          <li><a class="dropdown-item"  >Aplicația 1</a></li>
-          <li><a class="dropdown-item" >Aplicația 2</a></li>
-              <li><a class="dropdown-item"  >Aplicația 3</a></li>
+        <li><a class="dropdown-item" ng-click="mediaAplicatii(5,7)" >Expresii Aritmetice</a></li>
+          <li><a class="dropdown-item"  ng-click="mediaAplicatii(5,0)">Aplicația 1</a></li>
+          <li><a class="dropdown-item" ng-click="mediaAplicatii(6,0)">Aplicația 2</a></li>
+              <li><a class="dropdown-item" ng-click="mediaAplicatii(7,0)" >Aplicația 3</a></li>
          
           
         </ul>
          <a  class="dropdown-item test" >Operatori Relaționali <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item"  >Operatori Relaționali</a></li>
-          <li><a class="dropdown-item"  >Aplicația 1</a></li>
-          <li><a class="dropdown-item" >Aplicația 2</a></li>
+            <li><a class="dropdown-item" ng-click="mediaAplicatii(8,9)" >Operatori Relaționali</a></li>
+          <li><a class="dropdown-item"  ng-click="mediaAplicatii(8,0)">Aplicația 1</a></li>
+          <li><a class="dropdown-item"ng-click="mediaAplicatii(9,0)" >Aplicația 2</a></li>
             
           
         </ul>
            <a  class="dropdown-item test" >Structura Alternativă <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item"  >Structura Alternativă</a></li>
-          <li><a class="dropdown-item"  >Aplicația 1</a></li>
-          <li><a class="dropdown-item" >Aplicația 2</a></li>
-              <li><a class="dropdown-item"  >Aplicația 3</a></li>
-          <li><a class="dropdown-item" >Aplicația 4</a></li>
+            <li><a class="dropdown-item" ng-click="mediaAplicatii(11,14)" >Structura Alternativă</a></li>
+          <li><a class="dropdown-item" ng-click="mediaAplicatii(11,0)" >Aplicația 1</a></li>
+          <li><a class="dropdown-item"ng-click="mediaAplicatii(12,0)">Aplicația 2</a></li>
+              <li><a class="dropdown-item" ng-click="mediaAplicatii(13,0)"  >Aplicația 3</a></li>
+          <li><a class="dropdown-item" ng-click="mediaAplicatii(14,0)">Aplicația 4</a></li>
           
         </ul>
            <a  class="dropdown-item test" >Structura Repetitivă <span class="caret"></span></a>
         <ul class="dropdown-menu">
-             <li><a class="dropdown-item"  >Structura Repetitivă</a></li>
-          <li><a class="dropdown-item"  >Aplicația 1</a></li>
-          <li><a class="dropdown-item" >Aplicația 2</a></li>
-              <li><a class="dropdown-item"  >Aplicația 3</a></li>
-          <li><a class="dropdown-item" >Aplicația 4</a></li>
+             <li><a class="dropdown-item"  ng-click="mediaAplicatii(15,18)">Structura Repetitivă</a></li>
+          <li><a class="dropdown-item" ng-click="mediaAplicatii(15,0)" >Aplicația 1</a></li>
+          <li><a class="dropdown-item"ng-click="mediaAplicatii(16,0)"  >Aplicația 2</a></li>
+              <li><a class="dropdown-item" ng-click="mediaAplicatii(17,0)" >Aplicația 3</a></li>
+          <li><a class="dropdown-item" ng-click="mediaAplicatii(18,0)">Aplicația 4</a></li>
           
         </ul>
-         <li><a class="dropdown-item" >Expresii Logice</a></li>
+         <li><a class="dropdown-item" ng-click="mediaAplicatii(10,0)">Expresii Logice</a></li>
         
          
          
@@ -83,6 +95,7 @@
       
     </ul>
   </div>
+-->
 <div >
     
 
@@ -104,7 +117,7 @@
     <tr>
     
      <td> {{y.username}} </td>
-         <td> {{y.mesaj}} exercitii rezolvate </td>
+         <td> {{y.mesaj}}{{mesaj1}} </td>
         
       
       
@@ -114,43 +127,15 @@
   </tbody>
 </table>
     </div>
-
+<div id="canvasCreator">
     <canvas id="mycanvas" height="500px" width="500px"></canvas>
-
+    </div>
        
 
 <script>
 $(document).ready(function(){
    
-    var ctx =$("#mycanvas");
-  data = {
-    datasets: [{
-        data: [1, 0, 1, 2 ],
-        backgroundColor:["red","green","blue","yellow"]
-      
-    }],
-
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-        'Red',
-        'Yellow',
-        'Blue',
-        'Green'
-    ]
-};
-
-	var myDoughnutChart = new Chart(ctx, {
-    type: 'pie',
-    data: data,
-    options:{
-responsive:false
-    }
    
-});
-      myDoughnutChart.data.labels[4]="ADsadas";
-   myDoughnutChart.data.datasets[0].data[4]=6; 
-    myDoughnutChart.data.datasets[0].backgroundColor[4]="pink"; 
-     myDoughnutChart.update();
     
     
     
