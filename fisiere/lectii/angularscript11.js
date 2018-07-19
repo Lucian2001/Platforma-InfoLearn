@@ -2165,6 +2165,7 @@ loadClase();$scope.statistici="Stasadtistici";
 var clase=[];
     var elevi=[];
     var mesaje=[];
+     var optiuni=[];
     var nr1=1;var clasa1234;var numarElev=1;var idElev;
     nr1=1;
     $scope.titluClasa="";
@@ -2364,156 +2365,20 @@ var matrice= new Array(31)
 for (i=1; i <=30; i++)
 matrice[i]=new Array(21)
 var optiune1,optiune2;    
+  $scope.optiuni=[{optiune:"",functie1:"",functie2:""}];
 $scope.media=function(){
     $scope.alegeri="Media";
-optiune1=1;
-
+    $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18"};
+    
 }
+
+
+
+
+
   var elemente=new Array();
         
 
-$scope.toateExercitiile=function(){
- var nr1=0,nr2=0,nr3=0,nr4=0,nr5=0,y;
-     if(optiune1==1){
-         
-    for (i=0; i <=numarElev-2; i++){
-          $scope.elevi[i]={username:dataElevi.username[i+1],nume:"",parola:"",numar:"",mesaj:matrice[i+1][19]};
-          }
-     $scope.alegeri=$scope.alegeri+" clasei la toate exercițiile";
-     
-         for(i=1;i<=numarElev-1;i++){
-          for(j=1;j<=18;j++){
-              if(matrice[i][j]!=null && matrice[i][j]!=""){
-            y=generareCalificativ1(matrice[i][j],j,dificultate[j]);
-            if (y=="Experimentat"){
-                nr1++;
-            } else if(y=="Bun"){
-                nr2++;
-            }else if(y=="Mediu"){
-                nr3++;
-            }else if(y=="Mai lucreaza"){
-                nr4++;
-            }else if(y=="Slab"){
-                nr5++;
-            }
-              }
-            }
-            elemente[i]=media(nr1,nr2,nr3,nr4,nr5);
-             nr1=0;
-             nr2=0;
-             nr3=0;
-             nr4=0;
-             nr5=0;
-         }
-         
-         for(i=1;i<=numarElev-1;i++){
-             if(elemente[i]>=1 && elemente[i]<2){
-                 if (elemente[i]>1.49){
-                     elemente[i]=2;
-                 } else{
-                     elemente[i]=1;
-                 }
-             }
-             if(elemente[i]>=2 && elemente[i]<3){
-                 if (elemente[i]>2.49){
-                     elemente[i]=3;
-                 } else{
-                     elemente[i]=2;
-                 }
-             }
-             if(elemente[i]>=3 && elemente[i]<4){
-               
-                 if (elemente[i]>3.49){
-                     elemente[i]=4;
-                 } else{
-                     elemente[i]=3;
-                 }
-             }
-             if(elemente[i]>=4 && elemente[i]<5){
-                 if (elemente[i]>4.49){
-                     elemente[i]=5;
-                 } else{
-                     elemente[i]=4;
-                 }
-             }
-            
-         }
-           for(i=1;i<=numarElev-1;i++){
-             
-                if (elemente[i]==5){
-                nr1++;nr6++;
-            } else if(elemente[i]==4){
-                nr2++;
-            }else if(elemente[i]==3){
-                nr3++;
-            }else if(elemente[i]==2){
-                nr4++;
-            }else if(elemente[i]==1){
-                nr5++;
-            }
-           }
-        
-var ctx =$("#mycanvas");
-  data = {
-    datasets: [{
-        data: [],
-        backgroundColor:[]
-      
-    }],
-
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-        
-    ]
-};
-	var myDoughnutChart = new Chart(ctx, {
-    type: 'pie',
-    data: data,
-    options:{
-responsive:false
-    }
-   
-});
-    
-         myDoughnutChart.data.labels[0]="Experimentat";
-         myDoughnutChart.data.labels[1]="Bun";
-         myDoughnutChart.data.labels[2]="Mediu";
-         myDoughnutChart.data.labels[3]="Mai lucreaza";
-         myDoughnutChart.data.labels[4]="Slab";
-         
-
-   myDoughnutChart.data.datasets[0].data[0]=nr1;
-         myDoughnutChart.data.datasets[0].data[1]=nr2;
-         myDoughnutChart.data.datasets[0].data[2]=nr3;
-         myDoughnutChart.data.datasets[0].data[3]=nr4;
-         myDoughnutChart.data.datasets[0].data[4]=nr5;
-          myDoughnutChart.data.datasets[0].backgroundColor[2]="blue";
-    myDoughnutChart.data.datasets[0].backgroundColor[1]="red"; 
-     myDoughnutChart.update();
-         
-         
-         $scope.mesaj1="/18 exercitii rezolvate";
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
- } else{
-       swal({
-  title: "Eroare!",
-  text: "Trebuie sa alegi un tip de statistică!",
-  icon: "error",
-});
- }
-}
 
     $scope.statistici = function(){
        incarcareScoruri(1);
@@ -2676,6 +2541,7 @@ return "Experimentat";
           
      
  $scope.mediaAplicatii=function(x,y){
+     
 $("#mycanvas").remove(); 
      $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
 
@@ -2687,6 +2553,7 @@ $("#mycanvas").remove();
           if(matrice[i][j]!=null && matrice[i][j]!=""){
               nr++; 
          a=generareCalificativ1(matrice[i][j],j,dificultate[j]);
+              
             if (a=="Experimentat"){
                 nr1++;
             } else if(a=="Bun"){
@@ -2700,16 +2567,18 @@ $("#mycanvas").remove();
             }
           }
      }
+        
     elemente[i]=media(nr1,nr2,nr3,nr4,nr5);
     numar[i]=nr;
     nr=0;
-    }
-    
-     nr1=0;
+         nr1=0;
              nr2=0;
              nr3=0;
              nr4=0;
              nr5=0;
+    }
+    
+    
  for(i=1;i<=numarElev-1;i++){
              
      if(elemente[i]>=1 && elemente[i]<2){
