@@ -25,6 +25,7 @@ margin-left: 4%;
 #tabelEleviStatistici{
     float:right;
     overflow-y: scroll; 
+    overflow-x: scroll; 
     height:76%;
     margin-top: 5%;
    width:20%;
@@ -45,4 +46,7 @@ margin-top: 1%;
 }
 #mycanvas{
 margin-top:2%;
+}
+.coloanaNume{
+    width: 100px;
 }

@@ -2164,6 +2164,7 @@ loadClase();$scope.statistici="Stasadtistici";
     var titluri= new Array;
 var clase=[];
     var elevi=[];
+     var titluri=[];
     var mesaje=[];
      var optiuni=[];
     var nr1=1;var clasa1234;var numarElev=1;var idElev;
@@ -2370,29 +2371,15 @@ $scope.media=function(){
     $scope.alegeri="Media";
     $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"1"};
     $scope.optiuni[1]={optiune:"Algoritmul",functie1:"1",functie2:"4",functie3:"1"};
-    $scope.optiuni[2]={optiune:"Aplicația 1",functie1:"1",functie2:"0",functie3:"1"};
-    $scope.optiuni[3]={optiune:"Aplicația 2",functie1:"2",functie2:"0",functie3:"1"};
-    $scope.optiuni[4]={optiune:"Aplicația 3",functie1:"3",functie2:"0",functie3:"1"};
-    $scope.optiuni[5]={optiune:"Aplicația 4",functie1:"4",functie2:"0",functie3:"1"};
-    $scope.optiuni[6]={optiune:"Expresii aritmetice",functie1:"5",functie2:"7",functie3:"1"};
-    $scope.optiuni[7]={optiune:"Aplicația 1",functie1:"5",functie2:"0",functie3:"1"};
-    $scope.optiuni[8]={optiune:"Aplicația 2",functie1:"6",functie2:"0",functie3:"1"};
-    $scope.optiuni[9]={optiune:"Aplicația 3",functie1:"7",functie2:"0",functie3:"1"};
-    $scope.optiuni[10]={optiune:"Operatori relaționali",functie1:"8",functie2:"9",functie3:"1"};
-    $scope.optiuni[11]={optiune:"Aplicația 1",functie1:"8",functie2:"0",functie3:"1"};
-    $scope.optiuni[12]={optiune:"Aplicația 2",functie1:"9",functie2:"0",functie3:"1"};
-    $scope.optiuni[13]={optiune:"Expresii logice",functie1:"10",functie2:"0",functie3:"1"};
-    $scope.optiuni[14]={optiune:"Structura alternativă",functie1:"11",functie2:"14",functie3:"1"};
-    $scope.optiuni[15]={optiune:"Aplicația 1",functie1:"11",functie2:"0",functie3:"1"};
-    $scope.optiuni[16]={optiune:"Aplicația 2",functie1:"12",functie2:"0",functie3:"1"};
-    $scope.optiuni[17]={optiune:"Aplicația 3",functie1:"13",functie2:"0",functie3:"1"};
-    $scope.optiuni[18]={optiune:"Aplicația 4",functie1:"14",functie2:"0",functie3:"1"};
-    $scope.optiuni[19]={optiune:"Bucla repetitivă",functie1:"15",functie2:"18",functie3:"1"};
-    $scope.optiuni[20]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"1"};
-    $scope.optiuni[21]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"1"};
-    $scope.optiuni[22]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"1"};
-    $scope.optiuni[23]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"1"};
-    
+   
+    $scope.optiuni[2]={optiune:"Expresii aritmetice",functie1:"5",functie2:"7",functie3:"1"};
+   
+    $scope.optiuni[3]={optiune:"Operatori relaționali",functie1:"8",functie2:"9",functie3:"1"};
+
+    $scope.optiuni[4]={optiune:"Structura alternativă",functie1:"11",functie2:"14",functie3:"1"};
+
+    $scope.optiuni[5]={optiune:"Bucla repetitivă",functie1:"15",functie2:"18",functie3:"1"};
+ 
     
 }
 $scope.rGresite=function(){
@@ -2491,9 +2478,10 @@ $scope.timp=function(){
 
   var elemente=new Array();
         
-
+$scope.titluri=[{nume:""}]; 
 
     $scope.statistici = function(){
+        $scope.titluri[0]={nume:"Nume elev"}; 
        incarcareScoruri(1);
        $scope.src1="fisiere/profesor/statistici.html";
     angular.element(document.querySelector( '#statistici' )).addClass ("active");
@@ -2654,11 +2642,12 @@ return "Experimentat";
           
      
  $scope.Statistici=function(x,y,z){
+      
      $("#mycanvas").remove(); 
      $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
   var nr=0; var numar=new Array(); var numar1=new Array();
      if (z==1){
-               
+               $("#chestie").hide();
      if(y>0){
 
    var a; var nr1=0,nr2=0,nr3=0,nr4=0,nr5=0;
@@ -2818,6 +2807,7 @@ responsive:false
         
        
      } else if(z==2){
+           $("#chestie").hide();
          nr=0; 
          for(i=1;i<=30;i++){
              numar1[i]=0;
@@ -2985,7 +2975,72 @@ $scope.elevi[i-1]={username:dataElevi.username[i],nume:"",parola:"",numar:"",mes
         }
         
      } else if (z==3){
+                         
+       
+          
          
+      
+         $("#tabel1").hide();
+         $(".textStatistici").css("display","none");    
+             $("#tabel2").hide();
+    function matrix() {
+		
+        var arr = [[]];
+
+       
+        for (var i = 0; i < numarElev; i++) {
+
+          
+            arr[i] = [];
+
+           
+            arr[i] = new Array();
+
+            for (var j = 0; j <19 ; j++) {
+                 if (j==0 && i==0){
+                     arr[i][j] ="Nume_elev"; 
+                 }
+                if (i==0 &&j>=1){
+                     arr[i][j] ="Aplicatia-"+j+"  "; 
+                }
+                if(j==0&& i>0){
+                  arr[i][j] =dataElevi.username[i];  
+               } else if(i!=0) {
+                    if(matrice[i][j]!=null && matrice[i][j]!=""){
+               
+                  a=generareCalificativ1(matrice[i][j],j,dificultate[j]);
+                   
+                        arr[i][j]=a;
+                } else {
+                    arr[i][j]="Nerezolvat";
+                } 
+                  
+               }
+               
+            }
+        }
+
+        return arr;
+    }
+
+  
+ var calificative=[];
+         $scope.calificative[i]={username:""}
+         if(x==1 && y==18){
+          
+             $("#tabelEleviStatistici").css("width","80%");
+             $("#tabelEleviStatistici").css("height","60%");
+              $("#tabelEleviStatistici").css("float","left");
+           $(".textStatistici").css("font-size","20px");
+            $scope.titluri[0]={nume:""} ;
+           
+                  
+    $scope.cells = [
+        []
+    ];
+    $scope.sizes = [20];
+   $scope.cells = matrix();
+         }
      } else if (z==4){
          
      }

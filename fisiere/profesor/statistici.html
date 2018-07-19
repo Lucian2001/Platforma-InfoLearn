@@ -45,18 +45,28 @@
 
 <div id="tabelEleviStatistici" >
         <table class="table">
-  <thead>
-    <tr>
+ <thead id="tabel1">
+    <tr ng-repeat="y in titluri">
       
-      <th scope="col" class="textStatistici">Nume elev</th>
+      <th scope="col" class="textStatistici" >{{y.nume}}</th>
       
     </tr>
-  </thead>
-  <tbody ng-repeat="y in elevi">
+  </thead> 
+ 
+           <tbody id="chestie">
+            <tr ng-repeat="row in cells track by $index" >
+                <td ng-repeat="cell in row track by $index">
+                    {{cell}}
+                </td>
+            </tr>
+        </tbody> 
+          
+            <tbody  ng-repeat="y in elevi">
     <tr>
-    
-     <td class="textStatistici"> {{y.username}} </td>
-         <td class="textStatistici"> {{y.mesaj}}{{mesaj1}} </td>
+      
+     <td  class="textStatistici"> {{y.username}} </td>
+        
+         <td class="textStatistici"> {{y.mesaj}}{{mesaj1}}</td>
         
       
       
@@ -64,6 +74,7 @@
    
     
   </tbody>
+                
 </table>
     </div>
 <div id="canvasCreator">
