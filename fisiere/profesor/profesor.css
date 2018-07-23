@@ -28,7 +28,7 @@ cursor: pointer;
     overflow-y: scroll; 
     overflow-x: scroll; 
     height:76%;
-    margin-top: 5%;
+    
    width:20%;
 }
 #butonAplicatii{
@@ -44,7 +44,7 @@ margin-left: 2%;
 #titlu{
 text-align: center;
 margin-top: 2%;
-    font-size: 2.4vw;
+    font-size: 2.1vw;
 }
 #mycanvas{
 margin-top:2%;
@@ -59,14 +59,14 @@ margin-top:2%;
 #mycanvas{
    /* width:35%;
     height:60%;*/
-    width:30vw;
-    height:30vw;
+    width:25vw;
+    height:25vw;
     margin-left: 19%;
     margin-top: 4%;
     
 }
 #titluClasa1{
-    float:right;
-    margin-right: 50%;
+  text-align: center;
+   margin-top: -2%;
     font-size: 2.4vw;
 }
