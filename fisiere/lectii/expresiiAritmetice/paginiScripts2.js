@@ -19,7 +19,7 @@ var dificultateCalcul=5;
 $(document).ready(function(){
 redimensionare121();
 var semn=Math.floor((Math.random() * 5) + 1);
-
+ 
 generareValori(numarNumereGenerate,numarSemneGenerate,dificultateCalcul,semn);
 
 semn1=generareSemn(semn);
@@ -32,11 +32,7 @@ dragAndDrop(semn1);
 
         if (buttonActive==1){
             buttonActive=0;
-            $("#plus").draggable( 'enable' );
-               $("#minus").draggable( 'enable' );
-               $("#divide").draggable( 'enable' );
-               $("#multiply").draggable( 'enable' );
-               $("#slash").draggable( 'enable' );
+           if(parseInt($("#numarIncercari").html())<3 || parseInt($("#invisibleObject1").html())==1 ){ 
 var nr2=$("#invisibleObject").html();
 if (nr2=="1"){
 var ok=0;
@@ -52,7 +48,7 @@ succes();
 }
 if(ok==0){
       semn=Math.floor((Math.random() * 5) + 1);  //alert("semn="+semn);
-    var nr3=$("#invisibleObject1").html();
+    var nr3=$("#invisibleObject1").html(); 
 if (nr3==1)
       dificultateCalcul=dificultateCalcul+3; $("#slash").show();$("#multiply").show();$("#divide").show();$("#minus").show();$("#plus").show();
      generareValori(numarNumereGenerate,numarSemneGenerate,dificultateCalcul,semn);
@@ -64,18 +60,24 @@ $("#invisibleObject").html(0);
   $("#gresit").hide();
     $("#corect").hide();
       $("#numarIncercari").html("3");
+    
+            $("#plus").draggable( 'enable' );
+               $("#minus").draggable( 'enable' );
+               $("#divide").draggable( 'enable' );
+               $("#multiply").draggable( 'enable' );
+               $("#slash").draggable( 'enable' );
+    $( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "invalid" });
 }}}
                 timerCorect(1);
+    }
     })
 
 })
-$("#plus").draggable( 'enable' );
-   $("#minus").draggable( 'enable' );
-   $("#divide").draggable( 'enable' );
-   $("#multiply").draggable( 'enable' );
-   $("#slash").draggable( 'enable' );
 
 }
+
+
+
 var buttonActive122=1;
 function aplicatia2(){
   

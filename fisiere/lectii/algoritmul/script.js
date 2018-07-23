@@ -378,7 +378,7 @@ raspunsGresit();
 
 
 }else if (window.location.href=="https://infolearn.ml/index.php#/1/1#1"){
-  alert(y);
+ 
     tancId=y;
 
      if (tancId%1000>100){
@@ -388,7 +388,7 @@ raspunsGresit();
                      data:"Id=" + tancId ,
                   success:function(result)
                      {
-                         alert("eu");
+                         
 tanc=tancId;
                        
                       }

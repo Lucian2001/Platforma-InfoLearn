@@ -1,5 +1,4 @@
-
- $( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "invalid" });
+$( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "invalid" });
  function dragAndDrop(semn) {
  
     $( "#droppable" ).droppable({

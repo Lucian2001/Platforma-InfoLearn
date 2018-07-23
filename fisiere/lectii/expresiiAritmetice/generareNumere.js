@@ -121,14 +121,23 @@ function incercari(){
     nr1=parseInt(nr);
     if (nr1<=3 && nr1>1){
   //  alert(nr);
-      nr1=nr1-1;
-        $("#numarIncercari").html(nr1);}
-        else{
-                  $("#plus").draggable( 'disable' );
-               $("#minus").draggable( 'disable' );
-               $("#divide").draggable( 'disable' );
-               $("#multiply").draggable( 'disable' );
-               $("#slash").draggable( 'disable' );
+      nr1=nr1-1;  
+        $("#numarIncercari").html(nr1);
+     setTimeout(function(){
+                  $("#plus").draggable( 'enable' );
+               $("#minus").draggable( 'enable' );
+               $("#divide").draggable( 'enable' );
+               $("#multiply").draggable( 'enable' );
+               $("#slash").draggable( 'enable' );
+    $( "#plus,#minus,#divide,#multiply,#slash").draggable({ revert: "invalid" });
+                },100);
+
+    
+    }
+    
+        else{ 
+          
+                
            eroareRezultat("Răspunsul corect era"+semn1);
             $("#gresit").show();
             $("#numarIncercari").html(0);
