@@ -12,17 +12,18 @@
 }
 #clasaTitlu{
 float:right;
-    margin-top: -0.5%;
-    margin-right: 50%;
+    margin-top: 0%;
+    margin-right: 45%;
+    font-size:2.5vw;
 }
 .nav-link{
 cursor: pointer;
 }
 #dropdownMenuButton2{
-margin-top: 2%;
-margin-left: 4%;
+
 }
 #tabelEleviStatistici{
+  position:relative;
     float:right;
     overflow-y: scroll; 
     overflow-x: scroll; 
@@ -37,16 +38,35 @@ margin-left: 4%;
 }
 #butonStatistici{
 margin-left: 2%;
-    margin-top: 32%;
+    margin-top: 2%;
 
 }
 #titlu{
-float:left;
-margin-top: 1%;    
+text-align: center;
+margin-top: 2%;
+    font-size: 2.4vw;
 }
 #mycanvas{
 margin-top:2%;
 }
 .coloanaNume{
     width: 100px;
+}
+
+#butoane{
+    
+}
+#mycanvas{
+   /* width:35%;
+    height:60%;*/
+    width:30vw;
+    height:30vw;
+    margin-left: 19%;
+    margin-top: 4%;
+    
+}
+#titluClasa1{
+    float:right;
+    margin-right: 50%;
+    font-size: 2.4vw;
 }

@@ -1,6 +1,7 @@
 <style>
 
 </style>
+<div id="butonStatistici">
 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Selecteza clasa
   </button>
@@ -14,27 +15,27 @@
   </div>
 
 <div class="btn-group">
-   <button id="butonStatistici"type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Statistici
   </button>
   <div class="dropdown-menu">
     <a class="dropdown-item" ng-click="media()">Media</a>
     <a class="dropdown-item" ng-click="rGresite()">Număr răspunsuri greșite</a>
-    <a class="dropdown-item" ng-click="timp()">Timpul în care a fost făcut exercițiul</a>
        <a class="dropdown-item" ng-click="calificative()">Calificative</a>
   </div>
 </div>
 <div class="btn-group">
-   <button id="butonStatistici"type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <button  type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Lectii
   </button>
   <div class="dropdown-menu" >
       <div ng-repeat="x in optiuni">
-    <a class="dropdown-item" ng-click="Statistici(x.functie1,x.functie2,x.functie3)">{{x.optiune}}</a>
+    <a class="dropdown-item" ng-click="Statistici(x.functie1,x.functie2,x.functie3,x.functie4)">{{x.optiune}}</a>
           </div>
   </div>
 </div>
-
+    <h1 id="titluClasa1">{{clasa}}</h1>
+</div>
 <div >
     
 
@@ -78,7 +79,7 @@
 </table>
     </div>
 <div id="canvasCreator">
-    <canvas id="mycanvas" height="500px" width="500px"></canvas>
+    <canvas id="mycanvas" ></canvas>
     </div>
        
 

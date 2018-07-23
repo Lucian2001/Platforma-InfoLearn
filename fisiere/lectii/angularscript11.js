@@ -2167,6 +2167,7 @@ var clase=[];
      var titluri=[];
     var mesaje=[];
      var optiuni=[];
+   
     var nr1=1;var clasa1234;var numarElev=1;var idElev;
     nr1=1;
     $scope.titluClasa="";
@@ -2322,7 +2323,11 @@ loadElevi(clasa1234);
          $scope.elevi=[{nume:"",parola:"",numar:"",mesaj:""}];
         clasa1234=x;
         loadElevi(x);
-        $scope.titluClasa=titluri[x];
+        $scope.titluClasa=titluri[x]; 
+        if( $scope.src1=="fisiere/profesor/statistici.html"){
+        incarcareScoruri(x);
+        $scope.clasa=titluri[x];
+        }
     }
     
     
@@ -2361,15 +2366,15 @@ dificultate[16]=55;
 dificultate[17]=66;
 dificultate[18]=66;
 
-var matrice= new Array(31)
+var matrice= new Array(31);
 
 for (i=1; i <=30; i++)
 matrice[i]=new Array(21)
 var optiune1,optiune2;    
-  $scope.optiuni=[{optiune:"",functie1:"",functie2:"",functie3:""}];
+  $scope.optiuni=[{optiune:"",functie1:"",functie2:"",functie3:"",functie4:""}];
 $scope.media=function(){
     $scope.alegeri="Media";
-    $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"1"};
+    $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"1",functie4:"tuturor exercițiilor"};
     $scope.optiuni[1]={optiune:"Algoritmul",functie1:"1",functie2:"4",functie3:"1"};
    
     $scope.optiuni[2]={optiune:"Expresii aritmetice",functie1:"5",functie2:"7",functie3:"1"};
@@ -2481,8 +2486,9 @@ $scope.timp=function(){
 $scope.titluri=[{nume:""}]; 
 
     $scope.statistici = function(){
+         
         $scope.titluri[0]={nume:"Nume elev"}; 
-       incarcareScoruri(1);
+       
        $scope.src1="fisiere/profesor/statistici.html";
     angular.element(document.querySelector( '#statistici' )).addClass ("active");
           angular.element(document.querySelector( '#inregistrare' )).removeClass ("active");
@@ -2641,8 +2647,8 @@ return "Experimentat";
       
           
      
- $scope.Statistici=function(x,y,z){
-      
+ $scope.Statistici=function(x,y,z,t){
+      $scope.alegeri=$scope.alegeri+" "+t;
      $("#mycanvas").remove(); 
      $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
   var nr=0; var numar=new Array(); var numar1=new Array();
