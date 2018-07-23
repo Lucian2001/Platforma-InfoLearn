@@ -1,3 +1,5 @@
+var array=new Array();
+var aray=1;
 function generareNumere4(array,aray){
   var numar=Math.floor((Math.random() * 8) + 1);
   var numar1=Math.floor((Math.random() * 6) + 1);
@@ -46,13 +48,13 @@ function gresit(){
      timp1=-1;
     raspunsuriGresite=raspunsuriGresite+1;
   $("#gresit1").show();
-  eroareRezultat("Răspunsul corect era"+raspuns);
+  eroareRezultat("Răspunsul corect era"+" "+raspuns);
   setTimeout(function(){
         generareNumere4(array,aray);
         raspuns=rezultat23();
       $("#gresit1").hide();
  $("#raspuns2").val("");
-buttonActive=1;
+buttonActive1=1;
   } ,1500);
 
 
@@ -67,7 +69,7 @@ function corect(){
         generareNumere4(array,aray);
         raspuns=rezultat23();
       $("#corect1").hide();
-buttonActive=1;
+buttonActive1=1;
       $("#raspuns2").val("");
 
   } ,1500);

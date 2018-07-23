@@ -123,8 +123,9 @@ redimensionare122();
     });
 
 }
+var buttonActive1=1;
 function aplicatia3(){
-    var buttonActive=1;
+ 
 var array=new Array();
 var aray=1;
   generareScor(7,40);
@@ -139,8 +140,8 @@ raspuns=rezultat23();
 $("#verificare1").click(function(){
  
   
-    if (buttonActive==1){
-            buttonActive=0;
+    if (buttonActive1==1){
+            buttonActive1=0;
 
 
   if ($("#raspuns2").val()==raspuns){

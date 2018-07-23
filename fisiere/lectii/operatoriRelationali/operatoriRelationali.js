@@ -65,6 +65,7 @@ $("#corect").show();
     nr1=parseInt(nr);
     if (nr1<5 && nr1>=0){
         $("#exercitiiRezolvate").html(nr1+1);
+       
     } else{$("#exercitiiRezolvate").html(nr1+1);
         succes(); timpOver=0;
             creereScor(timp,raspunsuriGresite,4,coeficientCorect,8);
@@ -78,6 +79,7 @@ if (raspuns==false){
 raspuns=true;
 }
  eroareRezultat("Răspunsul corect era "+semn);
+
 }
 var d;
 

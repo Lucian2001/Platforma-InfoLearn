@@ -31,7 +31,9 @@ generareNumere(randomNr1);
     $("#maiMic").draggable( 'enable' );
                   $("#maiMare").draggable( 'enable' );
                   $("#egal").draggable( 'enable' );
+                $("#maiMic,#egal,#maiMare").draggable({ revert: "invalid" });
         timerCorect(1);
+    
     })
 
 }

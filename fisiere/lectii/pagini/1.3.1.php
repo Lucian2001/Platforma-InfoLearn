@@ -6,7 +6,7 @@
         <p id="id---1" class="valoare">20</p>
         <p class="valoare" id="id---2">20</p>
 
-        <div id="droppable" class="ui-widget-header"></div>
+        <div id="droppable" class="ui-widget-header" style="background-color:lightgrey"></div>
         <img id="corect" src="fisiere/assets/images/corect.png" >
          <img id="gresit" src="fisiere/assets/images/gresit.png" >
         </div>

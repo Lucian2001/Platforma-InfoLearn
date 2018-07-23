@@ -20,7 +20,7 @@ a[11]=0;
  a[64]=0;
 //
 function succes(){
-    
+  
 var Id="";
  var url= window.location.href;
  for(i=0;i<url.length;i++){
@@ -32,7 +32,7 @@ if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3|| url[i]=
  $("#id-"+Id).css("background-color","#d8ffd6");
 
 $.ajax({   type:"POST",
-  url:"fisiere/verificareSave.php",
+  url:"fisiere/php/verificareSave.php",
   data:"Id=" + Id ,
 success:function(result)
   {
@@ -62,7 +62,7 @@ if (a[Id%100]==1 || Id=="111"){
 terminareExercitiu("Ai terminat aceasta aplicatie!");
 } else{
   $.ajax({   type:"POST",
-    url:"fisiere/saveProgres.php",
+    url:"fisiere/php/saveProgres.php",
     data:"Id=" + Id ,
   success:function(result)
     {
