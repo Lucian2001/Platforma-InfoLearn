@@ -134,7 +134,7 @@ eroare=1;
                   success:function(result)  
                      { 
                           
-                    
+                   
                           window.location.assign("https://infolearn.ml/index.php");
                       }
                          

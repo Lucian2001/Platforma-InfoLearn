@@ -62,8 +62,11 @@ $id=$_SESSION['id'];
     
 }
 
-
-
+ 
+$id1=intval($id1);
+ if ($id1==-1){
+     $_SESSION['id']=-1;
+ }
 if ( $_SESSION['id'] !="" and ($row1[4]==1||$row1[4]==3)) {
          include("fisiere/meniu.php");
 include("pagini/paginaUtilizator.php");
@@ -72,7 +75,7 @@ else if ( $_SESSION['id'] !="" and $row1[4]==2){
         include("fisiere/meniu.php");
         include("pagini/paginaProfesor.php");
    
-} else if ($_SESSION['id'] == -1){
+} else if ($_SESSION['id'] == "-1"){
     include("fisiere/meniu.php");
 
         include("pagini/paginaVizitator.php");

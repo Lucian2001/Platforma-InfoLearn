@@ -11,6 +11,7 @@ $query = "SELECT * FROM users WHERE email = '". mysqli_real_escape_string($link,
 
  if ($_POST['email']=="vizitator" and  $_POST['password']=="vizitator"){
      $_SESSION['id'] = -1;
+    
  } else{
     
 $query = "SELECT * FROM users WHERE email = '". mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
