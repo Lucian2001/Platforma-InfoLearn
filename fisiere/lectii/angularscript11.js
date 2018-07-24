@@ -3142,19 +3142,44 @@ nr1=nr1*10+parseInt(b[i]);
 }).then(function successCallback(response) {
                  
                   if (response.data==1){
-alert("Introdu o valoare para si mai mica decat 30 si mai mare de 5");
+eroareShow("Introdu o valoare para si mai mica decat 30 si mai mare de 5");
                   }
                   
               })
          
         
       }else {
-alert("eroare");
+eroareShow("eroare");
         }
     })
     }
+   
+    
     $scope.adaugaIntrebare=function(){
-        
+        var enunt,r1,r2,r3,r4;
+        enunt=$("#enunt").val();
+        r1=$("#raspunsCorect").val();
+        r2=$("#raspunsGresit1").val();
+        r3=$("#raspunsGresit2").val();
+        r4=$("#raspunsGresit3").val();
+        if(enunt=="" || r1=="" || r2=="" || r3=="" || r4==""){
+            eroareShow("Introdu date in toate spatiile!");
+        } else{
+             $http({
+  method: 'POST',
+  url: '/fisiere/profesor/incarcareIntrebari.php',
+  data: {enunt:enunt,r1:r1,r2:r2,r3:r3,r4:r4},
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+}).then(function successCallback(response) {
+                 
+                  if (response.data==1){
+eroareShow("Eroare");
+                  }
+                  
+              })
+         
+        }
     }
     
     
