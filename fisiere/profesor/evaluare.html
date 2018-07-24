@@ -1,0 +1,90 @@
+
+<div id="butonStatistici">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Selecteza clasa
+  </button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+<div ng-repeat="x in clase">
+    <a class="dropdown-item" ng-click="selectareClasa(x.id)">{{x.clasa}}</a>
+
+</div>
+  
+          
+  </div>
+    <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Adauga întrebare</button>
+    <button  type="button" class="btn btn-primary" ng-click="numarIntrebari()">Numar de intrebari evaluare</button>
+    
+</div>
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="loginModalTitle" >Adauga o intrebare </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        
+      </div>
+      <div class="modal-body">
+          <form>
+             
+              
+  
+ <fieldset class="form-group">
+    <label for="enunt">Enuntul intrebarii:</label>
+    <input  class="form-control" id="enunt" placeholder="Enunt">
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="raspunsCorect">Raspunsul corect</label>
+    <input class="form-control" id="raspunsCorect" placeholder="Raspuns corect">
+  </fieldset>
+      <fieldset class="form-group">
+    <label for="password">Raspunsul gresit</label>
+    <input  class="form-control" id="raspunsGresit1" placeholder="Raspuns gresit">
+  </fieldset>
+                <fieldset class="form-group">
+    <label for="password">Raspunsul gresit</label>
+     <input  class="form-control" id="raspunsGresit2" placeholder="Raspuns gresit">
+  </fieldset>
+                <fieldset class="form-group">
+    <label for="password">Raspunsul gresit</label>
+    <input  class="form-control" id="raspunsGresit3" placeholder="Raspuns gresit">
+  </fieldset>
+
+
+ <button  type="button" class="btn btn-primary" ng-click ="adaugaIntrebare()" >Validare intrebare</button>
+          </form>
+        </div>
+      </div>
+     </div>
+</div>
+
+              
+<div id="tabelEleviStatistici" >
+        <table class="table">
+ <thead id="tabel1">
+    <tr ng-repeat="y in titluri">
+      
+      <th scope="col" class="textStatistici" >{{y.nume}}</th>
+      
+    </tr>
+  </thead> 
+ 
+         
+          
+            <tbody  ng-repeat="y in elevi">
+    <tr>
+      
+     <td  class="textStatistici"> {{y.username}} </td>
+        
+         <td class="textStatistici"> {{y.mesaj}}{{mesaj1}}</td>
+        
+      
+      
+    </tr>
+   
+    
+  </tbody>
+                
+</table>
+    </div>

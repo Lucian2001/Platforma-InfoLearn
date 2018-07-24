@@ -8,7 +8,7 @@
     <a id="statistici" class="nav-link" ng-click="statistici()">Statistici</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link " ng-click="">Evaluare</a>
+    <a id="evaluare11"class="nav-link" ng-click="evaluare()">Evaluare</a>
   </li>
 </ul>
 

@@ -1043,8 +1043,11 @@ var numarIntermediar=0;
     for(var i=1;i<=20;i++){
         idIntrebari[i]=0;
     }
-
-   generareIntrebari(20,idIntrebari,1);
+     var numarIntrebari,procent;
+  //numarIntrebari=loadNrIntrebari();
+    numarIntrebari=20;
+      procent=(2/numarIntrebari)*100;
+   generareIntrebari(numarIntrebari+10,idIntrebari,1);
     generareRaspunsuri(4,idRaspunsuri,1);
   $http({
   method: 'POST',
@@ -1498,13 +1501,20 @@ buton12=$(this).attr('id');
 
     });
 var procente1=0;
-$scope.resetare= function(){
+     
+     function loadNrIntrebari(){
+         
+         
+         
+     }
+     
+     $scope.resetare= function(){
 
 
 
-    if (x<10){
+    if (x<numarIntrebari){
         x=x+2;
-        procente1=procente1+20;
+        procente1=procente1+procent;
     $("#progresEvaluare").css("width",(procente1+"%"));
     $scope.procente=procente1;
     raspunsOn=0;
@@ -2329,6 +2339,7 @@ loadElevi(clasa1234);
             $scope.alegeri="";
         incarcareScoruri(x);
         $scope.clasa=titluri[x];
+            nr1=x;
             $scope.mesaj1="";
          $("#mycanvas").remove(); 
      $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
@@ -2403,6 +2414,9 @@ $scope.media=function(){
     }
     
 }
+
+
+
 $scope.rGresite=function(){
   clearStatistici();
     if(numarElev>1){
@@ -2509,6 +2523,15 @@ $scope.titluri=[{nume:""}];
           angular.element(document.querySelector( '#inregistrare' )).removeClass ("active");
         
     };
+    $scope.evaluare=function (){
+    // $scope.clasa=titluri[nr1-1];        $scope.titluri[0]={nume:"Nume elev"}; 
+     //  incarcareScoruri(nr1-1);
+       $scope.src1="fisiere/profesor/evaluare.html";
+          angular.element(document.querySelector( '#evaluare11' )).addClass ("active");
+          angular.element(document.querySelector( '#inregistrare' )).removeClass ("active");
+          angular.element(document.querySelector( '#statistici' )).removeClass ("active");
+    
+}
     $scope.inregistrare = function(){
         
        $scope.src1="fisiere/profesor/inregistrareElevi.html";
@@ -3097,7 +3120,42 @@ nr1=nr1*10+parseInt(b[i]);
  return nr1;
  }
     
- 
+  
+    
+    
+    $scope.numarIntrebari=function(){
+      
+          swal("Introdu numarul de intrebari la care trrebuie sa raspunda un elev!", {
+  content: "input",
+})
+.then((value) => {
+              if ($.isNumeric(value)==true || value%2==1){
+              $http({
+  method: 'POST',
+  url: '/fisiere/profesor/adaugareNumarIntrebari.php',
+  data: {numarIntrebari:value,clasa:nr1-1,numar:numarElev-1},
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+}).then(function successCallback(response) {
+                 
+                  if (response.data==0){
+alert("Introdu o valoare para si mai mica decat 30 si mai mare de 5");
+                  }
+                  
+              })
+         
+        
+      }else {
+alert("eroare");
+        }
+    })
+    }
+    $scope.adaugaIntrebare=function(){
+        
+    }
+    
+    
+    
 })
 
 
