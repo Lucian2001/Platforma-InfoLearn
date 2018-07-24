@@ -11,18 +11,18 @@ $id=$row3[0];
 $nrIntrebari=mysqli_real_escape_string($link, $_POST['numarIntrebari']);
 $clasa=mysqli_real_escape_string($link, $_POST['clasa']);
 $numar=mysqli_real_escape_string($link, $_POST['numar']);
+
 if ($nrIntrebari<6 or $nrIntrebari>25 ){
-    echo 0;
+    echo 1;
 } else{
-    $clasa=1;
-    $numar=4;
+   
     for($i=1;$i<=$numar;$i++){
          if($i<10){
      $idProfesor=$id.$clasa."0".$i;
              $query= "UPDATE elevi SET numarIntrebari ='".mysqli_real_escape_string($link, $nrIntrebari)."'WHERE idProfesor=$idProfesor";
              if ( $result = mysqli_query($link,$query)){
                  
-   
+  
 }else {
  
 }

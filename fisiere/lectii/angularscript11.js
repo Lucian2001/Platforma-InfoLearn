@@ -2330,16 +2330,17 @@ loadElevi(clasa1234);
     
     
     $scope.selectareClasa=function(x){
-        
+        nr1=x;
+        alert(nr1);
          $scope.elevi=[{nume:"",parola:"",numar:"",mesaj:""}];
         clasa1234=x;
         loadElevi(x);
-        $scope.titluClasa=titluri[x]; 
+        $scope.titluClasa=titluri[x]; $scope.clasaEvaluare=titluri[x]; 
         if( $scope.src1=="fisiere/profesor/statistici.html"){
             $scope.alegeri="";
         incarcareScoruri(x);
         $scope.clasa=titluri[x];
-            nr1=x;
+            
             $scope.mesaj1="";
          $("#mycanvas").remove(); 
      $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
@@ -2521,10 +2522,11 @@ $scope.titluri=[{nume:""}];
        $scope.src1="fisiere/profesor/statistici.html";
     angular.element(document.querySelector( '#statistici' )).addClass ("active");
           angular.element(document.querySelector( '#inregistrare' )).removeClass ("active");
+         angular.element(document.querySelector( '#evaluare' )).removeClass ("active");
         
     };
     $scope.evaluare=function (){
-    // $scope.clasa=titluri[nr1-1];        $scope.titluri[0]={nume:"Nume elev"}; 
+    $scope.clasaEvaluare=titluri[nr1-1];        $scope.titluri[0]={nume:"Nume elev"}; 
      //  incarcareScoruri(nr1-1);
        $scope.src1="fisiere/profesor/evaluare.html";
           angular.element(document.querySelector( '#evaluare11' )).addClass ("active");
@@ -3130,15 +3132,16 @@ nr1=nr1*10+parseInt(b[i]);
 })
 .then((value) => {
               if ($.isNumeric(value)==true || value%2==1){
-              $http({
+                 
+           $http({
   method: 'POST',
   url: '/fisiere/profesor/adaugareNumarIntrebari.php',
-  data: {numarIntrebari:value,clasa:nr1-1,numar:numarElev-1},
+  data: {numarIntrebari:value,clasa:nr1,numar:numarElev-1},
   headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 
 }).then(function successCallback(response) {
                  
-                  if (response.data==0){
+                  if (response.data==1){
 alert("Introdu o valoare para si mai mica decat 30 si mai mare de 5");
                   }
                   
