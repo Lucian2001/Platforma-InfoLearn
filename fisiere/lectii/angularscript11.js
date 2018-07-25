@@ -3289,21 +3289,44 @@ for(var j=1;j<numarElev;j++)
    
   }
 });
-     
-     
-     
-     
-       myChart.data.labels[0]="Aplicația 1";
-         myChart.data.labels[1]="Aplicația 2";
-         myChart.data.labels[2]="Aplicația 3";
-         myChart.data.labels[3]="Aplicația 4";
+     var stringuri= new Array();
+     var y=scoruriEvaluare[x];var i=0,z;var nrIntrebari=0;
+     y=scoruriEvaluare[x]
+      
+     while(y!=""){
+         myChart.data.labels[i]=i;
+         z=y.substr(y.length - 2);
+         nrIntrebari=z;
+         y=y.slice(0,y.length-2);
+         z=y.substr(y.length - 2);
+        // alert(z);
+         
+         if(z[0]=='a'){ 
+           
+             z=z.substr(z.length - 1);
+             
+         } else{
+             z=parseInt(z);
+         }
+        
+         stringuri[i+1]=z;
+         
+         y=y.slice(0,y.length-2);
+        
+         i++;
+        
+  
+     }
+      for(var j=1;j<=i+1;j++){
+        myChart.data.datasets[0].data[i-j]=stringuri[j];  
+      }
+     myChart.data.datasets[0].data[0]=0;
+     myChart.data.datasets[0].data[nrIntrebari]=16;
+     myChart.data.labels[i]=i;
          
       
 
-        myChart.data.datasets[0].data[0]=1;
-        myChart.data.datasets[0].data[1]=2;
-         myChart.data.datasets[0].data[2]=3;
-         myChart.data.datasets[0].data[3]=4;
+        
      
    myChart.update(); 
  
@@ -3315,6 +3338,11 @@ for(var j=1;j<numarElev;j++)
  
  
  }
+ 
+   
+ function reverseString(str) {
+    return str.split("").reverse().join("");
+}
 })
 
 
