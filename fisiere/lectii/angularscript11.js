@@ -2386,7 +2386,7 @@ loadElevi(clasa1234);
     
     $scope.selectareClasa=function(x){
         nr1=x;
-        alert(nr1);
+        
          $scope.elevi=[{nume:"",parola:"",numar:"",mesaj:""}];
         clasa1234=x;
         loadElevi(x);
@@ -2397,6 +2397,14 @@ loadElevi(clasa1234);
         $scope.clasa=titluri[x];
             
             $scope.mesaj1="";
+         $("#mycanvas").remove(); 
+     $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
+        
+        }
+         if( $scope.src1=="fisiere/profesor/evaluare.html"){
+           
+        incarcareScoruriEvaluare(x);
+      
          $("#mycanvas").remove(); 
      $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
         
@@ -3236,9 +3244,77 @@ eroareShow("Eroare");
          
         }
     }
-    
-    
-    
+    var scoruriEvaluare=new Array();
+    function incarcareScoruriEvaluare(x){
+        $http({
+  method: 'POST',
+  url: '/fisiere/profesor/loadScoruriEvaluare.php',
+  data: {clasa:x},
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+
+}).then(function successCallback(response) {
+                 
+var data2 =JSON.parse(JSON.stringify(response.data));
+
+numarExercitiiRezolvate=0;
+for(var j=1;j<numarElev;j++)
+    { 
+        scoruriEvaluare[j]=data2.scoruriEvaluare[j];
+    }
+   
+     
+          
+                  
+              })
+
+    }
+    var data2;
+ $scope.scorEvaluare=function(x){
+     x=x+1;
+   
+  var myChart=  new Chart(document.getElementById("mycanvas1"), {
+  type: 'line',
+  data: {
+    labels: [],
+    datasets: [{ 
+        data: [],
+        label: "Exercitii corecte",
+        borderColor: "#3e95cd",
+        fill: false
+      }
+    ]
+  },
+  options: {
+      responsive:false,
+   
+  }
+});
+     
+     
+     
+     
+       myChart.data.labels[0]="Aplicația 1";
+         myChart.data.labels[1]="Aplicația 2";
+         myChart.data.labels[2]="Aplicația 3";
+         myChart.data.labels[3]="Aplicația 4";
+         
+      
+
+        myChart.data.datasets[0].data[0]=1;
+        myChart.data.datasets[0].data[1]=2;
+         myChart.data.datasets[0].data[2]=3;
+         myChart.data.datasets[0].data[3]=4;
+     
+   myChart.update(); 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ }
 })
 
 

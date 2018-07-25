@@ -60,7 +60,7 @@
 </div>
 
               
-<div id="tabelEleviStatistici" >
+<div id="tabelEleviStatistici2" >
         <table class="table">
  <thead id="tabel1">
     <tr ng-repeat="y in titluri">
@@ -72,12 +72,12 @@
  
          
           
-            <tbody  ng-repeat="y in elevi">
+            <tbody  ng-repeat="y in elevi track by $index">
     <tr>
       
-     <td  class="textStatistici"> {{y.username}} </td>
+     <td  class="textStatistici" > <button ng-click="scorEvaluare($index)">{{y.username}} </button></td>
         
-         <td class="textStatistici"> {{y.mesaj}}{{mesaj1}}</td>
+         <td class="textStatistici" ng-click> {{y.mesaj}}{{mesaj1}}</td>
         
       
       
@@ -87,4 +87,7 @@
   </tbody>
                 
 </table>
+    </div>
+<div id="canvasCreator1">
+    <canvas id="mycanvas1" ></canvas>
     </div>
