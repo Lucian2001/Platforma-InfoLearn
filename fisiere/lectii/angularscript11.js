@@ -1013,6 +1013,29 @@ succes();  timpOver=0;
 
 
 angular.module('myApp').controller('evaluare', function ($scope,$http,$location,$timeout){
+    function loadNrIntrebari(){
+         
+         
+            $.ajax({   type:"POST",
+                     url:"fisiere/evaluare/loadNrIntrebari.php",
+                  success:function(result)
+                  {
+                      
+                    
+                      numarIntrebari=result;
+                       procent=(2/numarIntrebari)*100;
+                  }
+                })
+         
+     }
+         var numarIntrebari,procent;
+  numarIntrebari=loadNrIntrebari();
+   numarIntrebari=2;
+    
+   // setTimeout(function(){
+        
+         
+ 
     var x=2;var exercitiuOn=0;nrExercitiu=0;
     var punctaj=0; var raspunsOn1=0;
     var raspunsOn=0,raspunsOn1=0;var intrebare,intrebare1,raspuns,enunt,raspuns11;
@@ -1020,16 +1043,15 @@ angular.module('myApp').controller('evaluare', function ($scope,$http,$location,
     $scope.x1=x-1;
     $scope.y1=x;
     var corecte= new Array();
-   corecte[1]=new Array(3);
-    corecte[2]=new Array(3);
-    corecte[3]=new Array(3);
-    corecte[4]=new Array(3);
-    corecte[5]=new Array(3);
-    corecte[6]=new Array(3);
-    corecte[7]=new Array(3);
-    corecte[8]=new Array(3);
-    corecte[9]=new Array(3);
-    corecte[10]=new Array(3);
+    for(i=1;i<=21;i++)
+ corecte[i]=new Array(3);
+ 
+    
+    
+    
+
+    
+    
 
     $(".btn-info").css("background-color","#17A2B8");
 var idIntrebari = new Array();
@@ -1040,14 +1062,19 @@ var id1Ex1=new Array();
 var numarIntermediar=0;
     var idRaspunsuri1=new Array();
     var idRaspunsuri2=new Array();
-    for(var i=1;i<=20;i++){
+    for(var i=1;i<=30;i++){
         idIntrebari[i]=0;
     }
-     var numarIntrebari,procent;
-  //numarIntrebari=loadNrIntrebari();
-    numarIntrebari=20;
-      procent=(2/numarIntrebari)*100;
-   generareIntrebari(numarIntrebari+10,idIntrebari,1);
+    
+   
+     
+    
+    
+
+
+      
+   generareIntrebari(30,idIntrebari,1);
+    
     generareRaspunsuri(4,idRaspunsuri,1);
   $http({
   method: 'POST',
@@ -1502,11 +1529,6 @@ buton12=$(this).attr('id');
     });
 var procente1=0;
      
-     function loadNrIntrebari(){
-         
-         
-         
-     }
      
      $scope.resetare= function(){
 
@@ -1532,7 +1554,7 @@ var procente1=0;
   headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 
 }).then(function successCallback(response) {
-
+  
   intrebare=response.data.Intrebare;
 
   if (intrebare.slice(0,-1) =="##&##"){
@@ -1738,7 +1760,7 @@ corecte[x-1][1]=enunt;
 
            generareRezultate(raspunsuri,raspuns11);
       corecte[x][1]=enunt;
-     corecte[x][2]=raspuns;
+     corecte[x][2]=raspuns11;
   } else if (numarExercitiu==2){
   generareNumere4(idEx1,numarIntermediar);
   numarIntermediar=Math.floor((Math.random() *2) + 1);
@@ -1775,7 +1797,7 @@ corecte[x-1][1]=enunt;
 
 
 corecte[x][1]=enunt;
-     corecte[x][2]=raspuns;
+     corecte[x][2]=raspuns11;
   } else if(numarExercitiu==3){
   var a,b;
     a=Math.floor((Math.random() * 6) + 1);
@@ -1786,7 +1808,7 @@ corecte[x][1]=enunt;
    generareRaspunsuri124(raspunsuri,a,b);
    raspuns11=raspunsuri[5];
       corecte[x][1]=enunt;
-     corecte[x][2]=raspuns;
+     corecte[x][2]=raspuns11;
   } else if(numarExercitiu==4){
   var nr=Math.floor((Math.random() * 20) + 1);
   var nr1=Math.floor((Math.random() * 20) + 1);
@@ -1848,7 +1870,7 @@ corecte[x][1]=enunt;
   raspunsuri[8]="";
    
 corecte[x][1]=enunt;
-     corecte[x][2]=raspuns;
+     corecte[x][2]=raspuns11;
   }
      idRaspunsuri1[5]=raspunsuri[5];
         idRaspunsuri1[6]=raspunsuri[6];
@@ -1901,7 +1923,7 @@ $(".modal-dialog").hide();
     $("#evaluareEnding").show();
 $scope.punctajShow=punctaj;
     var inlocuitor,inlocuitor1,inlocuitor2;
-    for(i=1;i<=10;i++){
+    for(i=1;i<=numarIntrebari;i++){
        inlocuitor=corecte[i][1];
     inlocuitor1=corecte[i][2];
      if(corecte[i][3]==1){
@@ -1926,7 +1948,7 @@ $scope.punctajShow=punctaj;
         raspuns12:"",
     }
     ];
-
+ //  },100);
     })
 
 
@@ -1935,7 +1957,8 @@ $scope.punctajShow=punctaj;
 
 
 function generareIntrebari(nr,idIntrebari,i){
-    if (i==11 ) return 0;
+   
+    if (i==21) return 0;
     else{
        x=Math.floor((Math.random() *nr) + 1);
         idIntrebari[i]=x;

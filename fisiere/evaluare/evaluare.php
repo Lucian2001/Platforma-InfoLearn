@@ -18,7 +18,7 @@
    <h2 id="titluIntrebari">Întrebări</h2> 
 <h2 id="titluRaspunsuri">Răspunsuri</h2>
     
-<div class="container">
+<div class="container" style="overflow-x:scroll;">
   <div id="#rowEvaluare"class="row" ng-repeat="x in intrebariSiRaspunsuri">
     <div class="col-sm coloana1" ng-style="{'background-color':($index===x.corect12-1 ?'#ffd1d1':'#d1ffdd'),'border-color':($index===x.corect12-1 ?'#d84747':'#24a53a')}">
       {{x.numar1234}} {{x.intrebare2}}
