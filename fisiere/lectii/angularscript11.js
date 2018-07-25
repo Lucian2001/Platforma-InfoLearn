@@ -1013,6 +1013,7 @@ succes();  timpOver=0;
 
 
 angular.module('myApp').controller('evaluare', function ($scope,$http,$location,$timeout){
+    var valoarePunctaj;
     function loadNrIntrebari(){
          
          
@@ -1024,6 +1025,7 @@ angular.module('myApp').controller('evaluare', function ($scope,$http,$location,
                     
                       numarIntrebari=result;
                        procent=(2/numarIntrebari)*100;
+                      valoarePunctaj=100/numarIntrebari;
                   }
                 })
          
@@ -1481,13 +1483,13 @@ var buton12=0;
 
               if (idRaspunsuri2[$(this).attr('id')]==raspuns){
          corecte[x-1][3]=1;
-          punctaj=punctaj+10;
+          punctaj=punctaj+valoarePunctaj;
 buton12=$(this).attr('id');
 
             }
           } else{
             if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
-          punctaj=punctaj+10;
+          punctaj=punctaj+valoarePunctaj;
  corecte[x-1][3]=1;
 buton12=$(this).attr('id');
             }
@@ -1506,12 +1508,12 @@ buton12=$(this).attr('id');
             raspunsOn1=1;
         if(exercitiuOn==1){
                if (idRaspunsuri2[$(this).attr('id')]==raspuns11){
-          punctaj=punctaj+10;
+          punctaj=punctaj+valoarePunctaj;
  corecte[x][3]=1;buton12=$(this).attr('id');
             }
           } else{
             if (idRaspunsuri2[$(this).attr('id')]==idRaspunsuri1[1]){
-          punctaj=punctaj+10;
+          punctaj=punctaj+valoarePunctaj;
  corecte[x][3]=1;buton12=$(this).attr('id');
             }
           }
@@ -1922,23 +1924,53 @@ $(".modal-dialog").hide();
      $("#continua").hide();
     $("#evaluareEnding").show();
 $scope.punctajShow=punctaj;
-    var inlocuitor,inlocuitor1,inlocuitor2;
+    var inlocuitor,inlocuitor1,inlocuitor2,nrCorecte=0,scorFinal="",nrIntr;
     for(i=1;i<=numarIntrebari;i++){
        inlocuitor=corecte[i][1];
     inlocuitor1=corecte[i][2];
-     if(corecte[i][3]==1){
+    
+        if(corecte[i][3]==1){
        inlocuitor2=-1;
-         inlocuitor1="Ai raspuns corect la aceasta intrebare!";
-
+     inlocuitor1="Ai raspuns corect la aceasta intrebare!";
+       nrCorecte++;
      } else{
        inlocuitor2=i;
         inlocuitor1="Raspuns corect:  "+inlocuitor1;
      }
 
-    $scope.intrebariSiRaspunsuri[i-1]={numar1234:(i+".  "),intrebare2:inlocuitor,raspuns12:inlocuitor1,corect12:inlocuitor2};
+         
+    
+           
+            $scope.intrebariSiRaspunsuri[i-1]={numar1234:(i+".  "),intrebare2:inlocuitor,raspuns12:inlocuitor1,corect12:inlocuitor2};
     }
+if(nrCorecte<10){
+            scorFinal="a"+nrCorecte;
+         } else {
+scorFinal=nrCorecte;
+         }
+        
+        nrIntr=(numarIntrebari.toString()).replace(/\s/g,'');
+    
+         if (numarIntrebari<10){
+             scorFinal=scorFinal.toString()+"0"+numarIntrebari.toString();
+         } else{
+              scorFinal=scorFinal.toString()+nrIntr;
+         }
+         $http({
+  method: 'POST',
+  url: '/fisiere/evaluare/incarcareScorEvaluare.php',
+  data: {scor:scorFinal},
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 
-}
+}).then(function successCallback(response) {
+         
+         
+         });
+
+    
+    
+    }
+        
 }
 $scope.punctajShow=punctaj;
 

@@ -24,28 +24,34 @@ var href1;
 
 
     $("#evaluare").click(function(){
+        $("#continutInfo").hide();
 $(location).attr('href', "https://infolearn.ml/index.php#/evaluare");
   })
     $("#structuraAlternativa").click(function(){
-loadSave(6);
+$("#continutInfo").hide();
+        loadSave(6);
  })
 
     $("#buclarepetitiva").click(function(){
-loadSave(5);
+$("#continutInfo").hide();
+        loadSave(5);
 })
 $("#operatorirelationali").click(function(){
-  loadSave(3);
+$("#continutInfo").hide();
+    loadSave(3);
     })
     $("#inceput").click(function(){
-
+$("#continutInfo").hide();
 loadSave(1);
     })
     $("#expresiiaritmetice").click(function(){
-    loadSave(2);
+    $("#continutInfo").hide();
+        loadSave(2);
          
     })
     $("#expresiiLogice").click(function(){
-    loadSave(4);
+    $("#continutInfo").hide();
+        loadSave(4);
         
 
     })
