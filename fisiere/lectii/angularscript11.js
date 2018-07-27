@@ -2449,7 +2449,7 @@ dificultate[17]=66;
 dificultate[18]=66;
 
 var matrice= new Array(31);
-
+var tipStatistica="";
 for (i=1; i <=30; i++)
 matrice[i]=new Array(21)
 var optiune1,optiune2;    
@@ -2457,8 +2457,9 @@ var optiune1,optiune2;
 $scope.media=function(){
     clearStatistici();
     if(numarElev>1){
-    $scope.alegeri="Media";
-    $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"1",functie4:"tuturor exercițiilor"};
+    $scope.alegeri="Media calificativelor";
+    tipStatistica="Media calificativelor";
+        $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"1",functie4:"tuturor exercițiilor"};
     $scope.optiuni[1]={optiune:"Algoritmul",functie1:"1",functie2:"4",functie3:"1",functie4:"exercițiilor cu algoritmi"};
    
     $scope.optiuni[2]={optiune:"Expresii aritmetice",functie1:"5",functie2:"7",functie3:"1",functie4:"exercițiilor cu expresii aritmetice"};
@@ -2485,6 +2486,7 @@ $scope.rGresite=function(){
   clearStatistici();
     if(numarElev>1){
     $scope.alegeri="Răspunsuri greșite";
+          tipStatistica="Răspunsuri greșite";
     $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"2",functie4:"în toate exercițiile"};
     $scope.optiuni[1]={optiune:"Algoritmul",functie1:"1",functie2:"4",functie3:"2",functie4:"exercițiile cu algoritmi"};
     $scope.optiuni[2]={optiune:"Aplicația 1",functie1:"1",functie2:"0",functie3:"2",functie4:"în aplicația 1"};
@@ -2534,6 +2536,7 @@ $scope.calificative=function(){
    clearStatistici();
    if(numarElev>1){
     $scope.alegeri="Calificative";
+       tipStatistica="Calificative";
     $scope.optiuni[0]={optiune:"Toate exercițiile",functie1:"1",functie2:"18",functie3:"3",functie4:"în toate aplicațiile"};
     $scope.optiuni[1]={optiune:"Algoritmul",functie1:"0",functie2:"0",functie3:"0"};
     $scope.optiuni[2]={optiune:"Aplicația 1",functie1:"1",functie2:"0",functie3:"1",functie4:"în aplicația 1"};
@@ -2585,7 +2588,7 @@ $scope.titluri=[{nume:""}];
        $scope.src1="fisiere/profesor/statistici.html";
     angular.element(document.querySelector( '#statistici' )).addClass ("active");
           angular.element(document.querySelector( '#inregistrare' )).removeClass ("active");
-         angular.element(document.querySelector( '#evaluare' )).removeClass ("active");
+         angular.element(document.querySelector( '#evaluare11' )).removeClass ("active");
         
     };
     $scope.evaluare=function (){
@@ -2754,8 +2757,9 @@ return "Experimentat";
  $scope.Statistici=function(x,y,z,t){
        $("#mycanvas").remove(); 
      $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
-      $scope.alegeri=$scope.alegeri+" "+t;
-
+     
+     $scope.alegeri=tipStatistica+" "+t;
+     
   var nr=0; var numar=new Array(); var numar1=new Array();
      if (z==1){
                $("#chestie").hide();
@@ -3189,8 +3193,17 @@ nr1=nr1*10+parseInt(b[i]);
     
     
     $scope.numarIntrebari=function(){
-      
-          swal("Introdu numarul de intrebari la care trrebuie sa raspunda un elev!", {
+  swal({
+  title: "Sunteti sigur?",
+  text: "Daca introduceti un numar de intrebari toate datele de la evaluare ale elevilor vor fi sterse. Daca este prima data cand faceti aceasta setare nu va fi nicio problema",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+   
+  swal("Introdu numarul de intrebari la care trrebuie sa raspunda un elev!", {
   content: "input",
 })
 .then((value) => {
@@ -3215,6 +3228,18 @@ eroareShow("Introdu o valoare para si mai mica decat 30 si mai mare de 5");
 eroareShow("eroare");
         }
     })
+  
+  
+  
+  
+  
+  
+  
+  } else {
+    swal("Your imaginary file is safe!");
+  }
+});
+          
     }
    
     

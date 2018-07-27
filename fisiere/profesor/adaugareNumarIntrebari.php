@@ -26,6 +26,32 @@ if ($nrIntrebari<6 or $nrIntrebari>25 ){
 }else {
  
 }
+             
+             
+$query= "UPDATE elevi SET scorEvaluare=NULL WHERE idProfesor=$idProfesor";
+             if ( $result = mysqli_query($link,$query)){
+                 
+  
+}else {
+  echo mysqli_error($link);
+}
+         }else{
+              $idProfesor=$id.$clasa.$i;
+             $query= "UPDATE elevi SET numarIntrebari ='".mysqli_real_escape_string($link, $nrIntrebari)."'WHERE idProfesor=$idProfesor";
+             if ( $result = mysqli_query($link,$query)){
+                 
+  
+}else {
+ 
+}
+             $query= "UPDATE elevi SET scorEvaluare='".NULL."'WHERE idProfesor=$idProfesor";
+             if ( $result = mysqli_query($link,$query)){
+                 
+  
+}else {
+ 
+}
+             
          }
     }
 }

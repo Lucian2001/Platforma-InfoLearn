@@ -32,7 +32,7 @@
 
 header("X-XSS-Protection: 1; mode=block");
 header("Strict-Transport-Security: max-age=31536000");
-//header("Content-Security-Policy: policy");
+
 header("X-Frame-Options: DENY");
 header("X-Content-Type-Options: nosniff");
 header("Referrer-Policy: no-referrer");

@@ -75,7 +75,7 @@
             <tbody  ng-repeat="y in elevi track by $index">
     <tr>
       
-     <td  class="textStatistici" > <button ng-click="scorEvaluare($index)">{{y.username}} </button></td>
+     <td  class="textStatistici" > <div style="cursor:pointer" ng-click="scorEvaluare($index)">{{y.username}} </div></td>
         
          <td class="textStatistici" ng-click> {{y.mesaj}}{{mesaj1}}</td>
         

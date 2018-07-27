@@ -29,7 +29,7 @@ cursor: pointer;
     overflow-x: scroll; 
     height:76%;
     
-   width:30%;
+   width:20%;
 }
 #tabelEleviStatistici2{
   position:relative;
@@ -39,7 +39,7 @@ cursor: pointer;
     overflow-x: scroll; 
     height:76%;
     
-   width:20%;
+   width:23%;
 }
 #butonAplicatii{
     float:left;
