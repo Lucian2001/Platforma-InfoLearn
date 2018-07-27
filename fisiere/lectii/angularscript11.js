@@ -1164,7 +1164,7 @@ var a,b;
   a=Math.floor((Math.random() * 6) + 1);
   b=Math.floor((Math.random() * 30) + 10);
 numarIntermediar=generareOperator11(a);
-enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"__ .";
+enunt="Alege o variantă ca această expresie sa fie corectă "+b+numarIntermediar+"__ .";
  $scope.intrebare=enunt;
  generareRaspunsuri124(raspunsuri,a,b);
  raspuns=raspunsuri[1];
@@ -1223,7 +1223,7 @@ if(nr7==1){
 }
 
 
-enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
+enunt="Care este valoarea de adevăr a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
  $scope.intrebare=enunt;
  raspunsuri[1]="adevarat";
   raspunsuri[2]="fals";
@@ -1358,7 +1358,7 @@ corecte[x][1]=enunt;
     a=Math.floor((Math.random() * 6) + 1);
     b=Math.floor((Math.random() * 30) + 10);
   numarIntermediar=generareOperator11(a);
-  enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"__ .";
+  enunt="Alege o variantă ca această expresie sa fie corectă "+b+numarIntermediar+"__ .";
    $scope.intrebare1=enunt;
    generareRaspunsuri124(raspunsuri,a,b);
    raspuns11=raspunsuri[5];corecte[x][1]=enunt;
@@ -1416,7 +1416,7 @@ if(nr7==1){
 }
 
 
-enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
+enunt="Care este valoarea de adevăr a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
  $scope.intrebare1=enunt;
  raspunsuri[5]="adevarat";
   raspunsuri[6]="fals";
@@ -1462,7 +1462,7 @@ corecte[x][1]=enunt;
 
 
   }, function errorCallback(response) {
-alert("eroare!Reload page!");
+alert("Eroare!Resetează pagina!");
      // alert(idIntrebari[1]+" sdaasd "+idIntrebari[2]);
      // alert(response);
     // called asynchronously if an error occurs
@@ -1499,7 +1499,7 @@ buton12=$(this).attr('id');
        if(buton12!=$(this).attr('id'))    {
  $("#"+$(this).attr('id')).css("background-color","#17A2B8");}
          $(".btn-info").css("border-color","#17A2B8");
-            eroareShow("Poti apasa un singur rapuns!");
+            eroareShow("Poți apăsa un singur răspuns!");
         }
 
 
@@ -1521,7 +1521,7 @@ buton12=$(this).attr('id');
         if(buton12!=$(this).attr('id')){
             $("#"+$(this).attr('id')).css("background-color","#17A2B8");}
                  $(".btn-info").css("border-color","#17A2B8");
-            eroareShow("Poti apasa un singur rapuns!");
+            eroareShow("Poti apasă un singur răspuns!");
         }
 
           }
@@ -1693,7 +1693,7 @@ var procente1=0;
   }
 
 
-  enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
+  enunt="Care este valoare de adevăr a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
   $scope.intrebare=enunt;
   raspunsuri[1]="adevarat";
   raspunsuri[2]="fals";
@@ -1805,7 +1805,7 @@ corecte[x][1]=enunt;
     a=Math.floor((Math.random() * 6) + 1);
     b=Math.floor((Math.random() * 30) + 10);
   numarIntermediar=generareOperator11(a);
-  enunt="Alege o varianta ca aceasa expresie sa fie corecta "+b+numarIntermediar+"__ .";
+  enunt="Alege o variantă ca această expresie să fie corectă "+b+numarIntermediar+"__ .";
    $scope.intrebare1=enunt;
    generareRaspunsuri124(raspunsuri,a,b);
    raspuns11=raspunsuri[5];
@@ -1864,7 +1864,7 @@ corecte[x][1]=enunt;
   }
 
 
-  enunt="Care este valoare de adevar a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
+  enunt="Care este valoarea de adevăr a expresiei: " + "("+nr+semn+nr1+"=="+ nr4+") "+numarIntermediar+"("+nr2+operator+nr5+")";
   $scope.intrebare1=enunt;
   raspunsuri[5]="adevarat";
   raspunsuri[6]="fals";
@@ -1931,11 +1931,11 @@ $scope.punctajShow=punctaj;
     
         if(corecte[i][3]==1){
        inlocuitor2=-1;
-     inlocuitor1="Ai raspuns corect la aceasta intrebare!";
+     inlocuitor1="Ai răspuns corect la această întrebare!";
        nrCorecte++;
      } else{
        inlocuitor2=i;
-        inlocuitor1="Raspuns corect:  "+inlocuitor1;
+        inlocuitor1="Răspuns corect:  "+inlocuitor1;
      }
 
          
@@ -2239,7 +2239,7 @@ var clase=[];
   $scope.src1="fisiere/profesor/inregistrareElevi.html";
    
   $scope.adaugaClasa = function(){
-    swal("Introdu numele clasei pe care vrei sa o adaugi!", {
+    swal("Introdu numele clasei pe care vrei să o adaugi!", {
   content: "input",
 })
 .then((value) => { 
@@ -2276,7 +2276,7 @@ loadClase();
 })
       }
             else {
-          alert ("Nu poti creea mai multer clase!");
+          alert ("Nu poți creea mai multe clase!");
       }
         } else{
             alert("input error");
@@ -2319,7 +2319,7 @@ loadClase();
  $scope.elevi=[{nume:"",parola:"",numar:""}];
   
     $scope.adaugareElev=function(){
-          swal("Introdu numele elevului pe care vrei sa-l adaugi!", {
+          swal("Introdu numele elevului pe care vrei să-l adaugi!", {
   content: "input",
 })
 .then((value) => {
@@ -2848,7 +2848,7 @@ return "Experimentat";
             }}
          for(i=0;i<numarElev-1;i++)
    $scope.elevi[i]={username:dataElevi.username[i+1],nume:"",parola:"",numar:"",mesaj:numar[i+1]};
-           $scope.mesaj1="/"+(y-x+1)+" exercitii rezolvate";
+           $scope.mesaj1="/"+(y-x+1)+" exerciții rezolvate";
      } else if(y==0){
          nr1=0;nr2=0;nr3=0;nr4=0;nr5=0;
          for(i=1;i<numarElev;i++){
@@ -2867,7 +2867,7 @@ return "Experimentat";
                 nr5++;
             }
          } else{
-elemente[i]="nu a completat exercitiul.";
+elemente[i]="nu a completat exercițiul.";
          }
          }
      
@@ -2903,7 +2903,7 @@ responsive:false
 	 myDoughnutChart.data.labels[0]="Experimentat";
          myDoughnutChart.data.labels[1]="Bun";
          myDoughnutChart.data.labels[2]="Mediu";
-         myDoughnutChart.data.labels[3]="Mai lucreaza";
+         myDoughnutChart.data.labels[3]="Mai lucrează";
          myDoughnutChart.data.labels[4]="Slab";
       
 
@@ -2912,11 +2912,11 @@ responsive:false
          myDoughnutChart.data.datasets[0].data[2]=nr3;
          myDoughnutChart.data.datasets[0].data[3]=nr4;
          myDoughnutChart.data.datasets[0].data[4]=nr5;
-         myDoughnutChart.data.datasets[0].backgroundColor[2]="blue";
-         myDoughnutChart.data.datasets[0].backgroundColor[1]="red"; 
-      myDoughnutChart.data.datasets[0].backgroundColor[3]="green";
-         myDoughnutChart.data.datasets[0].backgroundColor[0]="pink"; 
-      myDoughnutChart.data.datasets[0].backgroundColor[4]="yellow";
+         myDoughnutChart.data.datasets[0].backgroundColor[2]="#9ec3ff";
+         myDoughnutChart.data.datasets[0].backgroundColor[1]="#ff9191"; 
+      myDoughnutChart.data.datasets[0].backgroundColor[3]="#c6ffd1";
+         myDoughnutChart.data.datasets[0].backgroundColor[0]="#ffc6ed"; 
+      myDoughnutChart.data.datasets[0].backgroundColor[4]="#fff499";
        
          myDoughnutChart.update();
      
@@ -2996,17 +2996,17 @@ responsive:false
          myDoughnutChart.data.datasets[0].data[3]=numar1[4];
          myDoughnutChart.data.datasets[0].data[4]=numar1[5];
          myDoughnutChart.data.datasets[0].data[5]=numar1[6];
-         myDoughnutChart.data.datasets[0].backgroundColor[2]="blue";
-         myDoughnutChart.data.datasets[0].backgroundColor[1]="red"; 
-      myDoughnutChart.data.datasets[0].backgroundColor[3]="green";
-         myDoughnutChart.data.datasets[0].backgroundColor[0]="pink"; 
-      myDoughnutChart.data.datasets[0].backgroundColor[4]="yellow";
-             myDoughnutChart.data.datasets[0].backgroundColor[5]="brown";
+         myDoughnutChart.data.datasets[0].backgroundColor[2]="#9ec3ff";
+         myDoughnutChart.data.datasets[0].backgroundColor[1]="#ff9191"; 
+      myDoughnutChart.data.datasets[0].backgroundColor[3]="#c6ffd1";
+         myDoughnutChart.data.datasets[0].backgroundColor[0]="#ffc6ed"; 
+      myDoughnutChart.data.datasets[0].backgroundColor[4]="#fff499";
+             myDoughnutChart.data.datasets[0].backgroundColor[5]="#f9ca98";
          myDoughnutChart.update();  
          
          for(i=0;i<numarElev-1;i++){
           $scope.elevi[i]={username:dataElevi.username[i+1],nume:"",parola:"",numar:"",mesaj:numar[i+1]};
-           $scope.mesaj1=" greseli";
+           $scope.mesaj1=" greșeli";
      }
         } else if ((x!=i || y!=18) && y!=0){
               nr=0; 
@@ -3067,10 +3067,10 @@ responsive:false
          myDoughnutChart.data.datasets[0].data[2]=numar1[3];
          myDoughnutChart.data.datasets[0].data[3]=numar1[4];
          
-         myDoughnutChart.data.datasets[0].backgroundColor[2]="blue";
-         myDoughnutChart.data.datasets[0].backgroundColor[1]="red"; 
-      myDoughnutChart.data.datasets[0].backgroundColor[3]="green";
-         myDoughnutChart.data.datasets[0].backgroundColor[0]="pink"; 
+         myDoughnutChart.data.datasets[0].backgroundColor[2]="#9ec3ff";
+         myDoughnutChart.data.datasets[0].backgroundColor[1]="#ff9191"; 
+      myDoughnutChart.data.datasets[0].backgroundColor[3]="#c6ffd1";
+         myDoughnutChart.data.datasets[0].backgroundColor[0]="#ffc6ed"; 
    
          myDoughnutChart.update(); 
                  for(i=0;i<numarElev-1;i++){
@@ -3121,7 +3121,7 @@ $scope.elevi[i-1]={username:dataElevi.username[i],nume:"",parola:"",numar:"",mes
                      arr[i][j] ="Nume_elev"; 
                  }
                 if (i==0 &&j>=1){
-                     arr[i][j] ="Aplicatia-"+j+"  "; 
+                     arr[i][j] ="Aplicația-"+j+"  "; 
                 }
                 if(j==0&& i>0){
                   arr[i][j] =dataElevi.username[i];  
@@ -3196,8 +3196,8 @@ nr1=nr1*10+parseInt(b[i]);
     
     $scope.numarIntrebari=function(){
   swal({
-  title: "Sunteti sigur?",
-  text: "Daca introduceti un numar de intrebari toate datele de la evaluare ale elevilor vor fi sterse. Daca este prima data cand faceti aceasta setare nu va fi nicio problema",
+  title: "Sunteți sigur?",
+  text: "Dacă introduceți un număr de întrebări, toate datele de la evaluare ale elevilor vor fi șterse. Daca este prima dată când faceți această setare nu va fi nicio problemă.",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -3205,7 +3205,7 @@ nr1=nr1*10+parseInt(b[i]);
 .then((willDelete) => {
   if (willDelete) {
    
-  swal("Introdu numarul de intrebari la care trrebuie sa raspunda un elev!", {
+  swal("Introdu numărul de întrebări la care trebuie să răspundă un elev!", {
   content: "input",
 })
 .then((value) => {
@@ -3220,14 +3220,14 @@ nr1=nr1*10+parseInt(b[i]);
 }).then(function successCallback(response) {
                  
                   if (response.data==1){
-eroareShow("Introdu o valoare para si mai mica decat 30 si mai mare de 5");
+eroareShow("Introdu o valoare pară și mai mică decat 22 și mai mare de 5.");
                   }
                   
               })
          
         
       }else {
-eroareShow("eroare");
+eroareShow("Eroare!");
         }
     })
   
@@ -3238,7 +3238,7 @@ eroareShow("eroare");
   
   
   } else {
-    swal("Your imaginary file is safe!");
+    
   }
 });
           

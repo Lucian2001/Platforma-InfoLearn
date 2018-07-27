@@ -81,7 +81,7 @@
 
 
 </div>
- <button type="button" id="continua"class="btn btn-warning" ng-click="resetare()">Continua</button>
+ <button type="button" id="continua"class="btn btn-warning" ng-click="resetare()">Continuă</button>
 </div>
 
 
