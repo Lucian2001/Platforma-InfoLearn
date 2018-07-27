@@ -2405,8 +2405,8 @@ loadElevi(clasa1234);
            
         incarcareScoruriEvaluare(x);
       
-         $("#mycanvas").remove(); 
-     $("#canvasCreator").prepend("<canvas id=mycanvas height=500px width=500px></canvas>");
+         $("#mycanvas1").remove(); 
+     $("#canvasCreator1").prepend("<canvas id=mycanvas1></canvas>");
         
         }
         
@@ -2592,6 +2592,8 @@ $scope.titluri=[{nume:""}];
         
     };
     $scope.evaluare=function (){
+        
+        incarcareScoruriEvaluare(nr1-1);
     $scope.clasaEvaluare=titluri[nr1-1];        $scope.titluri[0]={nume:"Nume elev"}; 
      //  incarcareScoruri(nr1-1);
        $scope.src1="fisiere/profesor/evaluare.html";
@@ -3269,8 +3271,11 @@ eroareShow("Eroare");
          
         }
     }
+    var activ=0;
     var scoruriEvaluare=new Array();
     function incarcareScoruriEvaluare(x){
+       $("#textGrafic").show();
+       $("#textGrafic1").show();
         $http({
   method: 'POST',
   url: '/fisiere/profesor/loadScoruriEvaluare.php',
@@ -3289,12 +3294,15 @@ for(var j=1;j<numarElev;j++)
    
      
           
-                  
+               activ=1;   
               })
 
     }
     var data2;
  $scope.scorEvaluare=function(x){
+       $("#mycanvas1").remove(); 
+     $("#canvasCreator1").prepend("<canvas id=mycanvas1  ></canvas>");
+     if (activ==1){
      x=x+1;
    
   var myChart=  new Chart(document.getElementById("mycanvas1"), {
@@ -3317,7 +3325,11 @@ for(var j=1;j<numarElev;j++)
      var stringuri= new Array();
      var y=scoruriEvaluare[x];var i=0,z;var nrIntrebari=0;
      y=scoruriEvaluare[x]
-      
+      if (y==null){
+eroareShow("Acest elev nu a rezolvat niciun test!");
+           $("#mycanvas1").remove(); 
+     $("#canvasCreator1").prepend("<canvas id=mycanvas1  ></canvas>");
+      } else{
      while(y!=""){
          myChart.data.labels[i]=i;
          z=y.substr(y.length - 2);
@@ -3359,9 +3371,9 @@ for(var j=1;j<numarElev;j++)
  
  
  
+     }
  
- 
- 
+     }
  }
  
    
