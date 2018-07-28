@@ -2,6 +2,7 @@
 $_POST = json_decode(file_get_contents('php://input'), true);
 include ($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
 $id1=$_SESSION['id'];
+$id1=mysqli_real_escape_string($link, $id1);  
   $query="SELECT *FROM users WHERE token = '$id1'";
 if ($result1 = mysqli_query($link,$query)){
     $row3 = mysqli_fetch_array($result1);
@@ -26,7 +27,7 @@ for ($x = 0; $x < strlen($parola); $x++) {
 $bytes = random_bytes(5);
 $parolaNoua=bin2hex($parolaNoua);
 
-echo $parolaNoua;
+
 
 $query = "INSERT INTO users (`username`, `email`,`password`,`tip`) VALUES ('". mysqli_real_escape_string($link, "elev")."','".mysqli_real_escape_string($link, $elev)."','".mysqli_real_escape_string($link,$parolaNoua)."','". mysqli_real_escape_string($link, "3")."')";
 if (mysqli_query($link,$query)){
@@ -41,7 +42,7 @@ $parola= md5(md5($newId).$parolaNoua);
                     
                    
 }else {
-     echo("Error description: " . mysqli_error($link));
+    // echo("Error description: " . mysqli_error($link));
 }
 $query = "INSERT INTO elevi (`numeElev`,`username`,`idElev`, `parolaElev`,`clasa`,`idProfesor`) VALUES ('". mysqli_real_escape_string($link, $elev)."', '".mysqli_real_escape_string($link, $username)."','".mysqli_real_escape_string($link, $newId)."', '". mysqli_real_escape_string($link, $parolaNoua)."','". mysqli_real_escape_string($link,$clasa)."','". mysqli_real_escape_string($link, $id)."')";
 if ( $result = mysqli_query($link,$query)){

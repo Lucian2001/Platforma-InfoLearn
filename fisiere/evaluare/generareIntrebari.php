@@ -3,6 +3,9 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 include ($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
 $id1=$_POST['id1'];
 $id2=$_POST['id2'];
+$id1=mysqli_real_escape_string($link, $id1);
+$id2=mysqli_real_escape_string($link, $id2);
+mysqli_real_escape_string($link, $_POST['r1']);
 $query="SELECT *FROM evaluare WHERE id = $id1";
 if ($result = mysqli_query($link,$query)){
    $row = mysqli_fetch_array($result);
@@ -31,5 +34,5 @@ $outp .= '"R11":"'.$r11.'",';
 $outp .= '"R21":"'.$r21.'",';
 $outp .= '"R31":"'.$r31.'",';
 $outp .= '"R41":"'.$r41.'"}';
-echo $outp;
+echo htmlspecialchars($outp,ENT_QUOTES,'UTF-8');
 ?>

@@ -2,6 +2,7 @@
 $_POST = json_decode(file_get_contents('php://input'), true);
 include($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
 $id1=$_SESSION['id'];
+$id1=mysqli_real_escape_string($link, $id1);  
   $query="SELECT *FROM users WHERE token = '$id1'";
 if ($result1 = mysqli_query($link,$query)){
     $row3 = mysqli_fetch_array($result1);
@@ -33,7 +34,7 @@ $query= "UPDATE elevi SET scorEvaluare=NULL WHERE idProfesor=$idProfesor";
                  
   
 }else {
-  echo mysqli_error($link);
+ 
 }
          }else{
               $idProfesor=$id.$clasa.$i;

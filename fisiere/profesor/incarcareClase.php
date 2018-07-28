@@ -2,6 +2,7 @@
 $_POST = json_decode(file_get_contents('php://input'), true);
 include ($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
 $id1=$_SESSION['id'];
+$id1=mysqli_real_escape_string($link, $id1);  
   $query="SELECT *FROM users WHERE token = '$id1'";
 if ($result1 = mysqli_query($link,$query)){
     $row3 = mysqli_fetch_array($result1);
@@ -9,9 +10,9 @@ if ($result1 = mysqli_query($link,$query)){
 $id=$row3[0]; 
 $clasa=$_POST['clasa'];
 $nr=$_POST['nr'];
-echo $nr;
+$nr=mysqli_real_escape_string($link, $nr);  
 $nume="clasa".$nr;
-echo $nume;
+
 $query= "ALTER TABLE clase ADD $nume TEXT NOT NULL";
 if ( $result = mysqli_query($link,$query)){
    

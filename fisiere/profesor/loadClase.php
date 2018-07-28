@@ -1,6 +1,7 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
 $id1=$_SESSION['id'];
+$id1=mysqli_real_escape_string($link, $id1);  
   $query="SELECT *FROM users WHERE token = '$id1'";
 if ($result1 = mysqli_query($link,$query)){
     $row3 = mysqli_fetch_array($result1);
@@ -31,5 +32,5 @@ for ($i = 2; $i <= $nr; $i++) {
     $clase1=$clase1.$row[$i]."#";
 } 
 $clase1=$clase1.$row[1];
-echo $clase1;
+echo htmlspecialchars($clase1,ENT_QUOTES,'UTF-8');
  ?>

@@ -35,10 +35,7 @@
             } else{
                     $("#continutInfo").hide();
             }
-    var username= "<?php echo $username?>"
-
-    var email="<?php echo $email?>"
-    var image="<?php echo $image ?>"
+  
     var n=username.length;
              var panelOn=false;
          var n1;

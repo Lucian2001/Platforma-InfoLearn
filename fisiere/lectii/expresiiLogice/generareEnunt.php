@@ -14,6 +14,6 @@ $raspuns=$row[2];
 $outp .= '{"Intrebare":"'.$intrebare.'",';
    $outp .= '"Raspuns":"'.$raspuns.'"}';
 
-echo $outp;
+echo htmlspecialchars($outp,ENT_QUOTES,'UTF-8');
 
 ?>

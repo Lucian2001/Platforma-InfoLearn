@@ -13,6 +13,7 @@ if (mysqli_connect_error()){
     if ($_GET['function']== "logout"){
 
         $id=$_SESSION['id'];
+        $id1=mysqli_real_escape_string($link, $id1);  
         $query = "UPDATE users SET  token=NULL WHERE token='$id'";
                     
                 if($result2 = mysqli_query($link, $query)) {

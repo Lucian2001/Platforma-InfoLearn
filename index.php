@@ -1,6 +1,6 @@
 <head>
-<meta charset="utf-8">
- <meta charset="utf-8">
+<meta charset="UTF-8">
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>InfoLearn</title>
 <!-- frameworks-->
@@ -29,6 +29,7 @@
 
 </head>
 <?php
+header('Content-type: application/json'); 
 
 header("X-XSS-Protection: 1; mode=block");
 header("Strict-Transport-Security: max-age=31536000");
@@ -39,7 +40,7 @@ header("Referrer-Policy: no-referrer");
 
 include($_SERVER['DOCUMENT_ROOT']."/fisiere/php/functions.php");
 $id1=$_SESSION['id']; 
-
+$id1=mysqli_real_escape_string($link, $id1);  
 if ($id1!=""){
 $query="SELECT *FROM users WHERE token = '$id1'";
 if ($result1 = mysqli_query($link,$query)){
