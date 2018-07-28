@@ -57,7 +57,7 @@
 </div>
 
 </div>
-<div class="expl-box-fi162" ng-fi-text=" Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Ele se pot șterge la nevoie.Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run."></div>
+<div class="expl-fi156">Folosindu-te de blocurile din panoul ,,Blocuri,, trebuie să controlezi tancul și să-l duci în locul marcat pe hartă. Comenzile se adaugă dând click pe un bloc. Ele se pot șterge la nevoie.Pentru a vedea ce se întâmplă cu tancul tău trebuie apăsat butonul Run.</div>
 
 <script src="fisiere/lectii/structuraAlternativa/generareMapa1.6.2.js"></script>
 

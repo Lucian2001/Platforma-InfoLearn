@@ -35,7 +35,7 @@
             <p   font-weight= "normal;" id="login-text"></p>
             <img id="login-image" src="fisiere/assets/images/user-icon-placeholder.png"  height="22" width="22">
     </div>
-    <div id="panel">
+    <div id="panel"> 
 
       
 

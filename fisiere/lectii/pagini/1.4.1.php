@@ -1,6 +1,6 @@
 <body ng-app=myApp>
 <div id="animation-side"  ng-controller="expresiiLogice">
- <div class="expl-box-fi-enunt" ng-fi-text="Uitându-te la imagine de mai jos, completează spațiile punctate cu o expresie logică astfel încat enunțul să exprime un adevăr/fals."></div>
+ <div class="expl-fi-enunt1">Uitându-te la imagine de mai jos, completează spațiile punctate cu o expresie logică astfel încat enunțul să exprime un adevăr/fals.</div>
 <img src="fisiere/assets/images/expresiiLogice/Imagine1.png" id="imagine">
 
         <img ng-show="visible"id="corect" src="fisiere/assets/images/corect.png" >

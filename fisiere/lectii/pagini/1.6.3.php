@@ -1,6 +1,6 @@
 
 <div id="animation-side">
- <div class="expl-box-fi-enunt163" ng-fi-text="Scrie în caseta de mai jos răspunsul corect care respectă structura de mai jos!"></div>
+ <div class="expl-fi-enunt163">Scrie în caseta de mai jos răspunsul corect care respectă structura de mai jos!</div>
     <div id="spatiuExercitii">
 <p  class="valoare">Daca</p>
            <p class="valoare" >(</p>

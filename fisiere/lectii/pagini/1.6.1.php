@@ -1,6 +1,6 @@
 
 <div id="animation-side">
-  <div class="expl-box-fi-enunt161" ng-fi-text="Stabilește valoarea de adevăr a expresiei de mai jos!"></div>
+  <div class="expl-fi-enunt161"> Stabilește valoarea de adevăr a expresiei de mai jos!</div>
 
 
     <div id="spatiuExercitii">

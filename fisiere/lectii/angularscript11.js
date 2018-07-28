@@ -27,12 +27,11 @@ var eroareRun=false;
     
 
 
-    $scope.src="fisiere/lectii/pagini/"+href12+".php";
 
-    $timeout( function (){
+ 
          $scope.src="fisiere/lectii/pagini/"+paginaUpload+".php";
 
-        }, 200);
+       
 
        $scope.blocuriSrc="fisiere/lectii/blocuri/"+paginaUpload +"bloc.html";
     //            alert("dsa");
@@ -289,8 +288,9 @@ bucla=false;
 return 0;
  }
     }
-altfelOn=0;
+var altfelOn=0;
       $scope.altfel=function(){
+         
           if (verificareLimita()==true){
            eroareShow("Nu poți introduce mai multe comenzi!");       
            return 0;
@@ -303,7 +303,7 @@ altfelOn=0;
            eroareShow("Ar trebui să pui un bloc DACĂ mai întâi!");
            return 0;
        }
-          if (altfelOn==1){
+          if (altfelOn==0){
           spatiu="--";
           spatiu1="--";
 
@@ -331,7 +331,7 @@ altfelOn=0;
       var terminat=true;
        
     $scope.Run=function(){
-      
+      eroarePattern=0;
 isRunning=true;
         if (idUrl==164||idUrl==151||idUrl==152||idUrl==153||idUrl==154){
             if (repetaOn==0){
@@ -411,7 +411,7 @@ else {
   if (ifOn==1){
       var eroarePattern=0;
         patternRepetaString1= patternRepetaString1+patternRepetaString.slice(0,1);
-
+alert(patternRepetaString1);
       if (patternRepetaString1!="1"){
          eroarePattern=1;
       }
@@ -453,7 +453,7 @@ else {
          }
 
                  patternString=patternString.replace("4",patternRepetaString1);
-//alert(patternString);
+
 
 
          pattern=patternString;}}
@@ -477,6 +477,7 @@ var patternSave;
 
     $scope.error="Nu e nicio eroare" ;
 pattern=patternSave;
+        
            RunAlgorritm(pattern);
      }
  }
@@ -497,6 +498,7 @@ isRunning=false;
       ifOn=0;
       endOn=0;
       repetaOn=false;
+      altfelOn=0;
   patternRepetaString1="";
   patternRepetaString="";
   patternRepeta="";

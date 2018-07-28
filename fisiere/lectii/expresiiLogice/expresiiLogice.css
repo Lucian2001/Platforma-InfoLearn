@@ -60,7 +60,7 @@ text-align: center;
 margin:0;
 margin-bottom: 5%;
 }
-.expl-box-fi-enunt{
+.expl-fi-enunt1{
     margin-top: 1%;
 margin-left:1%;
  text-align:justify;
@@ -69,7 +69,7 @@ height: 20%;
 width: 99%;
 color:black;
   text-indent: 20px;
-    
+font-size: 1vw;    
  
 }
 [class^="expl-box"] {

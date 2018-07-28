@@ -1,5 +1,5 @@
 <div id="animation-side">
-  <div class="expl-box-fi-enunt" ng-fi-text="Trage casetele din panoul cu blocuri în locurile corespunzătoare pentru ca expresia sa fie corectă."></div>
+  <div class="expl-fi-enunt1"> Trage casetele din panoul cu blocuri în locurile corespunzătoare pentru ca expresia sa fie corectă.</div>
 
     <div id="spatiuExercitii3">
 
@@ -14,7 +14,7 @@
     <button id="generare3" class="btn btn-primary">Generare alt exercitiu</button>
       <h1 id="exercitii"><span id="exercitiiRezolvate">0</span>/6</h1>
 </div>
-<div class="expl-box-fi2" ng-fi-text="    După ce ai pus un bloc vei afla dacă ai răspuns corect sau nu. După aceea apasă butonul de mai sus pentru a genera un nou exercițiu. Aplicația va fi completă după ce ai răspuns corect la 6 itemi."></div>
+<div class="expl-fi21" >    După ce ai pus un bloc vei afla dacă ai răspuns corect sau nu. După aceea apasă butonul de mai sus pentru a genera un nou exercițiu. Aplicația va fi completă după ce ai răspuns corect la 6 itemi.</div>
 
 <link rel="stylesheet" href="fisiere/lectii/expresiiAritmetice/expresiiAritmetice.css">
 

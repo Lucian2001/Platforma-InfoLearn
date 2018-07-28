@@ -7,8 +7,8 @@
         float: left;
         margin-top: -4%;
     }
-    .expl-box-fi2 {
-		margin-top: -4%;;
+    .expl-fi21 {
+		margin-top: -2%;;
             border-style: none;
 			height: 23%;
             width:95%;
@@ -16,7 +16,32 @@
              margin-left:3%;
             color:black;
          text-indent: 10px;
-
+            font-size: 1.2vw;
+        
+		}
+  .expl-fi22 {
+		margin-top: -2%;;
+            border-style: none;
+			height: 23%;
+            width:95%;
+            text-align:justify;
+             margin-left:3%;
+            color:black;
+         text-indent: 10px;
+            font-size: 1.05vw;
+        
+		}
+  .expl-fi23 {
+		margin-top: -2%;;
+            border-style: none;
+			height: 23%;
+            width:95%;
+            text-align:justify;
+             margin-left:3%;
+            color:black;
+         text-indent: 10px;
+            font-size: 1.05vw;
+        
 		}
     #droppable{
         width: 13%;
@@ -195,7 +220,7 @@ float:left;
     height: 12%;
     font-size: 20px;
 }
-.expl-box-fi-enunt{
+.expl-fi-enunt1{
     margin-top: 1%;
 margin-left:1%;
  text-align:justify;
@@ -204,7 +229,7 @@ height: 20%;
 width: 99%;
 color:black;
   text-indent: 20px;
-    
+    font-size:  1.2vw;
  
 }
 [class^="expl-box"] {
@@ -229,7 +254,7 @@ color:black;
     margin-right: 3%;
     margin-top: 2%;
 }
-.expl-box-fi-enun{
+.expl-fi-enunt2{
     margin-top: 1%;
 margin-left:1%;
  text-align:justify;
