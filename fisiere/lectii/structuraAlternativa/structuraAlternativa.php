@@ -28,7 +28,7 @@
     <a class="nav-item nav-link active tabAplicatie "  id="id-161" data-toggle="tab"role="tab" aria-controls="nav-home" aria-selected="false" ng-click="a1()">Aplicația 1</a>
     <a class="nav-item nav-link tabAplicatie " id="id-162" data-toggle="tab"  role="tab" aria-controls="nav-profile" aria-selected="true" ng-click="a2()">Aplicația 2</a>
     <a class="nav-item nav-link tabAplicatie" id="id-163" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a3()">Aplicația 3</a>
-		  <a class="nav-item nav-link tabAplicatie" id="id-164" data-toggle="tab" role="tab" aria-controls="nav-contact" aria-selected="false" ng-click="a4()">Aplicația 4</a>
+		  
   </div>
 </nav>
         <img id="object1" src="">

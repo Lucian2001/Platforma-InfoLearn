@@ -42,7 +42,7 @@ $i=false;
 
 
 
-$data['numar'][1]=htmlspecialchars($nr;,ENT_QUOTES,'UTF-8');  
+$data['numar'][1]=htmlspecialchars($nr,ENT_QUOTES,'UTF-8');  
 $data= json_encode($data);
 echo substr($data, 0, -2); 
 ?>

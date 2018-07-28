@@ -3,7 +3,7 @@
 
 
 angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams,$http,$timeout){
-alert(idUrl);
+
     function verificareLimita(){
 if (n1<13)
     return false;
@@ -95,6 +95,7 @@ return 0;
 spatiu="---";
              spatiu1="---";
          }
+       
         $scope.records[i] =n1+spatiu+spatiu1+" "+"mergi-înainte";
     i=i+1;
        if (bucla==false && repetaOn==false){
@@ -413,7 +414,7 @@ else {
   if (ifOn==1){
       var eroarePattern=0;
         patternRepetaString1= patternRepetaString1+patternRepetaString.slice(0,1);
-alert(patternRepetaString1);
+
       if (patternRepetaString1!="1"){
          eroarePattern=1;
       }
@@ -462,7 +463,7 @@ alert(patternRepetaString1);
 
 
 
-
+alert(pattern);
 
 
 //alert(n);
