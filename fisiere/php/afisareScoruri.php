@@ -17,7 +17,7 @@ $data['scor'] = array();
                   
               }
 for($i=1;$i<=17;$i++){
-$data['scor'][$i]=$row[$i+1];
+$data['scor'][$i]=htmlspecialchars($row[$i+1],ENT_QUOTES,'UTF-8'); 
 }
 
 $data= json_encode($data);

@@ -29,7 +29,7 @@
 
 </head>
 <?php
-header('Content-type: application/json'); 
+ 
 
 header("X-XSS-Protection: 1; mode=block");
 header("Strict-Transport-Security: max-age=31536000");

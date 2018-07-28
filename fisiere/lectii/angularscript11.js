@@ -3,7 +3,7 @@
 
 
 angular.module('myApp').controller('blocuri', function ($scope,$location,$route,$window,$location,$routeParams,$http,$timeout){
-
+alert(idUrl);
     function verificareLimita(){
 if (n1<13)
     return false;
@@ -57,6 +57,7 @@ var eroareRun=false;
                 idUrl=idUrl*10+z4;
             }
         }
+    
     var i=0;
     var n=1,n1=1;
     var nr=0;
@@ -78,6 +79,7 @@ var eroareRun=false;
            return 0;
        }
        if ((idUrl==164 && repetaOn==0)||(idUrl==151 && repetaOn==0)||(idUrl==152 && repetaOn==0)||(idUrl==153 && repetaOn==0)){
+          
            eroareShow("Comenzile ar trebui să le pui într-un bloc repetă!");
            return 0;
        }

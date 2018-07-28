@@ -25,9 +25,9 @@ $query = "SELECT * FROM elevi WHERE idProfesor = $idElev";
             $result = mysqli_query($link, $query);
             if (mysqli_num_rows($result) > 0)  {
                    $row = mysqli_fetch_array($result);
-   $data['username'][$nr]=$row[2];       
-$data['nume'][$nr]=$row[1];
-$data['parola'][$nr]=$row[4];
+   $data['username'][$nr]=htmlspecialchars($row[2],ENT_QUOTES,'UTF-8');       
+$data['nume'][$nr]=htmlspecialchars($row[1],ENT_QUOTES,'UTF-8');  
+$data['parola'][$nr]=htmlspecialchars($row[4],ENT_QUOTES,'UTF-8');  
 
 $nr=$nr+1;
 if($nr<10){
@@ -42,7 +42,7 @@ $i=false;
 
 
 
-$data['numar'][1]=$nr;
+$data['numar'][1]=htmlspecialchars($nr;,ENT_QUOTES,'UTF-8');  
 $data= json_encode($data);
 echo substr($data, 0, -2); 
 ?>

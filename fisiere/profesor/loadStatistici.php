@@ -25,7 +25,7 @@ $idElev= $row[3];
 if ($result2 = mysqli_query($link,$query)){
     $rowScor = mysqli_fetch_array($result2);
  for($j=1;$j<=19;$j++)
-    $data['scoruri'][$i][$j]=$rowScor[$j];
+    $data['scoruri'][$i][$j]=htmlspecialchars($rowScor[$j],ENT_QUOTES,'UTF-8');  
     //echo $rowScor[1]."&";
 } else{
     

@@ -14,7 +14,7 @@ $clasa=$_POST['clasa'];
 $idElev=$_POST['idElev'];
 $parola=$id.$idElev;
 $elev=$elev."_".$id.$idElev."@elev.ro";
-
+ if($elev!=""){
 $id=$id.$idElev;
 for ($x = 0; $x < strlen($parola); $x++) {
   $y=$parola[$x];
@@ -51,5 +51,7 @@ if ( $result = mysqli_query($link,$query)){
   
 }
 
-
+ } else {
+     echo eroare;
+ }
 ?>

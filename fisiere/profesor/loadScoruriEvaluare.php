@@ -21,7 +21,7 @@ if ($result1 = mysqli_query($link,$query)){
     $row = mysqli_fetch_array($result1);
   if ($row[3]!=""){
 
-    $data['scoruriEvaluare'][$i-1]=$row[8];
+    $data['scoruriEvaluare'][$i-1]=htmlspecialchars($row[8],ENT_QUOTES,'UTF-8');  
 } else{
     
 }

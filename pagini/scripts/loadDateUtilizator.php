@@ -18,7 +18,7 @@ $query="SELECT *FROM completat WHERE id = '$id'";
 
 if ($result2 = mysqli_query($link,$query)){
     $row2= mysqli_fetch_array($result2);
-$data["save"]=$row2[1];
+$data["save"]=htmlspecialchars($row2[1],ENT_QUOTES,'UTF-8'); 
 
 
 }
@@ -29,8 +29,8 @@ $query="SELECT *FROM users WHERE id = '$id'";
 if ($result1 = mysqli_query($link,$query)){
     $row = mysqli_fetch_array($result1);
    
-    $data['username']=$row[1];
-   $data['email']=$row[2];
+    $data['username']=htmlspecialchars($row[1],ENT_QUOTES,'UTF-8'); 
+   $data['email']=htmlspecialchars($row[2],ENT_QUOTES,'UTF-8'); 
 
     // echo "your username is ".$row[1] . "hello ".$row[1];
 
