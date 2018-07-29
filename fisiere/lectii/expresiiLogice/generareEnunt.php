@@ -6,14 +6,15 @@ $query="SELECT *FROM ExpresiiLogiceA1 WHERE id = $id";
 
 if ($result = mysqli_query($link,$query)){
    $row = mysqli_fetch_array($result);
-$intrebare=$row[1];
-$raspuns=$row[2];
+$intrebare=htmlspecialchars($row[1],ENT_QUOTES,'UTF-8');
+
+$raspuns=htmlspecialchars($row[2],ENT_QUOTES,'UTF-8');
 
 
 }
 $outp .= '{"Intrebare":"'.$intrebare.'",';
    $outp .= '"Raspuns":"'.$raspuns.'"}';
 
-echo htmlspecialchars($outp,ENT_QUOTES,'UTF-8');
+echo $outp;
 
 ?>
