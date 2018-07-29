@@ -14,7 +14,8 @@ function generareTeren1(target) {
     }
 }
 function generareTeren2(target){
-  var iarba= new Array();
+
+    var iarba= new Array();
 
   iarba[1]=new Array(6);
   iarba[2]=new Array(6);
@@ -32,6 +33,7 @@ var a=1,b=1;
  for(i=1;i<7;i++)
  for(j=1;j<7;j++){
  if(  iarba[i][j]==0 && (i*10+j)!=target ){
+      
     $("#id-"+i+j).attr('src','fisiere/assets/images/iarba.png');
  }
  }

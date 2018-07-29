@@ -23,6 +23,7 @@ $("#sub-menu").show();
 }
 
 function aplicatia1(){
+     setTimeout(function(){
      generareScor(14,20);   
 start();
 if (tanc==0){
@@ -68,8 +69,10 @@ $("#butonError").click(function(){
 
     $("#errorPanel").hide();
 })
+         },50);
 }
 function aplicatia2(){
+          setTimeout(function(){
      redimensionare151()
  generareScor(15,58);   
 start();
@@ -132,8 +135,10 @@ $("#butonError").click(function(){
 
     $("#errorPanel").hide();
 })
+              },50);
 }
 function aplicatia3(){
+               setTimeout(function(){
      redimensionare151()
      generareScor(16,55);   
 start();
@@ -203,8 +208,10 @@ $("#butonError").click(function(){
      if (width<1500&&height<800&&width>1400&&height>1000){
 
      }}
+                },100);   
 }
 function aplicatia4(){
+                    setTimeout(function(){
  generareScor(17,66); 
 start();
 if (tanc==0){
@@ -262,5 +269,5 @@ $("#object1").show();
 $("#butonError").click(function(){
  hidethings();
 });
-
+                    },50);
 }

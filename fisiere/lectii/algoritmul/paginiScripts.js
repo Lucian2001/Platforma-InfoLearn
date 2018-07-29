@@ -29,7 +29,7 @@ $("#object1").hide();
 
 }
 function pagina112(){
-   
+   setTimeout(function(){
      isRunning=false;
      generareScor(2,20);  
     //generate target
@@ -85,9 +85,11 @@ $("#butonError").click(function(){
      if (width<1500&&height<800&&width>1400&&height>1000){
 
      }} 
+   },50);
 }
 
 function pagina113(){
+    setTimeout(function(){
        isRunning=false;
 start();
     generareScor(3,52); 
@@ -107,7 +109,8 @@ target.css("top",offsettarget.top-(($(document).width()*8.2)/100));
 target.css("left",offsettarget.left-(($(document).width()*1.2)/100));
 target1=generareTinta(locatiiValide,12,67,20);
     $("#id-"+target1).attr('src','fisiere/assets/images/road_target.png');
-generareTeren2(target1);
+
+ 
     
 
 $(".imagineComponentaTanc").hide();
@@ -121,9 +124,9 @@ $(".imagineComponentaTanc").hide();
 //}
 
 
-$(document).ready(function(){
-  
-  $("#butonsmecher").show();
+
+       generareTeren2(target1);
+    $("#butonsmecher").show();
   $("#resetareAplicatie").hide();
    redimensionare13();
    // $("#id:35").attr("src","fisiere/assets/images/road_target");
@@ -131,14 +134,18 @@ $(document).ready(function(){
 
     $("#object1").attr('src','fisiere/assets/images/'+tanc+'.png');
 $("#object1").show();
+ 
+  
 
-})
+
 if (tanc==0||tanc==undefined){
     
   noTank();
 }
+    },50) 
 }
 function pagina114(){
+    setTimeout(function(){
     isRunning=false;
    generareScor(4,52); 
 start();
@@ -187,7 +194,7 @@ $("#butonError").click(function(){
  hidethings();
 });
 
-
+},50);
 
 }
 
