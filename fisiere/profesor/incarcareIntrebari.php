@@ -22,7 +22,7 @@ if ($enunt=="" || $r1=="" || $r2=="" || $r3=="" || $r4==""  ){
              if ( $result = mysqli_query($link,$query)){
              
   for($i=1;$i<=4;$i++){
-      $enunt="##&##".$i; 
+      $enunt="##!##".$i; 
       $query= "INSERT INTO evaluare (`intrebare`,`r1`,`r2`,`r3`,`r4`,`valid`) VALUES ('$enunt','2','3','4','5','1')";
         if ( $result = mysqli_query($link,$query)){}
   }

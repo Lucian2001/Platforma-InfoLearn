@@ -1094,7 +1094,7 @@ var numarIntermediar=0;
 
   intrebare=response.data.Intrebare;
 
- if (intrebare.slice(0,-1) =="##&##"){
+ if (intrebare.slice(0,-1) =="##!##"){
 numarExercitiu= intrebare.substr(intrebare.length - 1);
 exercitiuOn=1;
 
@@ -1284,7 +1284,7 @@ corecte[x-1][1]=enunt;
 
 
 intrebare1=response.data.Intrebare1;
-      if (intrebare1.slice(0,-1)=="##&##"){
+      if (intrebare1.slice(0,-1)=="##!##"){
         numarExercitiu= intrebare1.substr(intrebare1.length - 1);
         exercitiuOn=1;
 
@@ -1564,7 +1564,7 @@ var procente1=0;
   
   intrebare=response.data.Intrebare;
 
-  if (intrebare.slice(0,-1) =="##&##"){
+  if (intrebare.slice(0,-1) =="##!##"){
   numarExercitiu= intrebare.substr(intrebare.length - 1);
   exercitiuOn=1;
   enunt="";
@@ -1731,7 +1731,7 @@ corecte[x-1][1]=enunt;
 
 
   intrebare1=response.data.Intrebare1;
-      if (intrebare1.slice(0,-1)=="##&##"){
+      if (intrebare1.slice(0,-1)=="##!##"){
         numarExercitiu= intrebare1.substr(intrebare1.length - 1);
         exercitiuOn=1;
 
@@ -2471,7 +2471,7 @@ $scope.media=function(){
    
     $scope.optiuni[3]={optiune:"Operatori relaționali",functie1:"8",functie2:"9",functie3:"1",functie4:"exercițiilor cu operatori relaționali"};
 
-    $scope.optiuni[4]={optiune:"Structura alternativă",functie1:"11",functie2:"14",functie3:"1",functie4:"exercițiilor cu structura Alternativă"};
+    $scope.optiuni[4]={optiune:"Structura alternativă",functie1:"11",functie2:"13",functie3:"1",functie4:"exercițiilor cu structura Alternativă"};
 
     $scope.optiuni[5]={optiune:"Bucla repetitivă",functie1:"15",functie2:"18",functie3:"1",functie4:"exercițiilor cu bucla repetitivă"};
      }
@@ -2506,16 +2506,16 @@ $scope.rGresite=function(){
     $scope.optiuni[11]={optiune:"Aplicația 1",functie1:"8",functie2:"0",functie3:"2",functie4:"în aplicația 1"};
     $scope.optiuni[12]={optiune:"Aplicația 2",functie1:"9",functie2:"0",functie3:"2",functie4:"în aplicația 2"};
     $scope.optiuni[13]={optiune:"Expresii logice",functie1:"10",functie2:"0",functie3:"2",functie4:"exercițiile cu expresii logice"};
-    $scope.optiuni[14]={optiune:"Structura alternativă",functie1:"11",functie2:"14",functie3:"2",functie4:"exercițiile cu structura alternativă"};
+    $scope.optiuni[14]={optiune:"Structura alternativă",functie1:"11",functie2:"13",functie3:"2",functie4:"exercițiile cu structura alternativă"};
     $scope.optiuni[15]={optiune:"Aplicația 1",functie1:"11",functie2:"0",functie3:"2",functie4:"în aplicația 1"};
     $scope.optiuni[16]={optiune:"Aplicația 2",functie1:"12",functie2:"0",functie3:"2",functie4:"în aplicația 2"};
     $scope.optiuni[17]={optiune:"Aplicația 3",functie1:"13",functie2:"0",functie3:"2",functie4:"în aplicația 3"};
-    $scope.optiuni[18]={optiune:"Aplicația 4",functie1:"14",functie2:"0",functie3:"2",functie4:"în aplicația 4"};
-    $scope.optiuni[19]={optiune:"Bucla repetitivă",functie1:"15",functie2:"18",functie3:"2",functie4:"exercițiile cu bucla repetitivă"};
-    $scope.optiuni[20]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"2",functie4:"în aplicația 1"};
-    $scope.optiuni[21]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"2",functie4:"în aplicația 2"};
-    $scope.optiuni[22]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"2",functie4:"în aplicația 3"};
-    $scope.optiuni[23]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"2",functie4:"în aplicația 4"};
+
+    $scope.optiuni[18]={optiune:"Bucla repetitivă",functie1:"15",functie2:"18",functie3:"2",functie4:"exercițiile cu bucla repetitivă"};
+    $scope.optiuni[19]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"2",functie4:"în aplicația 1"};
+    $scope.optiuni[20]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"2",functie4:"în aplicația 2"};
+    $scope.optiuni[21]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"2",functie4:"în aplicația 3"};
+    $scope.optiuni[22]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"2",functie4:"în aplicația 4"};
     }  else{
           swal({
   title: "Eroare!",
@@ -2560,12 +2560,11 @@ $scope.calificative=function(){
     $scope.optiuni[15]={optiune:"Aplicația 1",functie1:"11",functie2:"0",functie3:"1",functie4:"în aplicația 1"};
     $scope.optiuni[16]={optiune:"Aplicația 2",functie1:"12",functie2:"0",functie3:"1",functie4:"în aplicația 2"};
     $scope.optiuni[17]={optiune:"Aplicația 3",functie1:"13",functie2:"0",functie3:"1",functie4:"în aplicația 3"};
-    $scope.optiuni[18]={optiune:"Aplicația 4",functie1:"14",functie2:"0",functie3:"1",functie4:"în aplicația 4"};
-    $scope.optiuni[19]={optiune:"Bucla repetitivă",functie1:"0",functie2:"0",functie3:"0"};
-    $scope.optiuni[20]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"1",functie4:"în aplicația 1"};
-    $scope.optiuni[21]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"1",functie4:"în aplicația 2"};
-    $scope.optiuni[22]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"1",functie4:"în aplicația 3"};
-    $scope.optiuni[23]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"1",functie4:"în aplicația 4"};
+    $scope.optiuni[18]={optiune:"Bucla repetitivă",functie1:"0",functie2:"0",functie3:"0"};
+    $scope.optiuni[19]={optiune:"Aplicația 1",functie1:"15",functie2:"0",functie3:"1",functie4:"în aplicația 1"};
+    $scope.optiuni[20]={optiune:"Aplicația 2",functie1:"16",functie2:"0",functie3:"1",functie4:"în aplicația 2"};
+    $scope.optiuni[21]={optiune:"Aplicația 3",functie1:"17",functie2:"0",functie3:"1",functie4:"în aplicația 3"};
+    $scope.optiuni[22]={optiune:"Aplicația 4",functie1:"18",functie2:"0",functie3:"1",functie4:"în aplicația 4"};
    } else{
           swal({
   title: "Eroare!",

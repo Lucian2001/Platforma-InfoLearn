@@ -9,20 +9,20 @@ mysqli_real_escape_string($link, $_POST['r1']);
 $query="SELECT *FROM evaluare WHERE id = $id1";
 if ($result = mysqli_query($link,$query)){
    $row = mysqli_fetch_array($result);
-$i=$row[1];
-$r1=$row[2];
-$r2=$row[3];
-$r3=$row[4];
-$r4=$row[5];
+$i=htmlspecialchars($row[1],ENT_QUOTES,'UTF-8');
+$r1=htmlspecialchars($row[2],ENT_QUOTES,'UTF-8');
+$r2=htmlspecialchars($row[3],ENT_QUOTES,'UTF-8');
+$r3=htmlspecialchars($row[4],ENT_QUOTES,'UTF-8');
+$r4=htmlspecialchars($row[5],ENT_QUOTES,'UTF-8');
 }
 $query="SELECT *FROM evaluare WHERE id = $id2";
 if ($result = mysqli_query($link,$query)){
    $row = mysqli_fetch_array($result);
-$i1=$row[1];
-$r11=$row[2];
-$r21=$row[3];
-$r31=$row[4];
-$r41=$row[5];
+$i1=htmlspecialchars($row[1],ENT_QUOTES,'UTF-8');
+$r11=htmlspecialchars($row[2],ENT_QUOTES,'UTF-8');
+$r21=htmlspecialchars($row[3],ENT_QUOTES,'UTF-8');
+$r31=htmlspecialchars($row[4],ENT_QUOTES,'UTF-8');
+$r41=htmlspecialchars($row[5],ENT_QUOTES,'UTF-8');
 }
 $outp .= '{"Intrebare":"'.$i.'",';
 $outp .= '"R1":"'.$r1.'",';
@@ -34,5 +34,5 @@ $outp .= '"R11":"'.$r11.'",';
 $outp .= '"R21":"'.$r21.'",';
 $outp .= '"R31":"'.$r31.'",';
 $outp .= '"R41":"'.$r41.'"}';
-echo htmlspecialchars($outp,ENT_QUOTES,'UTF-8');
+echo $outp;
 ?>
