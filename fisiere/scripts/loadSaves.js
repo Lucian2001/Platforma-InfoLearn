@@ -1,5 +1,6 @@
  function loadsaves(username) {
 
+     if(username!=undefined){
 username=username.toString();
    // alert((username.length)/3);
     if (username!=""){
@@ -12,7 +13,7 @@ username=username.toString();
 
          $("#id-"+id1).css("background-color","#d8ffd6");
      }
-    }
+    }}
  }
 
 function loadHref(nr,ids,vectorIds,id1){

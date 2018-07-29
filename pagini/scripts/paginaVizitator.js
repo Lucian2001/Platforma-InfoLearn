@@ -1,4 +1,5 @@
- $("#myaccount").mouseout(function(){
+var progresul;
+$("#myaccount").mouseout(function(){
 
         $(this).css("background-color","#2669d6");
         $("#login-text").css ("color","white")  ;
@@ -36,17 +37,9 @@
                     $("#continutInfo").hide();
             }
   
-    var n=username.length;
-             var panelOn=false;
-         var n1;
-     n1=n*(29-n);
 
 
-    $("#myaccount").css ("width",n1);
-    $("#login-text").text(username);
-    $("#username1").text("Username: "+username);
- 
-    $("#email1").text("Email: "+email);
-    $("#profileImage" ).attr("src",image);
+
+   
 
 });
