@@ -83,5 +83,6 @@ if (nr1==6){
    $("#exercitiiRezolvate").html(6);
 succes(); timpOver=0;
       creereScor(timp,raspunsuriGresite,1,coeficientCorect,7); 
+    generareScor(7,40);
 }
 }

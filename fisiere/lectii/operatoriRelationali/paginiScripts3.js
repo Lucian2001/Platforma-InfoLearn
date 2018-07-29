@@ -37,24 +37,25 @@ generareNumere(randomNr1);
     })
 
 }
+var buttonActive2=1; var numar1;
 function aplicatia2(){
-var buttonActive=1;
+
 generareScor(9,25);
 start();
 timerCorect(1);
-    var numar=Math.floor((Math.random() * 6) + 1);
+     numar1=Math.floor((Math.random() * 6) + 1);
 $(document).ready(function(){
 redimensionare132();
-  afisareSemn(numar)
+  afisareSemn(numar1)
 })
     $("#generare4").click(function(){
         
 
-        if (buttonActive==1){
+        if (buttonActive2==1){
 
-         buttonActive=0;
+         buttonActive2=0;
 
-        verificareRaspuns(numar);
+        verificareRaspuns(numar1);
         }
                 timerCorect(1);
     })

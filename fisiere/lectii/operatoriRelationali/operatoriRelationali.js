@@ -69,7 +69,8 @@ $("#corect").show();
     } else{$("#exercitiiRezolvate").html(nr1+1);
         succes(); timpOver=0;
             creereScor(timp,raspunsuriGresite,4,coeficientCorect,8);
-    }
+      generareScor(8,35);
+          }
     }
 }
 
@@ -83,16 +84,18 @@ raspuns=true;
 }
 var d;
 
-
+var variabila;
 function afisareSemn(x){
 var y;
     var a=Math.floor((Math.random() * 2) + 1);
     var b= Math.floor((Math.random() * 25) + 1);
 c=a;
     if (a==1){
+        variabila=b;
         $("#id---1").val(b);
         $("#id---1").prop('disabled', true);
     } else{
+        variabila=b;
        $("#id---2").val(b);
         $("#id---2").prop('disabled', true);
     }
@@ -114,49 +117,107 @@ d=x;
 }
 
 function verificareRaspuns(x){
+    
     ok=false;
- a=$("#id---1").val();
+ a=variabila;
+    if (c==1){
  b=$("#id---2").val();
-if (parseInt(a).toString()!=a || parseInt(a)==null){
-  ok=false;
-} else{
-a=parseInt(a);
+    } else{
+         b=$("#id---1").val();
+    }
 
+if (parseInt(a).toString()!=a || parseInt(a)==null){
+  ok=false; 
+} else{ 
+a=parseInt(a);
 b=parseInt(b);
     if (a!=0 && b!=0){
-
+alert("a="+a+" b="+b+" x="+x+" c="+c);
     if (x==1){
-      if(a<b){
-          ok=true;
-      } else ok=false;
+       if(c==1){
+           if(a<b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       } else{
+           if(a>b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       }
     } else if (x==2){
-    if(a<=b){
-          ok=true;
-      } else ok=false;
+         if(c==1){
+           if(a<=b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       } else{
+           if(a>=b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       }
     } else if (x==3){
-
-  if(a>b){
-          ok=true;
-      } else{
-
-         ok=false;
-      }
+         if(c==1){
+           if(a>b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       } else{
+           if(a<b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       }    
+    
     } else if (x==4){
-  if(a>=b){
-          ok=true;
-      }else ok=false;
+         if(c==1){
+           if(a>=b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       } else{
+           if(a<=b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       }
     } else if (x==5){
-   if(a==b){
-          ok=true;
-      }else ok=false;
+         if(c==1){
+           if(a==b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       } else{
+           if(a==b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       }
     } else if (x==6){
-   if(a==b){
-          ok=false;
-      }
-        else{
-
-        ok=true;
-        }
+         if(c==1){
+           if(a!=b){
+               ok=true;
+           } else{
+               ok=false;
+           }
+       } else{
+          if(a!=b){
+               ok=true;
+           } else{
+               ok=false;
+           } 
+       }
     }
     } else{
         ok=false;
@@ -169,6 +230,7 @@ b=parseInt(b);
     }
 
 }
+
 function corect1(){
     coeficientCorect=coeficientCorect+timp1;
     
@@ -176,16 +238,16 @@ function corect1(){
     if ($("#exercitiiRezolvate").html()!=6){
   $("#corect").show();
   setTimeout(function(){
-          numar=Math.floor((Math.random() * 6) + 1);
+          numar1=Math.floor((Math.random() * 6) + 1);
       $("#id---2").prop('disabled', false);
            $("#id---1").prop('disabled', false);
           $("#id---1").val("");
-$("#id---2").val("");
+$("#id---2").val("");032
       $("#corect").hide();
-      afisareSemn(numar);
+      afisareSemn(numar1);
 
 
-buttonActive=1;
+buttonActive2=1;
   } ,1500);
   var nr=$("#exercitiiRezolvate").html();
   var nr1=parseInt(nr);
@@ -204,21 +266,22 @@ if (url[i]!="/" && url[i]!="#" && (url[i]==1 || url[i]==2 || url[i]==3)){
 }
  succes(); timpOver=0;
      creereScor(timp,raspunsuriGresite,4,coeficientCorect,9);
+    generareScor(9,25);
 }}
 }
 function gresit1(){
      timp1=-1;
   $("#gresit").show(); eroareRezultat( "Un raspuns corect ar putea fi   "+generareRaspunsCorect());
   setTimeout(function(){
-          numar=Math.floor((Math.random() * 6) + 1);
+          numar1=Math.floor((Math.random() * 6) + 1);
        $("#id---2").prop('disabled', false);
            $("#id---1").prop('disabled', false);
         $("#gresit").hide();
    $("#id---1").val("");
 $("#id---2").val("");
-      afisareSemn(numar);
+      afisareSemn(numar1);
 
-buttonActive=1;
+buttonActive2=1;
   } ,1500);
 
 

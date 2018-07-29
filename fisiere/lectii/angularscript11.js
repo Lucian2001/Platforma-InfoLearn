@@ -463,7 +463,7 @@ else {
 
 
 
-alert(pattern);
+
 
 
 //alert(n);

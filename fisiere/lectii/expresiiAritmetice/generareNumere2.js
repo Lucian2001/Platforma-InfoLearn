@@ -309,8 +309,9 @@ $("#corect1").show();
 optiune=0;corect=0;
  if (nr1==6){
     $("#exercitiiRezolvate").html(6);
-succes(); timpOver=0;
+succes(); timpOver=0; 
     creereScor(timp,raspunsuriGresite,4,coeficientCorect,6);
+     generareScor(6,360);
  }
 }
 function verificareEroare(eroare){
