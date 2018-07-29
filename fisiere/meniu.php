@@ -3,91 +3,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
-<style>
-    #left-bar{
- position: fixed;
-  top: -5;
-  left: -1;
-  width: 15.1%;
-  height:110%;
-  background-color: lightgrey;
-margin-bottom: 0;
-   box-shadow:         inset 0 0 10px #000000;
-
-}
-#title {
-        margin-top: 15px;
-        margin-left:11px;
-    margin-bottom: 25px;
-    width:90%;
-    height: 6%;
-    }
-    body {
-  margin: 0px;
-  padding: 0px;
-
-}
-    .item-design{
-        background-color:#388aff;
-        width:5px;
-        height:6%;
-    }
-
-    #lista1{
-
-margin-top: 20%;
-    }
-    ul {
-  list-style-type: none;
-        padding-left: 20px;
-
-}
-    .menu-item{
-       margin-right: 20px;
-        border-style: solid;
-        border-color:white;
-        border-right:none;
-        border-bottom:none;
-        border-width: 1px;
-        cursor: pointer;
-    }
-    #last-column{
-       margin-right: 20px;
-        border-style: solid;
-        border-color:white;
-        border-right:none;
-
-        border-width: 1px;
-
-    }
-    .menu-title{
-        margin-left:15px;
-        margin-top:20px;
-        font-family: 'Roboto Condensed', sans-serif;
-     font-size: 100%;
-        font-size:3.5vh;
-    }
-    .menu-text{
-        margin-left:15px;
-        font-family: 'Roboto Condensed', sans-serif;
-     font-size: 100%;
-        font-size:3vh;
-        padding-top: 8px;
-        width:250px;
-    }
-    #sub-menu-item{
-
-    margin-left:3%;
-    }
-    #sub-menu{
-    margin-left:-9%;
-        display: none;
-
-    }
-    #title{
-        cursor: pointer;
-    }
-    </style>
+<link href="fisiere/css/meniu.css" rel="stylesheet">
 
 </head>
 
@@ -130,23 +46,10 @@ margin-top: 20%;
           
 
     </div>
-<script>
-    $(document).ready(function(){
-         var height=$(document).height();
-        var width=$(document).width();
-     if (width<1400&&height<800){
+    
+    
+    </html>
 
-         $(".menu-text").css("width","160px");
-
-
-     }
-    })
-    $("#title").click(function(){
-        window.location.replace("https://infolearn.ml/index.php");
-
-    })
-
-    </script>
 <script src="fisiere/scripts/loadSaves.js"></script>
 <script src=fisiere/scripts/meniuScript.js></script>
 

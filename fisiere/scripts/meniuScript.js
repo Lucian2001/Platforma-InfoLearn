@@ -1,3 +1,17 @@
+ $(document).ready(function(){
+         var height=$(document).height();
+        var width=$(document).width();
+     if (width<1400&&height<800){
+
+         $(".menu-text").css("width","160px");
+
+
+     }
+    })
+    $("#title").click(function(){
+        window.location.replace("https://infolearn.ml/index.php");
+
+    })
 
 var href1;
     var vector=[];
