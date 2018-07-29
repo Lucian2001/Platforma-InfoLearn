@@ -18,13 +18,21 @@ else if (width<1500&&height<800){
 function redimensionare121(){
     var height=$(document).height();
     var width=$(document).width();
- if (width<1800&&height<900){
+ if (width<1800&&height<900 &&width>1400 && height>800){
      $("#exercitii").css("float","left");
      $("#exercitii").css("margin-top","-8%");
      $("#numarIncercari").css("font-size","33px");
               $("#spatiuExercitii").css("margin-left","4%");
  }
+    else if (width<1400&&height<800){
+      $(".expl-fi21").css("font-size","1vw");
+        $("#exercitii").css("float","left");
+     $("#exercitii").css("margin-top","-13%");
+     $("#numarIncercari").css("font-size","28px");
+              $("#spatiuExercitii").css("margin-left","4%");
+ }
 }
+
 
 function redimensionare122(){
    var height=$(document).height();
@@ -42,7 +50,7 @@ $(".valoare2").css("font-size","41px");
 $("#spatiuExercitii1").css("margin-left","-20px");
 }
 else if (width<1400&&height<700){
-   
+   $(".expl-fi22").css("font-size","0.9vw");
     $("#verificare").css("margin-top","15%");
     $("#buttons").css("margin-top","-15%");
     $(".valoare2").css("font-size","35px");
@@ -57,7 +65,7 @@ else if (width<1400&&height<700){
 function redimensionare123(){
     var height=$(document).height();
     var width=$(document).width();
- if (width<1800&&height<900){
+if (width<1800&&height<900 &&width>1400 && height>800){
       $(".valoare1").css("font-size","60px");
      $("#raspuns1").css("width","99%");
      $("#raspuns1").css("margin-top","1%");
@@ -65,16 +73,25 @@ function redimensionare123(){
      $("#verificare1").css("height","12%");
       $("#verificare1").css("margin-top","-8%");
        $("#verificare1").css("margin-left","50%");
+ } else if (width<1400&&height<800){
+     $(".valoare1").css("font-size","50px");
+     $("#raspuns1").css("width","79%");
+     $("#raspuns1").css("margin-top","-10%");
+     $("#verificare1").css("width","27%");
+     $("#verificare1").css("height","12%");
+      $("#verificare1").css("margin-top","-9%");
+       $("#verificare1").css("margin-left","50%"); 
+      $(".expl-fi23").css("font-size","1vw");
  }
 }
 function redimensionare131(){
    var height=$(document).height();
    var width=$(document).width();
 if (width<1650&&height<800){
-    $("#droppable").css("margin-left","16%");
-
+    $("#droppable").css("margin-left","18%");
+ $(".expl-fi21").css("font-size","1vw");
     $("#exercitii").css("float","left");
-     $("#exercitii").css("margin-top","0%");
+     $("#exercitii").css("margin-top","-7%");
                             $("#exercitii").css("margin-left","2%");
     $("#numarIncercari").css("font-size","33px");
       $("#generare3").css("font-size","18px");
@@ -94,15 +111,15 @@ function redimensionare132(){
 
 
          $("#semn1").css("margin-top","-4%");
-         $("#exercitii").css("margin-top","2%");
+         $("#exercitii").css("margin-top","0%");
 
            $("#generare4").css("font-size","18px");
          $("#id---1").css("margin-left","1%");
-
+ $(".expl-fi22").css("font-size","1vw");
            $("#generare4").css("margin-top","-9%");
          $(".input").css("font-size","32px");
      }
-if(width<1700&&height<900){
+else if(width<1700&&height<900){
       $("#semn1").css("margin-top","-2%");
          $("#exercitii").css("margin-top","2%");
 
@@ -138,6 +155,8 @@ $(".valoare").css("font-size","38px");
 
  }
 else if (width<1500&&height<800 ){
+   
+    $(".expl-fi156").css("font-size","0.85vw"); 
     $("#exercitii").css("font-size","35px");
     $("#exercitii").css("margin-top","30%");
      $(".valoare").css("font-size","33px");
@@ -146,6 +165,7 @@ else if (width<1500&&height<800 ){
  }
 }
 function redimensionare153(){
+    
    var height=$(document).height();
    var width=$(document).width();
 if (width<1601&&height<770 && width>1400 && height>650){

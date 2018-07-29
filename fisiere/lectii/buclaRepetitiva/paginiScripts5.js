@@ -1,4 +1,5 @@
 function buclaRepetitiva(){
+    
   if ( window.location.href=="https://infolearn.ml/index.php"){
                 $("#continutInfo").show();
             } else{
@@ -69,6 +70,7 @@ $("#butonError").click(function(){
 })
 }
 function aplicatia2(){
+     redimensionare151()
  generareScor(15,58);   
 start();
 if (tanc==0){
@@ -116,7 +118,8 @@ $(document).ready(function(){
          $("#textError").css("font-size","13px");
       $("#textError").css("margin-top","15%");
           $("#butonError").css("margin-left","15%");
-     }
+     
+    }
    // $("#id:35").attr("src","fisiere/assets/images/road_target");
 // $("#id-35").attr('id', 'target');
 
@@ -131,6 +134,7 @@ $("#butonError").click(function(){
 })
 }
 function aplicatia3(){
+     redimensionare151()
      generareScor(16,55);   
 start();
 if (tanc==0){
@@ -193,6 +197,7 @@ $("#butonError").click(function(){
     $("#errorPanel").hide();
 })
   function redimensionare4(){
+       redimensionare151()
         var height=$(document).height();
         var width=$(document).width();
      if (width<1500&&height<800&&width>1400&&height>1000){

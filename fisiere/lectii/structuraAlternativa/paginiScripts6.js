@@ -28,6 +28,7 @@ function aplicatia1(){
 start();
 timerCorect(1); 
 $(document).ready(function(){
+    
   redimensionare151();
     $("#object1").hide();
     $("#butonsmecher").hide();
@@ -65,7 +66,7 @@ var dificultate;
         }
             }
     })
-
+$("#butonsmecher").hide();
 }
 function aplicatia2(){
     generareScor(11,34);  
