@@ -2612,6 +2612,7 @@ $scope.titluri=[{nume:""}];
        $scope.src1="fisiere/profesor/inregistrareElevi.html";
     angular.element(document.querySelector( '#inregistrare' )).addClass ("active");
         angular.element(document.querySelector( '#statistici' )).removeClass ("active");
+           angular.element(document.querySelector( '#evaluare11' )).addClass ("active");
     };
    
   function incarcareScoruri(clasa){

@@ -132,7 +132,7 @@ if (parseInt(a).toString()!=a || parseInt(a)==null){
 a=parseInt(a);
 b=parseInt(b);
     if (a!=0 && b!=0){
-alert("a="+a+" b="+b+" x="+x+" c="+c);
+
     if (x==1){
        if(c==1){
            if(a<b){
