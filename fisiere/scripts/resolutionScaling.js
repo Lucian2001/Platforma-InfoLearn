@@ -147,7 +147,7 @@ var height=$(document).height();
     var width=$(document).width();
    if (width<1900&&height<900&&width>1500&&height>700){ 
 $(".valoare").css("font-size","38px");
-  $("#exercitii").css("margin-top","18%");
+  $("#exercitii").css("margin-top","6%");
        $("#corect").css("margin-left","60%");
         $("#corect").css("margin-top","-4%");
        $("#gresit").css("margin-left","60%");
@@ -155,12 +155,12 @@ $(".valoare").css("font-size","38px");
 
  }
 else if (width<1500&&height<800 ){
-   
+
     $(".expl-fi156").css("font-size","0.85vw"); 
     $("#exercitii").css("font-size","35px");
-    $("#exercitii").css("margin-top","30%");
+    
      $(".valoare").css("font-size","33px");
-  $("#exercitii").css("margin-top","10%");
+  $("#exercitii").css("margin-top","5.5%");
       $("#butonError").css("margin-left","15%");
  }
 }

@@ -105,7 +105,7 @@ function generareNumere(x){
  function operator(x,y){
     var z;
      if(x==1){
-             do {
+             do { 
                 z=Math.floor((Math.random() * (y*2)) + 1);
              } while(y<=z);
         return z;
@@ -148,6 +148,7 @@ buttonActive=1;
             
 succes(); timpOver=0;
     creereScor(timp,raspunsuriGresite,4,Math.round( (coeficientCorect/6) * 10 ),11); 
+             generareScor(11,35);
       }
 
 }

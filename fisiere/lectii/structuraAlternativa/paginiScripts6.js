@@ -20,9 +20,10 @@ $('.dropdown-toggle').dropdown();
 loadsaves(progresul);
 $("#sub-menu").show();
 }
+ var buttonActive=1; var dificultate; var raspuns;
 function aplicatia1(){
-    var buttonActive=1; 
-    var raspuns;
+   
+   
 
       generareScor(11,35);
 start();
@@ -34,7 +35,7 @@ $(document).ready(function(){
     $("#butonsmecher").hide();
      $("#resetareAplicatie").hide();
 })
-var dificultate;
+
     dificultate=10;
    raspuns=generareNumere(dificultate);
 
@@ -138,15 +139,15 @@ $("#butonError").click(function(){
      if (width<1500&&height<800&&width>1400&&height>1000){
 
      }}
-}
+} var dificultate=10; var buttonActive1=1;  var raspuns1;
 function aplicatia3(){
       generareScor(12,53);
 start();
 timerCorect(1);
- var dificultate=10;   var raspuns;var buttonActive=1;
+
     $(document).ready(function(){
 
-       raspuns=generareNumere(dificultate);
+       raspuns1=generareNumere(dificultate);
 
         $("#object1").hide();
     $("#butonsmecher").hide();
@@ -156,14 +157,14 @@ redimensionare153();
     $("#generare").click(function(){
      
 
-if (buttonActive==1){
-    buttonActive=0;
+if (buttonActive1==1){
+    buttonActive1=0;
   if ($("#input").val()!=parseInt($("#input").val()).toString()){
 gresit();
 $("#input").val("");
 
   } else
-        if ($("#input").val()==raspuns){
+        if ($("#input").val()==raspuns1){
             corect();
 $("#input").val("");
         } else{

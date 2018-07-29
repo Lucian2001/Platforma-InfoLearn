@@ -117,10 +117,10 @@ $("#corect").show();
             setTimeout(function(){
                  $("#corect").hide();
                 dificultate=dificultate+7;
-               raspuns= generareNumere(dificultate);
+               raspuns1= generareNumere(dificultate);
 
 
-  buttonActive=1;
+  buttonActive1=1;
             } ,1500);
          var nr=$("#exercitiiRezolvate").html();
          var nr1=parseInt(nr);
@@ -131,20 +131,20 @@ $("#corect").show();
        else{$("#exercitiiRezolvate").html(6);
 succes(); timpOver=0;
  creereScor(timp,raspunsuriGresite,4,coeficientCorect,13);            
-
+generareScor(12,53);
       }
 
 }
 function gresit(){
      timp1=-1;
         raspunsuriGresite=raspunsuriGresite+1;
-    $("#gresit").show(); eroareRezultat("Răspunsul corect era "+raspuns);
+    $("#gresit").show(); eroareRezultat("Răspunsul corect era "+raspuns1);
             setTimeout(function(){
                  $("#gresit").hide();
                 dificultate=dificultate-1;
-               raspuns=generareNumere(dificultate);
+               raspuns1=generareNumere(dificultate);
 
-          buttonActive=1;
+          buttonActive1=1;
 
             } ,1500);
 }
