@@ -1,5 +1,6 @@
-function aplicatia1(){
 var semn;
+function aplicatia1(){
+
   generareScor(8,35);
 start();
 timerCorect(1);

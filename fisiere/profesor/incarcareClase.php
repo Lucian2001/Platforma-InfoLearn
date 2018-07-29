@@ -13,17 +13,23 @@ $nr=$_POST['nr'];
 $nr=mysqli_real_escape_string($link, $nr);  
 $nume="clasa".$nr;
 
-$query= "ALTER TABLE clase ADD $nume TEXT NOT NULL";
+//$query= "ALTER TABLE clase ADD $nume TEXT NOT NULL";
+//if ( $result = mysqli_query($link,$query)){
+   
+//}else {
+
+//}
+$query="INSERT INTO clase (`id`) VALUES ('$id')";
 if ( $result = mysqli_query($link,$query)){
    
 }else {
-
+  echo mysqli_error($link);
 }
 $query= "UPDATE clase SET $nume ='".mysqli_real_escape_string($link, $clasa)."'WHERE id=$id";
 if ( $result = mysqli_query($link,$query)){
    
 }else {
- 
+  
 }
 $nr= intval($nr);
 $nr=$nr+1;

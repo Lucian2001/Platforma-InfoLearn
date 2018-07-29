@@ -1013,6 +1013,7 @@ $timeout( 1500);
   function terminat(){
 succes();  timpOver=0;
        creereScor(timp,raspunsuriGresite,4,coeficientCorect,10);
+      generareScor(10,50);
 }
 })
 

@@ -3,13 +3,14 @@
             } else{
                     $("#continutInfo").hide();
             }
+var semn1;
 function aplicatia1(){
            
 generareScor(5,30);
 start();
 timerCorect(1);
     buttonActive=1;
-    var semn1;
+    
     
 
 var corectValue;

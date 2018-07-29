@@ -138,7 +138,7 @@ function incercari(){
         else{ 
           
                 
-           eroareRezultat("Răspunsul corect era"+semn1);
+           eroareRezultat("Răspunsul corect era "+semn1);
             $("#gresit").show();
             $("#numarIncercari").html(0);
             $("#invisibleObject").html(1);
